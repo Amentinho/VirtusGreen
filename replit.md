@@ -23,11 +23,12 @@ Preferred communication style: Simple, everyday language.
 - Tailwind CSS for styling with custom design tokens
 
 **Design System:**
-- Custom color palette based on earth tones and sustainability-focused greens
+- VirtusGreen brand color palette (vibrant green HSL 135, 60%, 42-45%)
 - Responsive design with mobile-first approach
 - Light/dark mode support through CSS custom properties
 - Typography using Inter (primary) and Poppins (accents) fonts
 - Component library following the "new-york" shadcn style variant
+- Official VirtusGreen logo used throughout the site (navigation and footer)
 
 **Key Features:**
 - Single-page application (SPA) with smooth scroll navigation
@@ -174,6 +175,22 @@ Preferred communication style: Simple, everyday language.
 - Comprehensive meta tags for search optimization
 
 ## Recent Changes
+
+### October 2025 - Phase 3: Official Branding
+
+**Logo Integration (Completed):**
+- Integrated official VirtusGreen logo throughout the website
+- Logo displayed in navigation header (h-10) and footer (h-12)
+- Replaced placeholder Leaf icon with actual brand logo
+- Logo imported from `attached_assets/aaa_1759692758271.jpg`
+
+**Color Palette Refinement (Completed):**
+- Updated color scheme to match VirtusGreen brand identity
+- Primary green: HSL(135, 60%, 42%) - vibrant, fresh green
+- CTA green: HSL(135, 65%, 45%) - brighter accent for call-to-action
+- Success green: HSL(135, 60%, 45%) - consistent brand color
+- Applied consistently across light and dark modes
+- All buttons, accents, and highlights use brand colors
 
 ### October 2025 - Phase 2 Features
 
