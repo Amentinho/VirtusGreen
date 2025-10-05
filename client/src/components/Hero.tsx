@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Shield, TrendingUp, Gift, Smartphone } from "lucide-react";
-import barcodeScanningImage from "@assets/stock_images/barcode_scanning_mob_970fcad8.jpg";
+import barcodeScanningImage from "@assets/stock_images/hand_holding_smartph_de1df2e4.jpg";
 
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false);
