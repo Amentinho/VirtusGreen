@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Shield, TrendingUp, Gift, Smartphone } from "lucide-react";
+import barcodeScanningImage from "@assets/stock_images/barcode_scanning_mob_970fcad8.jpg";
 
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false);
@@ -163,10 +164,11 @@ export default function Hero() {
                           Get instant environmental insights
                         </p>
                       </div>
-                      <div className="w-full h-2 bg-primary/20 rounded-full overflow-hidden">
-                        <div
-                          className="h-full bg-primary rounded-full animate-pulse"
-                          style={{ width: "70%" }}
+                      <div className="w-full mt-4">
+                        <img 
+                          src={barcodeScanningImage} 
+                          alt="Barcode scanning example" 
+                          className="w-full h-32 object-cover rounded-lg"
                         />
                       </div>
                     </div>
