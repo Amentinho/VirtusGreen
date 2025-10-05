@@ -48,7 +48,7 @@ export default function WhyVirtusGreen() {
       icon: Gift,
       title: "Real Rewards",
       description:
-        "Turn sustainable choices into tangible benefits. Earn tokens for eco-conscious decisions and redeem them for exclusive discounts.",
+        "Turn sustainable choices into tangible benefits. Earn tokens for eco-conscious decisions and redeem them for exclusive discounts. ",
       features: ["Earn tokens", "Exclusive discounts", "Free products"],
       color: "from-chart-2/20 to-chart-2/10",
       iconBg: "bg-chart-2/20",
@@ -109,7 +109,7 @@ export default function WhyVirtusGreen() {
                       {value.description}
                     </p>
 
-                    <ul className="space-y-2 pt-2">
+                    <ul className={`space-y-2 ${index === 2 ? 'pt-8' : 'pt-2'}`}>
                       {value.features.map((feature, idx) => (
                         <li
                           key={idx}
