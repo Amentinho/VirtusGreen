@@ -91,9 +91,9 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { icon: Linkedin, label: "LinkedIn", href: "#" },
-    { icon: Twitter, label: "Twitter", href: "#" },
-    { icon: Instagram, label: "Instagram", href: "#" },
+    { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/virtusgreen" },
+    { icon: Twitter, label: "Twitter", href: "https://x.com/virtusgreen" },
+    { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/virtusgreen/" },
   ];
 
   return (
@@ -145,6 +145,8 @@ export default function Footer() {
                   <a
                     key={social.label}
                     href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center hover-elevate active-elevate-2 transition-colors"
                     data-testid={`link-social-${social.label.toLowerCase()}`}
                     aria-label={social.label}
