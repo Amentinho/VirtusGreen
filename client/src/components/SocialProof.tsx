@@ -153,11 +153,7 @@ export default function SocialProof() {
                   </div>
 
                   <div className="space-y-1">
-                    <div className="text-3xl sm:text-4xl font-bold text-foreground" data-testid={`text-stat-value-${index}`}>
-                      {formatNumber(stat.value)}
-                      {stat.suffix}
-                    </div>
-                    <p className="text-sm text-muted-foreground font-medium" data-testid={`text-stat-label-${index}`}>
+                    <p className="text-base text-foreground font-semibold" data-testid={`text-stat-label-${index}`}>
                       {stat.label}
                     </p>
                   </div>
