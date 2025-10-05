@@ -25,6 +25,7 @@ import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import logoImage from "@assets/aaa_1759692758271.jpg";
+import { trackEvent } from "@/lib/analytics";
 
 export default function Footer() {
   const { toast } = useToast();
@@ -44,7 +45,8 @@ export default function Footer() {
     mutationFn: async (data: InsertContact) => {
       return await apiRequest("POST", "/api/contact", data);
     },
-    onSuccess: () => {
+    onSuccess: (_, variables) => {
+      trackEvent('contact_form_submit', 'conversion', variables.projectType);
       setIsSubmitted(true);
       form.reset();
       toast({
@@ -54,6 +56,7 @@ export default function Footer() {
       setTimeout(() => setIsSubmitted(false), 3000);
     },
     onError: () => {
+      trackEvent('contact_form_error', 'error', 'form_submission_failed');
       toast({
         title: "Failed to send message",
         description: "Please try again later.",
@@ -79,6 +82,8 @@ export default function Footer() {
         top: offsetPosition,
         behavior: "smooth",
       });
+      
+      trackEvent('scroll_to_section', 'navigation', sectionId);
     }
   };
 
@@ -89,6 +94,11 @@ export default function Footer() {
     { label: "Roadmap", id: "roadmap" },
     { label: "About Us", id: "team" },
   ];
+
+  const handleSocialClick = (platform: string, href: string) => {
+    trackEvent('social_link_click', 'engagement', platform);
+    window.open(href, "_blank", "noopener noreferrer");
+  };
 
   const socialLinks = [
     { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/virtusgreen" },
@@ -142,17 +152,15 @@ export default function Footer() {
               </h3>
               <div className="flex gap-3">
                 {socialLinks.map((social) => (
-                  <a
+                  <button
                     key={social.label}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    onClick={() => handleSocialClick(social.label, social.href)}
                     className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center hover-elevate active-elevate-2 transition-colors"
                     data-testid={`link-social-${social.label.toLowerCase()}`}
                     aria-label={social.label}
                   >
                     <social.icon className="w-5 h-5 text-secondary-foreground" />
-                  </a>
+                  </button>
                 ))}
               </div>
             </div>

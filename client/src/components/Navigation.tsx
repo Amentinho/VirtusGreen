@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoImage from "@assets/aaa_1759692758271.jpg";
+import { trackEvent } from "@/lib/analytics";
 
 interface NavigationProps {
   scrolled: boolean;
@@ -23,6 +24,8 @@ export default function Navigation({ scrolled }: NavigationProps) {
         top: offsetPosition,
         behavior: "smooth",
       });
+      
+      trackEvent('scroll_to_section', 'navigation', sectionId);
       setMobileMenuOpen(false);
     }
   };
@@ -90,7 +93,10 @@ export default function Navigation({ scrolled }: NavigationProps) {
 
             <button
               className="md:hidden p-2 hover-elevate active-elevate-2 rounded-lg"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              onClick={() => {
+                setMobileMenuOpen(!mobileMenuOpen);
+                trackEvent('mobile_menu_toggle', 'navigation', mobileMenuOpen ? 'close' : 'open');
+              }}
               data-testid="button-mobile-menu"
             >
               {mobileMenuOpen ? (

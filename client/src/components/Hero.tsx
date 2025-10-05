@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Shield, TrendingUp, Gift, Smartphone, ScanLine } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false);
@@ -23,6 +24,8 @@ export default function Hero() {
         top: offsetPosition,
         behavior: "smooth",
       });
+      
+      trackEvent('scroll_to_section', 'navigation', sectionId);
     }
   };
 
@@ -51,6 +54,8 @@ export default function Hero() {
     const platform = detectPlatform();
     const appStoreUrl = "https://apps.apple.com/us/app/virtusgreen/id123456789?mt=8&ct=hero-cta";
     const playStoreUrl = "https://play.google.com/store/apps/details?id=com.virtusgreen.app&referrer=utm_source%3Dwebsite%26utm_medium%3Dhero-cta";
+    
+    trackEvent('app_download_click', 'engagement', platform);
     
     if (platform === "ios") {
       window.open(appStoreUrl, "_blank", "noopener,noreferrer");

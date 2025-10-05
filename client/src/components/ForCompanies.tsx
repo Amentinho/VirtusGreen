@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ListChecks, Calculator, Users } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 
 export default function ForCompanies() {
   const [isVisible, setIsVisible] = useState(false);
@@ -69,10 +70,11 @@ export default function ForCompanies() {
     },
   ];
 
-  const scrollToContact = () => {
+  const scrollToContact = (source?: string) => {
     const element = document.getElementById("footer");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
+      trackEvent('cta_click', 'engagement', source || 'for_companies_section');
     }
   };
 
@@ -147,7 +149,7 @@ export default function ForCompanies() {
                   <Button
                     variant="outline"
                     className="w-full"
-                    onClick={scrollToContact}
+                    onClick={() => scrollToContact(`learn_more_${service.title.toLowerCase().replace(/ /g, '_')}`)}
                     data-testid={`button-learn-more-${index}`}
                   >
                     Learn More
@@ -169,7 +171,7 @@ export default function ForCompanies() {
           <Button
             size="lg"
             className="bg-cta hover:bg-cta text-cta-foreground border-cta-border text-base px-8"
-            onClick={scrollToContact}
+            onClick={() => scrollToContact('get_started_today')}
             data-testid="button-get-started-companies"
           >
             Get Started Today
