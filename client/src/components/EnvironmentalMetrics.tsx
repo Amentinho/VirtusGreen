@@ -105,7 +105,7 @@ export default function EnvironmentalMetrics() {
             Environmental Impact Metrics
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Track six key sustainability indexes with blockchain-verified data
+            Track six key sustainability indexes for comprehensive environmental assessment
           </p>
         </div>
 
@@ -163,8 +163,8 @@ export default function EnvironmentalMetrics() {
 
                   <div className="pt-2">
                     <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                      <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                      <span>Blockchain verified</span>
+                      <div className="w-2 h-2 rounded-full bg-yellow-500 animate-pulse" />
+                      <span>Blockchain verification coming soon</span>
                     </div>
                   </div>
                 </div>

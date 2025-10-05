@@ -26,46 +26,61 @@ export default function Roadmap() {
 
   const roadmapItems = [
     {
-      quarter: "Q4 2024",
-      title: "Foundation & Planning",
+      quarter: "Q2 2025",
+      title: "Foundation & Plan",
       status: "completed",
       items: [
         "Platform architecture design",
-        "Initial partnerships established",
+        "Gamification experience",
         "Brand identity development",
-      ],
-    },
-    {
-      quarter: "Q1 2025",
-      title: "Platform Development",
-      status: "in-progress",
-      items: [
-        "Blockchain integration development",
-        "Product passport system",
-        "Database infrastructure",
-        "Mobile app development",
-      ],
-    },
-    {
-      quarter: "Q2 2025",
-      title: "Beta Launch",
-      status: "upcoming",
-      items: [
-        "Beta testing with select partners",
-        "Rewards system activation",
-        "User feedback integration",
-        "Security audits",
+        "Rewarding system definition",
       ],
     },
     {
       quarter: "Q3 2025",
+      title: "Platform Development",
+      status: "completed",
+      items: [
+        "Mobile application development",
+        "Sustainability indicators",
+        "Database infrastructure",
+        "Rewarding system implementation",
+        "Social media strategy",
+      ],
+    },
+    {
+      quarter: "Q4 2025",
+      title: "Beta Launch",
+      status: "in-progress",
+      items: [
+        "Beta testing with users",
+        "User feedback integration",
+        "Security audits",
+        "API integrations with partners",
+        "Marketing & Social Media",
+      ],
+    },
+    {
+      quarter: "Q1 2026",
       title: "Public Launch",
       status: "upcoming",
       items: [
         "Full platform launch",
         "App store releases (iOS & Android)",
         "Partner onboarding program",
-        "Marketing campaign",
+        "Customer engagement",
+        "Reward system implementation",
+      ],
+    },
+    {
+      quarter: "2026+",
+      title: "Deep Tech Enhancements",
+      status: "upcoming",
+      items: [
+        "Blockchain stack development",
+        "Image recognition for products",
+        "Token generation",
+        "Sustainability impact calculator",
       ],
     },
   ];
@@ -126,7 +141,7 @@ export default function Roadmap() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {roadmapItems.map((item, index) => (
             <div
               key={index}

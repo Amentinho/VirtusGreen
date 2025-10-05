@@ -13,10 +13,10 @@ export default function SocialProof() {
   const sectionRef = useRef<HTMLElement>(null);
 
   const finalCounts = {
-    products: 50000,
-    co2: 125000,
-    users: 25000,
-    partners: 150,
+    products: 120,
+    co2: 450,
+    users: 35,
+    partners: 5,
   };
 
   useEffect(() => {
