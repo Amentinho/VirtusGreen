@@ -3,12 +3,24 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertContactSchema } from "@shared/schema";
 import { z } from "zod";
+import { sendContactFormEmail } from "./email";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   app.post("/api/contact", async (req, res) => {
     try {
       const validatedData = insertContactSchema.parse(req.body);
       const submission = await storage.createContactSubmission(validatedData);
+      
+      // Send email notification (don't block response on email sending)
+      sendContactFormEmail({
+        name: validatedData.name,
+        email: validatedData.email,
+        projectType: validatedData.projectType,
+        message: validatedData.message,
+      }).catch(error => {
+        console.error('Email notification failed:', error);
+      });
+      
       res.status(201).json(submission);
     } catch (error) {
       if (error instanceof z.ZodError) {
