@@ -20,10 +20,11 @@ import {
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { insertContactSchema, type InsertContact } from "@shared/schema";
-import { Leaf, Linkedin, Twitter, Instagram, Facebook } from "lucide-react";
+import { Linkedin, Twitter, Instagram, Facebook } from "lucide-react";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
+import logoImage from "@assets/aaa_1759692758271.jpg";
 
 export default function Footer() {
   const { toast } = useToast();
@@ -103,15 +104,14 @@ export default function Footer() {
           <div className="space-y-6">
             <button
               onClick={() => scrollToSection("hero")}
-              className="flex items-center gap-2 hover-elevate active-elevate-2 rounded-lg px-3 py-2 -ml-3"
+              className="flex items-center gap-3 hover-elevate active-elevate-2 rounded-lg px-3 py-2 -ml-3"
               data-testid="button-logo-footer"
             >
-              <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
-                <Leaf className="w-6 h-6 text-primary-foreground" />
-              </div>
-              <span className="text-xl font-bold text-foreground font-[Poppins]">
-                VirtusGreen
-              </span>
+              <img 
+                src={logoImage} 
+                alt="VirtusGreen Logo" 
+                className="h-12 w-auto object-contain"
+              />
             </button>
 
             <p className="text-base text-muted-foreground max-w-md">
