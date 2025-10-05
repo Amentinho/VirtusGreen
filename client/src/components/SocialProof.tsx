@@ -122,10 +122,10 @@ export default function SocialProof() {
           }`}
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
-            Making a Real Impact
+            Building the Future of Sustainability
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Join thousands of users and companies driving sustainable change
+            Our platform is under development. These projected metrics represent our vision for impact.
           </p>
         </div>
 

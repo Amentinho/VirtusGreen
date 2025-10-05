@@ -43,10 +43,10 @@ export default function ForCompanies() {
       icon: Calculator,
       title: "LCA Calculation",
       description:
-        "Professional Life Cycle Assessment using advanced mathematical methodologies. Get comprehensive environmental impact analysis from cradle to grave.",
+        "Professional Life Cycle Assessment using advanced mathematical methodologies. EU compliant using PEF regulation for comprehensive environmental impact analysis from cradle to grave.",
       features: [
+        "EU PEF regulation compliant",
         "Advanced LCA methodologies",
-        "Comprehensive analysis",
         "Industry-standard reporting",
       ],
       color: "from-cta/20 to-cta/10",

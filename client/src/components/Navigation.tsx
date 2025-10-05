@@ -80,10 +80,10 @@ export default function Navigation({ scrolled }: NavigationProps) {
               </Button>
               <Button
                 className="bg-cta hover:bg-cta text-cta-foreground border-cta-border"
-                onClick={() => scrollToSection("hero")}
-                data-testid="button-download-app-nav"
+                onClick={() => scrollToSection("footer")}
+                data-testid="button-get-in-touch-nav"
               >
-                Download App
+                Get in Touch
               </Button>
             </div>
 
@@ -126,10 +126,10 @@ export default function Navigation({ scrolled }: NavigationProps) {
               </Button>
               <Button
                 className="w-full bg-cta hover:bg-cta text-cta-foreground border-cta-border"
-                onClick={() => scrollToSection("hero")}
-                data-testid="button-download-app-mobile"
+                onClick={() => scrollToSection("footer")}
+                data-testid="button-get-in-touch-mobile"
               >
-                Download App
+                Get in Touch
               </Button>
             </div>
           </div>

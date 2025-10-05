@@ -62,9 +62,9 @@ export default function Hero() {
   };
 
   const trustIndicators = [
-    { icon: Shield, label: "Blockchain-Verified Data" },
+    { icon: Shield, label: "Blockchain-Verified Data", badge: "Coming Soon" },
     { icon: TrendingUp, label: "Transparent Impact Metrics" },
-    { icon: Gift, label: "Real Rewards" },
+    { icon: Gift, label: "Real Rewards", badge: "Coming Soon" },
   ];
 
   return (
@@ -102,21 +102,20 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 size="lg"
-                onClick={handleDownloadClick}
+                onClick={() => scrollToSection("for-companies")}
                 className="bg-cta hover:bg-cta text-cta-foreground border-cta-border text-base px-8"
-                data-testid="button-download-app-hero"
+                data-testid="button-for-companies-hero"
               >
-                <Smartphone className="w-5 h-5 mr-2" />
-                Download App
+                For Companies
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                onClick={() => scrollToSection("for-companies")}
+                onClick={() => scrollToSection("footer")}
                 className="text-base px-8 backdrop-blur-sm"
-                data-testid="button-for-companies-hero"
+                data-testid="button-get-in-touch-hero"
               >
-                For Companies
+                Get in Touch
               </Button>
             </div>
 
@@ -129,7 +128,12 @@ export default function Hero() {
                   data-testid={`badge-trust-${index}`}
                 >
                   <indicator.icon className="w-4 h-4" />
-                  {indicator.label}
+                  <span>{indicator.label}</span>
+                  {indicator.badge && (
+                    <span className="ml-1 text-xs bg-primary/20 text-primary px-2 py-0.5 rounded">
+                      {indicator.badge}
+                    </span>
+                  )}
                 </Badge>
               ))}
             </div>

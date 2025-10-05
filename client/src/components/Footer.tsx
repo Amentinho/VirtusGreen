@@ -20,7 +20,7 @@ import {
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { insertContactSchema, type InsertContact } from "@shared/schema";
-import { Linkedin, Twitter, Instagram, Facebook } from "lucide-react";
+import { Linkedin, Twitter, Instagram } from "lucide-react";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
@@ -94,7 +94,6 @@ export default function Footer() {
     { icon: Linkedin, label: "LinkedIn", href: "#" },
     { icon: Twitter, label: "Twitter", href: "#" },
     { icon: Instagram, label: "Instagram", href: "#" },
-    { icon: Facebook, label: "Facebook", href: "#" },
   ];
 
   return (
