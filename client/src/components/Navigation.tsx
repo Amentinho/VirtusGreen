@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Menu, X, Leaf } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logoImage from "@assets/aaa_1759692758271.jpg";
 
 interface NavigationProps {
   scrolled: boolean;
@@ -46,15 +47,14 @@ export default function Navigation({ scrolled }: NavigationProps) {
           <div className="flex items-center justify-between h-20">
             <button
               onClick={() => scrollToSection("hero")}
-              className="flex items-center gap-2 hover-elevate active-elevate-2 rounded-lg px-3 py-2 -ml-3"
+              className="flex items-center gap-3 hover-elevate active-elevate-2 rounded-lg px-3 py-2 -ml-3"
               data-testid="button-logo"
             >
-              <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
-                <Leaf className="w-6 h-6 text-primary-foreground" />
-              </div>
-              <span className="text-xl font-bold text-foreground font-[Poppins]">
-                VirtusGreen
-              </span>
+              <img 
+                src={logoImage} 
+                alt="VirtusGreen Logo" 
+                className="h-10 w-auto object-contain"
+              />
             </button>
 
             <div className="hidden md:flex items-center gap-1">
