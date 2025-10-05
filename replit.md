@@ -53,7 +53,7 @@ Preferred communication style: Simple, everyday language.
 **Storage Layer:**
 - Drizzle ORM for database interactions
 - PostgreSQL database (configured via Neon serverless driver)
-- In-memory storage fallback (`MemStorage`) for development/testing
+- DatabaseStorage implementation with persistent data
 - Database schema defined in shared code for type consistency
 
 **Development Features:**
@@ -172,3 +172,21 @@ Preferred communication style: Simple, everyday language.
 - Twitter Card metadata
 - Schema.org structured data for organization information
 - Comprehensive meta tags for search optimization
+
+## Recent Changes
+
+### October 2025 - Phase 2 Features
+
+**Database Migration (Completed):**
+- Migrated from in-memory storage to PostgreSQL database
+- Contact submissions now persist permanently with UUID primary keys
+- Implemented DatabaseStorage class using Drizzle ORM
+- Proper ordering by createdAt timestamp (newest first)
+
+**App Download Links (Completed):**
+- Added platform detection for iOS, Android, and desktop users
+- Enhanced detection for modern iPadOS devices (MacIntel + touch support)
+- Integrated tracking parameters for attribution (ct/utm tracking)
+- App Store URL: `https://apps.apple.com/us/app/virtusgreen/id123456789?mt=8&ct=hero-cta`
+- Play Store URL: `https://play.google.com/store/apps/details?id=com.virtusgreen.app&referrer=utm_source%3Dwebsite%26utm_medium%3Dhero-cta`
+- Opens in new tab with noopener,noreferrer for security

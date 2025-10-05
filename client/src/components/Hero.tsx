@@ -26,6 +26,41 @@ export default function Hero() {
     }
   };
 
+  const detectPlatform = () => {
+    const userAgent = navigator.userAgent || navigator.vendor;
+    
+    if (/android/i.test(userAgent)) {
+      return "android";
+    }
+    
+    if (/iPad|iPhone|iPod/.test(userAgent)) {
+      return "ios";
+    }
+    
+    if (
+      navigator.platform === "MacIntel" &&
+      navigator.maxTouchPoints > 1
+    ) {
+      return "ios";
+    }
+    
+    return "web";
+  };
+
+  const handleDownloadClick = () => {
+    const platform = detectPlatform();
+    const appStoreUrl = "https://apps.apple.com/us/app/virtusgreen/id123456789?mt=8&ct=hero-cta";
+    const playStoreUrl = "https://play.google.com/store/apps/details?id=com.virtusgreen.app&referrer=utm_source%3Dwebsite%26utm_medium%3Dhero-cta";
+    
+    if (platform === "ios") {
+      window.open(appStoreUrl, "_blank", "noopener,noreferrer");
+    } else if (platform === "android") {
+      window.open(playStoreUrl, "_blank", "noopener,noreferrer");
+    } else {
+      window.open(playStoreUrl, "_blank", "noopener,noreferrer");
+    }
+  };
+
   const trustIndicators = [
     { icon: Shield, label: "Blockchain-Verified Data" },
     { icon: TrendingUp, label: "Transparent Impact Metrics" },
@@ -67,6 +102,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 size="lg"
+                onClick={handleDownloadClick}
                 className="bg-cta hover:bg-cta text-cta-foreground border-cta-border text-base px-8"
                 data-testid="button-download-app-hero"
               >
