@@ -1,0 +1,129 @@
+Create a modern, professional website for VirtusGreen - a blockchain-based digital product passport platform that helps companies drive brand value by rewarding sustainable user actions.
+
+## Website Structure & Sections:
+
+### Hero Section
+- Compelling headline: "Transform Sustainability Into Rewards"
+- Subheadline: "Scan. Learn. Earn. The blockchain-powered app that makes sustainable shopping rewarding."
+- Two prominent CTAs: "Download App" (primary) and "For Companies" (secondary)
+- Clean hero image or animation showing someone scanning a product with their phone
+- Trust indicators: "Blockchain-Verified Data" + "Transparent Impact Metrics" + "Real Rewards"
+
+### How It Works Section (3-Step Process)
+**For Users:**
+1. **Scan** - Use your camera to scan any product barcode
+2. **Discover** - View transparent environmental impact data stored on blockchain
+3. **Earn** - Collect tokens and redeem for discounts and free products
+
+Visual: Interactive illustration or animation showing the scan-to-reward journey
+
+### Environmental Impact Metrics Section
+Showcase the 6 key indexes we track:
+- Greenhouse gas emissions
+- Water consumption
+- Energy usage
+- Renewable energies
+- Recycled materials
+- Recyclable materials
+
+Design: Icon-based grid with hover effects revealing more details about each metric
+
+### Why VirtusGreen Section (Value Propositions)
+**Three columns:**
+- **Blockchain Transparency** - Immutable, verified sustainability data you can trust
+- **User-Friendly Experience** - Simple registration, intuitive scanning, instant insights
+- **Real Rewards** - Turn sustainable choices into tangible benefits
+
+### For Companies Section
+Headline: "Elevate Your Brand Through Verified Sustainability"
+
+**Three-tier service showcase:**
+1. **Product Listing** - Get your products featured with EcoScore ratings
+2. **LCA Calculation** - Professional Life Cycle Assessment using advanced mathematical methodologies
+3. **Sustainability Consulting** - Expert guidance to minimize environmental impact
+
+Each with "Learn More" CTA leading to dedicated pages
+
+### Social Proof / Stats Section
+Display impactful numbers:
+- Products analyzed
+- CO2 equivalent tracked
+- Active users
+- Partner brands
+
+### Team Section
+Feature the founder:
+- **Andrea** - Sustainability & Blockchain Expert | "Technology is the key to solve climate change"
+Professional card with photo placeholder and title: Sustainability and green energy engineer. Blockchain and decentralization addict.
+
+### Footer
+- Quick links: How it Works, Our App, Environmental Indexes, About Us, For Companies
+- Contact form with fields: Name, Email, Project Type (dropdown: Freelance/Business/Affiliate/User), Message
+- Social media icons
+- Copyright notice
+
+## Design Requirements:
+
+### Visual Style
+- Modern, clean, eco-conscious aesthetic
+- Color palette: Primary green (#2D5F3F or similar earth tone), white, light grays, accent colors for CTAs
+- Generous white space for clarity
+- Rounded corners for modern feel
+- Subtle gradients or mesh backgrounds for depth
+
+### Typography
+- Clear hierarchy with large, bold headlines
+- Sans-serif fonts (Inter, Poppins, or Montserrat)
+- Readable body text (16-18px minimum)
+
+### Interactive Elements
+- Smooth scroll animations (fade-in, slide-up effects)
+- Hover states on all clickable elements
+- Sticky navigation bar with transparency effect
+- Mobile hamburger menu
+- Animated barcode scanning demonstration
+
+### Mobile Responsiveness
+- Fully responsive design
+- Touch-friendly buttons (minimum 44px height)
+- Stacked layouts for mobile
+- Optimized images for faster loading
+
+## SEO Optimization:
+
+### Technical SEO
+- Semantic HTML5 structure
+- Meta title: "VirtusGreen - Blockchain Sustainability App | Scan Products, Earn Rewards"
+- Meta description: "Discover product environmental impact through blockchain transparency. Scan barcodes, learn sustainability metrics, and earn rewards for eco-conscious choices."
+- Open Graph tags for social sharing
+- Schema markup for Organization and Product
+- Fast loading speed (optimize images, minimize code)
+
+### Content SEO
+**Target Keywords:**
+- Primary: "sustainable shopping app", "product environmental impact", "blockchain sustainability"
+- Secondary: "digital product passport", "eco-friendly rewards", "carbon footprint tracking"
+- Long-tail: "how to check product sustainability", "blockchain environmental data"
+
+**Content Strategy:**
+- H1 tags for main headlines
+- Descriptive alt text for all images
+- Internal linking between sections
+- Clear, benefit-focused copy throughout
+
+### Performance
+- Lazy loading for images
+- Minified CSS/JavaScript
+- Mobile-first indexing ready
+- Core Web Vitals optimized
+
+## Call-to-Actions Throughout:
+- "Download on App Store" / "Get it on Google Play" (hero + footer)
+- "See How It Works" (hero to explainer section)
+- "For Companies - Get Started" (navigation + dedicated section)
+- "Contact Us" (footer + floating button)
+- "Learn More About Our Services" (For Companies section)
+
+Create a visually stunning, conversion-optimized website that positions VirtusGreen as the leading solution for sustainable consumption and corporate environmental transparency. The design should feel modern, trustworthy, and inspiring - making users excited about making sustainable choices.
+
+Use HTML, CSS, and JavaScript to build this as a complete, production-ready single-page website with smooth animations and excellent user experience.
