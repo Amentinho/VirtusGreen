@@ -174,13 +174,15 @@ Preferred communication style: Simple, everyday language.
 - Schema.org structured data for organization information
 - Comprehensive meta tags for search optimization
 
-## Pending Setup
+## Email Notifications
 
-**Email Notifications:**
-- Contact form submissions are currently stored in the database
-- Recipient email configured: andrea.amenta87@gmail.com
-- TODO: Set up email service (Resend, SendGrid, or similar) to send notifications when contact forms are submitted
-- Contact submissions can be viewed in the database or via GET /api/contact endpoint
+**Resend Integration (Completed):**
+- Contact form submissions automatically send email notifications via Resend
+- Recipient email: andrea.amenta87@gmail.com
+- Sender email: Configured in Resend connection settings (contact@virtusgreen.com recommended)
+- Email includes: name, email, project type, and message from contact form
+- Implementation: server/email.ts handles email sending
+- Contact submissions are also stored in the database and can be viewed via GET /api/contact endpoint
 
 ## Recent Changes
 
