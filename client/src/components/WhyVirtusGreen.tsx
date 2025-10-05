@@ -102,7 +102,7 @@ export default function WhyVirtusGreen() {
                   </div>
 
                   <div className="space-y-4">
-                    <h3 className={`text-2xl font-bold text-foreground ${index === 2 ? 'mb-6' : ''}`} data-testid={`text-value-title-${index}`}>
+                    <h3 className={`text-2xl font-bold text-foreground ${index === 2 ? 'mb-12' : ''}`} data-testid={`text-value-title-${index}`}>
                       {value.title}
                     </h3>
                     <p className="text-base text-muted-foreground leading-relaxed" data-testid={`text-value-description-${index}`}>
