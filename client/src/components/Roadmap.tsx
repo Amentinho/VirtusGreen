@@ -1,0 +1,181 @@
+import { useEffect, useRef, useState } from "react";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { CheckCircle2, Circle, Clock } from "lucide-react";
+
+export default function Roadmap() {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const roadmapItems = [
+    {
+      quarter: "Q4 2024",
+      title: "Foundation & Planning",
+      status: "completed",
+      items: [
+        "Platform architecture design",
+        "Initial partnerships established",
+        "Brand identity development",
+      ],
+    },
+    {
+      quarter: "Q1 2025",
+      title: "Platform Development",
+      status: "in-progress",
+      items: [
+        "Blockchain integration development",
+        "Product passport system",
+        "Database infrastructure",
+        "Mobile app development",
+      ],
+    },
+    {
+      quarter: "Q2 2025",
+      title: "Beta Launch",
+      status: "upcoming",
+      items: [
+        "Beta testing with select partners",
+        "Rewards system activation",
+        "User feedback integration",
+        "Security audits",
+      ],
+    },
+    {
+      quarter: "Q3 2025",
+      title: "Public Launch",
+      status: "upcoming",
+      items: [
+        "Full platform launch",
+        "App store releases (iOS & Android)",
+        "Partner onboarding program",
+        "Marketing campaign",
+      ],
+    },
+  ];
+
+  const getStatusIcon = (status: string) => {
+    switch (status) {
+      case "completed":
+        return <CheckCircle2 className="w-6 h-6 text-primary" />;
+      case "in-progress":
+        return <Clock className="w-6 h-6 text-cta" />;
+      default:
+        return <Circle className="w-6 h-6 text-muted-foreground" />;
+    }
+  };
+
+  const getStatusBadge = (status: string) => {
+    switch (status) {
+      case "completed":
+        return (
+          <Badge className="bg-primary/20 text-primary hover:bg-primary/20">
+            Completed
+          </Badge>
+        );
+      case "in-progress":
+        return (
+          <Badge className="bg-cta/20 text-cta hover:bg-cta/20">
+            In Progress
+          </Badge>
+        );
+      default:
+        return (
+          <Badge variant="secondary">
+            Upcoming
+          </Badge>
+        );
+    }
+  };
+
+  return (
+    <section
+      id="roadmap"
+      ref={sectionRef}
+      className="py-20 bg-gradient-to-b from-background to-primary/5 relative overflow-hidden"
+    >
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent" />
+      
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          className={`text-center mb-16 space-y-4 transition-all duration-700 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
+            Our Roadmap
+          </h2>
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
+            Follow our journey as we build the future of sustainable shopping
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {roadmapItems.map((item, index) => (
+            <div
+              key={index}
+              className={`transition-all duration-700 ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-8"
+              }`}
+              style={{ transitionDelay: `${index * 150}ms` }}
+            >
+              <Card className="p-6 h-full hover-elevate active-elevate-2 flex flex-col" data-testid={`card-roadmap-${index}`}>
+                <div className="flex items-start justify-between mb-4">
+                  {getStatusIcon(item.status)}
+                  {getStatusBadge(item.status)}
+                </div>
+                
+                <div className="space-y-3 flex-1">
+                  <div>
+                    <p className="text-sm font-semibold text-primary mb-1" data-testid={`text-roadmap-quarter-${index}`}>
+                      {item.quarter}
+                    </p>
+                    <h3 className="text-xl font-bold text-foreground" data-testid={`text-roadmap-title-${index}`}>
+                      {item.title}
+                    </h3>
+                  </div>
+
+                  <ul className="space-y-2">
+                    {item.items.map((task, idx) => (
+                      <li
+                        key={idx}
+                        className="flex items-start gap-2 text-sm text-muted-foreground"
+                      >
+                        <div className={`w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0 ${
+                          item.status === "completed" 
+                            ? "bg-primary" 
+                            : item.status === "in-progress"
+                            ? "bg-cta"
+                            : "bg-muted-foreground/50"
+                        }`} />
+                        <span>{task}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Card>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -6,6 +6,7 @@ import EnvironmentalMetrics from "@/components/EnvironmentalMetrics";
 import WhyVirtusGreen from "@/components/WhyVirtusGreen";
 import ForCompanies from "@/components/ForCompanies";
 import SocialProof from "@/components/SocialProof";
+import Roadmap from "@/components/Roadmap";
 import Team from "@/components/Team";
 import Footer from "@/components/Footer";
 
@@ -31,6 +32,7 @@ export default function Home() {
         <WhyVirtusGreen />
         <ForCompanies />
         <SocialProof />
+        <Roadmap />
         <Team />
       </main>
       <Footer />

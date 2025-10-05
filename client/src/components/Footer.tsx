@@ -84,10 +84,10 @@ export default function Footer() {
 
   const quickLinks = [
     { label: "How it Works", id: "how-it-works" },
-    { label: "Our App", id: "hero" },
     { label: "Environmental Indexes", id: "environmental-metrics" },
-    { label: "About Us", id: "team" },
     { label: "For Companies", id: "for-companies" },
+    { label: "Roadmap", id: "roadmap" },
+    { label: "About Us", id: "team" },
   ];
 
   const socialLinks = [

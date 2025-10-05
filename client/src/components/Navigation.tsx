@@ -31,6 +31,7 @@ export default function Navigation({ scrolled }: NavigationProps) {
     { label: "How it Works", id: "how-it-works" },
     { label: "Environmental Indexes", id: "environmental-metrics" },
     { label: "For Companies", id: "for-companies" },
+    { label: "Roadmap", id: "roadmap" },
     { label: "About Us", id: "team" },
   ];
 
