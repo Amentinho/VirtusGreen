@@ -174,7 +174,30 @@ Preferred communication style: Simple, everyday language.
 - Schema.org structured data for organization information
 - Comprehensive meta tags for search optimization
 
+## Pending Setup
+
+**Email Notifications:**
+- Contact form submissions are currently stored in the database
+- Recipient email configured: andrea.amenta87@gmail.com
+- TODO: Set up email service (Resend, SendGrid, or similar) to send notifications when contact forms are submitted
+- Contact submissions can be viewed in the database or via GET /api/contact endpoint
+
 ## Recent Changes
+
+### October 2025 - Phase 3: Content & Feature Updates
+
+**Platform Status Updates (Completed):**
+- Added "Coming Soon" badges to Blockchain-Verified Data and Real Rewards features
+- Updated "Making a Real Impact" to "Building the Future of Sustainability" with development disclaimer
+- Removed app download links (app not yet live)
+- Replaced download buttons with "Get in Touch" calls-to-action
+- Contact form configured to send to andrea.amenta87@gmail.com
+
+**Feature Enhancements (Completed):**
+- Added EU PEF compliance mention to LCA Calculation service
+- Removed Facebook from social links (LinkedIn, Twitter, Instagram only)
+- Added comprehensive Roadmap section with quarterly milestones (Q4 2024 - Q3 2025)
+- Roadmap shows project phases: Foundation, Development, Beta Launch, Public Launch
 
 ### October 2025 - Phase 3: Official Branding
 
