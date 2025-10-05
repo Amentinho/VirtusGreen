@@ -125,7 +125,7 @@ export default function SocialProof() {
             Building the Future of Sustainability
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Our platform is under development. These projected metrics represent our vision for impact.
+            We will provide the first results after the testing phase.
           </p>
         </div>
 

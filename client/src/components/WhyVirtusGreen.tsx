@@ -113,9 +113,9 @@ export default function WhyVirtusGreen() {
                       {value.features.map((feature, idx) => (
                         <li
                           key={idx}
-                          className="flex items-center gap-2 text-sm text-foreground"
+                          className="flex items-start gap-2 text-sm text-foreground"
                         >
-                          <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                          <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5" />
                           <span>{feature}</span>
                         </li>
                       ))}
