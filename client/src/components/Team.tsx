@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Card } from "@/components/ui/card";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Quote, Linkedin } from "lucide-react";
+import founderPhoto from "@assets/1757088011096_1759750073591.jpg";
 
 export default function Team() {
   const [isVisible, setIsVisible] = useState(false);
@@ -63,6 +64,7 @@ export default function Team() {
                   <div className="relative">
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-cta/20 rounded-full blur-2xl" />
                     <Avatar className="relative w-32 h-32 border-4 border-background ring-4 ring-primary/20">
+                      <AvatarImage src={founderPhoto} alt="Andrea - Founder" />
                       <AvatarFallback className="text-4xl font-bold bg-gradient-to-br from-primary to-cta text-primary-foreground">
                         A
                       </AvatarFallback>
