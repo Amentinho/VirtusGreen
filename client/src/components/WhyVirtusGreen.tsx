@@ -105,7 +105,7 @@ export default function WhyVirtusGreen() {
                     <h3 className="text-2xl font-bold text-foreground mb-4" data-testid={`text-value-title-${index}`}>
                       {value.title}
                     </h3>
-                    <p className="text-base text-muted-foreground leading-relaxed mb-6 min-h-[6rem]" data-testid={`text-value-description-${index}`}>
+                    <p className="text-base text-muted-foreground leading-relaxed mb-6 min-h-[7.5rem]" data-testid={`text-value-description-${index}`}>
                       {value.description}
                     </p>
 
