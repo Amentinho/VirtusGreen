@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Card } from "@/components/ui/card";
-import { Scan, Database, Coins } from "lucide-react";
+import { Scan, Database, Coins, Sparkles } from "lucide-react";
 
 export default function HowItWorks() {
   const [isVisible, setIsVisible] = useState(false);
@@ -110,15 +110,21 @@ export default function HowItWorks() {
                     </p>
                   </div>
 
-                  <div className="pt-4">
-                    <div className="w-full h-1 bg-border rounded-full overflow-hidden">
+                  <div className="pt-4 flex items-center justify-center gap-2">
+                    {[0, 1, 2].map((i) => (
                       <div
-                        className={`h-full bg-gradient-to-r ${step.color.replace("/20", "").replace("/10", "")} transition-all duration-1000 ${
-                          isVisible ? "w-full" : "w-0"
+                        key={i}
+                        className={`transition-all duration-500 ${
+                          isVisible ? "opacity-100 scale-100" : "opacity-0 scale-0"
                         }`}
-                        style={{ transitionDelay: `${index * 150 + 500}ms` }}
-                      />
-                    </div>
+                        style={{ transitionDelay: `${index * 150 + 500 + i * 100}ms` }}
+                      >
+                        <Sparkles 
+                          className={`w-5 h-5 ${step.iconColor} animate-pulse`}
+                          style={{ animationDelay: `${i * 200}ms` }}
+                        />
+                      </div>
+                    ))}
                   </div>
                 </div>
               </Card>
