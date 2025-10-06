@@ -129,7 +129,7 @@ export default function ForCompanies() {
                     <h3 className="text-2xl font-bold text-foreground" data-testid={`text-service-title-${index}`}>
                       {service.title}
                     </h3>
-                    <p className="text-base text-muted-foreground leading-relaxed" data-testid={`text-service-description-${index}`}>
+                    <p className="text-base text-muted-foreground leading-relaxed min-h-[7.5rem]" data-testid={`text-service-description-${index}`}>
                       {service.description}
                     </p>
 
