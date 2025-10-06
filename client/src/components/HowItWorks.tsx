@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Scan, Database, Coins } from "lucide-react";
-import appPreviewImage from "@assets/WhatsApp Image 2025-10-06 at 13.36.46_1759750666570.jpeg";
 
 export default function HowItWorks() {
   const [isVisible, setIsVisible] = useState(false);
@@ -72,22 +71,6 @@ export default function HowItWorks() {
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
             Three simple steps to start your sustainable journey
           </p>
-        </div>
-
-        <div
-          className={`flex justify-center mb-12 transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-          style={{ transitionDelay: "100ms" }}
-        >
-          <div className="relative max-w-sm mx-auto">
-            <img 
-              src={appPreviewImage} 
-              alt="VirtusGreen App Preview - Scan Product Feature" 
-              className="rounded-2xl shadow-2xl w-full h-auto"
-              data-testid="img-app-preview"
-            />
-          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
