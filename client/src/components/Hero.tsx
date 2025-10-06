@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Shield, TrendingUp, Gift, Smartphone, ScanLine } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
-import appPreviewImage from "@assets/WhatsApp Image 2025-10-06 at 13.36.46_1759750666570.jpeg";
 
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false);
@@ -170,12 +169,16 @@ export default function Hero() {
                         </p>
                       </div>
                       <div className="w-full mt-6 flex items-center justify-center">
-                        <img 
-                          src={appPreviewImage} 
-                          alt="VirtusGreen App - Scan Product Feature" 
-                          className="rounded-lg w-full h-auto max-w-xs"
-                          data-testid="img-app-preview"
-                        />
+                        <div className="relative">
+                          <div className="relative">
+                            <Smartphone className="w-20 h-32 text-primary/40 transform -rotate-12" strokeWidth={1.5} />
+                            <ScanLine className="w-16 h-16 text-cta absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" strokeWidth={2} />
+                          </div>
+                          <svg className="absolute -bottom-4 -left-8 w-24 h-24 text-primary/30" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+                            <path d="M 20,80 Q 30,60 40,70 T 60,65" strokeLinecap="round" />
+                            <ellipse cx="18" cy="82" rx="8" ry="10" fill="currentColor" opacity="0.3" />
+                          </svg>
+                        </div>
                       </div>
                     </div>
                   </div>
