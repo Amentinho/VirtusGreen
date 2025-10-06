@@ -36,6 +36,7 @@ export default function Navigation({ scrolled }: NavigationProps) {
     { label: "For Companies", id: "for-companies" },
     { label: "Roadmap", id: "roadmap" },
     { label: "About Us", id: "team" },
+    { label: "Contact Us", id: "footer" },
   ];
 
   return (
