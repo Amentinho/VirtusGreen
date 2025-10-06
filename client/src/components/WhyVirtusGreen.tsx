@@ -94,22 +94,22 @@ export default function WhyVirtusGreen() {
                   className={`absolute inset-0 bg-gradient-to-br ${value.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
                 />
                 
-                <div className="relative z-10 space-y-6">
+                <div className="relative z-10 flex flex-col h-full">
                   <div
-                    className={`w-16 h-16 ${value.iconBg} rounded-2xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110`}
+                    className={`w-16 h-16 ${value.iconBg} rounded-2xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110 mb-6`}
                   >
                     <value.icon className={`w-8 h-8 ${value.iconColor}`} />
                   </div>
 
-                  <div className="space-y-4">
-                    <h3 className="text-2xl font-bold text-foreground" data-testid={`text-value-title-${index}`}>
+                  <div className="flex flex-col flex-1">
+                    <h3 className="text-2xl font-bold text-foreground mb-4" data-testid={`text-value-title-${index}`}>
                       {value.title}
                     </h3>
-                    <p className="text-base text-muted-foreground leading-relaxed" data-testid={`text-value-description-${index}`}>
+                    <p className="text-base text-muted-foreground leading-relaxed mb-6 min-h-[6rem]" data-testid={`text-value-description-${index}`}>
                       {value.description}
                     </p>
 
-                    <ul className="space-y-2 pt-2">
+                    <ul className="space-y-2 mt-auto">
                       {value.features.map((feature, idx) => (
                         <li
                           key={idx}
