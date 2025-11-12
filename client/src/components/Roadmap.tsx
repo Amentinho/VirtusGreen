@@ -88,7 +88,7 @@ export default function Roadmap() {
   const getStatusIcon = (status: string) => {
     switch (status) {
       case "completed":
-        return <CheckCircle2 className="w-6 h-6 text-primary" />;
+        return <CheckCircle2 className="w-6 h-6 text-cta" />;
       case "in-progress":
         return <Clock className="w-6 h-6 text-cta" />;
       default:
@@ -100,7 +100,7 @@ export default function Roadmap() {
     switch (status) {
       case "completed":
         return (
-          <Badge className="bg-primary/20 text-primary hover:bg-primary/20">
+          <Badge className="bg-cta/20 text-cta hover:bg-cta/20">
             Completed
           </Badge>
         );
@@ -152,15 +152,19 @@ export default function Roadmap() {
               }`}
               style={{ transitionDelay: `${index * 150}ms` }}
             >
-              <Card className="p-6 h-full hover-elevate active-elevate-2 flex flex-col" data-testid={`card-roadmap-${index}`}>
-                <div className="flex items-start justify-between mb-4">
+              <Card className="relative overflow-hidden p-6 h-full hover-elevate active-elevate-2 group flex flex-col" data-testid={`card-roadmap-${index}`}>
+                <div
+                  className="absolute inset-0 bg-gradient-to-br from-cta/20 to-chart-2/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                />
+                
+                <div className="relative z-10 flex items-start justify-between mb-4">
                   {getStatusIcon(item.status)}
                   {getStatusBadge(item.status)}
                 </div>
                 
-                <div className="space-y-3 flex-1">
+                <div className="relative z-10 space-y-3 flex-1">
                   <div>
-                    <p className="text-sm font-semibold text-primary mb-1" data-testid={`text-roadmap-quarter-${index}`}>
+                    <p className="text-sm font-semibold text-cta mb-1" data-testid={`text-roadmap-quarter-${index}`}>
                       {item.quarter}
                     </p>
                     <h3 className="text-xl font-bold text-foreground" data-testid={`text-roadmap-title-${index}`}>
@@ -176,7 +180,7 @@ export default function Roadmap() {
                       >
                         <div className={`w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0 ${
                           item.status === "completed" 
-                            ? "bg-primary" 
+                            ? "bg-cta" 
                             : item.status === "in-progress"
                             ? "bg-cta"
                             : "bg-muted-foreground/50"
