@@ -36,7 +36,7 @@ export default function ForCompanies() {
         "Enhanced product visibility",
         "Consumer trust building",
       ],
-      color: "from-cta/20 to-cta/10",
+      color: "from-cta/20 to-chart-2/20",
       iconColor: "text-cta",
     },
     {
@@ -49,7 +49,7 @@ export default function ForCompanies() {
         "Advanced LCA methodologies",
         "Industry-standard reporting",
       ],
-      color: "from-cta/20 to-cta/10",
+      color: "from-cta/20 to-chart-2/20",
       iconColor: "text-cta",
     },
     {
@@ -62,7 +62,7 @@ export default function ForCompanies() {
         "Impact reduction strategies",
         "Continuous improvement",
       ],
-      color: "from-cta/20 to-cta/10",
+      color: "from-cta/20 to-chart-2/20",
       iconColor: "text-cta",
     },
   ];

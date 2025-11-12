@@ -30,7 +30,7 @@ export default function HowItWorks() {
       icon: barcodeIcon,
       title: "Scan",
       description: "Use your camera to scan any product barcode",
-      color: "from-cta/20 to-cta/10",
+      color: "from-cta/20 to-chart-2/20",
       isImage: true,
     },
     {
@@ -38,14 +38,14 @@ export default function HowItWorks() {
       title: "Discover",
       description:
         "View transparent environmental impact data stored on blockchain",
-      color: "from-cta/20 to-cta/10",
+      color: "from-cta/20 to-chart-2/20",
       isImage: true,
     },
     {
       icon: Coins,
       title: "Earn",
       description: "Collect tokens and redeem for discounts and free products",
-      color: "from-cta/20 to-cta/10",
+      color: "from-cta/20 to-chart-2/20",
       iconColor: "text-cta",
       isImage: false,
     },

@@ -30,7 +30,7 @@ export default function WhyVirtusGreen() {
       description:
         "Immutable, verified sustainability data you can trust. Every metric is stored on blockchain for complete transparency and accountability.",
       features: ["Immutable records", "Verified data", "Full traceability"],
-      color: "from-cta/20 to-cta/10",
+      color: "from-cta/20 to-chart-2/20",
       iconColor: "text-cta",
     },
     {
@@ -39,7 +39,7 @@ export default function WhyVirtusGreen() {
       description:
         "Simple registration, intuitive scanning, instant insights. Get started in seconds and access environmental data with a single tap.",
       features: ["Quick setup", "Easy scanning", "Instant results"],
-      color: "from-cta/20 to-cta/10",
+      color: "from-cta/20 to-chart-2/20",
       iconColor: "text-cta",
     },
     {
@@ -48,7 +48,7 @@ export default function WhyVirtusGreen() {
       description:
         "Turn sustainable choices into tangible benefits. Earn tokens for eco-conscious decisions and redeem them for exclusive discounts. ",
       features: ["Earn tokens", "Exclusive discounts", "Free products"],
-      color: "from-cta/20 to-cta/10",
+      color: "from-cta/20 to-chart-2/20",
       iconColor: "text-cta",
     },
   ];

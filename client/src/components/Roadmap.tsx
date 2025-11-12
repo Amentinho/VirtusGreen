@@ -125,7 +125,7 @@ export default function Roadmap() {
       ref={sectionRef}
       className="py-20 bg-gradient-to-b from-background to-primary/5 relative overflow-hidden"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-cta/10 via-chart-2/5 to-transparent" />
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div

@@ -36,7 +36,7 @@ export default function EnvironmentalMetrics() {
       shortDesc: "CO2 equivalent tracking",
       fullDesc:
         "Comprehensive measurement of carbon footprint throughout the product lifecycle",
-      color: "from-cta/20 to-cta/10",
+      color: "from-cta/20 to-chart-2/20",
     },
     {
       icon: waterIcon,
@@ -44,7 +44,7 @@ export default function EnvironmentalMetrics() {
       shortDesc: "Water usage metrics",
       fullDesc:
         "Track water consumption from production to delivery, promoting conservation",
-      color: "from-cta/20 to-cta/10",
+      color: "from-cta/20 to-chart-2/20",
     },
     {
       icon: energyIcon,
@@ -52,7 +52,7 @@ export default function EnvironmentalMetrics() {
       shortDesc: "Total energy consumption",
       fullDesc:
         "Monitor energy consumption across manufacturing and distribution processes",
-      color: "from-cta/20 to-cta/10",
+      color: "from-cta/20 to-chart-2/20",
     },
     {
       icon: renewableIcon,
@@ -60,7 +60,7 @@ export default function EnvironmentalMetrics() {
       shortDesc: "Clean energy sources",
       fullDesc:
         "Percentage of renewable energy used in production and operations",
-      color: "from-cta/20 to-cta/10",
+      color: "from-cta/20 to-chart-2/20",
     },
     {
       icon: recycledIcon,
@@ -68,7 +68,7 @@ export default function EnvironmentalMetrics() {
       shortDesc: "Recycled content percentage",
       fullDesc:
         "Track the use of recycled materials in product manufacturing",
-      color: "from-cta/20 to-cta/10",
+      color: "from-cta/20 to-chart-2/20",
     },
     {
       icon: recyclableIcon,
@@ -76,7 +76,7 @@ export default function EnvironmentalMetrics() {
       shortDesc: "End-of-life recyclability",
       fullDesc:
         "Measure how much of the product can be recycled at end of life",
-      color: "from-cta/20 to-cta/10",
+      color: "from-cta/20 to-chart-2/20",
     },
   ];
 
