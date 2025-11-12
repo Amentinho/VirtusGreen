@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoImage from "@assets/aaa_1759692758271.jpg";
+import logoImage from "@assets/virtusgreen-logo-dark.svg";
 import { trackEvent } from "@/lib/analytics";
 
 interface NavigationProps {
