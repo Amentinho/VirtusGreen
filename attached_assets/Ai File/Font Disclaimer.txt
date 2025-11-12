@@ -1,0 +1,11 @@
+Reminder: Logo Font Usage Guidelines
+
+Please note that the fonts selected for the logo should be used exclusively within the logo itself, and not applied elsewhere. This will ensure the logo maintains its distinctiveness across your brand assets, avoiding the risk of it blending in with regular text on your site.
+
+If you intend to use this font on your website or in other materials outside of the logo, you will need to purchase a separate license for web use, as it differs from the licensing required for logo design.
+
+Additionally, please refrain from using trial or "free for personal use" fonts, as these are restricted to personal projects and cannot be used commercially.
+
+For consistent branding across your website and other assets, we recommend using Google Fonts, which offer a wide selection without licensing limitations.
+
+Thank you for your attention to this matter.
