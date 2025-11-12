@@ -92,7 +92,7 @@ export default function ForCompanies() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
             Elevate Your Brand Through
             <br />
-            <span className="text-primary">Verified Sustainability</span>
+            <span className="text-cta">Verified Sustainability</span>
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
             Comprehensive services to showcase your environmental commitment

@@ -66,7 +66,7 @@ export default function Team() {
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-cta/20 rounded-full blur-2xl" />
                     <Avatar className="relative w-32 h-32 border-4 border-background ring-4 ring-primary/20">
                       <AvatarImage src={founderPhoto} alt="Andrea - Founder" />
-                      <AvatarFallback className="text-4xl font-bold bg-gradient-to-br from-primary to-cta text-primary-foreground">
+                      <AvatarFallback className="text-4xl font-bold bg-gradient-to-br from-cta to-chart-2 text-primary-foreground">
                         A
                       </AvatarFallback>
                     </Avatar>
@@ -86,8 +86,8 @@ export default function Team() {
                   </div>
 
                   <div className="relative mt-4 pt-6 border-t border-border w-full">
-                    <Quote className="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 text-primary bg-card" />
-                    <blockquote className="text-xl font-medium text-primary italic" data-testid="text-founder-quote">
+                    <Quote className="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 text-cta bg-card" />
+                    <blockquote className="text-xl font-medium text-cta italic" data-testid="text-founder-quote">
                       "Technology is the key to solve climate change"
                     </blockquote>
                   </div>

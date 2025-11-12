@@ -91,7 +91,7 @@ export default function Hero() {
             <div className="space-y-4">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight tracking-tight" data-testid="text-hero-title">
                 Transform Sustainability Into{" "}
-                <span className="text-primary">Rewards</span>
+                <span className="text-cta">Rewards</span>
               </h1>
               <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl" data-testid="text-hero-subtitle">
                 Scan. Learn. Earn. The blockchain-powered app that makes
@@ -130,7 +130,7 @@ export default function Hero() {
                   <indicator.icon className="w-4 h-4" />
                   <span>{indicator.label}</span>
                   {indicator.badge && (
-                    <span className="ml-1 text-xs bg-primary/20 text-primary px-2 py-0.5 rounded">
+                    <span className="ml-1 text-xs bg-cta/20 text-cta px-2 py-0.5 rounded">
                       {indicator.badge}
                     </span>
                   )}
@@ -147,13 +147,13 @@ export default function Hero() {
             }`}
           >
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-cta/20 rounded-3xl blur-2xl transform rotate-6" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-cta/20 to-chart-2/20 rounded-3xl blur-2xl transform rotate-6" />
               <div className="relative bg-card border border-card-border rounded-3xl p-8 backdrop-blur-sm">
                 <div className="space-y-6">
-                  <div className="aspect-[3/4] rounded-2xl bg-gradient-to-br from-primary/10 to-cta/10 flex items-center justify-center overflow-hidden">
+                  <div className="aspect-[3/4] rounded-2xl bg-gradient-to-br from-cta/10 to-chart-2/10 flex items-center justify-center overflow-hidden">
                     <div className="text-center space-y-4 p-8">
-                      <div className="w-24 h-24 mx-auto rounded-full bg-primary/20 flex items-center justify-center">
-                        <Smartphone className="w-12 h-12 text-primary" />
+                      <div className="w-24 h-24 mx-auto rounded-full bg-cta/20 flex items-center justify-center">
+                        <Smartphone className="w-12 h-12 text-cta" />
                       </div>
                       <div className="space-y-2">
                         <p className="text-2xl font-bold text-foreground">
@@ -166,10 +166,10 @@ export default function Hero() {
                       <div className="w-full mt-6 flex items-center justify-center">
                         <div className="relative">
                           <div className="relative">
-                            <Smartphone className="w-20 h-32 text-primary/40 transform -rotate-12" strokeWidth={1.5} />
+                            <Smartphone className="w-20 h-32 text-cta/40 transform -rotate-12" strokeWidth={1.5} />
                             <ScanLine className="w-16 h-16 text-cta absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" strokeWidth={2} />
                           </div>
-                          <svg className="absolute -bottom-4 -left-8 w-24 h-24 text-primary/30" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+                          <svg className="absolute -bottom-4 -left-8 w-24 h-24 text-cta/30" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
                             <path d="M 20,80 Q 30,60 40,70 T 60,65" strokeLinecap="round" />
                             <ellipse cx="18" cy="82" rx="8" ry="10" fill="currentColor" opacity="0.3" />
                           </svg>
