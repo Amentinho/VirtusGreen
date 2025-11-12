@@ -24,7 +24,7 @@ import { Linkedin, Twitter, Instagram } from "lucide-react";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
-import logoImage from "@assets/logo-full.svg";
+import logoImage from "@assets/aaa_1759692758271.jpg";
 import { trackEvent } from "@/lib/analytics";
 
 export default function Footer() {
