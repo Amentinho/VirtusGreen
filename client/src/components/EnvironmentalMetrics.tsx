@@ -36,9 +36,7 @@ export default function EnvironmentalMetrics() {
       shortDesc: "CO2 equivalent tracking",
       fullDesc:
         "Comprehensive measurement of carbon footprint throughout the product lifecycle",
-      color: "from-destructive/20 to-destructive/10",
-      iconBg: "bg-destructive/20",
-      iconColor: "text-destructive",
+      color: "from-cta/20 to-cta/10",
     },
     {
       icon: waterIcon,
@@ -46,9 +44,7 @@ export default function EnvironmentalMetrics() {
       shortDesc: "Water usage metrics",
       fullDesc:
         "Track water consumption from production to delivery, promoting conservation",
-      color: "from-blue-500/20 to-blue-500/10",
-      iconBg: "bg-blue-500/20",
-      iconColor: "text-blue-500",
+      color: "from-cta/20 to-cta/10",
     },
     {
       icon: energyIcon,
@@ -56,9 +52,7 @@ export default function EnvironmentalMetrics() {
       shortDesc: "Total energy consumption",
       fullDesc:
         "Monitor energy consumption across manufacturing and distribution processes",
-      color: "from-yellow-500/20 to-yellow-500/10",
-      iconBg: "bg-yellow-500/20",
-      iconColor: "text-yellow-500",
+      color: "from-cta/20 to-cta/10",
     },
     {
       icon: renewableIcon,
@@ -66,9 +60,7 @@ export default function EnvironmentalMetrics() {
       shortDesc: "Clean energy sources",
       fullDesc:
         "Percentage of renewable energy used in production and operations",
-      color: "from-orange-500/20 to-orange-500/10",
-      iconBg: "bg-orange-500/20",
-      iconColor: "text-orange-500",
+      color: "from-cta/20 to-cta/10",
     },
     {
       icon: recycledIcon,
@@ -76,9 +68,7 @@ export default function EnvironmentalMetrics() {
       shortDesc: "Recycled content percentage",
       fullDesc:
         "Track the use of recycled materials in product manufacturing",
-      color: "from-primary/20 to-primary/10",
-      iconBg: "bg-primary/20",
-      iconColor: "text-primary",
+      color: "from-cta/20 to-cta/10",
     },
     {
       icon: recyclableIcon,
@@ -87,8 +77,6 @@ export default function EnvironmentalMetrics() {
       fullDesc:
         "Measure how much of the product can be recycled at end of life",
       color: "from-cta/20 to-cta/10",
-      iconBg: "bg-cta/20",
-      iconColor: "text-cta",
     },
   ];
 
@@ -166,7 +154,7 @@ export default function EnvironmentalMetrics() {
 
                   <div className="pt-2">
                     <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                      <div className="w-2 h-2 rounded-full bg-yellow-500 animate-pulse" />
+                      <div className="w-2 h-2 rounded-full bg-cta animate-pulse" />
                       <span>Blockchain verification coming soon</span>
                     </div>
                   </div>
