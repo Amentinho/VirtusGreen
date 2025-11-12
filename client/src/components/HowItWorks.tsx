@@ -30,9 +30,7 @@ export default function HowItWorks() {
       icon: barcodeIcon,
       title: "Scan",
       description: "Use your camera to scan any product barcode",
-      color: "from-primary/20 to-primary/10",
-      iconBg: "bg-primary/20",
-      iconColor: "text-primary",
+      color: "from-cta/20 to-cta/10",
       isImage: true,
     },
     {
@@ -41,17 +39,14 @@ export default function HowItWorks() {
       description:
         "View transparent environmental impact data stored on blockchain",
       color: "from-cta/20 to-cta/10",
-      iconBg: "bg-cta/20",
-      iconColor: "text-cta",
       isImage: true,
     },
     {
       icon: Coins,
       title: "Earn",
       description: "Collect tokens and redeem for discounts and free products",
-      color: "from-chart-2/20 to-chart-2/10",
-      iconBg: "bg-chart-2/20",
-      iconColor: "text-chart-2",
+      color: "from-cta/20 to-cta/10",
+      iconColor: "text-cta",
       isImage: false,
     },
   ];
@@ -96,13 +91,11 @@ export default function HowItWorks() {
                 
                 <div className="relative z-10 space-y-6">
                   <div className="flex items-start justify-between">
-                    <div
-                      className={`w-16 h-16 ${step.iconBg} rounded-2xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110`}
-                    >
+                    <div className="flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                       {step.isImage ? (
-                        <img src={step.icon as string} alt={step.title} className="w-10 h-10 object-contain" />
+                        <img src={step.icon as string} alt={step.title} className="w-20 h-20 object-contain" />
                       ) : (
-                        <step.icon className={`w-8 h-8 ${step.iconColor}`} />
+                        <step.icon className={`w-16 h-16 ${step.iconColor}`} />
                       )}
                     </div>
                     <div className="text-5xl font-bold text-muted-foreground/20">
