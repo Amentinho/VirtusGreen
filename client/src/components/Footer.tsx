@@ -23,7 +23,7 @@ import { insertContactSchema, type InsertContact } from "@shared/schema";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
-import logoImage from "@assets/Asset 69_1762948147227.png";
+import logoImage from "@assets/Asset 77_1762949956789.png";
 import linkedinIcon from "@assets/Asset 100_1762948267335.png";
 import twitterIcon from "@assets/Asset 96_1762948267334.png";
 import instagramIcon from "@assets/Asset 94_1762948267333.png";
