@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import lcaIcon from "@assets/Asset 81_1762948369324.png";
-import { ListChecks, Users } from "lucide-react";
+import { ListChecks, Calculator, Users } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
 
 export default function ForCompanies() {
@@ -42,7 +41,7 @@ export default function ForCompanies() {
       isImage: false,
     },
     {
-      icon: lcaIcon,
+      icon: Calculator,
       title: "LCA Calculation",
       description:
         "Professional Life Cycle Assessment using advanced mathematical methodologies. EU compliant using PEF regulation for comprehensive environmental impact analysis from cradle to grave.",
@@ -53,7 +52,7 @@ export default function ForCompanies() {
       ],
       color: "from-cta/20 to-cta/10",
       iconColor: "text-cta",
-      isImage: true,
+      isImage: false,
     },
     {
       icon: Users,
