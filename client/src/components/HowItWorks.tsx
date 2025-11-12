@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Card } from "@/components/ui/card";
-import { Scan, Database, Coins } from "lucide-react";
+import barcodeIcon from "@assets/Asset 82_1762948369325.png";
+import discoverIcon from "@assets/Asset 79_1762948369320.png";
+import { Coins } from "lucide-react";
 
 export default function HowItWorks() {
   const [isVisible, setIsVisible] = useState(false);
@@ -25,21 +27,23 @@ export default function HowItWorks() {
 
   const steps = [
     {
-      icon: Scan,
+      icon: barcodeIcon,
       title: "Scan",
       description: "Use your camera to scan any product barcode",
       color: "from-primary/20 to-primary/10",
       iconBg: "bg-primary/20",
       iconColor: "text-primary",
+      isImage: true,
     },
     {
-      icon: Database,
+      icon: discoverIcon,
       title: "Discover",
       description:
         "View transparent environmental impact data stored on blockchain",
       color: "from-cta/20 to-cta/10",
       iconBg: "bg-cta/20",
       iconColor: "text-cta",
+      isImage: true,
     },
     {
       icon: Coins,
@@ -48,6 +52,7 @@ export default function HowItWorks() {
       color: "from-chart-2/20 to-chart-2/10",
       iconBg: "bg-chart-2/20",
       iconColor: "text-chart-2",
+      isImage: false,
     },
   ];
 
@@ -94,7 +99,11 @@ export default function HowItWorks() {
                     <div
                       className={`w-16 h-16 ${step.iconBg} rounded-2xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110`}
                     >
-                      <step.icon className={`w-8 h-8 ${step.iconColor}`} />
+                      {step.isImage ? (
+                        <img src={step.icon as string} alt={step.title} className="w-10 h-10 object-contain" />
+                      ) : (
+                        <step.icon className={`w-8 h-8 ${step.iconColor}`} />
+                      )}
                     </div>
                     <div className="text-5xl font-bold text-muted-foreground/20">
                       {index + 1}

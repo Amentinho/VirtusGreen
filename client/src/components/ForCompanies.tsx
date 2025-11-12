@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ListChecks, Calculator, Users } from "lucide-react";
+import lcaIcon from "@assets/Asset 81_1762948369324.png";
+import { ListChecks, Users } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
 
 export default function ForCompanies() {
@@ -39,9 +40,10 @@ export default function ForCompanies() {
       color: "from-primary/20 to-primary/10",
       iconBg: "bg-primary/20",
       iconColor: "text-primary",
+      isImage: false,
     },
     {
-      icon: Calculator,
+      icon: lcaIcon,
       title: "LCA Calculation",
       description:
         "Professional Life Cycle Assessment using advanced mathematical methodologies. EU compliant using PEF regulation for comprehensive environmental impact analysis from cradle to grave.",
@@ -53,6 +55,7 @@ export default function ForCompanies() {
       color: "from-cta/20 to-cta/10",
       iconBg: "bg-cta/20",
       iconColor: "text-cta",
+      isImage: true,
     },
     {
       icon: Users,
@@ -67,6 +70,7 @@ export default function ForCompanies() {
       color: "from-chart-2/20 to-chart-2/10",
       iconBg: "bg-chart-2/20",
       iconColor: "text-chart-2",
+      isImage: false,
     },
   ];
 
@@ -122,7 +126,11 @@ export default function ForCompanies() {
                   <div
                     className={`w-16 h-16 ${service.iconBg} rounded-2xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110 mb-6`}
                   >
-                    <service.icon className={`w-8 h-8 ${service.iconColor}`} />
+                    {service.isImage ? (
+                      <img src={service.icon as string} alt={service.title} className="w-10 h-10 object-contain" />
+                    ) : (
+                      <service.icon className={`w-8 h-8 ${service.iconColor}`} />
+                    )}
                   </div>
 
                   <div className="flex-1 space-y-4 mb-6">

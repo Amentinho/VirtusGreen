@@ -1,6 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { Card } from "@/components/ui/card";
-import { Cloud, Droplet, Zap, Sun, Recycle, Package } from "lucide-react";
+import greenhouseIcon from "@assets/Asset 88_1762948369318.png";
+import waterIcon from "@assets/Asset 87_1762948369315.png";
+import energyIcon from "@assets/Asset 86_1762948369334.png";
+import renewableIcon from "@assets/Asset 85_1762948369332.png";
+import recycledIcon from "@assets/Asset 84_1762948369329.png";
+import recyclableIcon from "@assets/Asset 83_1762948369327.png";
 
 export default function EnvironmentalMetrics() {
   const [isVisible, setIsVisible] = useState(false);
@@ -26,7 +31,7 @@ export default function EnvironmentalMetrics() {
 
   const metrics = [
     {
-      icon: Cloud,
+      icon: greenhouseIcon,
       title: "Greenhouse Gas Emissions",
       shortDesc: "CO2 equivalent tracking",
       fullDesc:
@@ -36,7 +41,7 @@ export default function EnvironmentalMetrics() {
       iconColor: "text-destructive",
     },
     {
-      icon: Droplet,
+      icon: waterIcon,
       title: "Water Consumption",
       shortDesc: "Water usage metrics",
       fullDesc:
@@ -46,7 +51,7 @@ export default function EnvironmentalMetrics() {
       iconColor: "text-blue-500",
     },
     {
-      icon: Zap,
+      icon: energyIcon,
       title: "Energy Usage",
       shortDesc: "Total energy consumption",
       fullDesc:
@@ -56,7 +61,7 @@ export default function EnvironmentalMetrics() {
       iconColor: "text-yellow-500",
     },
     {
-      icon: Sun,
+      icon: renewableIcon,
       title: "Renewable Energies",
       shortDesc: "Clean energy sources",
       fullDesc:
@@ -66,7 +71,7 @@ export default function EnvironmentalMetrics() {
       iconColor: "text-orange-500",
     },
     {
-      icon: Recycle,
+      icon: recycledIcon,
       title: "Recycled Materials",
       shortDesc: "Recycled content percentage",
       fullDesc:
@@ -76,7 +81,7 @@ export default function EnvironmentalMetrics() {
       iconColor: "text-primary",
     },
     {
-      icon: Package,
+      icon: recyclableIcon,
       title: "Recyclable Materials",
       shortDesc: "End-of-life recyclability",
       fullDesc:
@@ -134,7 +139,7 @@ export default function EnvironmentalMetrics() {
                   <div
                     className={`w-14 h-14 ${metric.iconBg} rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-6`}
                   >
-                    <metric.icon className={`w-7 h-7 ${metric.iconColor}`} />
+                    <img src={metric.icon} alt={metric.title} className="w-10 h-10 object-contain" />
                   </div>
 
                   <div className="space-y-2">
