@@ -136,10 +136,8 @@ export default function EnvironmentalMetrics() {
                 />
                 
                 <div className="relative z-10 space-y-4">
-                  <div
-                    className={`w-14 h-14 ${metric.iconBg} rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-6`}
-                  >
-                    <img src={metric.icon} alt={metric.title} className="w-10 h-10 object-contain" />
+                  <div className="flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+                    <img src={metric.icon} alt={metric.title} className="w-20 h-20 object-contain" />
                   </div>
 
                   <div className="space-y-2">
