@@ -20,11 +20,13 @@ import {
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { insertContactSchema, type InsertContact } from "@shared/schema";
-import { Linkedin, Twitter, Instagram } from "lucide-react";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import logoImage from "@assets/Asset 69_1762948147227.png";
+import linkedinIcon from "@assets/Asset 100_1762948267335.png";
+import twitterIcon from "@assets/Asset 96_1762948267334.png";
+import instagramIcon from "@assets/Asset 94_1762948267333.png";
 import { trackEvent } from "@/lib/analytics";
 
 export default function Footer() {
@@ -101,9 +103,9 @@ export default function Footer() {
   };
 
   const socialLinks = [
-    { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/virtusgreen" },
-    { icon: Twitter, label: "Twitter", href: "https://x.com/virtusgreen" },
-    { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/virtusgreen/" },
+    { icon: linkedinIcon, label: "LinkedIn", href: "https://www.linkedin.com/company/virtusgreen" },
+    { icon: twitterIcon, label: "Twitter", href: "https://x.com/virtusgreen" },
+    { icon: instagramIcon, label: "Instagram", href: "https://www.instagram.com/virtusgreen/" },
   ];
 
   return (
@@ -155,11 +157,15 @@ export default function Footer() {
                   <button
                     key={social.label}
                     onClick={() => handleSocialClick(social.label, social.href)}
-                    className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center hover-elevate active-elevate-2 transition-colors"
+                    className="w-10 h-10 rounded-lg flex items-center justify-center hover-elevate active-elevate-2 transition-colors"
                     data-testid={`link-social-${social.label.toLowerCase()}`}
                     aria-label={social.label}
                   >
-                    <social.icon className="w-5 h-5 text-secondary-foreground" />
+                    <img 
+                      src={social.icon} 
+                      alt={social.label} 
+                      className="w-6 h-6 object-contain" 
+                    />
                   </button>
                 ))}
               </div>
