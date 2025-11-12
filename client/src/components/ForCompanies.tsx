@@ -37,9 +37,8 @@ export default function ForCompanies() {
         "Enhanced product visibility",
         "Consumer trust building",
       ],
-      color: "from-primary/20 to-primary/10",
-      iconBg: "bg-primary/20",
-      iconColor: "text-primary",
+      color: "from-cta/20 to-cta/10",
+      iconColor: "text-cta",
       isImage: false,
     },
     {
@@ -53,7 +52,6 @@ export default function ForCompanies() {
         "Industry-standard reporting",
       ],
       color: "from-cta/20 to-cta/10",
-      iconBg: "bg-cta/20",
       iconColor: "text-cta",
       isImage: true,
     },
@@ -67,9 +65,8 @@ export default function ForCompanies() {
         "Impact reduction strategies",
         "Continuous improvement",
       ],
-      color: "from-chart-2/20 to-chart-2/10",
-      iconBg: "bg-chart-2/20",
-      iconColor: "text-chart-2",
+      color: "from-cta/20 to-cta/10",
+      iconColor: "text-cta",
       isImage: false,
     },
   ];
@@ -123,13 +120,11 @@ export default function ForCompanies() {
                 />
                 
                 <div className="relative z-10 flex-1 flex flex-col">
-                  <div
-                    className={`w-16 h-16 ${service.iconBg} rounded-2xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110 mb-6`}
-                  >
+                  <div className="flex items-center justify-center transition-transform duration-300 group-hover:scale-110 mb-6">
                     {service.isImage ? (
-                      <img src={service.icon as string} alt={service.title} className="w-10 h-10 object-contain" />
+                      <img src={service.icon as string} alt={service.title} className="w-20 h-20 object-contain" />
                     ) : (
-                      <service.icon className={`w-8 h-8 ${service.iconColor}`} />
+                      <service.icon className={`w-16 h-16 ${service.iconColor}`} />
                     )}
                   </div>
 
@@ -147,7 +142,7 @@ export default function ForCompanies() {
                           key={idx}
                           className="flex items-center gap-2 text-sm text-foreground"
                         >
-                          <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                          <div className="w-1.5 h-1.5 rounded-full bg-cta" />
                           <span>{feature}</span>
                         </li>
                       ))}

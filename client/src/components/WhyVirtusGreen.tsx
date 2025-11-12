@@ -30,9 +30,8 @@ export default function WhyVirtusGreen() {
       description:
         "Immutable, verified sustainability data you can trust. Every metric is stored on blockchain for complete transparency and accountability.",
       features: ["Immutable records", "Verified data", "Full traceability"],
-      color: "from-primary/20 to-primary/10",
-      iconBg: "bg-primary/20",
-      iconColor: "text-primary",
+      color: "from-cta/20 to-cta/10",
+      iconColor: "text-cta",
     },
     {
       icon: Smartphone,
@@ -41,7 +40,6 @@ export default function WhyVirtusGreen() {
         "Simple registration, intuitive scanning, instant insights. Get started in seconds and access environmental data with a single tap.",
       features: ["Quick setup", "Easy scanning", "Instant results"],
       color: "from-cta/20 to-cta/10",
-      iconBg: "bg-cta/20",
       iconColor: "text-cta",
     },
     {
@@ -50,9 +48,8 @@ export default function WhyVirtusGreen() {
       description:
         "Turn sustainable choices into tangible benefits. Earn tokens for eco-conscious decisions and redeem them for exclusive discounts. ",
       features: ["Earn tokens", "Exclusive discounts", "Free products"],
-      color: "from-chart-2/20 to-chart-2/10",
-      iconBg: "bg-chart-2/20",
-      iconColor: "text-chart-2",
+      color: "from-cta/20 to-cta/10",
+      iconColor: "text-cta",
     },
   ];
 
@@ -95,10 +92,8 @@ export default function WhyVirtusGreen() {
                 />
                 
                 <div className="relative z-10 flex flex-col h-full">
-                  <div
-                    className={`w-16 h-16 ${value.iconBg} rounded-2xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110 mb-6`}
-                  >
-                    <value.icon className={`w-8 h-8 ${value.iconColor}`} />
+                  <div className="flex items-center justify-center transition-transform duration-300 group-hover:scale-110 mb-6">
+                    <value.icon className={`w-16 h-16 ${value.iconColor}`} />
                   </div>
 
                   <div className="flex flex-col flex-1">
@@ -115,7 +110,7 @@ export default function WhyVirtusGreen() {
                           key={idx}
                           className="flex items-start gap-2 text-sm text-foreground"
                         >
-                          <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5" />
+                          <div className="w-1.5 h-1.5 rounded-full bg-cta mt-1.5" />
                           <span>{feature}</span>
                         </li>
                       ))}
