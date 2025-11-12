@@ -38,7 +38,6 @@ export default function ForCompanies() {
       ],
       color: "from-cta/20 to-cta/10",
       iconColor: "text-cta",
-      isImage: false,
     },
     {
       icon: Calculator,
@@ -52,7 +51,6 @@ export default function ForCompanies() {
       ],
       color: "from-cta/20 to-cta/10",
       iconColor: "text-cta",
-      isImage: false,
     },
     {
       icon: Users,
@@ -66,7 +64,6 @@ export default function ForCompanies() {
       ],
       color: "from-cta/20 to-cta/10",
       iconColor: "text-cta",
-      isImage: false,
     },
   ];
 
@@ -120,11 +117,7 @@ export default function ForCompanies() {
                 
                 <div className="relative z-10 flex-1 flex flex-col">
                   <div className="flex items-center justify-center transition-transform duration-300 group-hover:scale-110 mb-6">
-                    {service.isImage ? (
-                      <img src={service.icon as string} alt={service.title} className="w-20 h-20 object-contain" />
-                    ) : (
-                      <service.icon className={`w-16 h-16 ${service.iconColor}`} />
-                    )}
+                    <service.icon className={`w-16 h-16 ${service.iconColor}`} />
                   </div>
 
                   <div className="flex-1 space-y-4 mb-6">

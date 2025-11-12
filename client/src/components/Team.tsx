@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Quote, Linkedin } from "lucide-react";
+import { Quote } from "lucide-react";
 import founderPhoto from "@assets/1757088011096_1759750073591.jpg";
+import linkedinIcon from "@assets/Asset 100_1762948267335.png";
 
 export default function Team() {
   const [isVisible, setIsVisible] = useState(false);
@@ -96,22 +97,22 @@ export default function Team() {
                       href="https://www.linkedin.com/in/andrea-amenta/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center hover-elevate active-elevate-2 transition-colors"
+                      className="transition-transform duration-300 hover:scale-110"
                       data-testid="link-founder-linkedin"
                       aria-label="Andrea's LinkedIn"
                     >
-                      <Linkedin className="w-5 h-5 text-secondary-foreground" />
+                      <img src={linkedinIcon} alt="LinkedIn" className="w-8 h-8 object-contain" />
                     </a>
                   </div>
 
                   <div className="flex flex-wrap justify-center gap-2 pt-4">
-                    <div className="px-4 py-2 rounded-full bg-primary/10 text-sm font-medium text-primary">
+                    <div className="px-4 py-2 rounded-full bg-cta/10 text-sm font-medium text-cta">
                       Green Energy
                     </div>
                     <div className="px-4 py-2 rounded-full bg-cta/10 text-sm font-medium text-cta">
                       Blockchain
                     </div>
-                    <div className="px-4 py-2 rounded-full bg-chart-2/10 text-sm font-medium text-chart-2">
+                    <div className="px-4 py-2 rounded-full bg-cta/10 text-sm font-medium text-cta">
                       Sustainability
                     </div>
                   </div>
