@@ -27,6 +27,7 @@ import logoImage from "@assets/Asset 77_1762949956789.png";
 import linkedinIcon from "@assets/Asset 100_1762948267335.png";
 import twitterIcon from "@assets/Asset 96_1762948267334.png";
 import instagramIcon from "@assets/Asset 94_1762948267333.png";
+import infoIcon from "@assets/Asset 79_1763132541263.png";
 import { trackEvent } from "@/lib/analytics";
 
 export default function Footer() {
@@ -174,9 +175,16 @@ export default function Footer() {
 
           <div className="space-y-6">
             <div className="space-y-2">
-              <h3 className="text-2xl font-bold text-foreground">
-                Get in Touch
-              </h3>
+              <div className="flex items-center gap-3">
+                <img 
+                  src={infoIcon} 
+                  alt="Contact Info" 
+                  className="w-16 h-16 object-contain flex-shrink-0" 
+                />
+                <h3 className="text-2xl font-bold text-foreground">
+                  Get in Touch
+                </h3>
+              </div>
               <p className="text-base text-muted-foreground">
                 Have questions? We'd love to hear from you.
               </p>
