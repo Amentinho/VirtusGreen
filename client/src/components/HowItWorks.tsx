@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Card } from "@/components/ui/card";
 import barcodeIcon from "@assets/Asset 82_1762948369325.png";
-import discoverIcon from "@assets/Asset 79_1762948369320.png";
-import { Coins } from "lucide-react";
+import discoverIcon from "@assets/Asset 107_1763132403495.png";
+import earnIcon from "@assets/Asset 108_1763132423783.png";
 
 export default function HowItWorks() {
   const [isVisible, setIsVisible] = useState(false);
@@ -42,12 +42,11 @@ export default function HowItWorks() {
       isImage: true,
     },
     {
-      icon: Coins,
+      icon: earnIcon,
       title: "Earn",
       description: "Collect tokens and redeem for discounts and free products",
       color: "from-cta/20 to-chart-2/20",
-      iconColor: "text-cta",
-      isImage: false,
+      isImage: true,
     },
   ];
 
@@ -92,11 +91,7 @@ export default function HowItWorks() {
                 <div className="relative z-10 space-y-6">
                   <div className="flex items-start justify-between">
                     <div className="flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-                      {step.isImage ? (
-                        <img src={step.icon as string} alt={step.title} className="w-20 h-20 object-contain" />
-                      ) : (
-                        <step.icon className={`w-16 h-16 ${step.iconColor}`} />
-                      )}
+                      <img src={step.icon as string} alt={step.title} className="w-20 h-20 object-contain" />
                     </div>
                     <div className="text-5xl font-bold text-muted-foreground/20">
                       {index + 1}
