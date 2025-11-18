@@ -4,9 +4,22 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Helmet } from "react-helmet-async";
+import { useState, useEffect } from "react";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 export default function Checklist() {
   const { t, i18n } = useTranslation();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   
   const pdfUrl = `/assets/7_day_sustainable_eating_checklist_${i18n.language}.pdf`;
   const days = t('checklist.days', { returnObjects: true }) as Array<{ title: string; body: string }>;
@@ -29,6 +42,7 @@ export default function Checklist() {
       </Helmet>
 
       <div className="min-h-screen" style={{ backgroundColor: '#fbf9f3' }}>
+        <Navigation scrolled={scrolled} />
         {/* Hero Section */}
         <section className="container mx-auto px-4 py-16">
           <div className="max-w-6xl mx-auto">
@@ -274,6 +288,8 @@ export default function Checklist() {
             </div>
           </div>
         </section>
+
+        <Footer />
       </div>
     </>
   );

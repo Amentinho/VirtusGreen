@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import logoImage from "@assets/Asset 77_1762949956789.png";
 import { trackEvent } from "@/lib/analytics";
 import { useTranslation } from "react-i18next";
+import { useLocation } from "wouter";
 import LanguageSelector from "./LanguageSelector";
 
 interface NavigationProps {
@@ -13,24 +14,44 @@ interface NavigationProps {
 export default function Navigation({ scrolled }: NavigationProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { t } = useTranslation();
+  const [location, setLocation] = useLocation();
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const offset = 80;
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
+    if (location !== "/") {
+      setLocation("/");
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const offset = 80;
+          const bodyRect = document.body.getBoundingClientRect().top;
+          const elementRect = element.getBoundingClientRect().top;
+          const elementPosition = elementRect - bodyRect;
+          const offsetPosition = elementPosition - offset;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-      
-      trackEvent('scroll_to_section', 'navigation', sectionId);
-      setMobileMenuOpen(false);
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const offset = 80;
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = element.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
     }
+    
+    trackEvent('scroll_to_section', 'navigation', sectionId);
+    setMobileMenuOpen(false);
   };
 
   const navLinks = [
