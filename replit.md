@@ -186,6 +186,24 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
+### November 2025 - Phase 6: Mobile Language Selector & Translation Fixes
+
+**Mobile Language Selector (Completed):**
+- Added LanguageSelector component to mobile navigation menu
+- Language selector now accessible on all screen sizes (desktop and mobile)
+- Centered placement in mobile menu above action buttons
+- Language selection persists across menu open/close cycles
+- Full multilingual support maintained on mobile devices
+
+**Translation Key Fixes (Completed):**
+- Fixed literal translation keys displaying on Checklist page
+- Added proper localized labels for impact section in all three languages:
+  * English: "Production:", "Land use:", "Processing & transport:", "Waste:"
+  * Italian: "Produzione:", "Uso del suolo:", "Lavorazione e trasporto:", "Spreco:"
+  * Spanish: "Producción:", "Uso de la tierra:", "Procesamiento y transporte:", "Desperdicio:"
+- Eliminated all hard-coded English strings
+- Verified full multilingual functionality across EN, IT, ES
+
 ### November 2025 - Phase 5: Checklist Page
 
 **Checklist Page Implementation (Completed):**

@@ -145,6 +145,9 @@ export default function Navigation({ scrolled }: NavigationProps) {
               </button>
             ))}
             <div className="pt-4 space-y-3">
+              <div className="flex justify-center pb-2">
+                <LanguageSelector />
+              </div>
               <Button
                 onClick={() => {
                   setLocation("/checklist");
