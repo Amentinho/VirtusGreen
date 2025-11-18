@@ -186,6 +186,29 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
+### November 2025 - Phase 5: Checklist Page
+
+**Checklist Page Implementation (Completed):**
+- Created fully multilingual /checklist page in English, Italian, and Spanish
+- Comprehensive translation keys added for all checklist content (7-day sustainable eating guide)
+- VirtusGreen brand colors maintained throughout: dark teal (#043231), green (#00AF67), lime (#C0FA79), cream (#fbf9f3)
+- Hero section with Free PDF badge and download button
+- "What's inside" section listing all 7 days with environmental tips
+- "Quick benefits" sidebar highlighting key features
+- Full SEO implementation with react-helmet-async (meta tags, OG tags, Twitter cards)
+- Navigation and Footer components included for consistent experience
+- Cross-page navigation using hash-based routing (/#section-id)
+- Placeholder PDF files created in public/assets/ with setup instructions
+- Responsive design with mobile support
+- Multiple download buttons throughout the page linking to language-specific PDFs
+
+**Navigation System Updates (Completed):**
+- Enhanced Navigation component to handle cross-page routing using wouter
+- Hash-based navigation for links clicked from non-home pages
+- Home page detects hash fragments and auto-scrolls to target sections
+- URL cleanup after navigation (hash removed via window.history.replaceState)
+- Reliable section scrolling from any page in the application
+
 ### October 2025 - Phase 4: Analytics Integration
 
 **Google Analytics Setup (Completed):**

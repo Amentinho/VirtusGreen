@@ -18,22 +18,7 @@ export default function Navigation({ scrolled }: NavigationProps) {
 
   const scrollToSection = (sectionId: string) => {
     if (location !== "/") {
-      setLocation("/");
-      setTimeout(() => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          const offset = 80;
-          const bodyRect = document.body.getBoundingClientRect().top;
-          const elementRect = element.getBoundingClientRect().top;
-          const elementPosition = elementRect - bodyRect;
-          const offsetPosition = elementPosition - offset;
-
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth",
-          });
-        }
-      }, 100);
+      setLocation(`/#${sectionId}`);
     } else {
       const element = document.getElementById(sectionId);
       if (element) {
