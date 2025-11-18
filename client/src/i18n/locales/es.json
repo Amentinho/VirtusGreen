@@ -1,0 +1,183 @@
+{
+  "navigation": {
+    "howItWorks": "Cómo Funciona",
+    "indexes": "Índices",
+    "forCompanies": "Para Empresas",
+    "roadmap": "Hoja de Ruta",
+    "aboutUs": "Sobre Nosotros",
+    "getInTouch": "Contáctanos"
+  },
+  "hero": {
+    "title": "Transforma la Sostenibilidad en",
+    "titleHighlight": "Recompensas",
+    "subtitle": "Escanea. Aprende. Gana. La aplicación basada en blockchain que hace que las compras sostenibles sean gratificantes.",
+    "forCompaniesBtn": "Para Empresas",
+    "getInTouchBtn": "Contáctanos",
+    "blockchainVerified": "Verificado Blockchain",
+    "comingSoon": "Próximamente",
+    "ecoRewards": "Recompensas Eco",
+    "transparency": "Transparencia",
+    "scanProduct": "Escanea Cualquier Producto",
+    "instantInsights": "Obtén información ambiental instantánea"
+  },
+  "socialProof": {
+    "trustedBy": "Confiado por líderes de la industria",
+    "companiesPartner": "empresas se asocian con nosotros para mostrar su compromiso con la sostenibilidad"
+  },
+  "howItWorks": {
+    "title": "Cómo Funciona",
+    "subtitle": "Tres simples pasos para comenzar tu viaje sostenible",
+    "scan": {
+      "title": "Escanea",
+      "description": "Usa tu cámara para escanear cualquier código de barras del producto"
+    },
+    "discover": {
+      "title": "Descubre",
+      "description": "Ve datos transparentes de impacto ambiental almacenados en blockchain"
+    },
+    "earn": {
+      "title": "Gana",
+      "description": "Colecciona tokens y canjéalos por descuentos y productos gratis"
+    }
+  },
+  "metrics": {
+    "title": "Índices Ambientales",
+    "subtitle": "Rastrea métricas de impacto real para productos",
+    "carbonFootprint": {
+      "title": "Huella de Carbono",
+      "description": "Rastrea las emisiones de CO2 durante el ciclo de vida del producto",
+      "unit": "kg CO2e"
+    },
+    "waterUsage": {
+      "title": "Uso de Agua",
+      "description": "Monitorea el consumo de agua en la producción",
+      "unit": "litros"
+    },
+    "recyclability": {
+      "title": "Reciclabilidad",
+      "description": "Porcentaje de materiales reciclables utilizados",
+      "unit": "% reciclable"
+    },
+    "energyEfficiency": {
+      "title": "Eficiencia Energética",
+      "description": "Calificación de consumo de energía",
+      "unit": "kWh"
+    }
+  },
+  "whyVirtusGreen": {
+    "title": "¿Por Qué VirtusGreen?",
+    "subtitle": "Transparencia basada en blockchain para decisiones sostenibles",
+    "blockchainTransparency": {
+      "title": "Transparencia Blockchain",
+      "description": "Datos ambientales inmutables en los que puedes confiar"
+    },
+    "rewardSystem": {
+      "title": "Sistema de Recompensas",
+      "description": "Gana tokens por decisiones de compra sostenibles"
+    },
+    "comprehensiveData": {
+      "title": "Datos Completos",
+      "description": "Análisis completo del impacto ambiental del ciclo de vida"
+    },
+    "easyToUse": {
+      "title": "Fácil de Usar",
+      "description": "Interfaz simple de escanear y aprender para todos"
+    }
+  },
+  "forCompanies": {
+    "title": "Eleva Tu Marca a Través de",
+    "titleHighlight": "Sostenibilidad Verificada",
+    "subtitle": "Servicios completos para mostrar tu compromiso ambiental",
+    "lcaCalculation": {
+      "title": "Cálculo LCA",
+      "description": "Evaluación completa del ciclo de vida de tus productos"
+    },
+    "digitalProductPassport": {
+      "title": "Pasaporte Digital del Producto",
+      "description": "Credenciales ambientales verificadas por blockchain"
+    },
+    "sustainabilityReporting": {
+      "title": "Informes de Sostenibilidad",
+      "description": "Informes ESG y cumplimiento automatizados"
+    }
+  },
+  "team": {
+    "title": "Conoce Nuestro Equipo",
+    "subtitle": "Apasionados por la tecnología y la sostenibilidad",
+    "founder": {
+      "name": "Andrea",
+      "role": "Fundador y CEO",
+      "bio": "Entusiasta de Web3, defensor de la sostenibilidad, adicto a la descentralización.",
+      "quote": "La tecnología es la clave para resolver el cambio climático"
+    }
+  },
+  "roadmap": {
+    "title": "Nuestra Hoja de Ruta",
+    "subtitle": "Construyendo el futuro de las compras sostenibles",
+    "completed": "Completado",
+    "inProgress": "En Progreso",
+    "q4_2024": {
+      "quarter": "Q4 2024",
+      "items": [
+        "Inicio del desarrollo de la plataforma",
+        "Configuración de infraestructura blockchain",
+        "Incorporación de socios iniciales"
+      ]
+    },
+    "q1_2025": {
+      "quarter": "Q1 2025",
+      "items": [
+        "Lanzamiento de la app beta",
+        "Expansión de la base de datos de productos",
+        "Implementación del sistema de recompensas"
+      ]
+    },
+    "q2_2025": {
+      "quarter": "Q2 2025",
+      "items": [
+        "Lanzamiento público de la app",
+        "Panel empresarial",
+        "API para integraciones de terceros"
+      ]
+    },
+    "q3_2025": {
+      "quarter": "Q3 2025",
+      "items": [
+        "Recomendaciones impulsadas por IA",
+        "Expansión del mercado global",
+        "Funciones de análisis avanzadas"
+      ]
+    }
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "subtitle": "¿Tienes preguntas? Nos encantaría saber de ti.",
+    "name": "Nombre",
+    "namePlaceholder": "Tu nombre",
+    "email": "Email",
+    "emailPlaceholder": "tu@email.com",
+    "projectType": "Tipo de Proyecto",
+    "projectTypePlaceholder": "Selecciona tipo de proyecto",
+    "projectTypes": {
+      "freelance": "Freelance",
+      "business": "Negocio",
+      "affiliate": "Afiliado",
+      "user": "Usuario"
+    },
+    "message": "Mensaje",
+    "messagePlaceholder": "Cuéntanos sobre tu proyecto...",
+    "sendButton": "Enviar Mensaje",
+    "sending": "Enviando...",
+    "sent": "¡Mensaje Enviado!",
+    "successTitle": "¡Mensaje enviado con éxito!",
+    "successDescription": "Te responderemos lo antes posible.",
+    "errorTitle": "Error al enviar el mensaje",
+    "errorDescription": "Por favor, inténtalo de nuevo más tarde."
+  },
+  "footer": {
+    "description": "Transforma la sostenibilidad en recompensas con transparencia basada en blockchain. Únete a miles que toman decisiones eco-conscientes.",
+    "quickLinks": "Enlaces Rápidos",
+    "followUs": "Síguenos",
+    "copyright": "VirtusGreen. Todos los derechos reservados."
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "navigation": {
+    "howItWorks": "How It Works",
+    "indexes": "Indexes",
+    "forCompanies": "For Companies",
+    "roadmap": "Roadmap",
+    "aboutUs": "About Us",
+    "getInTouch": "Get in Touch"
+  },
+  "hero": {
+    "title": "Transform Sustainability Into",
+    "titleHighlight": "Rewards",
+    "subtitle": "Scan. Learn. Earn. The blockchain-powered app that makes sustainable shopping rewarding.",
+    "forCompaniesBtn": "For Companies",
+    "getInTouchBtn": "Get in Touch",
+    "blockchainVerified": "Blockchain Verified",
+    "comingSoon": "Coming Soon",
+    "ecoRewards": "Eco Rewards",
+    "transparency": "Transparency",
+    "scanProduct": "Scan Any Product",
+    "instantInsights": "Get instant environmental insights"
+  },
+  "socialProof": {
+    "trustedBy": "Trusted by industry leaders",
+    "companiesPartner": "companies partner with us to showcase their sustainability commitment"
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "subtitle": "Three simple steps to start your sustainable journey",
+    "scan": {
+      "title": "Scan",
+      "description": "Use your camera to scan any product barcode"
+    },
+    "discover": {
+      "title": "Discover",
+      "description": "View transparent environmental impact data stored on blockchain"
+    },
+    "earn": {
+      "title": "Earn",
+      "description": "Collect tokens and redeem for discounts and free products"
+    }
+  },
+  "metrics": {
+    "title": "Environmental Indexes",
+    "subtitle": "Track real-world impact metrics for products",
+    "carbonFootprint": {
+      "title": "Carbon Footprint",
+      "description": "Track CO2 emissions across the product lifecycle",
+      "unit": "kg CO2e"
+    },
+    "waterUsage": {
+      "title": "Water Usage",
+      "description": "Monitor water consumption in production",
+      "unit": "liters"
+    },
+    "recyclability": {
+      "title": "Recyclability",
+      "description": "Percentage of recyclable materials used",
+      "unit": "% recyclable"
+    },
+    "energyEfficiency": {
+      "title": "Energy Efficiency",
+      "description": "Energy consumption rating",
+      "unit": "kWh"
+    }
+  },
+  "whyVirtusGreen": {
+    "title": "Why VirtusGreen?",
+    "subtitle": "Blockchain-powered transparency for sustainable choices",
+    "blockchainTransparency": {
+      "title": "Blockchain Transparency",
+      "description": "Immutable environmental data you can trust"
+    },
+    "rewardSystem": {
+      "title": "Reward System",
+      "description": "Earn tokens for sustainable shopping choices"
+    },
+    "comprehensiveData": {
+      "title": "Comprehensive Data",
+      "description": "Full lifecycle environmental impact analysis"
+    },
+    "easyToUse": {
+      "title": "Easy to Use",
+      "description": "Simple scan-and-learn interface for everyone"
+    }
+  },
+  "forCompanies": {
+    "title": "Elevate Your Brand Through",
+    "titleHighlight": "Verified Sustainability",
+    "subtitle": "Comprehensive services to showcase your environmental commitment",
+    "lcaCalculation": {
+      "title": "LCA Calculation",
+      "description": "Complete lifecycle assessment of your products"
+    },
+    "digitalProductPassport": {
+      "title": "Digital Product Passport",
+      "description": "Blockchain-verified environmental credentials"
+    },
+    "sustainabilityReporting": {
+      "title": "Sustainability Reporting",
+      "description": "Automated compliance and ESG reporting"
+    }
+  },
+  "team": {
+    "title": "Meet Our Team",
+    "subtitle": "Passionate about technology and sustainability",
+    "founder": {
+      "name": "Andrea",
+      "role": "Founder & CEO",
+      "bio": "Web3 enthusiast, sustainability advocate, decentralization addict.",
+      "quote": "Technology is the key to solve climate change"
+    }
+  },
+  "roadmap": {
+    "title": "Our Roadmap",
+    "subtitle": "Building the future of sustainable shopping",
+    "completed": "Completed",
+    "inProgress": "In Progress",
+    "q4_2024": {
+      "quarter": "Q4 2024",
+      "items": [
+        "Platform development kickoff",
+        "Blockchain infrastructure setup",
+        "Initial partner onboarding"
+      ]
+    },
+    "q1_2025": {
+      "quarter": "Q1 2025",
+      "items": [
+        "Beta app launch",
+        "Product database expansion",
+        "Reward system implementation"
+      ]
+    },
+    "q2_2025": {
+      "quarter": "Q2 2025",
+      "items": [
+        "Public app release",
+        "Enterprise dashboard",
+        "API for third-party integrations"
+      ]
+    },
+    "q3_2025": {
+      "quarter": "Q3 2025",
+      "items": [
+        "AI-powered recommendations",
+        "Global market expansion",
+        "Advanced analytics features"
+      ]
+    }
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Have questions? We'd love to hear from you.",
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "projectType": "Project Type",
+    "projectTypePlaceholder": "Select project type",
+    "projectTypes": {
+      "freelance": "Freelance",
+      "business": "Business",
+      "affiliate": "Affiliate",
+      "user": "User"
+    },
+    "message": "Message",
+    "messagePlaceholder": "Tell us about your project...",
+    "sendButton": "Send Message",
+    "sending": "Sending...",
+    "sent": "Message Sent!",
+    "successTitle": "Message sent successfully!",
+    "successDescription": "We'll get back to you as soon as possible.",
+    "errorTitle": "Failed to send message",
+    "errorDescription": "Please try again later."
+  },
+  "footer": {
+    "description": "Transform sustainability into rewards with blockchain-powered transparency. Join thousands making eco-conscious choices.",
+    "quickLinks": "Quick Links",
+    "followUs": "Follow Us",
+    "copyright": "VirtusGreen. All rights reserved."
+  }
+}
