@@ -1,6 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Download, CheckCircle2 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { CheckCircle2, Leaf, TrendingDown, Package, MapPin, BarChart3, Calendar, Lightbulb } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Helmet } from "react-helmet-async";
@@ -20,11 +19,10 @@ export default function Checklist() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  
-  const pdfUrl = `/assets/7_day_sustainable_eating_checklist_${i18n.language}.pdf`;
+
   const days = t('checklist.days', { returnObjects: true }) as Array<{ title: string; body: string }>;
-  const howToUseSteps = t('checklist.howToUseSteps', { returnObjects: true }) as string[];
-  const benefits = t('checklist.benefits', { returnObjects: true }) as string[];
+
+  const dayIcons = [Leaf, Calendar, TrendingDown, Package, MapPin, BarChart3, CheckCircle2];
 
   return (
     <>
@@ -43,249 +41,363 @@ export default function Checklist() {
 
       <div className="min-h-screen" style={{ backgroundColor: '#fbf9f3' }}>
         <Navigation scrolled={scrolled} />
+        
         {/* Hero Section */}
-        <section className="container mx-auto px-4 py-16">
-          <div className="max-w-6xl mx-auto">
-            <Card className="overflow-hidden border-none shadow-lg" data-testid="card-hero">
-              <CardContent className="p-8 md:p-12">
-                <div className="flex flex-col md:flex-row gap-8 items-start">
-                  <div className="flex-1">
-                    <Badge 
-                      className="mb-4 text-sm font-semibold"
-                      style={{ 
-                        backgroundColor: '#C0FA79', 
-                        color: '#043231',
-                        border: 'none'
-                      }}
-                      data-testid="badge-free"
-                    >
-                      {t('checklist.freeBadge')}
-                    </Badge>
-                    
-                    <h1 
-                      className="text-4xl md:text-5xl font-bold mb-4 leading-tight"
-                      style={{ color: '#043231' }}
-                      data-testid="text-hero-title"
-                    >
-                      {t('checklist.heroTitle')}
-                    </h1>
-                    
-                    <p 
-                      className="text-lg md:text-xl mb-6 leading-relaxed"
-                      style={{ color: '#043231', opacity: 0.8 }}
-                      data-testid="text-hero-subtitle"
-                    >
-                      {t('checklist.heroSubtitle')}
-                    </p>
-                    
-                    <Button
-                      asChild
-                      size="lg"
-                      className="font-semibold text-white hover-elevate active-elevate-2"
-                      style={{ backgroundColor: '#00AF67', border: 'none' }}
-                      data-testid="button-download-hero"
-                    >
-                      <a href={pdfUrl} download>
-                        <Download className="mr-2 h-5 w-5" />
-                        {t('checklist.downloadBtn')}
-                      </a>
-                    </Button>
-                  </div>
-                  
-                  <div className="md:w-64 flex flex-col items-center">
-                    <div 
-                      className="w-48 h-48 md:w-64 md:h-64 rounded-lg flex items-center justify-center"
-                      style={{ backgroundColor: '#C0FA79' }}
-                      data-testid="img-checklist-preview"
-                    >
-                      <div className="text-center" style={{ color: '#043231' }}>
-                        <CheckCircle2 className="h-24 w-24 mx-auto mb-2" />
-                        <p className="font-bold text-lg">7-Day<br />Checklist</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+        <section className="pt-24 pb-12 px-4">
+          <div className="max-w-5xl mx-auto text-center">
+            <div className="mb-6 flex justify-center gap-3 flex-wrap">
+              <Badge 
+                className="text-sm font-bold px-4 py-1.5"
+                style={{ backgroundColor: '#C0FA79', color: '#043231', border: 'none' }}
+                data-testid="badge-practical"
+              >
+                Practical
+              </Badge>
+              <Badge 
+                className="text-sm font-bold px-4 py-1.5"
+                style={{ backgroundColor: '#00AF67', color: 'white', border: 'none' }}
+                data-testid="badge-evidence"
+              >
+                Evidence-backed
+              </Badge>
+              <Badge 
+                className="text-sm font-bold px-4 py-1.5"
+                style={{ backgroundColor: '#C0FA79', color: '#043231', border: 'none' }}
+                data-testid="badge-actionable"
+              >
+                Actionable
+              </Badge>
+            </div>
+            
+            <h1 
+              className="text-4xl md:text-6xl font-bold mb-6 leading-tight"
+              style={{ color: '#043231' }}
+              data-testid="text-hero-title"
+            >
+              7-Day Sustainable Eating Guide
+            </h1>
+            
+            <p 
+              className="text-xl md:text-2xl mb-4 leading-relaxed max-w-3xl mx-auto"
+              style={{ color: '#043231' }}
+              data-testid="text-hero-subtitle"
+            >
+              How food choices impact the planet (and what to do)
+            </p>
+            
+            <p 
+              className="text-lg leading-relaxed max-w-2xl mx-auto"
+              style={{ color: '#043231', opacity: 0.7 }}
+              data-testid="text-hero-lead"
+            >
+              Expanded explanations, real examples and actionable steps to reduce your environmental footprint.
+            </p>
           </div>
         </section>
 
         {/* Main Content */}
-        <section className="container mx-auto px-4 pb-16">
-          <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-            {/* Left Column - What's Inside */}
-            <div className="md:col-span-2">
-              <Card className="border-none shadow-lg" data-testid="card-whats-inside">
-                <CardContent className="p-8">
-                  <h2 
-                    className="text-3xl font-bold mb-6"
-                    style={{ color: '#043231' }}
-                    data-testid="text-whats-inside-title"
-                  >
-                    {t('checklist.whatsInside')}
-                  </h2>
-                  
-                  <ul className="space-y-4" data-testid="list-days">
-                    {days.map((day, index) => (
-                      <li key={index} className="flex gap-3" data-testid={`list-item-day-${index + 1}`}>
-                        <CheckCircle2 
-                          className="h-6 w-6 flex-shrink-0 mt-0.5" 
-                          style={{ color: '#00AF67' }}
-                        />
-                        <div>
-                          <strong 
-                            className="block mb-1"
-                            style={{ color: '#043231' }}
-                          >
-                            {day.title}
-                          </strong>
-                          <p 
-                            style={{ color: '#043231', opacity: 0.7 }}
-                          >
-                            {day.body}
-                          </p>
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="mt-8 pt-8" style={{ borderTop: '1px solid #e5e7eb' }}>
-                    <h3 
-                      className="text-2xl font-bold mb-3"
+        <section className="pb-16 px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* Main Column */}
+              <div className="md:col-span-2 space-y-8">
+                {/* Big Picture */}
+                <Card className="border-none shadow-lg" data-testid="card-big-picture">
+                  <CardContent className="p-8">
+                    <h2 
+                      className="text-3xl font-bold mb-4"
                       style={{ color: '#043231' }}
-                      data-testid="text-who-is-this-for"
                     >
-                      {t('checklist.whoIsThisFor')}
-                    </h3>
+                      Big picture: why food matters
+                    </h2>
                     <p 
-                      className="mb-6"
-                      style={{ color: '#043231', opacity: 0.7 }}
-                      data-testid="text-who-is-this-for-desc"
+                      className="text-base leading-relaxed mb-3"
+                      style={{ color: '#043231', opacity: 0.8 }}
                     >
-                      {t('checklist.whoIsThisForText')}
+                      The global food system — from farming and land-use change to processing, transport and retail — makes up a major share
+                      of planetary pressure: roughly a quarter to a third of global greenhouse gas emissions depending on the accounting method.
+                      Agriculture also uses a large share of freshwater and habitable land. That means changes in what and how we eat scale quickly at population level.
                     </p>
-
-                    <h3 
-                      className="text-2xl font-bold mb-3"
-                      style={{ color: '#043231' }}
-                      data-testid="text-how-to-use"
+                    <p 
+                      className="text-sm italic"
+                      style={{ color: '#043231', opacity: 0.6 }}
                     >
-                      {t('checklist.howToUse')}
-                    </h3>
-                    <ol className="list-decimal list-inside space-y-2 mb-6" data-testid="list-how-to-use">
-                      {howToUseSteps.map((step, index) => (
-                        <li 
-                          key={index}
-                          style={{ color: '#043231', opacity: 0.7 }}
-                          data-testid={`list-item-step-${index + 1}`}
-                        >
-                          {step}
+                      (Key source: Our World in Data, UNEP Food Waste Index; see Sources below.)
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* How Impacts Arise */}
+                <Card className="border-none shadow-lg" data-testid="card-impacts">
+                  <CardContent className="p-8">
+                    <h2 
+                      className="text-3xl font-bold mb-6"
+                      style={{ color: '#043231' }}
+                    >
+                      How impacts arise (clear breakdown)
+                    </h2>
+                    <ul className="space-y-4">
+                      {[
+                        { title: 'Production emissions:', text: 'Fertiliser, animal enteric emissions, farm energy and feed production.' },
+                        { title: 'Land-use change:', text: 'Clearing forests or draining peat to create pasture or cropland releases large carbon stocks.' },
+                        { title: 'Processing & transport:', text: 'Refrigeration, packaging and long-distance shipping add emissions (but often less than production).' },
+                        { title: 'Food waste:', text: 'When edible food is wasted, all upstream emissions and resources are effectively lost.' }
+                      ].map((item, index) => (
+                        <li key={index} className="flex gap-3">
+                          <CheckCircle2 
+                            className="h-6 w-6 flex-shrink-0 mt-0.5" 
+                            style={{ color: '#00AF67' }}
+                          />
+                          <div>
+                            <strong style={{ color: '#043231' }}>{item.title}</strong>{' '}
+                            <span style={{ color: '#043231', opacity: 0.8 }}>{item.text}</span>
+                          </div>
                         </li>
                       ))}
-                    </ol>
+                    </ul>
+                  </CardContent>
+                </Card>
 
-                    <Button
-                      asChild
-                      size="lg"
-                      className="font-semibold text-white hover-elevate active-elevate-2"
-                      style={{ backgroundColor: '#00AF67', border: 'none' }}
-                      data-testid="button-download-content"
+                {/* Case Studies */}
+                <Card className="border-none shadow-lg" data-testid="card-case-studies">
+                  <CardContent className="p-8">
+                    <h2 
+                      className="text-3xl font-bold mb-6"
+                      style={{ color: '#043231' }}
                     >
-                      <a href={pdfUrl} download>
-                        <Download className="mr-2 h-5 w-5" />
-                        {t('checklist.downloadBtn')}
-                      </a>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
+                      Real-world case studies you can cite
+                    </h2>
+                    
+                    <div className="space-y-6">
+                      {[
+                        {
+                          title: 'Too Good To Go — surplus rescue at scale',
+                          text: 'Too Good To Go is a consumer app that connects users to surplus food from retailers and restaurants. In recent impact reporting the organisation reports saving tens of millions — and in some years over 100 million — meals from going to waste. This model shows how consumer behaviour + simple tech delivers measurable waste reduction quickly.'
+                        },
+                        {
+                          title: 'Oddbox — rescuing imperfect produce',
+                          text: 'Oddbox works directly with growers to rescue \'too odd\' or surplus produce. For example, in a single reported season they rescued hundreds of tonnes of fruit that would otherwise have been wasted. The lesson: changing retail acceptance and consumer demand (buying \'ugly\' fruit) reduces farm-level loss.'
+                        },
+                        {
+                          title: 'Walmart & IBM Food Trust — traceability to reduce uncertainty',
+                          text: 'Walmart\'s traceability initiative (with IBM Food Trust/Hyperledger) required leafy-greens suppliers to register trace events, enabling rapid tracing back to farms in seconds instead of days. Better traceability reduces recall times, helps target waste reduction, and increases shopper trust in product origin.'
+                        }
+                      ].map((study, index) => (
+                        <div 
+                          key={index}
+                          className="p-4 rounded-lg"
+                          style={{ backgroundColor: '#f0fdf4', borderLeft: '4px solid #00AF67' }}
+                        >
+                          <strong 
+                            className="block mb-2"
+                            style={{ color: '#043231' }}
+                          >
+                            {study.title}
+                          </strong>
+                          <p 
+                            className="text-sm"
+                            style={{ color: '#043231', opacity: 0.8 }}
+                          >
+                            {study.text}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
 
-            {/* Right Column - Quick Benefits */}
-            <div className="md:col-span-1">
-              <Card 
-                className="border-none shadow-lg sticky top-4"
-                style={{ backgroundColor: '#f8fafc' }}
-                data-testid="card-benefits"
-              >
-                <CardContent className="p-6">
-                  <h3 
-                    className="text-xl font-bold mb-4"
-                    style={{ color: '#043231' }}
-                    data-testid="text-quick-benefits"
+                {/* 7-Day Plan */}
+                <Card className="border-none shadow-lg" data-testid="card-seven-days">
+                  <CardContent className="p-8">
+                    <h2 
+                      className="text-3xl font-bold mb-8"
+                      style={{ color: '#043231' }}
+                    >
+                      7-Day Expanded Action Plan
+                    </h2>
+                    
+                    <div className="space-y-8">
+                      {days.map((day, index) => {
+                        const Icon = dayIcons[index];
+                        return (
+                          <div 
+                            key={index}
+                            className="p-6 rounded-lg"
+                            style={{ backgroundColor: index % 2 === 0 ? '#f0fdf4' : '#fef3f2' }}
+                            data-testid={`card-day-${index + 1}`}
+                          >
+                            <div className="flex items-start gap-4">
+                              <div 
+                                className="p-3 rounded-lg"
+                                style={{ backgroundColor: '#C0FA79' }}
+                              >
+                                <Icon 
+                                  className="h-6 w-6"
+                                  style={{ color: '#043231' }}
+                                />
+                              </div>
+                              <div className="flex-1">
+                                <h3 
+                                  className="text-xl font-bold mb-3"
+                                  style={{ color: '#043231' }}
+                                >
+                                  {day.title}
+                                </h3>
+                                <p 
+                                  className="text-base leading-relaxed"
+                                  style={{ color: '#043231', opacity: 0.8 }}
+                                >
+                                  {day.body}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Sidebar */}
+              <div className="md:col-span-1">
+                <div className="sticky top-24 space-y-6">
+                  {/* Quick Stats */}
+                  <Card 
+                    className="border-none shadow-lg"
+                    style={{ backgroundColor: '#f0fdf4' }}
+                    data-testid="card-quick-stats"
                   >
-                    {t('checklist.quickBenefits')}
-                  </h3>
-                  
-                  <ul className="space-y-3 mb-6" data-testid="list-benefits">
-                    {benefits.map((benefit, index) => (
-                      <li 
-                        key={index}
-                        className="flex items-start gap-2"
-                        data-testid={`list-item-benefit-${index + 1}`}
-                      >
-                        <CheckCircle2 
-                          className="h-5 w-5 flex-shrink-0 mt-0.5" 
+                    <CardContent className="p-6">
+                      <div className="flex items-center gap-2 mb-4">
+                        <Lightbulb 
+                          className="h-6 w-6"
                           style={{ color: '#00AF67' }}
                         />
-                        <span style={{ color: '#043231', opacity: 0.8 }}>
-                          {benefit}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
+                        <h3 
+                          className="text-lg font-bold"
+                          style={{ color: '#043231' }}
+                        >
+                          Quick stats & talking points
+                        </h3>
+                      </div>
+                      
+                      <div className="space-y-4">
+                        <div>
+                          <strong 
+                            className="block text-sm mb-1"
+                            style={{ color: '#043231' }}
+                          >
+                            Food system share:
+                          </strong>
+                          <p 
+                            className="text-sm"
+                            style={{ color: '#043231', opacity: 0.8 }}
+                          >
+                            ~25–30% of global GHGs (used for headlines).
+                          </p>
+                        </div>
+                        
+                        <div>
+                          <strong 
+                            className="block text-sm mb-1"
+                            style={{ color: '#043231' }}
+                          >
+                            Food waste:
+                          </strong>
+                          <p 
+                            className="text-sm"
+                            style={{ color: '#043231', opacity: 0.8 }}
+                          >
+                            1.05 billion tonnes wasted in 2022 (≈19% of available food) — households are the largest source.
+                          </p>
+                        </div>
+                        
+                        <p 
+                          className="text-sm italic"
+                          style={{ color: '#043231', opacity: 0.8 }}
+                        >
+                          Use local business examples (Too Good To Go, Oddbox, traceability pilots) to show solutions work now.
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
 
-                  <div 
-                    className="pt-6 mb-6"
-                    style={{ borderTop: '1px solid #e5e7eb' }}
+                  {/* Short Checklist */}
+                  <Card 
+                    className="border-none shadow-lg"
+                    style={{ backgroundColor: 'white' }}
+                    data-testid="card-short-checklist"
                   >
-                    <p 
-                      className="text-sm mb-4"
-                      style={{ color: '#043231', opacity: 0.7 }}
-                      data-testid="text-subscribe"
-                    >
-                      {t('checklist.subscribeText')}
-                    </p>
-                  </div>
-
-                  <Button
-                    asChild
-                    className="w-full font-semibold text-white hover-elevate active-elevate-2"
-                    style={{ backgroundColor: '#00AF67', border: 'none' }}
-                    data-testid="button-get-checklist"
-                  >
-                    <a href={pdfUrl} download>
-                      <Download className="mr-2 h-4 w-4" />
-                      {t('checklist.getTheChecklist')}
-                    </a>
-                  </Button>
-                </CardContent>
-              </Card>
+                    <CardContent className="p-6">
+                      <h3 
+                        className="text-lg font-bold mb-4"
+                        style={{ color: '#043231' }}
+                      >
+                        Short checklist to keep
+                      </h3>
+                      
+                      <ol className="space-y-2 list-decimal list-inside text-sm">
+                        {[
+                          'Buy seasonal produce this week',
+                          'Plan meals & freeze extras',
+                          'Swap one meat meal for legumes',
+                          'Prefer recyclable packaging',
+                          'Buy local where possible',
+                          'Check quick footprint indicators',
+                          'Do a weekly waste audit (1 number)'
+                        ].map((item, index) => (
+                          <li 
+                            key={index}
+                            style={{ color: '#043231', opacity: 0.8 }}
+                          >
+                            {item}
+                          </li>
+                        ))}
+                      </ol>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Footer Note */}
-        <section 
-          className="py-8"
-          style={{ borderTop: '1px solid #e5e7eb' }}
-        >
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto text-center">
-              <p 
-                className="text-sm"
-                style={{ color: '#043231', opacity: 0.6 }}
-                data-testid="text-no-spam"
-              >
-                {t('checklist.noSpam')}
-              </p>
-              <p 
-                className="text-sm mt-2"
-                style={{ color: '#043231', opacity: 0.6 }}
-              >
-                © {new Date().getFullYear()} {t('footer.copyright')}
-              </p>
-            </div>
+        {/* Sources Section */}
+        <section className="pb-16 px-4">
+          <div className="max-w-6xl mx-auto">
+            <Card className="border-none shadow-lg" data-testid="card-sources">
+              <CardContent className="p-8">
+                <h2 
+                  className="text-2xl font-bold mb-4"
+                  style={{ color: '#043231' }}
+                >
+                  Sources
+                </h2>
+                <p 
+                  className="text-sm mb-4"
+                  style={{ color: '#043231', opacity: 0.7 }}
+                >
+                  Key sources used to build the numbers and case studies (for internal verification / editorial use):
+                </p>
+                <ul className="space-y-2 text-sm">
+                  {[
+                    'Our World in Data — Environmental impacts of food & food system emissions (summary charts & comparisons).',
+                    'UNEP Food Waste Index Report — 1.05 billion tonnes of food wasted in 2022 (households: ~60% of consumer-level waste).',
+                    'Too Good To Go — Impact Reports (meals saved & community impact examples).',
+                    'Oddbox — sustainability / rescue stories and tonnes of rescued produce.',
+                    'Walmart Tech Blog / reporting on the IBM Food Trust / traceability pilot for leafy greens.'
+                  ].map((source, index) => (
+                    <li 
+                      key={index}
+                      style={{ color: '#043231', opacity: 0.7 }}
+                    >
+                      • {source}
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
           </div>
         </section>
 
