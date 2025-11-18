@@ -34,50 +34,44 @@ export default function EnvironmentalMetrics() {
   const metrics = [
     {
       icon: greenhouseIcon,
-      title: "Greenhouse Gas Emissions",
-      shortDesc: "CO2 equivalent tracking",
-      fullDesc:
-        "Comprehensive measurement of carbon footprint throughout the product lifecycle",
+      title: t('metrics.greenhouse.title'),
+      shortDesc: t('metrics.greenhouse.shortDesc'),
+      fullDesc: t('metrics.greenhouse.fullDesc'),
       color: "from-cta/20 to-chart-2/20",
     },
     {
       icon: waterIcon,
-      title: "Water Consumption",
-      shortDesc: "Water usage metrics",
-      fullDesc:
-        "Track water consumption from production to delivery, promoting conservation",
+      title: t('metrics.water.title'),
+      shortDesc: t('metrics.water.shortDesc'),
+      fullDesc: t('metrics.water.fullDesc'),
       color: "from-cta/20 to-chart-2/20",
     },
     {
       icon: energyIcon,
-      title: "Energy Usage",
-      shortDesc: "Total energy consumption",
-      fullDesc:
-        "Monitor energy consumption across manufacturing and distribution processes",
+      title: t('metrics.energy.title'),
+      shortDesc: t('metrics.energy.shortDesc'),
+      fullDesc: t('metrics.energy.fullDesc'),
       color: "from-cta/20 to-chart-2/20",
     },
     {
       icon: renewableIcon,
-      title: "Renewable Energies",
-      shortDesc: "Clean energy sources",
-      fullDesc:
-        "Percentage of renewable energy used in production and operations",
+      title: t('metrics.renewable.title'),
+      shortDesc: t('metrics.renewable.shortDesc'),
+      fullDesc: t('metrics.renewable.fullDesc'),
       color: "from-cta/20 to-chart-2/20",
     },
     {
       icon: recycledIcon,
-      title: "Recycled Materials",
-      shortDesc: "Recycled content percentage",
-      fullDesc:
-        "Track the use of recycled materials in product manufacturing",
+      title: t('metrics.recycled.title'),
+      shortDesc: t('metrics.recycled.shortDesc'),
+      fullDesc: t('metrics.recycled.fullDesc'),
       color: "from-cta/20 to-chart-2/20",
     },
     {
       icon: recyclableIcon,
-      title: "Recyclable Materials",
-      shortDesc: "End-of-life recyclability",
-      fullDesc:
-        "Measure how much of the product can be recycled at end of life",
+      title: t('metrics.recyclable.title'),
+      shortDesc: t('metrics.recyclable.shortDesc'),
+      fullDesc: t('metrics.recyclable.fullDesc'),
       color: "from-cta/20 to-chart-2/20",
     },
   ];
@@ -157,7 +151,7 @@ export default function EnvironmentalMetrics() {
                   <div className="pt-2">
                     <div className="flex items-center gap-2 text-xs text-muted-foreground">
                       <div className="w-2 h-2 rounded-full bg-cta animate-pulse" />
-                      <span>Blockchain verification coming soon</span>
+                      <span>{t('metrics.blockchainVerification')}</span>
                     </div>
                   </div>
                 </div>

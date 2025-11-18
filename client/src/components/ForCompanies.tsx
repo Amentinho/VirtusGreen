@@ -30,40 +30,25 @@ export default function ForCompanies() {
   const services = [
     {
       icon: ListChecks,
-      title: "Product Listing",
-      description:
-        "Get your products featured with EcoScore ratings. Increase visibility among eco-conscious consumers and showcase your commitment to sustainability.",
-      features: [
-        "EcoScore rating display",
-        "Enhanced product visibility",
-        "Consumer trust building",
-      ],
+      title: t('forCompanies.productListing.title'),
+      description: t('forCompanies.productListing.description'),
+      features: t('forCompanies.productListing.features', { returnObjects: true }) as string[],
       color: "from-cta/20 to-chart-2/20",
       iconColor: "text-cta",
     },
     {
       icon: Calculator,
-      title: "LCA Calculation",
-      description:
-        "Professional Life Cycle Assessment using advanced mathematical methodologies. EU compliant using PEF regulation for comprehensive environmental impact analysis from cradle to grave.",
-      features: [
-        "EU PEF regulation compliant",
-        "Advanced LCA methodologies",
-        "Industry-standard reporting",
-      ],
+      title: t('forCompanies.lcaCalculation.title'),
+      description: t('forCompanies.lcaCalculation.description'),
+      features: t('forCompanies.lcaCalculation.features', { returnObjects: true }) as string[],
       color: "from-cta/20 to-chart-2/20",
       iconColor: "text-cta",
     },
     {
       icon: Users,
-      title: "Sustainability Consulting",
-      description:
-        "Expert guidance to minimize environmental impact. Our team helps you identify opportunities and implement sustainable practices across your value chain.",
-      features: [
-        "Expert consultation",
-        "Impact reduction strategies",
-        "Continuous improvement",
-      ],
+      title: t('forCompanies.sustainabilityConsulting.title'),
+      description: t('forCompanies.sustainabilityConsulting.description'),
+      features: t('forCompanies.sustainabilityConsulting.features', { returnObjects: true }) as string[],
       color: "from-cta/20 to-chart-2/20",
       iconColor: "text-cta",
     },

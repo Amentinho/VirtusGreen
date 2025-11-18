@@ -28,62 +28,34 @@ export default function Roadmap() {
 
   const roadmapItems = [
     {
-      quarter: "Q2 2025",
-      title: "Foundation & Plan",
+      quarter: t('roadmap.q2_2025.quarter'),
+      title: t('roadmap.q2_2025.title'),
       status: "completed",
-      items: [
-        "Platform architecture design",
-        "Gamification experience",
-        "Brand identity development",
-        "Rewarding system definition",
-      ],
+      items: t('roadmap.q2_2025.items', { returnObjects: true }) as string[],
     },
     {
-      quarter: "Q3 2025",
-      title: "Platform Development",
+      quarter: t('roadmap.q3_2025.quarter'),
+      title: t('roadmap.q3_2025.title'),
       status: "completed",
-      items: [
-        "Mobile application development",
-        "Sustainability indicators",
-        "Database infrastructure",
-        "Rewarding system implementation",
-        "Social media strategy",
-      ],
+      items: t('roadmap.q3_2025.items', { returnObjects: true }) as string[],
     },
     {
-      quarter: "Q4 2025",
-      title: "Beta Launch",
+      quarter: t('roadmap.q4_2025.quarter'),
+      title: t('roadmap.q4_2025.title'),
       status: "in-progress",
-      items: [
-        "Beta testing with users",
-        "User feedback integration",
-        "Security audits",
-        "API integrations with partners",
-        "Marketing & Social Media",
-      ],
+      items: t('roadmap.q4_2025.items', { returnObjects: true }) as string[],
     },
     {
-      quarter: "Q1 2026",
-      title: "Public Launch",
+      quarter: t('roadmap.q1_2026.quarter'),
+      title: t('roadmap.q1_2026.title'),
       status: "upcoming",
-      items: [
-        "Full platform launch",
-        "App store releases (iOS & Android)",
-        "Partner onboarding program",
-        "Customer engagement",
-        "Reward system implementation",
-      ],
+      items: t('roadmap.q1_2026.items', { returnObjects: true }) as string[],
     },
     {
-      quarter: "2026+",
-      title: "Deep Tech Enhancements",
+      quarter: t('roadmap.q2026_plus.quarter'),
+      title: t('roadmap.q2026_plus.title'),
       status: "upcoming",
-      items: [
-        "Blockchain stack development",
-        "Image recognition for products",
-        "Token generation",
-        "Sustainability impact calculator",
-      ],
+      items: t('roadmap.q2026_plus.items', { returnObjects: true }) as string[],
     },
   ];
 
@@ -115,7 +87,7 @@ export default function Roadmap() {
       default:
         return (
           <Badge variant="secondary">
-            Upcoming
+            {t('roadmap.upcoming')}
           </Badge>
         );
     }
