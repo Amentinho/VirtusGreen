@@ -43,10 +43,10 @@ export default function Checklist() {
   const dayIcons = [Leaf, Calendar, TrendingDown, Package, MapPin, BarChart3, CheckCircle2];
 
   const impactsList = [
-    { title: 'Production:', text: impacts.production },
-    { title: 'Land use:', text: impacts.landUse },
-    { title: 'Processing & transport:', text: impacts.processing },
-    { title: 'Waste:', text: impacts.waste }
+    { title: impacts.productionLabel, text: impacts.production },
+    { title: impacts.landUseLabel, text: impacts.landUse },
+    { title: impacts.processingLabel, text: impacts.processing },
+    { title: impacts.wasteLabel, text: impacts.waste }
   ];
 
   const caseStudiesList = [

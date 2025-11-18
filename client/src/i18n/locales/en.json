@@ -249,9 +249,13 @@
     },
     "impacts": {
       "title": "How impacts arise (clear breakdown)",
+      "productionLabel": "Production:",
       "production": "Fertiliser, animal enteric emissions, farm energy and feed production.",
+      "landUseLabel": "Land use:",
       "landUse": "Clearing forests or draining peat to create pasture or cropland releases large carbon stocks.",
+      "processingLabel": "Processing & transport:",
       "processing": "Refrigeration, packaging and long-distance shipping add emissions (but often less than production).",
+      "wasteLabel": "Waste:",
       "waste": "When edible food is wasted, all upstream emissions and resources are effectively lost."
     },
     "caseStudies": {

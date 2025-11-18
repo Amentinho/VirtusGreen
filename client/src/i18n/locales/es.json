@@ -249,9 +249,13 @@
     },
     "impacts": {
       "title": "Cómo surgen los impactos (desglose claro)",
+      "productionLabel": "Producción:",
       "production": "Fertilizantes, emisiones entéricas de animales, energía agrícola y producción de alimento para ganado.",
+      "landUseLabel": "Uso de la tierra:",
       "landUse": "La tala de bosques o el drenaje de turberas para crear pastos o tierras de cultivo libera grandes reservas de carbono.",
+      "processingLabel": "Procesamiento y transporte:",
       "processing": "La refrigeración, el empaque y el envío de larga distancia añaden emisiones (pero a menudo menos que la producción).",
+      "wasteLabel": "Desperdicio:",
       "waste": "Cuando se desperdicia comida comestible, todas las emisiones y recursos previos se pierden efectivamente."
     },
     "caseStudies": {

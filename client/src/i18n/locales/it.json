@@ -249,9 +249,13 @@
     },
     "impacts": {
       "title": "Come si generano gli impatti (panoramica chiara)",
+      "productionLabel": "Produzione:",
       "production": "Fertilizzanti, emissioni enteriche degli animali, energia agricola e produzione di mangimi.",
+      "landUseLabel": "Uso del suolo:",
       "landUse": "Il disboscamento o il prosciugamento di torbiere per creare pascoli o terreni coltivabili rilascia grandi riserve di carbonio.",
+      "processingLabel": "Lavorazione e trasporto:",
       "processing": "Refrigerazione, imballaggio e trasporto a lunga distanza aggiungono emissioni (ma spesso meno della produzione).",
+      "wasteLabel": "Spreco:",
       "waste": "Quando il cibo commestibile viene sprecato, tutte le emissioni e le risorse a monte vengono effettivamente perse."
     },
     "caseStudies": {
