@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { Menu, X, Download } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import logoImage from "@assets/Asset 77_1762949956789.png";
 import { trackEvent } from "@/lib/analytics";
 import { useTranslation } from "react-i18next";
@@ -91,18 +90,11 @@ export default function Navigation({ scrolled }: NavigationProps) {
                   setLocation("/checklist");
                   trackEvent('checklist_nav_click', 'navigation', 'desktop');
                 }}
-                className="font-semibold text-white hover-elevate active-elevate-2 relative"
+                className="font-semibold hover-elevate active-elevate-2"
                 style={{ backgroundColor: '#C0FA79', color: '#043231', border: 'none' }}
                 data-testid="button-checklist-nav"
               >
-                <Download className="mr-2 h-4 w-4" />
                 {t('navigation.freeChecklist')}
-                <Badge 
-                  className="absolute -top-2 -right-2 px-1.5 py-0 text-xs font-bold"
-                  style={{ backgroundColor: '#00AF67', color: 'white', border: 'none' }}
-                >
-                  FREE
-                </Badge>
               </Button>
               <LanguageSelector />
               <Button
@@ -159,11 +151,10 @@ export default function Navigation({ scrolled }: NavigationProps) {
                   setMobileMenuOpen(false);
                   trackEvent('checklist_nav_click', 'navigation', 'mobile');
                 }}
-                className="w-full font-semibold text-white hover-elevate active-elevate-2"
+                className="w-full font-semibold hover-elevate active-elevate-2"
                 style={{ backgroundColor: '#C0FA79', color: '#043231', border: 'none' }}
                 data-testid="button-checklist-mobile"
               >
-                <Download className="mr-2 h-4 w-4" />
                 {t('navigation.freeChecklist')}
               </Button>
               <Button
