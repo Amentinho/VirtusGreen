@@ -20,9 +20,40 @@ export default function Checklist() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const days = t('checklist.days', { returnObjects: true }) as Array<{ title: string; body: string }>;
+  // Get translated content
+  const impacts = t('checklist.impacts', { returnObjects: true }) as any;
+  const caseStudies = t('checklist.caseStudies', { returnObjects: true }) as any;
+  const sidebar = t('checklist.sidebar', { returnObjects: true }) as any;
+  const shortChecklist = t('checklist.shortChecklist', { returnObjects: true }) as any;
+  const sources = t('checklist.sources', { returnObjects: true }) as any;
+  const bigPicture = t('checklist.bigPicture', { returnObjects: true }) as any;
+  const badges = t('checklist.badges', { returnObjects: true }) as any;
+  
+  // Manually construct days array from individual day objects
+  const days = [
+    t('checklist.day1', { returnObjects: true }),
+    t('checklist.day2', { returnObjects: true }),
+    t('checklist.day3', { returnObjects: true }),
+    t('checklist.day4', { returnObjects: true }),
+    t('checklist.day5', { returnObjects: true }),
+    t('checklist.day6', { returnObjects: true }),
+    t('checklist.day7', { returnObjects: true })
+  ] as Array<{ title: string; body?: string; why?: string; howTitle?: string; tips?: string[]; example?: string; metric?: string; note?: string }>;
 
   const dayIcons = [Leaf, Calendar, TrendingDown, Package, MapPin, BarChart3, CheckCircle2];
+
+  const impactsList = [
+    { title: t('checklist.impacts.productionTitle'), text: impacts.production },
+    { title: t('checklist.impacts.landUseTitle'), text: impacts.landUse },
+    { title: t('checklist.impacts.processingTitle'), text: impacts.processing },
+    { title: t('checklist.impacts.wasteTitle'), text: impacts.waste }
+  ];
+
+  const caseStudiesList = [
+    { title: caseStudies.tooGoodToGo.title, text: caseStudies.tooGoodToGo.content },
+    { title: caseStudies.oddbox.title, text: caseStudies.oddbox.content },
+    { title: caseStudies.walmart.title, text: caseStudies.walmart.content }
+  ];
 
   return (
     <>
@@ -51,21 +82,21 @@ export default function Checklist() {
                 style={{ backgroundColor: '#C0FA79', color: '#043231', border: 'none' }}
                 data-testid="badge-practical"
               >
-                Practical
+                {badges.practical}
               </Badge>
               <Badge 
                 className="text-sm font-bold px-4 py-1.5"
                 style={{ backgroundColor: '#00AF67', color: 'white', border: 'none' }}
                 data-testid="badge-evidence"
               >
-                Evidence-backed
+                {badges.evidenceBacked}
               </Badge>
               <Badge 
                 className="text-sm font-bold px-4 py-1.5"
                 style={{ backgroundColor: '#C0FA79', color: '#043231', border: 'none' }}
                 data-testid="badge-actionable"
               >
-                Actionable
+                {badges.actionable}
               </Badge>
             </div>
             
@@ -74,7 +105,7 @@ export default function Checklist() {
               style={{ color: '#043231' }}
               data-testid="text-hero-title"
             >
-              7-Day Sustainable Eating Guide
+              {t('checklist.heroTitle')}
             </h1>
             
             <p 
@@ -82,7 +113,7 @@ export default function Checklist() {
               style={{ color: '#043231' }}
               data-testid="text-hero-subtitle"
             >
-              How food choices impact the planet (and what to do)
+              {t('checklist.heroSubtitle')}
             </p>
             
             <p 
@@ -90,7 +121,7 @@ export default function Checklist() {
               style={{ color: '#043231', opacity: 0.7 }}
               data-testid="text-hero-lead"
             >
-              Expanded explanations, real examples and actionable steps to reduce your environmental footprint.
+              {t('checklist.heroLead')}
             </p>
           </div>
         </section>
@@ -108,21 +139,19 @@ export default function Checklist() {
                       className="text-3xl font-bold mb-4"
                       style={{ color: '#043231' }}
                     >
-                      Big picture: why food matters
+                      {bigPicture.title}
                     </h2>
                     <p 
                       className="text-base leading-relaxed mb-3"
                       style={{ color: '#043231', opacity: 0.8 }}
                     >
-                      The global food system — from farming and land-use change to processing, transport and retail — makes up a major share
-                      of planetary pressure: roughly a quarter to a third of global greenhouse gas emissions depending on the accounting method.
-                      Agriculture also uses a large share of freshwater and habitable land. That means changes in what and how we eat scale quickly at population level.
+                      {bigPicture.content}
                     </p>
                     <p 
                       className="text-sm italic"
                       style={{ color: '#043231', opacity: 0.6 }}
                     >
-                      (Key source: Our World in Data, UNEP Food Waste Index; see Sources below.)
+                      {bigPicture.note}
                     </p>
                   </CardContent>
                 </Card>
@@ -134,15 +163,10 @@ export default function Checklist() {
                       className="text-3xl font-bold mb-6"
                       style={{ color: '#043231' }}
                     >
-                      How impacts arise (clear breakdown)
+                      {impacts.title}
                     </h2>
                     <ul className="space-y-4">
-                      {[
-                        { title: 'Production emissions:', text: 'Fertiliser, animal enteric emissions, farm energy and feed production.' },
-                        { title: 'Land-use change:', text: 'Clearing forests or draining peat to create pasture or cropland releases large carbon stocks.' },
-                        { title: 'Processing & transport:', text: 'Refrigeration, packaging and long-distance shipping add emissions (but often less than production).' },
-                        { title: 'Food waste:', text: 'When edible food is wasted, all upstream emissions and resources are effectively lost.' }
-                      ].map((item, index) => (
+                      {impactsList.map((item, index) => (
                         <li key={index} className="flex gap-3">
                           <CheckCircle2 
                             className="h-6 w-6 flex-shrink-0 mt-0.5" 
@@ -165,24 +189,11 @@ export default function Checklist() {
                       className="text-3xl font-bold mb-6"
                       style={{ color: '#043231' }}
                     >
-                      Real-world case studies you can cite
+                      {caseStudies.title}
                     </h2>
                     
                     <div className="space-y-6">
-                      {[
-                        {
-                          title: 'Too Good To Go — surplus rescue at scale',
-                          text: 'Too Good To Go is a consumer app that connects users to surplus food from retailers and restaurants. In recent impact reporting the organisation reports saving tens of millions — and in some years over 100 million — meals from going to waste. This model shows how consumer behaviour + simple tech delivers measurable waste reduction quickly.'
-                        },
-                        {
-                          title: 'Oddbox — rescuing imperfect produce',
-                          text: 'Oddbox works directly with growers to rescue \'too odd\' or surplus produce. For example, in a single reported season they rescued hundreds of tonnes of fruit that would otherwise have been wasted. The lesson: changing retail acceptance and consumer demand (buying \'ugly\' fruit) reduces farm-level loss.'
-                        },
-                        {
-                          title: 'Walmart & IBM Food Trust — traceability to reduce uncertainty',
-                          text: 'Walmart\'s traceability initiative (with IBM Food Trust/Hyperledger) required leafy-greens suppliers to register trace events, enabling rapid tracing back to farms in seconds instead of days. Better traceability reduces recall times, helps target waste reduction, and increases shopper trust in product origin.'
-                        }
-                      ].map((study, index) => (
+                      {caseStudiesList.map((study, index) => (
                         <div 
                           key={index}
                           className="p-4 rounded-lg"
@@ -213,7 +224,7 @@ export default function Checklist() {
                       className="text-3xl font-bold mb-8"
                       style={{ color: '#043231' }}
                     >
-                      7-Day Expanded Action Plan
+                      {t('checklist.planTitle')}
                     </h2>
                     
                     <div className="space-y-8">
@@ -228,7 +239,7 @@ export default function Checklist() {
                           >
                             <div className="flex items-start gap-4">
                               <div 
-                                className="p-3 rounded-lg"
+                                className="p-3 rounded-lg flex-shrink-0"
                                 style={{ backgroundColor: '#C0FA79' }}
                               >
                                 <Icon 
@@ -243,12 +254,39 @@ export default function Checklist() {
                                 >
                                   {day.title}
                                 </h3>
-                                <p 
-                                  className="text-base leading-relaxed"
-                                  style={{ color: '#043231', opacity: 0.8 }}
-                                >
-                                  {day.body}
-                                </p>
+                                {day.why && (
+                                  <div className="mb-3">
+                                    <strong style={{ color: '#043231' }}>Why: </strong>
+                                    <span style={{ color: '#043231', opacity: 0.8 }}>{day.why}</span>
+                                  </div>
+                                )}
+                                {day.tips && day.tips.length > 0 && (
+                                  <div className="mb-3">
+                                    <strong style={{ color: '#043231' }}>{day.howTitle || 'How to do it:'}</strong>
+                                    <ul className="mt-2 space-y-1 ml-4 list-disc">
+                                      {day.tips.map((tip, tipIndex) => (
+                                        <li key={tipIndex} style={{ color: '#043231', opacity: 0.8 }}>
+                                          {tip}
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  </div>
+                                )}
+                                {day.example && (
+                                  <p className="text-sm italic" style={{ color: '#043231', opacity: 0.7 }}>
+                                    <strong>Example:</strong> {day.example}
+                                  </p>
+                                )}
+                                {day.metric && (
+                                  <p className="text-sm italic" style={{ color: '#043231', opacity: 0.7 }}>
+                                    <strong>Quick metric:</strong> {day.metric}
+                                  </p>
+                                )}
+                                {day.note && (
+                                  <p className="text-sm italic" style={{ color: '#043231', opacity: 0.7 }}>
+                                    {day.note}
+                                  </p>
+                                )}
                               </div>
                             </div>
                           </div>
@@ -278,7 +316,7 @@ export default function Checklist() {
                           className="text-lg font-bold"
                           style={{ color: '#043231' }}
                         >
-                          Quick stats & talking points
+                          {sidebar.statsTitle}
                         </h3>
                       </div>
                       
@@ -288,13 +326,13 @@ export default function Checklist() {
                             className="block text-sm mb-1"
                             style={{ color: '#043231' }}
                           >
-                            Food system share:
+                            {t('checklist.sidebar.foodSystemTitle')}
                           </strong>
                           <p 
                             className="text-sm"
                             style={{ color: '#043231', opacity: 0.8 }}
                           >
-                            ~25–30% of global GHGs (used for headlines).
+                            {sidebar.foodSystem}
                           </p>
                         </div>
                         
@@ -303,13 +341,13 @@ export default function Checklist() {
                             className="block text-sm mb-1"
                             style={{ color: '#043231' }}
                           >
-                            Food waste:
+                            {t('checklist.sidebar.foodWasteTitle')}
                           </strong>
                           <p 
                             className="text-sm"
                             style={{ color: '#043231', opacity: 0.8 }}
                           >
-                            1.05 billion tonnes wasted in 2022 (≈19% of available food) — households are the largest source.
+                            {sidebar.foodWaste}
                           </p>
                         </div>
                         
@@ -317,7 +355,7 @@ export default function Checklist() {
                           className="text-sm italic"
                           style={{ color: '#043231', opacity: 0.8 }}
                         >
-                          Use local business examples (Too Good To Go, Oddbox, traceability pilots) to show solutions work now.
+                          {sidebar.useExamples}
                         </p>
                       </div>
                     </CardContent>
@@ -334,19 +372,11 @@ export default function Checklist() {
                         className="text-lg font-bold mb-4"
                         style={{ color: '#043231' }}
                       >
-                        Short checklist to keep
+                        {shortChecklist.title}
                       </h3>
                       
                       <ol className="space-y-2 list-decimal list-inside text-sm">
-                        {[
-                          'Buy seasonal produce this week',
-                          'Plan meals & freeze extras',
-                          'Swap one meat meal for legumes',
-                          'Prefer recyclable packaging',
-                          'Buy local where possible',
-                          'Check quick footprint indicators',
-                          'Do a weekly waste audit (1 number)'
-                        ].map((item, index) => (
+                        {shortChecklist.items.map((item: string, index: number) => (
                           <li 
                             key={index}
                             style={{ color: '#043231', opacity: 0.8 }}
@@ -372,22 +402,16 @@ export default function Checklist() {
                   className="text-2xl font-bold mb-4"
                   style={{ color: '#043231' }}
                 >
-                  Sources
+                  {sources.title}
                 </h2>
                 <p 
                   className="text-sm mb-4"
                   style={{ color: '#043231', opacity: 0.7 }}
                 >
-                  Key sources used to build the numbers and case studies (for internal verification / editorial use):
+                  {sources.intro}
                 </p>
                 <ul className="space-y-2 text-sm">
-                  {[
-                    'Our World in Data — Environmental impacts of food & food system emissions (summary charts & comparisons).',
-                    'UNEP Food Waste Index Report — 1.05 billion tonnes of food wasted in 2022 (households: ~60% of consumer-level waste).',
-                    'Too Good To Go — Impact Reports (meals saved & community impact examples).',
-                    'Oddbox — sustainability / rescue stories and tonnes of rescued produce.',
-                    'Walmart Tech Blog / reporting on the IBM Food Trust / traceability pilot for leafy greens.'
-                  ].map((source, index) => (
+                  {sources.list.map((source: string, index: number) => (
                     <li 
                       key={index}
                       style={{ color: '#043231', opacity: 0.7 }}
