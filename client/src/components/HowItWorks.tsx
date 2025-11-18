@@ -3,8 +3,10 @@ import { Card } from "@/components/ui/card";
 import barcodeIcon from "@assets/Asset 82_1762948369325.png";
 import discoverIcon from "@assets/Asset 107_1763132403495.png";
 import earnIcon from "@assets/Asset 108_1763132423783.png";
+import { useTranslation } from "react-i18next";
 
 export default function HowItWorks() {
+  const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -28,23 +30,22 @@ export default function HowItWorks() {
   const steps = [
     {
       icon: barcodeIcon,
-      title: "Scan",
-      description: "Use your camera to scan any product barcode",
+      title: t('howItWorks.scan.title'),
+      description: t('howItWorks.scan.description'),
       color: "from-cta/20 to-chart-2/20",
       isImage: true,
     },
     {
       icon: discoverIcon,
-      title: "Discover",
-      description:
-        "View transparent environmental impact data stored on blockchain",
+      title: t('howItWorks.discover.title'),
+      description: t('howItWorks.discover.description'),
       color: "from-cta/20 to-chart-2/20",
       isImage: true,
     },
     {
       icon: earnIcon,
-      title: "Earn",
-      description: "Collect tokens and redeem for discounts and free products",
+      title: t('howItWorks.earn.title'),
+      description: t('howItWorks.earn.description'),
       color: "from-cta/20 to-chart-2/20",
       isImage: true,
     },
@@ -65,10 +66,10 @@ export default function HowItWorks() {
           }`}
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
-            How It Works
+            {t('howItWorks.title')}
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Three simple steps to start your sustainable journey
+            {t('howItWorks.subtitle')}
           </p>
         </div>
 

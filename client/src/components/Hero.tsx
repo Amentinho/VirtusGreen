@@ -3,8 +3,10 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Shield, TrendingUp, Gift, Smartphone, ScanLine } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
+import { useTranslation } from "react-i18next";
 
 export default function Hero() {
+  const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -67,9 +69,9 @@ export default function Hero() {
   };
 
   const trustIndicators = [
-    { icon: Shield, label: "Blockchain-Verified Data", badge: "Coming Soon" },
-    { icon: TrendingUp, label: "Transparent Impact Metrics" },
-    { icon: Gift, label: "Real Rewards", badge: "Coming Soon" },
+    { icon: Shield, label: t('hero.blockchainVerified'), badge: t('hero.comingSoon') },
+    { icon: TrendingUp, label: t('hero.transparency') },
+    { icon: Gift, label: t('hero.ecoRewards'), badge: t('hero.comingSoon') },
   ];
 
   return (
@@ -90,12 +92,11 @@ export default function Hero() {
           >
             <div className="space-y-4">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight tracking-tight" data-testid="text-hero-title">
-                Transform Sustainability Into{" "}
-                <span className="text-cta">Rewards</span>
+                {t('hero.title')}{" "}
+                <span className="text-cta">{t('hero.titleHighlight')}</span>
               </h1>
               <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl" data-testid="text-hero-subtitle">
-                Scan. Learn. Earn. The blockchain-powered app that makes
-                sustainable shopping rewarding.
+                {t('hero.subtitle')}
               </p>
             </div>
 
@@ -106,7 +107,7 @@ export default function Hero() {
                 className="bg-cta hover:bg-cta text-cta-foreground border-cta-border text-base px-8"
                 data-testid="button-for-companies-hero"
               >
-                For Companies
+                {t('hero.forCompaniesBtn')}
               </Button>
               <Button
                 size="lg"
@@ -115,7 +116,7 @@ export default function Hero() {
                 className="text-base px-8 backdrop-blur-sm"
                 data-testid="button-get-in-touch-hero"
               >
-                Get in Touch
+                {t('hero.getInTouchBtn')}
               </Button>
             </div>
 
@@ -157,10 +158,10 @@ export default function Hero() {
                       </div>
                       <div className="space-y-2">
                         <p className="text-2xl font-bold text-foreground">
-                          Scan Any Product
+                          {t('hero.scanProduct')}
                         </p>
                         <p className="text-muted-foreground">
-                          Get instant environmental insights
+                          {t('hero.instantInsights')}
                         </p>
                       </div>
                       <div className="w-full mt-6 flex items-center justify-center">

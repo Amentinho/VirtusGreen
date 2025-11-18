@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Shield, Smartphone, Gift } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function WhyVirtusGreen() {
+  const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -26,27 +28,24 @@ export default function WhyVirtusGreen() {
   const values = [
     {
       icon: Shield,
-      title: "Blockchain Transparency",
-      description:
-        "Immutable, verified sustainability data you can trust. Every metric is stored on blockchain for complete transparency and accountability.",
+      title: t('whyVirtusGreen.blockchainTransparency.title'),
+      description: t('whyVirtusGreen.blockchainTransparency.description'),
       features: ["Immutable records", "Verified data", "Full traceability"],
       color: "from-cta/20 to-chart-2/20",
       iconColor: "text-cta",
     },
     {
       icon: Smartphone,
-      title: "User-Friendly Experience",
-      description:
-        "Simple registration, intuitive scanning, instant insights. Get started in seconds and access environmental data with a single tap.",
+      title: t('whyVirtusGreen.easyToUse.title'),
+      description: t('whyVirtusGreen.easyToUse.description'),
       features: ["Quick setup", "Easy scanning", "Instant results"],
       color: "from-cta/20 to-chart-2/20",
       iconColor: "text-cta",
     },
     {
       icon: Gift,
-      title: "Real Rewards",
-      description:
-        "Turn sustainable choices into tangible benefits. Earn tokens for eco-conscious decisions and redeem them for exclusive discounts. ",
+      title: t('whyVirtusGreen.rewardSystem.title'),
+      description: t('whyVirtusGreen.rewardSystem.description'),
       features: ["Earn tokens", "Exclusive discounts", "Free products"],
       color: "from-cta/20 to-chart-2/20",
       iconColor: "text-cta",
@@ -68,10 +67,10 @@ export default function WhyVirtusGreen() {
           }`}
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
-            Why Choose VirtusGreen
+            {t('whyVirtusGreen.title')}
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-            The most trusted platform for sustainable shopping
+            {t('whyVirtusGreen.subtitle')}
           </p>
         </div>
 

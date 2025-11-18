@@ -2,8 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle2, Circle, Clock } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function Roadmap() {
+  const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -101,13 +103,13 @@ export default function Roadmap() {
       case "completed":
         return (
           <Badge className="bg-cta/20 text-cta hover:bg-cta/20">
-            Completed
+            {t('roadmap.completed')}
           </Badge>
         );
       case "in-progress":
         return (
           <Badge className="bg-cta/20 text-cta hover:bg-cta/20">
-            In Progress
+            {t('roadmap.inProgress')}
           </Badge>
         );
       default:
@@ -134,10 +136,10 @@ export default function Roadmap() {
           }`}
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
-            Our Roadmap
+            {t('roadmap.title')}
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Follow our journey as we build the future of sustainable shopping
+            {t('roadmap.subtitle')}
           </p>
         </div>
 

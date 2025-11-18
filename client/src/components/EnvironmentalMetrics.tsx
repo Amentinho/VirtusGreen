@@ -6,8 +6,10 @@ import energyIcon from "@assets/Asset 86_1762948369334.png";
 import renewableIcon from "@assets/Asset 85_1762948369332.png";
 import recycledIcon from "@assets/Asset 84_1762948369329.png";
 import recyclableIcon from "@assets/Asset 83_1762948369327.png";
+import { useTranslation } from "react-i18next";
 
 export default function EnvironmentalMetrics() {
+  const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
@@ -95,10 +97,10 @@ export default function EnvironmentalMetrics() {
           }`}
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
-            Environmental Impact Metrics
+            {t('metrics.title')}
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Track six key sustainability indexes for comprehensive environmental assessment
+            {t('metrics.subtitle')}
           </p>
         </div>
 

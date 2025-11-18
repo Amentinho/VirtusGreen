@@ -4,8 +4,10 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Quote } from "lucide-react";
 import founderPhoto from "@assets/1757088011096_1759750073591.jpg";
 import linkedinIcon from "@assets/Asset 100_1762948267335.png";
+import { useTranslation } from "react-i18next";
 
 export default function Team() {
+  const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -41,10 +43,10 @@ export default function Team() {
           }`}
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
-            Meet Our Founder
+            {t('team.title')}
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Leading the charge in sustainable technology
+            {t('team.subtitle')}
           </p>
         </div>
 
@@ -74,21 +76,20 @@ export default function Team() {
 
                   <div className="space-y-3">
                     <h3 className="text-3xl font-bold text-foreground" data-testid="text-founder-name">
-                      Andrea
+                      {t('team.founder.name')}
                     </h3>
                     <p className="text-lg font-medium text-muted-foreground" data-testid="text-founder-title">
-                      Sustainability & Blockchain Expert
+                      {t('team.founder.role')}
                     </p>
                     <p className="text-base text-foreground max-w-xl" data-testid="text-founder-bio">
-                      Sustainability and green energy engineer. Blockchain and
-                      decentralization addict.
+                      {t('team.founder.bio')}
                     </p>
                   </div>
 
                   <div className="relative mt-4 pt-6 border-t border-border w-full">
                     <Quote className="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 text-cta bg-card" />
                     <blockquote className="text-xl font-medium text-cta italic" data-testid="text-founder-quote">
-                      "Technology is the key to solve climate change"
+                      "{t('team.founder.quote')}"
                     </blockquote>
                   </div>
 

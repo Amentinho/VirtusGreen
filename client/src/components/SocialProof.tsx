@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Package, Cloud, Users, Building2 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function SocialProof() {
+  const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
   const [counts, setCounts] = useState({
     products: 0,
@@ -67,7 +69,7 @@ export default function SocialProof() {
   const stats = [
     {
       icon: Package,
-      label: "Products Analyzed",
+      label: t('socialProof.stats.productsAnalyzed'),
       value: counts.products,
       suffix: "+",
       color: "from-primary/20 to-primary/10",
@@ -76,7 +78,7 @@ export default function SocialProof() {
     },
     {
       icon: Cloud,
-      label: "CO2 Equivalent Tracked",
+      label: t('socialProof.stats.co2Tracked'),
       value: counts.co2,
       suffix: " kg",
       color: "from-destructive/20 to-destructive/10",
@@ -85,7 +87,7 @@ export default function SocialProof() {
     },
     {
       icon: Users,
-      label: "Active Users",
+      label: t('socialProof.stats.activeUsers'),
       value: counts.users,
       suffix: "+",
       color: "from-cta/20 to-cta/10",
@@ -94,7 +96,7 @@ export default function SocialProof() {
     },
     {
       icon: Building2,
-      label: "Partner Brands",
+      label: t('socialProof.stats.partnerBrands'),
       value: counts.partners,
       suffix: "+",
       color: "from-chart-2/20 to-chart-2/10",
@@ -122,10 +124,10 @@ export default function SocialProof() {
           }`}
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
-            Building the Future of Sustainability
+            {t('socialProof.title')}
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-            We will provide the first results after the testing phase.
+            {t('socialProof.subtitle')}
           </p>
         </div>
 

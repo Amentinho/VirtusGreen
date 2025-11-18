@@ -3,6 +3,8 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoImage from "@assets/Asset 77_1762949956789.png";
 import { trackEvent } from "@/lib/analytics";
+import { useTranslation } from "react-i18next";
+import LanguageSelector from "./LanguageSelector";
 
 interface NavigationProps {
   scrolled: boolean;
@@ -10,6 +12,7 @@ interface NavigationProps {
 
 export default function Navigation({ scrolled }: NavigationProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useTranslation();
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -31,12 +34,12 @@ export default function Navigation({ scrolled }: NavigationProps) {
   };
 
   const navLinks = [
-    { label: "How it Works", id: "how-it-works" },
-    { label: "Environmental Indexes", id: "environmental-metrics" },
-    { label: "For Companies", id: "for-companies" },
-    { label: "Roadmap", id: "roadmap" },
-    { label: "About Us", id: "team" },
-    { label: "Contact Us", id: "footer" },
+    { label: t('navigation.howItWorks'), id: "how-it-works" },
+    { label: t('navigation.indexes'), id: "environmental-metrics" },
+    { label: t('navigation.forCompanies'), id: "for-companies" },
+    { label: t('navigation.roadmap'), id: "roadmap" },
+    { label: t('navigation.aboutUs'), id: "team" },
+    { label: t('navigation.getInTouch'), id: "footer" },
   ];
 
   return (
@@ -76,19 +79,20 @@ export default function Navigation({ scrolled }: NavigationProps) {
             </div>
 
             <div className="hidden md:flex items-center gap-3">
+              <LanguageSelector />
               <Button
                 variant="outline"
                 onClick={() => scrollToSection("for-companies")}
                 data-testid="button-for-companies-nav"
               >
-                For Companies
+                {t('navigation.forCompanies')}
               </Button>
               <Button
                 className="bg-cta hover:bg-cta text-cta-foreground border-cta-border"
                 onClick={() => scrollToSection("footer")}
                 data-testid="button-get-in-touch-nav"
               >
-                Get in Touch
+                {t('navigation.getInTouch')}
               </Button>
             </div>
 
@@ -130,14 +134,14 @@ export default function Navigation({ scrolled }: NavigationProps) {
                 onClick={() => scrollToSection("for-companies")}
                 data-testid="button-for-companies-mobile"
               >
-                For Companies
+                {t('navigation.forCompanies')}
               </Button>
               <Button
                 className="w-full bg-cta hover:bg-cta text-cta-foreground border-cta-border"
                 onClick={() => scrollToSection("footer")}
                 data-testid="button-get-in-touch-mobile"
               >
-                Get in Touch
+                {t('navigation.getInTouch')}
               </Button>
             </div>
           </div>

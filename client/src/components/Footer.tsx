@@ -29,8 +29,10 @@ import twitterIcon from "@assets/Asset 96_1762948267334.png";
 import instagramIcon from "@assets/Asset 94_1762948267333.png";
 import infoIcon from "@assets/Asset 79_1763132541263.png";
 import { trackEvent } from "@/lib/analytics";
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
+  const { t } = useTranslation();
   const { toast } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -53,16 +55,16 @@ export default function Footer() {
       setIsSubmitted(true);
       form.reset();
       toast({
-        title: "Message sent successfully!",
-        description: "We'll get back to you as soon as possible.",
+        title: t('contact.successTitle'),
+        description: t('contact.successDescription'),
       });
       setTimeout(() => setIsSubmitted(false), 3000);
     },
     onError: () => {
       trackEvent('contact_form_error', 'error', 'form_submission_failed');
       toast({
-        title: "Failed to send message",
-        description: "Please try again later.",
+        title: t('contact.errorTitle'),
+        description: t('contact.errorDescription'),
         variant: "destructive",
       });
     },
@@ -91,11 +93,11 @@ export default function Footer() {
   };
 
   const quickLinks = [
-    { label: "How it Works", id: "how-it-works" },
-    { label: "Environmental Indexes", id: "environmental-metrics" },
-    { label: "For Companies", id: "for-companies" },
-    { label: "Roadmap", id: "roadmap" },
-    { label: "About Us", id: "team" },
+    { label: t('navigation.howItWorks'), id: "how-it-works" },
+    { label: t('navigation.indexes'), id: "environmental-metrics" },
+    { label: t('navigation.forCompanies'), id: "for-companies" },
+    { label: t('navigation.roadmap'), id: "roadmap" },
+    { label: t('navigation.aboutUs'), id: "team" },
   ];
 
   const handleSocialClick = (platform: string, href: string) => {
@@ -127,13 +129,12 @@ export default function Footer() {
             </button>
 
             <p className="text-base text-muted-foreground max-w-md">
-              Transform sustainability into rewards with blockchain-powered
-              transparency. Join thousands making eco-conscious choices.
+              {t('footer.description')}
             </p>
 
             <div className="space-y-4">
               <h3 className="text-lg font-semibold text-foreground">
-                Quick Links
+                {t('footer.quickLinks')}
               </h3>
               <div className="flex flex-wrap gap-4">
                 {quickLinks.map((link) => (
@@ -151,7 +152,7 @@ export default function Footer() {
 
             <div className="space-y-4">
               <h3 className="text-lg font-semibold text-foreground">
-                Follow Us
+                {t('footer.followUs')}
               </h3>
               <div className="flex gap-3">
                 {socialLinks.map((social) => (
@@ -182,11 +183,11 @@ export default function Footer() {
                   className="w-16 h-16 object-contain flex-shrink-0" 
                 />
                 <h3 className="text-2xl font-bold text-foreground">
-                  Get in Touch
+                  {t('contact.title')}
                 </h3>
               </div>
               <p className="text-base text-muted-foreground">
-                Have questions? We'd love to hear from you.
+                {t('contact.subtitle')}
               </p>
             </div>
 
@@ -200,10 +201,10 @@ export default function Footer() {
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Name</FormLabel>
+                      <FormLabel>{t('contact.name')}</FormLabel>
                       <FormControl>
                         <Input
-                          placeholder="Your name"
+                          placeholder={t('contact.namePlaceholder')}
                           data-testid="input-name"
                           {...field}
                         />
@@ -218,11 +219,11 @@ export default function Footer() {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Email</FormLabel>
+                      <FormLabel>{t('contact.email')}</FormLabel>
                       <FormControl>
                         <Input
                           type="email"
-                          placeholder="your@email.com"
+                          placeholder={t('contact.emailPlaceholder')}
                           data-testid="input-email"
                           {...field}
                         />
@@ -237,21 +238,21 @@ export default function Footer() {
                   name="projectType"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Project Type</FormLabel>
+                      <FormLabel>{t('contact.projectType')}</FormLabel>
                       <Select
                         onValueChange={field.onChange}
                         value={field.value}
                       >
                         <FormControl>
                           <SelectTrigger data-testid="select-project-type">
-                            <SelectValue placeholder="Select project type" />
+                            <SelectValue placeholder={t('contact.projectTypePlaceholder')} />
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
-                          <SelectItem value="Freelance">Freelance</SelectItem>
-                          <SelectItem value="Business">Business</SelectItem>
-                          <SelectItem value="Affiliate">Affiliate</SelectItem>
-                          <SelectItem value="User">User</SelectItem>
+                          <SelectItem value="Freelance">{t('contact.projectTypes.freelance')}</SelectItem>
+                          <SelectItem value="Business">{t('contact.projectTypes.business')}</SelectItem>
+                          <SelectItem value="Affiliate">{t('contact.projectTypes.affiliate')}</SelectItem>
+                          <SelectItem value="User">{t('contact.projectTypes.user')}</SelectItem>
                         </SelectContent>
                       </Select>
                       <FormMessage />
@@ -264,10 +265,10 @@ export default function Footer() {
                   name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Message</FormLabel>
+                      <FormLabel>{t('contact.message')}</FormLabel>
                       <FormControl>
                         <Textarea
-                          placeholder="Tell us about your project..."
+                          placeholder={t('contact.messagePlaceholder')}
                           className="min-h-[100px] resize-none"
                           data-testid="textarea-message"
                           {...field}
@@ -285,10 +286,10 @@ export default function Footer() {
                   data-testid="button-submit-contact"
                 >
                   {contactMutation.isPending
-                    ? "Sending..."
+                    ? t('contact.sending')
                     : isSubmitted
-                      ? "Message Sent!"
-                      : "Send Message"}
+                      ? t('contact.sent')
+                      : t('contact.sendButton')}
                 </Button>
               </form>
             </Form>
@@ -297,7 +298,7 @@ export default function Footer() {
 
         <div className="pt-8 border-t border-border text-center">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} VirtusGreen. All rights reserved.
+            © {new Date().getFullYear()} {t('footer.copyright')}
           </p>
         </div>
       </div>

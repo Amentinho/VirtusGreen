@@ -3,8 +3,10 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ListChecks, Calculator, Users } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
+import { useTranslation } from "react-i18next";
 
 export default function ForCompanies() {
+  const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -90,12 +92,12 @@ export default function ForCompanies() {
           }`}
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
-            Elevate Your Brand Through
+            {t('forCompanies.title')}
             <br />
-            <span className="text-cta">Verified Sustainability</span>
+            <span className="text-cta">{t('forCompanies.titleHighlight')}</span>
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Comprehensive services to showcase your environmental commitment
+            {t('forCompanies.subtitle')}
           </p>
         </div>
 
@@ -147,7 +149,7 @@ export default function ForCompanies() {
                     onClick={() => scrollToContact(`learn_more_${service.title.toLowerCase().replace(/ /g, '_')}`)}
                     data-testid={`button-learn-more-${index}`}
                   >
-                    Learn More
+                    {t('navigation.getInTouch')}
                   </Button>
                 </div>
               </Card>
@@ -169,7 +171,7 @@ export default function ForCompanies() {
             onClick={() => scrollToContact('get_started_today')}
             data-testid="button-get-started-companies"
           >
-            Get Started Today
+            {t('navigation.getInTouch')}
           </Button>
         </div>
       </div>
