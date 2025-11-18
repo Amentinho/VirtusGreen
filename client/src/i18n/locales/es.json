@@ -43,25 +43,36 @@
   "metrics": {
     "title": "Índices Ambientales",
     "subtitle": "Rastrea métricas de impacto real para productos",
-    "carbonFootprint": {
-      "title": "Huella de Carbono",
-      "description": "Rastrea las emisiones de CO2 durante el ciclo de vida del producto",
-      "unit": "kg CO2e"
+    "blockchainVerification": "Verificación blockchain próximamente",
+    "greenhouse": {
+      "title": "Emisiones de Gases de Efecto Invernadero",
+      "shortDesc": "Seguimiento equivalente CO2",
+      "fullDesc": "Medición integral de la huella de carbono durante todo el ciclo de vida del producto"
     },
-    "waterUsage": {
-      "title": "Uso de Agua",
-      "description": "Monitorea el consumo de agua en la producción",
-      "unit": "litros"
+    "water": {
+      "title": "Consumo de Agua",
+      "shortDesc": "Métricas de uso de agua",
+      "fullDesc": "Rastrea el consumo de agua desde la producción hasta la entrega, promoviendo la conservación"
     },
-    "recyclability": {
-      "title": "Reciclabilidad",
-      "description": "Porcentaje de materiales reciclables utilizados",
-      "unit": "% reciclable"
+    "energy": {
+      "title": "Uso de Energía",
+      "shortDesc": "Consumo energético total",
+      "fullDesc": "Monitorea el consumo de energía en procesos de fabricación y distribución"
     },
-    "energyEfficiency": {
-      "title": "Eficiencia Energética",
-      "description": "Calificación de consumo de energía",
-      "unit": "kWh"
+    "renewable": {
+      "title": "Energías Renovables",
+      "shortDesc": "Fuentes de energía limpia",
+      "fullDesc": "Porcentaje de energía renovable utilizada en producción y operaciones"
+    },
+    "recycled": {
+      "title": "Materiales Reciclados",
+      "shortDesc": "Porcentaje de contenido reciclado",
+      "fullDesc": "Rastrea el uso de materiales reciclados en la fabricación de productos"
+    },
+    "recyclable": {
+      "title": "Materiales Reciclables",
+      "shortDesc": "Reciclabilidad al fin de vida",
+      "fullDesc": "Mide cuánto del producto puede ser reciclado al final de su vida útil"
     }
   },
   "whyVirtusGreen": {
@@ -88,17 +99,32 @@
     "title": "Eleva Tu Marca a Través de",
     "titleHighlight": "Sostenibilidad Verificada",
     "subtitle": "Servicios completos para mostrar tu compromiso ambiental",
+    "productListing": {
+      "title": "Listado de Productos",
+      "description": "Presenta tus productos con calificaciones EcoScore. Aumenta la visibilidad entre consumidores conscientes del medio ambiente y muestra tu compromiso con la sostenibilidad.",
+      "features": [
+        "Visualización de calificación EcoScore",
+        "Visibilidad del producto mejorada",
+        "Construcción de confianza del consumidor"
+      ]
+    },
     "lcaCalculation": {
       "title": "Cálculo LCA",
-      "description": "Evaluación completa del ciclo de vida de tus productos"
+      "description": "Evaluación profesional del ciclo de vida utilizando metodologías matemáticas avanzadas. Cumple con la normativa UE PEF para un análisis integral del impacto ambiental desde la cuna hasta la tumba.",
+      "features": [
+        "Cumple con la normativa UE PEF",
+        "Metodologías LCA avanzadas",
+        "Informes estándar de la industria"
+      ]
     },
-    "digitalProductPassport": {
-      "title": "Pasaporte Digital del Producto",
-      "description": "Credenciales ambientales verificadas por blockchain"
-    },
-    "sustainabilityReporting": {
-      "title": "Informes de Sostenibilidad",
-      "description": "Informes ESG y cumplimiento automatizados"
+    "sustainabilityConsulting": {
+      "title": "Consultoría de Sostenibilidad",
+      "description": "Orientación experta para minimizar el impacto ambiental. Nuestro equipo te ayuda a identificar oportunidades e implementar prácticas sostenibles en toda tu cadena de valor.",
+      "features": [
+        "Consultoría experta",
+        "Estrategias de reducción de impacto",
+        "Mejora continua"
+      ]
     }
   },
   "team": {
@@ -116,36 +142,58 @@
     "subtitle": "Construyendo el futuro de las compras sostenibles",
     "completed": "Completado",
     "inProgress": "En Progreso",
-    "q4_2024": {
-      "quarter": "Q4 2024",
-      "items": [
-        "Inicio del desarrollo de la plataforma",
-        "Configuración de infraestructura blockchain",
-        "Incorporación de socios iniciales"
-      ]
-    },
-    "q1_2025": {
-      "quarter": "Q1 2025",
-      "items": [
-        "Lanzamiento de la app beta",
-        "Expansión de la base de datos de productos",
-        "Implementación del sistema de recompensas"
-      ]
-    },
+    "upcoming": "Próximamente",
     "q2_2025": {
       "quarter": "Q2 2025",
+      "title": "Fundamentos y Planificación",
       "items": [
-        "Lanzamiento público de la app",
-        "Panel empresarial",
-        "API para integraciones de terceros"
+        "Diseño de arquitectura de la plataforma",
+        "Experiencia de gamificación",
+        "Desarrollo de identidad de marca",
+        "Definición del sistema de recompensas"
       ]
     },
     "q3_2025": {
       "quarter": "Q3 2025",
+      "title": "Desarrollo de Plataforma",
       "items": [
-        "Recomendaciones impulsadas por IA",
-        "Expansión del mercado global",
-        "Funciones de análisis avanzadas"
+        "Desarrollo de aplicación móvil",
+        "Indicadores de sostenibilidad",
+        "Infraestructura de base de datos",
+        "Implementación del sistema de recompensas",
+        "Estrategia de redes sociales"
+      ]
+    },
+    "q4_2025": {
+      "quarter": "Q4 2025",
+      "title": "Lanzamiento Beta",
+      "items": [
+        "Pruebas beta con usuarios",
+        "Integración de comentarios de usuarios",
+        "Auditorías de seguridad",
+        "Integraciones API con socios",
+        "Marketing y Redes Sociales"
+      ]
+    },
+    "q1_2026": {
+      "quarter": "Q1 2026",
+      "title": "Lanzamiento Público",
+      "items": [
+        "Lanzamiento completo de la plataforma",
+        "Lanzamientos en app store (iOS y Android)",
+        "Programa de incorporación de socios",
+        "Compromiso del cliente",
+        "Implementación del sistema de recompensas"
+      ]
+    },
+    "q2026_plus": {
+      "quarter": "2026+",
+      "title": "Mejoras Deep Tech",
+      "items": [
+        "Desarrollo de stack blockchain",
+        "Reconocimiento de imágenes para productos",
+        "Generación de tokens",
+        "Calculadora de impacto de sostenibilidad"
       ]
     }
   },

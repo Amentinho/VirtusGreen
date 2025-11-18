@@ -43,25 +43,36 @@
   "metrics": {
     "title": "Environmental Indexes",
     "subtitle": "Track real-world impact metrics for products",
-    "carbonFootprint": {
-      "title": "Carbon Footprint",
-      "description": "Track CO2 emissions across the product lifecycle",
-      "unit": "kg CO2e"
+    "blockchainVerification": "Blockchain verification coming soon",
+    "greenhouse": {
+      "title": "Greenhouse Gas Emissions",
+      "shortDesc": "CO2 equivalent tracking",
+      "fullDesc": "Comprehensive measurement of carbon footprint throughout the product lifecycle"
     },
-    "waterUsage": {
-      "title": "Water Usage",
-      "description": "Monitor water consumption in production",
-      "unit": "liters"
+    "water": {
+      "title": "Water Consumption",
+      "shortDesc": "Water usage metrics",
+      "fullDesc": "Track water consumption from production to delivery, promoting conservation"
     },
-    "recyclability": {
-      "title": "Recyclability",
-      "description": "Percentage of recyclable materials used",
-      "unit": "% recyclable"
+    "energy": {
+      "title": "Energy Usage",
+      "shortDesc": "Total energy consumption",
+      "fullDesc": "Monitor energy consumption across manufacturing and distribution processes"
     },
-    "energyEfficiency": {
-      "title": "Energy Efficiency",
-      "description": "Energy consumption rating",
-      "unit": "kWh"
+    "renewable": {
+      "title": "Renewable Energies",
+      "shortDesc": "Clean energy sources",
+      "fullDesc": "Percentage of renewable energy used in production and operations"
+    },
+    "recycled": {
+      "title": "Recycled Materials",
+      "shortDesc": "Recycled content percentage",
+      "fullDesc": "Track the use of recycled materials in product manufacturing"
+    },
+    "recyclable": {
+      "title": "Recyclable Materials",
+      "shortDesc": "End-of-life recyclability",
+      "fullDesc": "Measure how much of the product can be recycled at end of life"
     }
   },
   "whyVirtusGreen": {
@@ -88,17 +99,32 @@
     "title": "Elevate Your Brand Through",
     "titleHighlight": "Verified Sustainability",
     "subtitle": "Comprehensive services to showcase your environmental commitment",
+    "productListing": {
+      "title": "Product Listing",
+      "description": "Get your products featured with EcoScore ratings. Increase visibility among eco-conscious consumers and showcase your commitment to sustainability.",
+      "features": [
+        "EcoScore rating display",
+        "Enhanced product visibility",
+        "Consumer trust building"
+      ]
+    },
     "lcaCalculation": {
       "title": "LCA Calculation",
-      "description": "Complete lifecycle assessment of your products"
+      "description": "Professional Life Cycle Assessment using advanced mathematical methodologies. EU compliant using PEF regulation for comprehensive environmental impact analysis from cradle to grave.",
+      "features": [
+        "EU PEF regulation compliant",
+        "Advanced LCA methodologies",
+        "Industry-standard reporting"
+      ]
     },
-    "digitalProductPassport": {
-      "title": "Digital Product Passport",
-      "description": "Blockchain-verified environmental credentials"
-    },
-    "sustainabilityReporting": {
-      "title": "Sustainability Reporting",
-      "description": "Automated compliance and ESG reporting"
+    "sustainabilityConsulting": {
+      "title": "Sustainability Consulting",
+      "description": "Expert guidance to minimize environmental impact. Our team helps you identify opportunities and implement sustainable practices across your value chain.",
+      "features": [
+        "Expert consultation",
+        "Impact reduction strategies",
+        "Continuous improvement"
+      ]
     }
   },
   "team": {
@@ -116,36 +142,58 @@
     "subtitle": "Building the future of sustainable shopping",
     "completed": "Completed",
     "inProgress": "In Progress",
-    "q4_2024": {
-      "quarter": "Q4 2024",
-      "items": [
-        "Platform development kickoff",
-        "Blockchain infrastructure setup",
-        "Initial partner onboarding"
-      ]
-    },
-    "q1_2025": {
-      "quarter": "Q1 2025",
-      "items": [
-        "Beta app launch",
-        "Product database expansion",
-        "Reward system implementation"
-      ]
-    },
+    "upcoming": "Upcoming",
     "q2_2025": {
       "quarter": "Q2 2025",
+      "title": "Foundation & Plan",
       "items": [
-        "Public app release",
-        "Enterprise dashboard",
-        "API for third-party integrations"
+        "Platform architecture design",
+        "Gamification experience",
+        "Brand identity development",
+        "Rewarding system definition"
       ]
     },
     "q3_2025": {
       "quarter": "Q3 2025",
+      "title": "Platform Development",
       "items": [
-        "AI-powered recommendations",
-        "Global market expansion",
-        "Advanced analytics features"
+        "Mobile application development",
+        "Sustainability indicators",
+        "Database infrastructure",
+        "Rewarding system implementation",
+        "Social media strategy"
+      ]
+    },
+    "q4_2025": {
+      "quarter": "Q4 2025",
+      "title": "Beta Launch",
+      "items": [
+        "Beta testing with users",
+        "User feedback integration",
+        "Security audits",
+        "API integrations with partners",
+        "Marketing & Social Media"
+      ]
+    },
+    "q1_2026": {
+      "quarter": "Q1 2026",
+      "title": "Public Launch",
+      "items": [
+        "Full platform launch",
+        "App store releases (iOS & Android)",
+        "Partner onboarding program",
+        "Customer engagement",
+        "Reward system implementation"
+      ]
+    },
+    "q2026_plus": {
+      "quarter": "2026+",
+      "title": "Deep Tech Enhancements",
+      "items": [
+        "Blockchain stack development",
+        "Image recognition for products",
+        "Token generation",
+        "Sustainability impact calculator"
       ]
     }
   },
