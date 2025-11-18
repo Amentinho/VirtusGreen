@@ -43,10 +43,10 @@ export default function Checklist() {
   const dayIcons = [Leaf, Calendar, TrendingDown, Package, MapPin, BarChart3, CheckCircle2];
 
   const impactsList = [
-    { title: t('checklist.impacts.productionTitle'), text: impacts.production },
-    { title: t('checklist.impacts.landUseTitle'), text: impacts.landUse },
-    { title: t('checklist.impacts.processingTitle'), text: impacts.processing },
-    { title: t('checklist.impacts.wasteTitle'), text: impacts.waste }
+    { title: 'Production:', text: impacts.production },
+    { title: 'Land use:', text: impacts.landUse },
+    { title: 'Processing & transport:', text: impacts.processing },
+    { title: 'Waste:', text: impacts.waste }
   ];
 
   const caseStudiesList = [
@@ -320,41 +320,16 @@ export default function Checklist() {
                         </h3>
                       </div>
                       
-                      <div className="space-y-4">
-                        <div>
-                          <strong 
-                            className="block text-sm mb-1"
-                            style={{ color: '#043231' }}
-                          >
-                            {t('checklist.sidebar.foodSystemTitle')}
-                          </strong>
-                          <p 
-                            className="text-sm"
-                            style={{ color: '#043231', opacity: 0.8 }}
-                          >
-                            {sidebar.foodSystem}
-                          </p>
-                        </div>
+                      <div className="space-y-3 text-sm" style={{ color: '#043231' }}>
+                        <p style={{ opacity: 0.8 }}>
+                          {sidebar.foodSystem}
+                        </p>
                         
-                        <div>
-                          <strong 
-                            className="block text-sm mb-1"
-                            style={{ color: '#043231' }}
-                          >
-                            {t('checklist.sidebar.foodWasteTitle')}
-                          </strong>
-                          <p 
-                            className="text-sm"
-                            style={{ color: '#043231', opacity: 0.8 }}
-                          >
-                            {sidebar.foodWaste}
-                          </p>
-                        </div>
+                        <p style={{ opacity: 0.8 }}>
+                          {sidebar.foodWaste}
+                        </p>
                         
-                        <p 
-                          className="text-sm italic"
-                          style={{ color: '#043231', opacity: 0.8 }}
-                        >
+                        <p className="italic" style={{ opacity: 0.8 }}>
                           {sidebar.useExamples}
                         </p>
                       </div>
