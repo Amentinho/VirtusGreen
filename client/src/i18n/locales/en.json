@@ -227,5 +227,63 @@
     "quickLinks": "Quick Links",
     "followUs": "Follow Us",
     "copyright": "VirtusGreen. All rights reserved."
+  },
+  "checklist": {
+    "title": "7-Day Sustainable Eating Checklist | Eat Better for the Planet",
+    "metaDesc": "Download our free 7-Day Sustainable Eating Checklist and learn simple daily actions to cut your food footprint and shop more sustainably.",
+    "ogTitle": "Free 7-Day Sustainable Eating Checklist",
+    "ogDesc": "Practical, science-based tips to reduce your food footprint in just 7 days. Download the free printable guide.",
+    "heroTitle": "Eat Better for the Planet — One Simple Step Each Day",
+    "heroSubtitle": "Download our free 7-Day Sustainable Eating Checklist and start reducing your food footprint with quick, practical actions you can do right now.",
+    "downloadBtn": "Download the Checklist",
+    "freeBadge": "Free PDF",
+    "whatsInside": "What's inside",
+    "whoIsThisFor": "Who is this for?",
+    "whoIsThisForText": "Anyone who wants quick, practical steps to eat healthier and reduce their environmental impact — from busy professionals to families and curious beginners.",
+    "howToUse": "How to use",
+    "howToUseSteps": [
+      "Download the PDF (button above).",
+      "Try one action per day for 7 days.",
+      "Share your progress with #VGChecklist on social media."
+    ],
+    "quickBenefits": "Quick benefits",
+    "benefits": [
+      "1 short action per day",
+      "Printable & mobile-friendly",
+      "Easy swaps that save money & emissions"
+    ],
+    "subscribeText": "Want more? Subscribe to weekly tips and get deeper guides on shopping smarter and tracking product footprints.",
+    "getTheChecklist": "Get the Checklist",
+    "noSpam": "No spam. Just science-based tips to help you reduce your footprint and shop smarter.",
+    "days": [
+      {
+        "title": "Day 1 — Choose Seasonal Produce",
+        "body": "Lower emissions and enjoy fresher taste by prioritizing seasonal fruits and vegetables."
+      },
+      {
+        "title": "Day 2 — Reduce Food Waste with Simple Meal Planning",
+        "body": "Plan your meals and store leftovers properly to cut waste and CO₂."
+      },
+      {
+        "title": "Day 3 — Try a Plant-Based Protein Swap",
+        "body": "Replace one meat-based meal with legumes or plant proteins."
+      },
+      {
+        "title": "Day 4 — Check Packaging and Recyclability",
+        "body": "Choose products with recyclable or minimal packaging."
+      },
+      {
+        "title": "Day 5 — Prefer Local & Low-Transport Foods",
+        "body": "Support local producers and avoid long-distance products."
+      },
+      {
+        "title": "Day 6 — Understand Footprint Indicators (CO₂, Water, Land)",
+        "body": "Learn the environmental impact of common foods."
+      },
+      {
+        "title": "Day 7 — Build a Weekly Sustainable Shopping Routine",
+        "body": "Create a simple checklist to guide all your grocery choices."
+      }
+    ]
   }
 }

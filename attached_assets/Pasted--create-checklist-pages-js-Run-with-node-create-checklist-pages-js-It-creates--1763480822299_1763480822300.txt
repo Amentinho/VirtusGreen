@@ -1,0 +1,288 @@
+/**
+ * create_checklist_pages.js
+ *
+ * Run with: node create_checklist_pages.js
+ *
+ * It creates:
+ *   - public/checklist/en/index.html
+ *   - public/checklist/it/index.html
+ *   - public/checklist/es/index.html
+ *
+ * Expected PDF asset files (place in public/assets/):
+ *   - 7_day_sustainable_eating_checklist_en.pdf
+ *   - 7_day_sustainable_eating_checklist_it.pdf
+ *   - 7_day_sustainable_eating_checklist_es.pdf
+ *
+ * Edit OG_IMAGE_PATH below if you have a specific OG image path.
+ */
+
+const fs = require("fs");
+const path = require("path");
+
+const OUT_DIR = path.join(__dirname, "public", "checklist");
+const ASSETS_DIR = path.join(__dirname, "public", "assets");
+const OG_IMAGE_PATH = "/assets/checklist-og.jpg"; // change if needed
+
+const pages = {
+  en: {
+    lang: "en",
+    urlPath: "/checklist/en/",
+    title: "7-Day Sustainable Eating Checklist | Eat Better for the Planet",
+    metaDesc:
+      "Download our free 7-Day Sustainable Eating Checklist and learn simple daily actions to cut your food footprint and shop more sustainably.",
+    ogTitle: "Free 7-Day Sustainable Eating Checklist",
+    ogDesc:
+      "Practical, science-based tips to reduce your food footprint in just 7 days. Download the free printable guide.",
+    pdf: "/assets/7_day_sustainable_eating_checklist_en.pdf",
+    heroTitle: "Eat Better for the Planet — One Simple Step Each Day",
+    heroSubtitle:
+      "Download our free 7-Day Sustainable Eating Checklist and start reducing your food footprint with quick, practical actions you can do right now.",
+    whatsInside: [
+      { title: "Day 1 — Choose Seasonal Produce", body: "Lower emissions and enjoy fresher taste by prioritizing seasonal fruits and vegetables." },
+      { title: "Day 2 — Reduce Food Waste with Simple Meal Planning", body: "Plan your meals and store leftovers properly to cut waste and CO₂." },
+      { title: "Day 3 — Try a Plant-Based Protein Swap", body: "Replace one meat-based meal with legumes or plant proteins." },
+      { title: "Day 4 — Check Packaging and Recyclability", body: "Choose products with recyclable or minimal packaging." },
+      { title: "Day 5 — Prefer Local & Low-Transport Foods", body: "Support local producers and avoid long-distance products." },
+      { title: "Day 6 — Understand Footprint Indicators (CO₂, Water, Land)", body: "Learn the environmental impact of common foods." },
+      { title: "Day 7 — Build a Weekly Sustainable Shopping Routine", body: "Create a simple checklist to guide all your grocery choices." }
+    ],
+    keywords: "sustainable eating, food footprint, reduce food waste, eco-friendly shopping, sustainable food tips, climate-friendly diet"
+  },
+
+  it: {
+    lang: "it",
+    urlPath: "/checklist/it/",
+    title: "Checklist di 7 Giorni per Mangiare Sostenibile | Guida Gratuita",
+    metaDesc:
+      "Scarica la checklist gratuita di 7 giorni per ridurre la tua impronta alimentare con azioni semplici e pratiche ogni giorno.",
+    ogTitle: "Checklist Gratuita di 7 Giorni per un'Alimentazione Sostenibile",
+    ogDesc:
+      "Consigli pratici e basati su dati scientifici per ridurre la tua impronta alimentare in una settimana. Scarica la guida stampabile.",
+    pdf: "/assets/7_day_sustainable_eating_checklist_it.pdf",
+    heroTitle: "Mangia Meglio per il Pianeta — Un Semplice Passo al Giorno",
+    heroSubtitle:
+      "Scarica la nostra Checklist Gratuita di 7 Giorni per ridurre la tua impronta alimentare con azioni pratiche e immediate.",
+    whatsInside: [
+      { title: "Giorno 1 — Scegli Prodotti di Stagione", body: "Riduci le emissioni e goditi prodotti più freschi." },
+      { title: "Giorno 2 — Riduci lo Spreco Alimentare con una Pianificazione Semplice", body: "Pianifica i pasti e conserva bene gli avanzi." },
+      { title: "Giorno 3 — Prova una Proteina Vegetale al Posto della Carne", body: "Sostituisci un pasto di carne con legumi o proteine vegetali." },
+      { title: "Giorno 4 — Controlla Imballaggi e Riciclabilità", body: "Scegli prodotti con imballaggi riciclabili o minimi." },
+      { title: "Giorno 5 — Preferisci Cibi Locali e a Basso Trasporto", body: "Supporta i produttori locali e riduci le emissioni del trasporto." },
+      { title: "Giorno 6 — Comprendi gli Indicatori di Impatto (CO₂, Acqua, Terra)", body: "Impara l'impatto dei cibi più comuni." },
+      { title: "Giorno 7 — Crea la tua Routine Settimanale Sostenibile", body: "Usa una checklist per guidare le tue scelte alimentari." }
+    ],
+    keywords: "alimentazione sostenibile, impronta alimentare, ridurre spreco alimentare, cibo sostenibile, consigli ecologici"
+  },
+
+  es: {
+    lang: "es",
+    urlPath: "/checklist/es/",
+    title: "Checklist de 7 Días de Alimentación Sostenible | Guía Gratis",
+    metaDesc:
+      "Descarga la checklist gratuita de 7 días y aprende acciones simples para reducir tu huella alimentaria y comprar de forma más sostenible.",
+    ogTitle: "Checklist Gratuita de Alimentación Sostenible (7 Días)",
+    ogDesc:
+      "Consejos prácticos basados en ciencia para reducir tu huella alimentaria en solo una semana. Descarga la guía imprimible.",
+    pdf: "/assets/7_day_sustainable_eating_checklist_es.pdf",
+    heroTitle: "Come Mejor para el Planeta — Un Paso Sencillo Cada Día",
+    heroSubtitle:
+      "Descarga la Checklist Gratuita de 7 Días y empieza a reducir tu huella alimentaria con acciones prácticas y fáciles.",
+    whatsInside: [
+      { title: "Día 1 — Elige Productos de Temporada", body: "Menos emisiones, más sabor." },
+      { title: "Día 2 — Reduce el Desperdicio con una Planificación Sencilla", body: "Planifica tus comidas y conserva bien las sobras." },
+      { title: "Día 3 — Prueba una Proteína Vegetal en Lugar de Carne", body: "Reduce tu huella cambiando una comida a la semana." },
+      { title: "Día 4 — Revisa Envases y Reciclabilidad", body: "Elige productos con envases reciclables o mínimos." },
+      { title: "Día 5 — Prefiere Alimentos Locales y de Bajo Transporte", body: "Apoya productores locales y reduce emisiones." },
+      { title: "Día 6 — Aprende los Indicadores de Impacto (CO₂, Agua, Tierra)", body: "Conoce el impacto real de los alimentos comunes." },
+      { title: "Día 7 — Construye tu Rutina de Compra Sostenible", body: "Crea una checklist semanal que guíe tus decisiones." }
+    ],
+    keywords: "alimentación sostenible, huella alimentaria, reducir desperdicio de comida, compra sostenible, dieta climática"
+  }
+};
+
+function ensureDir(dirPath) {
+  if (!fs.existsSync(dirPath)) {
+    fs.mkdirSync(dirPath, { recursive: true });
+  }
+}
+
+function makeHreflangs(currentLang) {
+  // Output hreflang links for all three languages
+  return Object.keys(pages)
+    .map((k) => {
+      const p = pages[k];
+      // In-site relative urls
+      return `<link rel="alternate" hreflang="${p.lang}" href="${p.urlPath}">`;
+    })
+    .join("\n    ");
+}
+
+function generateHTML(langKey) {
+  const p = pages[langKey];
+  const otherHreflangs = makeHreflangs(langKey);
+
+  const whatsInsideHtml = p.whatsInside
+    .map(
+      (item) => `
+          <li>
+            <strong>${item.title}</strong>
+            <p>${item.body}</p>
+          </li>`
+    )
+    .join("\n");
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": p.ogTitle,
+    "description": p.ogDesc,
+    "inLanguage": p.lang,
+    "license": "https://virtusgreen.com/terms",
+    "url": p.urlPath,
+    "publisher": {
+      "@type": "Organization",
+      "name": "VirtusGreen",
+      "url": "https://virtusgreen.com"
+    },
+    "encodingFormat": "application/pdf",
+    "contentUrl": p.pdf
+  };
+
+  const html = `<!doctype html>
+<html lang="${p.lang}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>${escapeHtml(p.title)}</title>
+    <meta name="description" content="${escapeHtml(p.metaDesc)}">
+    <meta name="keywords" content="${escapeHtml(p.keywords)}">
+    <link rel="canonical" href="${p.urlPath}">
+    ${otherHreflangs}
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="${escapeHtml(p.ogTitle)}">
+    <meta property="og:description" content="${escapeHtml(p.ogDesc)}">
+    <meta property="og:image" content="${OG_IMAGE_PATH}">
+    <meta property="og:url" content="${p.urlPath}">
+    <meta property="og:site_name" content="VirtusGreen">
+
+    <!-- Twitter card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="${escapeHtml(p.ogTitle)}">
+    <meta name="twitter:description" content="${escapeHtml(p.ogDesc)}">
+    <meta name="twitter:image" content="${OG_IMAGE_PATH}">
+
+    <script type="application/ld+json">
+${JSON.stringify(structuredData, null, 2)}
+    </script>
+
+    <style>
+      body{font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;line-height:1.5;color:#1f2937;margin:0;padding:0;background:#f7fafc}
+      .container{max-width:900px;margin:40px auto;padding:24px;background:#fff;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+      header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+      h1{font-size:28px;margin:6px 0 8px}
+      p.lead{margin:0;color:#374151}
+      .hero{padding:16px 0;border-bottom:1px solid #eef2f7}
+      .cta{display:inline-block;padding:12px 18px;background:#10b981;color:#fff;border-radius:8px;text-decoration:none;font-weight:600}
+      .grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:20px}
+      ul{padding-left:18px}
+      li{margin-bottom:12px}
+      footer{margin-top:28px;padding-top:18px;border-top:1px solid #eef2f7;color:#6b7280;font-size:14px}
+      .meta-badge{display:inline-block;background:#e6fffa;color:#065f46;padding:6px 10px;border-radius:999px;font-weight:600;margin-top:12px}
+      @media(min-width:768px){.grid{grid-template-columns:2fr 1fr}}
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="hero">
+        <div>
+          <h1>${escapeHtml(p.heroTitle)}</h1>
+          <p class="lead">${escapeHtml(p.heroSubtitle)}</p>
+          <p><a class="cta" href="${p.pdf}" download>Download the Checklist</a></p>
+        </div>
+        <div style="text-align:right">
+          <img src="${OG_IMAGE_PATH}" alt="Checklist preview" style="width:150px;border-radius:8px;object-fit:cover">
+          <div style="margin-top:8px"><span class="meta-badge">Free PDF</span></div>
+        </div>
+      </header>
+
+      <main class="grid" role="main">
+        <section>
+          <h2>What’s inside</h2>
+          <ul>
+            ${whatsInsideHtml}
+          </ul>
+
+          <h3>Who is this for?</h3>
+          <p>Anyone who wants quick, practical steps to eat healthier and reduce their environmental impact — from busy professionals to families and curious beginners.</p>
+
+          <h3>How to use</h3>
+          <ol>
+            <li>Download the PDF (button above).</li>
+            <li>Try one action per day for 7 days.</li>
+            <li>Share your progress with <strong>#VGChecklist</strong> on social media.</li>
+          </ol>
+
+          <p style="margin-top:16px"><a class="cta" href="${p.pdf}" download>Download the Checklist</a></p>
+        </section>
+
+        <aside>
+          <div style="background:#f8fafc;padding:12px;border-radius:8px">
+            <strong>Quick benefits</strong>
+            <ul>
+              <li>1 short action per day</li>
+              <li>Printable & mobile-friendly</li>
+              <li>Easy swaps that save money & emissions</li>
+            </ul>
+            <hr style="margin:12px 0;border:none;border-top:1px solid #e6eef5">
+            <p style="font-size:14px">Want more? Subscribe to weekly tips and get deeper guides on shopping smarter and tracking product footprints.</p>
+            <p><a class="cta" href="${p.pdf}" download>Get the Checklist</a></p>
+          </div>
+        </aside>
+      </main>
+
+      <footer>
+        <p>No spam. Just science-based tips to help you reduce your footprint and shop smarter.</p>
+        <p style="margin-top:8px">© ${new Date().getFullYear()} VirtusGreen • <a href="/privacy">Privacy</a> • <a href="/terms">Terms</a></p>
+      </footer>
+    </div>
+  </body>
+</html>
+`;
+
+  return html;
+}
+
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function writePages() {
+  ensureDir(OUT_DIR);
+  ensureDir(ASSETS_DIR);
+
+  Object.keys(pages).forEach((k) => {
+    const dir = path.join(OUT_DIR, k);
+    ensureDir(dir);
+    const filePath = path.join(dir, "index.html");
+    const html = generateHTML(k);
+    fs.writeFileSync(filePath, html, "utf8");
+    console.log("Wrote:", filePath);
+  });
+
+  console.log("\nPages created in:", OUT_DIR);
+  console.log("Place your PDFs in:", ASSETS_DIR);
+  console.log("Expected PDF filenames:");
+  console.log(" - 7_day_sustainable_eating_checklist_en.pdf");
+  console.log(" - 7_day_sustainable_eating_checklist_it.pdf");
+  console.log(" - 7_day_sustainable_eating_checklist_es.pdf");
+  console.log("\nEdit OG_IMAGE_PATH at top of this file to set your OG image path.\n");
+}
+
+writePages();

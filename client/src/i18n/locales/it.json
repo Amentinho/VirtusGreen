@@ -227,5 +227,63 @@
     "quickLinks": "Link Rapidi",
     "followUs": "Seguici",
     "copyright": "VirtusGreen. Tutti i diritti riservati."
+  },
+  "checklist": {
+    "title": "Checklist di 7 Giorni per Mangiare Sostenibile | Guida Gratuita",
+    "metaDesc": "Scarica la checklist gratuita di 7 giorni per ridurre la tua impronta alimentare con azioni semplici e pratiche ogni giorno.",
+    "ogTitle": "Checklist Gratuita di 7 Giorni per un'Alimentazione Sostenibile",
+    "ogDesc": "Consigli pratici e basati su dati scientifici per ridurre la tua impronta alimentare in una settimana. Scarica la guida stampabile.",
+    "heroTitle": "Mangia Meglio per il Pianeta — Un Semplice Passo al Giorno",
+    "heroSubtitle": "Scarica la nostra Checklist Gratuita di 7 Giorni per ridurre la tua impronta alimentare con azioni pratiche e immediate.",
+    "downloadBtn": "Scarica la Checklist",
+    "freeBadge": "PDF Gratuito",
+    "whatsInside": "Cosa c'è dentro",
+    "whoIsThisFor": "Per chi è questa guida?",
+    "whoIsThisForText": "Per chiunque voglia passi rapidi e pratici per mangiare in modo più sano e ridurre l'impatto ambientale — dai professionisti impegnati alle famiglie e ai principianti curiosi.",
+    "howToUse": "Come usarla",
+    "howToUseSteps": [
+      "Scarica il PDF (pulsante sopra).",
+      "Prova un'azione al giorno per 7 giorni.",
+      "Condividi i tuoi progressi con #VGChecklist sui social media."
+    ],
+    "quickBenefits": "Vantaggi rapidi",
+    "benefits": [
+      "1 azione breve al giorno",
+      "Stampabile e mobile-friendly",
+      "Cambiamenti facili che fanno risparmiare e riducono emissioni"
+    ],
+    "subscribeText": "Vuoi di più? Iscriviti ai consigli settimanali e ricevi guide più approfondite su come fare acquisti più intelligenti e monitorare le impronte dei prodotti.",
+    "getTheChecklist": "Ottieni la Checklist",
+    "noSpam": "Niente spam. Solo consigli basati su dati scientifici per ridurre la tua impronta e fare acquisti più intelligenti.",
+    "days": [
+      {
+        "title": "Giorno 1 — Scegli Prodotti di Stagione",
+        "body": "Riduci le emissioni e goditi prodotti più freschi."
+      },
+      {
+        "title": "Giorno 2 — Riduci lo Spreco Alimentare con una Pianificazione Semplice",
+        "body": "Pianifica i pasti e conserva bene gli avanzi."
+      },
+      {
+        "title": "Giorno 3 — Prova una Proteina Vegetale al Posto della Carne",
+        "body": "Sostituisci un pasto di carne con legumi o proteine vegetali."
+      },
+      {
+        "title": "Giorno 4 — Controlla Imballaggi e Riciclabilità",
+        "body": "Scegli prodotti con imballaggi riciclabili o minimi."
+      },
+      {
+        "title": "Giorno 5 — Preferisci Cibi Locali e a Basso Trasporto",
+        "body": "Supporta i produttori locali e riduci le emissioni del trasporto."
+      },
+      {
+        "title": "Giorno 6 — Comprendi gli Indicatori di Impatto (CO₂, Acqua, Terra)",
+        "body": "Impara l'impatto dei cibi più comuni."
+      },
+      {
+        "title": "Giorno 7 — Crea la tua Routine Settimanale Sostenibile",
+        "body": "Usa una checklist per guidare le tue scelte alimentari."
+      }
+    ]
   }
 }

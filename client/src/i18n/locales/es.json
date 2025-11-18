@@ -227,5 +227,63 @@
     "quickLinks": "Enlaces Rápidos",
     "followUs": "Síguenos",
     "copyright": "VirtusGreen. Todos los derechos reservados."
+  },
+  "checklist": {
+    "title": "Checklist de 7 Días de Alimentación Sostenible | Guía Gratis",
+    "metaDesc": "Descarga la checklist gratuita de 7 días y aprende acciones simples para reducir tu huella alimentaria y comprar de forma más sostenible.",
+    "ogTitle": "Checklist Gratuita de Alimentación Sostenible (7 Días)",
+    "ogDesc": "Consejos prácticos basados en ciencia para reducir tu huella alimentaria en solo una semana. Descarga la guía imprimible.",
+    "heroTitle": "Come Mejor para el Planeta — Un Paso Sencillo Cada Día",
+    "heroSubtitle": "Descarga la Checklist Gratuita de 7 Días y empieza a reducir tu huella alimentaria con acciones prácticas y fáciles.",
+    "downloadBtn": "Descargar la Checklist",
+    "freeBadge": "PDF Gratis",
+    "whatsInside": "Qué hay dentro",
+    "whoIsThisFor": "¿Para quién es esto?",
+    "whoIsThisForText": "Para cualquiera que quiera pasos rápidos y prácticos para comer más sano y reducir su impacto ambiental — desde profesionales ocupados hasta familias y principiantes curiosos.",
+    "howToUse": "Cómo usarlo",
+    "howToUseSteps": [
+      "Descarga el PDF (botón arriba).",
+      "Prueba una acción al día durante 7 días.",
+      "Comparte tu progreso con #VGChecklist en redes sociales."
+    ],
+    "quickBenefits": "Beneficios rápidos",
+    "benefits": [
+      "1 acción corta por día",
+      "Imprimible y mobile-friendly",
+      "Cambios fáciles que ahorran dinero y reducen emisiones"
+    ],
+    "subscribeText": "¿Quieres más? Suscríbete a consejos semanales y obtén guías más profundas sobre compras inteligentes y seguimiento de huellas de productos.",
+    "getTheChecklist": "Obtener la Checklist",
+    "noSpam": "Sin spam. Solo consejos basados en ciencia para ayudarte a reducir tu huella y comprar de forma más inteligente.",
+    "days": [
+      {
+        "title": "Día 1 — Elige Productos de Temporada",
+        "body": "Menos emisiones, más sabor."
+      },
+      {
+        "title": "Día 2 — Reduce el Desperdicio con una Planificación Sencilla",
+        "body": "Planifica tus comidas y conserva bien las sobras."
+      },
+      {
+        "title": "Día 3 — Prueba una Proteína Vegetal en Lugar de Carne",
+        "body": "Reduce tu huella cambiando una comida a la semana."
+      },
+      {
+        "title": "Día 4 — Revisa Envases y Reciclabilidad",
+        "body": "Elige productos con envases reciclables o mínimos."
+      },
+      {
+        "title": "Día 5 — Prefiere Alimentos Locales y de Bajo Transporte",
+        "body": "Apoya productores locales y reduce emisiones."
+      },
+      {
+        "title": "Día 6 — Aprende los Indicadores de Impacto (CO₂, Agua, Tierra)",
+        "body": "Conoce el impacto real de los alimentos comunes."
+      },
+      {
+        "title": "Día 7 — Construye tu Rutina de Compra Sostenible",
+        "body": "Crea una checklist semanal que guíe tus decisiones."
+      }
+    ]
   }
 }
