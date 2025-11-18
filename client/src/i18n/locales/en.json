@@ -234,57 +234,148 @@
     "metaDesc": "Download our free 7-Day Sustainable Eating Checklist and learn simple daily actions to cut your food footprint and shop more sustainably.",
     "ogTitle": "Free 7-Day Sustainable Eating Checklist",
     "ogDesc": "Practical, science-based tips to reduce your food footprint in just 7 days. Download the free printable guide.",
-    "heroTitle": "Eat Better for the Planet — One Simple Step Each Day",
-    "heroSubtitle": "Download our free 7-Day Sustainable Eating Checklist and start reducing your food footprint with quick, practical actions you can do right now.",
-    "downloadBtn": "Download the Checklist",
-    "freeBadge": "Free PDF",
-    "whatsInside": "What's inside",
-    "whoIsThisFor": "Who is this for?",
-    "whoIsThisForText": "Anyone who wants quick, practical steps to eat healthier and reduce their environmental impact — from busy professionals to families and curious beginners.",
-    "howToUse": "How to use",
-    "howToUseSteps": [
-      "Download the PDF (button above).",
-      "Try one action per day for 7 days.",
-      "Share your progress with #VGChecklist on social media."
-    ],
-    "quickBenefits": "Quick benefits",
-    "benefits": [
-      "1 short action per day",
-      "Printable & mobile-friendly",
-      "Easy swaps that save money & emissions"
-    ],
-    "subscribeText": "Want more? Subscribe to weekly tips and get deeper guides on shopping smarter and tracking product footprints.",
-    "getTheChecklist": "Get the Checklist",
-    "noSpam": "No spam. Just science-based tips to help you reduce your footprint and shop smarter.",
-    "days": [
-      {
-        "title": "Day 1 — Choose Seasonal Produce",
-        "body": "Lower emissions and enjoy fresher taste by prioritizing seasonal fruits and vegetables."
+    "badges": {
+      "practical": "Practical",
+      "evidenceBacked": "Evidence-backed",
+      "actionable": "Actionable"
+    },
+    "heroTitle": "How Food Choices Impact the Planet (and what to do)",
+    "heroSubtitle": "Expanded explanations, real examples and short case studies to use in posts, emails or to publish directly on your site.",
+    "heroLead": "Practical • Evidence-backed • Actionable",
+    "bigPicture": {
+      "title": "Big picture: why food matters",
+      "content": "The global food system — from farming and land-use change to processing, transport and retail — makes up a major share of planetary pressure: roughly a quarter to a third of global greenhouse gas emissions depending on the accounting method. Agriculture also uses a large share of freshwater and habitable land. That means changes in what and how we eat scale quickly at population level.",
+      "note": "(Key source: Our World in Data, UNEP Food Waste Index; see Sources below.)"
+    },
+    "impacts": {
+      "title": "How impacts arise (clear breakdown)",
+      "production": "Fertiliser, animal enteric emissions, farm energy and feed production.",
+      "landUse": "Clearing forests or draining peat to create pasture or cropland releases large carbon stocks.",
+      "processing": "Refrigeration, packaging and long-distance shipping add emissions (but often less than production).",
+      "waste": "When edible food is wasted, all upstream emissions and resources are effectively lost."
+    },
+    "caseStudies": {
+      "title": "Real-world case studies you can cite",
+      "tooGoodToGo": {
+        "title": "Too Good To Go — surplus rescue at scale",
+        "content": "Too Good To Go is a consumer app that connects users to surplus food from retailers and restaurants. In recent impact reporting the organisation reports saving tens of millions — and in some years over 100 million — meals from going to waste. This model shows how consumer behaviour + simple tech delivers measurable waste reduction quickly."
       },
-      {
-        "title": "Day 2 — Reduce Food Waste with Simple Meal Planning",
-        "body": "Plan your meals and store leftovers properly to cut waste and CO₂."
+      "oddbox": {
+        "title": "Oddbox — rescuing imperfect produce",
+        "content": "Oddbox works directly with growers to rescue 'too odd' or surplus produce. For example, in a single reported season they rescued hundreds of tonnes of fruit that would otherwise have been wasted. The lesson: changing retail acceptance and consumer demand (buying 'ugly' fruit) reduces farm-level loss."
       },
-      {
-        "title": "Day 3 — Try a Plant-Based Protein Swap",
-        "body": "Replace one meat-based meal with legumes or plant proteins."
-      },
-      {
-        "title": "Day 4 — Check Packaging and Recyclability",
-        "body": "Choose products with recyclable or minimal packaging."
-      },
-      {
-        "title": "Day 5 — Prefer Local & Low-Transport Foods",
-        "body": "Support local producers and avoid long-distance products."
-      },
-      {
-        "title": "Day 6 — Understand Footprint Indicators (CO₂, Water, Land)",
-        "body": "Learn the environmental impact of common foods."
-      },
-      {
-        "title": "Day 7 — Build a Weekly Sustainable Shopping Routine",
-        "body": "Create a simple checklist to guide all your grocery choices."
+      "walmart": {
+        "title": "Walmart & IBM Food Trust — traceability to reduce uncertainty",
+        "content": "Walmart's traceability initiative (with IBM Food Trust/Hyperledger) required leafy-greens suppliers to register trace events, enabling rapid tracing back to farms in seconds instead of days. Better traceability reduces recall times, helps target waste reduction, and increases shopper trust in product origin."
       }
-    ]
+    },
+    "planTitle": "7-Day Expanded Action Plan (detailed — use these in your PDF/landing page)",
+    "day1": {
+      "title": "Day 1 — Choose seasonal produce",
+      "why": "Seasonal crops are harvested when climate & soil conditions are optimal, reducing energy needed for greenhouse heating, artificial ripening, and refrigerated storage. They often travel shorter distances and use fewer inputs per unit of food.",
+      "howTitle": "How to do it (practical):",
+      "tips": [
+        "Check seasonality calendars for your country (farmers' markets often list seasonal highlights).",
+        "Buy tomatoes, strawberries and cucumbers in their local season — avoid imported greenhouse-grown out-of-season varieties.",
+        "Shop at your local weekly market one week a month and compare prices — seasonal produce is usually cheaper and tastier."
+      ],
+      "example": "swapping imported, out-of-season tomatoes for locally grown seasonal tomatoes reduces refrigeration and transport needs and typically improves flavor."
+    },
+    "day2": {
+      "title": "Day 2 — Reduce food waste with simple meal planning",
+      "why": "Household-level avoidable food waste is a large fraction of global waste (households account for around 60% of consumer-level waste in recent UN reporting). Wasting food wastes the embedded water, land and emissions.",
+      "howTitle": "How to do it (practical):",
+      "tips": [
+        "Plan 5–7 meals for the week and create a single shopping list to avoid impulse buys.",
+        "Use the \"first in, first out\" fridge rule: move older items to the front.",
+        "Batch-cook and freeze extras in labelled portions. Freeze ripe fruit for smoothies.",
+        "Use apps or a simple whiteboard on the fridge to list leftovers — make \"leftover night\" a weekly habit."
+      ],
+      "metric": "UN reporting estimates 1.05 billion tonnes of food were wasted at retail, food service, and households in 2022 — reducing household waste is high-leverage."
+    },
+    "day3": {
+      "title": "Day 3 — Try a plant-based protein swap",
+      "why": "Ruminant meat (beef, lamb) is among the highest-impact foods per kg in CO₂-eq, land and water. Swapping one beef meal per week for plant proteins can produce measurable per-person reductions.",
+      "howTitle": "How to do it (practical):",
+      "tips": [
+        "Start small: replace one meal per week (e.g., beef bolognese → lentil bolognese).",
+        "Try tasty, simple recipes: bean tacos, chickpea curry, tofu stir-fry, lentil shepherd's pie.",
+        "Use dried legumes (cheaper & lower footprint than processed meat alternatives)."
+      ],
+      "example": "Lentils and beans require far less land and water than beef and are inexpensive sources of protein and fiber. (Use per-kg comparison charts when posting visuals.)"
+    },
+    "day4": {
+      "title": "Day 4 — Check packaging and recyclability",
+      "why": "Some environmental gains from food are undermined by excessive or hard-to-recycle packaging. Minimising unnecessary packaging improves circularity.",
+      "howTitle": "How to do it (practical):",
+      "tips": [
+        "Prefer loose produce over pre-packaged where possible.",
+        "Choose glass or metal for long-life products (they are widely recyclable).",
+        "Avoid black plastics and multilayer film; these are often nonrecyclable in municipal systems.",
+        "Bring your own containers for bulk sections when allowed."
+      ],
+      "note": "Retailers are piloting reusable packaging and refill stations — highlight local examples to your audience."
+    },
+    "day5": {
+      "title": "Day 5 — Prefer local & low-transport foods",
+      "why": "Transport isn't always the largest share of food emissions, but choosing local reduces food-mile emissions (often refrigeration and air freight are the worst offenders) and supports regional resilience.",
+      "howTitle": "How to do it (practical):",
+      "tips": [
+        "Buy fruit & vegetables from local sellers or farmers' markets when in season.",
+        "Prefer produce labelled as locally grown rather than air-freighted items (e.g., berries flown from distant countries).",
+        "Support local dairies and bakeries — these often have lower distribution footprints over the final mile."
+      ]
+    },
+    "day6": {
+      "title": "Day 6 — Understand footprint indicators (CO₂, water, land)",
+      "why": "Learning the three main indicators—carbon (CO₂e), water footprint and land use—lets you make informed tradeoffs (e.g., some foods use little water but more land; others reverse the pattern).",
+      "howTitle": "How to do it (practical):",
+      "tips": [
+        "Look up simple charts comparing kg CO₂e per kg for common foods (beef vs chicken vs legumes vs tofu).",
+        "Use per-portion comparisons (per meal or per 100 g) in social posts to make numbers relatable.",
+        "Remember: context matters — production method, feed, and country change numbers significantly."
+      ],
+      "note": "Tip: Save a small table on your phone with quick comparisons to use in social posts and conversations."
+    },
+    "day7": {
+      "title": "Day 7 — Build a weekly sustainable shopping routine",
+      "why": "Habits lock in savings. A short routine reduces waste, impulsive purchases and helps you choose lower-impact foods consistently.",
+      "howTitle": "How to do it (practical):",
+      "tips": [
+        "Create a single shopping list from your week's meal plan.",
+        "Keep a running \"use this first\" list on the fridge for items close to expiry.",
+        "Schedule one weekly market visit and one \"batch-cook & freeze\" session.",
+        "Track one basic metric: number of meals you saved from waste this week (even a small number is progress)."
+      ]
+    },
+    "sidebar": {
+      "statsTitle": "Quick stats & practical talking points",
+      "foodSystem": "Food system share: ~25–30% of global GHGs (used for headlines).",
+      "foodWaste": "Food waste: 1.05 billion tonnes wasted in 2022 (≈19% of available food) — households are the largest source.",
+      "useExamples": "Use local business examples (Too Good To Go, Oddbox, traceability pilots) to show solutions work now."
+    },
+    "shortChecklist": {
+      "title": "Short checklist to keep (one page)",
+      "items": [
+        "Buy seasonal produce this week",
+        "Plan meals & freeze extras",
+        "Swap one meat meal for legumes",
+        "Prefer recyclable packaging",
+        "Buy local where possible",
+        "Check quick footprint indicators",
+        "Do a weekly waste audit (1 number)"
+      ]
+    },
+    "sources": {
+      "title": "Sources",
+      "intro": "Key sources used to build the numbers and case studies (for internal verification / editorial use):",
+      "list": [
+        "Our World in Data — Environmental impacts of food & food system emissions (summary charts & comparisons).",
+        "UNEP Food Waste Index Report — 1.05 billion tonnes of food wasted in 2022 (households: ~60% of consumer-level waste).",
+        "Too Good To Go — Impact Reports (meals saved & community impact examples).",
+        "Oddbox — sustainability / rescue stories and tonnes of rescued produce.",
+        "Walmart Tech Blog / reporting on the IBM Food Trust / traceability pilot for leafy greens."
+      ]
+    }
   }
 }

@@ -234,57 +234,148 @@
     "metaDesc": "Scarica la checklist gratuita di 7 giorni per ridurre la tua impronta alimentare con azioni semplici e pratiche ogni giorno.",
     "ogTitle": "Checklist Gratuita di 7 Giorni per un'Alimentazione Sostenibile",
     "ogDesc": "Consigli pratici e basati su dati scientifici per ridurre la tua impronta alimentare in una settimana. Scarica la guida stampabile.",
-    "heroTitle": "Mangia Meglio per il Pianeta — Un Semplice Passo al Giorno",
-    "heroSubtitle": "Scarica la nostra Checklist Gratuita di 7 Giorni per ridurre la tua impronta alimentare con azioni pratiche e immediate.",
-    "downloadBtn": "Scarica la Checklist",
-    "freeBadge": "PDF Gratuito",
-    "whatsInside": "Cosa c'è dentro",
-    "whoIsThisFor": "Per chi è questa guida?",
-    "whoIsThisForText": "Per chiunque voglia passi rapidi e pratici per mangiare in modo più sano e ridurre l'impatto ambientale — dai professionisti impegnati alle famiglie e ai principianti curiosi.",
-    "howToUse": "Come usarla",
-    "howToUseSteps": [
-      "Scarica il PDF (pulsante sopra).",
-      "Prova un'azione al giorno per 7 giorni.",
-      "Condividi i tuoi progressi con #VGChecklist sui social media."
-    ],
-    "quickBenefits": "Vantaggi rapidi",
-    "benefits": [
-      "1 azione breve al giorno",
-      "Stampabile e mobile-friendly",
-      "Cambiamenti facili che fanno risparmiare e riducono emissioni"
-    ],
-    "subscribeText": "Vuoi di più? Iscriviti ai consigli settimanali e ricevi guide più approfondite su come fare acquisti più intelligenti e monitorare le impronte dei prodotti.",
-    "getTheChecklist": "Ottieni la Checklist",
-    "noSpam": "Niente spam. Solo consigli basati su dati scientifici per ridurre la tua impronta e fare acquisti più intelligenti.",
-    "days": [
-      {
-        "title": "Giorno 1 — Scegli Prodotti di Stagione",
-        "body": "Riduci le emissioni e goditi prodotti più freschi."
+    "badges": {
+      "practical": "Pratico",
+      "evidenceBacked": "Basato su evidenze",
+      "actionable": "Attuabile"
+    },
+    "heroTitle": "Come le scelte alimentari influenzano il pianeta (e cosa fare)",
+    "heroSubtitle": "Spiegazioni approfondite, esempi reali e brevi casi di studio da utilizzare nei post, nelle email o da pubblicare direttamente sul tuo sito.",
+    "heroLead": "Pratico • Basato su evidenze • Attuabile",
+    "bigPicture": {
+      "title": "Perché il cibo conta",
+      "content": "Il sistema alimentare globale — dall'agricoltura al cambiamento d'uso del suolo, dalla lavorazione al trasporto e alla vendita al dettaglio — rappresenta una quota importante della pressione planetaria: circa un quarto o un terzo delle emissioni globali di gas serra a seconda del metodo di contabilizzazione. L'agricoltura utilizza anche una grande quota di acqua dolce e terreni abitabili. Ciò significa che i cambiamenti in ciò che e come mangiamo si moltiplicano rapidamente a livello di popolazione.",
+      "note": "(Fonte chiave: Our World in Data, UNEP Food Waste Index; vedi Fonti sotto.)"
+    },
+    "impacts": {
+      "title": "Come si generano gli impatti (panoramica chiara)",
+      "production": "Fertilizzanti, emissioni enteriche degli animali, energia agricola e produzione di mangimi.",
+      "landUse": "Il disboscamento o il prosciugamento di torbiere per creare pascoli o terreni coltivabili rilascia grandi riserve di carbonio.",
+      "processing": "Refrigerazione, imballaggio e trasporto a lunga distanza aggiungono emissioni (ma spesso meno della produzione).",
+      "waste": "Quando il cibo commestibile viene sprecato, tutte le emissioni e le risorse a monte vengono effettivamente perse."
+    },
+    "caseStudies": {
+      "title": "Casi di studio reali che puoi citare",
+      "tooGoodToGo": {
+        "title": "Too Good To Go — salvataggio di surplus su larga scala",
+        "content": "Too Good To Go è un'app consumer che collega gli utenti al cibo in eccedenza di rivenditori e ristoranti. Nei report di impatto recenti l'organizzazione riporta di aver salvato decine di milioni — e in alcuni anni oltre 100 milioni — di pasti dallo spreco. Questo modello mostra come il comportamento dei consumatori + la tecnologia semplice offra una riduzione misurabile degli sprechi rapidamente."
       },
-      {
-        "title": "Giorno 2 — Riduci lo Spreco Alimentare con una Pianificazione Semplice",
-        "body": "Pianifica i pasti e conserva bene gli avanzi."
+      "oddbox": {
+        "title": "Oddbox — salvare prodotti imperfetti",
+        "content": "Oddbox lavora direttamente con i coltivatori per salvare prodotti 'troppo strani' o in eccesso. Ad esempio, in una singola stagione riportata hanno salvato centinaia di tonnellate di frutta che altrimenti sarebbero state sprecate. La lezione: cambiare l'accettazione al dettaglio e la domanda dei consumatori (acquistare frutta 'brutta') riduce le perdite a livello agricolo."
       },
-      {
-        "title": "Giorno 3 — Prova una Proteina Vegetale al Posto della Carne",
-        "body": "Sostituisci un pasto di carne con legumi o proteine vegetali."
-      },
-      {
-        "title": "Giorno 4 — Controlla Imballaggi e Riciclabilità",
-        "body": "Scegli prodotti con imballaggi riciclabili o minimi."
-      },
-      {
-        "title": "Giorno 5 — Preferisci Cibi Locali e a Basso Trasporto",
-        "body": "Supporta i produttori locali e riduci le emissioni del trasporto."
-      },
-      {
-        "title": "Giorno 6 — Comprendi gli Indicatori di Impatto (CO₂, Acqua, Terra)",
-        "body": "Impara l'impatto dei cibi più comuni."
-      },
-      {
-        "title": "Giorno 7 — Crea la tua Routine Settimanale Sostenibile",
-        "body": "Usa una checklist per guidare le tue scelte alimentari."
+      "walmart": {
+        "title": "Walmart & IBM Food Trust — tracciabilità per ridurre l'incertezza",
+        "content": "L'iniziativa di tracciabilità di Walmart (con IBM Food Trust/Hyperledger) ha richiesto ai fornitori di verdure a foglia di registrare gli eventi di tracciamento, consentendo la tracciabilità rapida alle aziende agricole in secondi invece di giorni. Una migliore tracciabilità riduce i tempi di richiamo, aiuta a ridurre gli sprechi e aumenta la fiducia degli acquirenti nell'origine del prodotto."
       }
-    ]
+    },
+    "planTitle": "Piano d'azione espanso di 7 giorni (dettagliato — usa questi nel tuo PDF/landing page)",
+    "day1": {
+      "title": "Giorno 1 — Scegli prodotti di stagione",
+      "why": "I prodotti di stagione vengono raccolti quando le condizioni climatiche e del suolo sono ottimali, riducendo l'energia necessaria per il riscaldamento in serra, la maturazione artificiale e la conservazione refrigerata. Spesso percorrono distanze più brevi e utilizzano meno input per unità di cibo.",
+      "howTitle": "Come farlo (pratico):",
+      "tips": [
+        "Controlla i calendari di stagionalità per il tuo paese (i mercati degli agricoltori spesso elencano i prodotti di stagione).",
+        "Acquista pomodori, fragole e cetrioli nella loro stagione locale — evita le varietà importate coltivate in serra fuori stagione.",
+        "Fai la spesa al mercato locale settimanale una volta al mese e confronta i prezzi — i prodotti di stagione sono solitamente più economici e saporiti."
+      ],
+      "example": "sostituire i pomodori importati fuori stagione con pomodori di stagione coltivati localmente riduce le esigenze di refrigerazione e trasporto e in genere migliora il sapore."
+    },
+    "day2": {
+      "title": "Giorno 2 — Riduci lo spreco alimentare con una semplice pianificazione dei pasti",
+      "why": "Lo spreco alimentare evitabile a livello domestico è una grande frazione dello spreco globale (le famiglie rappresentano circa il 60% dello spreco a livello di consumatore nei recenti rapporti ONU). Sprecare cibo spreca l'acqua, la terra e le emissioni incorporate.",
+      "howTitle": "Come farlo (pratico):",
+      "tips": [
+        "Pianifica 5–7 pasti per la settimana e crea una singola lista della spesa per evitare acquisti impulsivi.",
+        "Usa la regola del frigorifero \"primo entrato, primo uscito\": sposta gli articoli più vecchi davanti.",
+        "Cucina in lotti e congela le porzioni extra in contenitori etichettati. Congela la frutta matura per frullati.",
+        "Usa app o una semplice lavagna sul frigorifero per elencare gli avanzi — fai della \"serata avanzi\" un'abitudine settimanale."
+      ],
+      "metric": "I rapporti ONU stimano che 1,05 miliardi di tonnellate di cibo siano stati sprecati al dettaglio, nella ristorazione e nelle famiglie nel 2022 — ridurre lo spreco domestico è ad alto impatto."
+    },
+    "day3": {
+      "title": "Giorno 3 — Prova uno scambio di proteine vegetali",
+      "why": "La carne di ruminanti (manzo, agnello) è tra gli alimenti a maggior impatto per kg in CO₂-eq, terra e acqua. Sostituire un pasto di manzo a settimana con proteine vegetali può produrre riduzioni misurabili per persona.",
+      "howTitle": "Come farlo (pratico):",
+      "tips": [
+        "Inizia in piccolo: sostituisci un pasto a settimana (es. bolognese di manzo → bolognese di lenticchie).",
+        "Prova ricette gustose e semplici: tacos di fagioli, curry di ceci, tofu saltato in padella, shepherd's pie di lenticchie.",
+        "Usa legumi secchi (più economici e con impronta minore rispetto alle alternative alla carne lavorate)."
+      ],
+      "example": "Le lenticchie e i fagioli richiedono molta meno terra e acqua rispetto al manzo e sono fonti economiche di proteine e fibre. (Usa grafici di confronto per kg quando pubblichi immagini.)"
+    },
+    "day4": {
+      "title": "Giorno 4 — Controlla imballaggi e riciclabilità",
+      "why": "Alcuni benefici ambientali dal cibo vengono compromessi da imballaggi eccessivi o difficili da riciclare. Ridurre al minimo gli imballaggi non necessari migliora la circolarità.",
+      "howTitle": "Come farlo (pratico):",
+      "tips": [
+        "Preferisci prodotti sfusi rispetto a quelli preconfezionati dove possibile.",
+        "Scegli vetro o metallo per prodotti a lunga conservazione (sono ampiamente riciclabili).",
+        "Evita plastiche nere e film multistrato; questi sono spesso non riciclabili nei sistemi municipali.",
+        "Porta i tuoi contenitori per le sezioni sfuse quando consentito."
+      ],
+      "note": "I rivenditori stanno sperimentando imballaggi riutilizzabili e stazioni di ricarica — evidenzia esempi locali al tuo pubblico."
+    },
+    "day5": {
+      "title": "Giorno 5 — Preferisci cibi locali e a basso trasporto",
+      "why": "Il trasporto non è sempre la quota maggiore delle emissioni alimentari, ma scegliere locale riduce le emissioni dei chilometri alimentari (spesso la refrigerazione e il trasporto aereo sono i peggiori colpevoli) e supporta la resilienza regionale.",
+      "howTitle": "Come farlo (pratico):",
+      "tips": [
+        "Acquista frutta e verdura da venditori locali o mercati degli agricoltori quando sono di stagione.",
+        "Preferisci prodotti etichettati come coltivati localmente piuttosto che articoli trasportati per via aerea (es. bacche volate da paesi lontani).",
+        "Supporta caseifici e panetterie locali — questi spesso hanno impronte di distribuzione inferiori sull'ultimo miglio."
+      ]
+    },
+    "day6": {
+      "title": "Giorno 6 — Comprendi gli indicatori di impronta (CO₂, acqua, terra)",
+      "why": "Imparare i tre indicatori principali — carbonio (CO₂e), impronta idrica e uso del suolo — ti consente di fare compromessi informati (es. alcuni alimenti usano poca acqua ma più terra; altri invertono il modello).",
+      "howTitle": "Come farlo (pratico):",
+      "tips": [
+        "Cerca grafici semplici che confrontano kg CO₂e per kg per alimenti comuni (manzo vs pollo vs legumi vs tofu).",
+        "Usa confronti per porzione (per pasto o per 100 g) nei post sui social per rendere i numeri comprensibili.",
+        "Ricorda: il contesto conta — il metodo di produzione, il mangime e il paese cambiano significativamente i numeri."
+      ],
+      "note": "Suggerimento: Salva una piccola tabella sul tuo telefono con confronti rapidi da usare nei post sui social e nelle conversazioni."
+    },
+    "day7": {
+      "title": "Giorno 7 — Crea una routine settimanale di spesa sostenibile",
+      "why": "Le abitudini consolidano i risparmi. Una breve routine riduce gli sprechi, gli acquisti impulsivi e ti aiuta a scegliere cibi a minor impatto in modo coerente.",
+      "howTitle": "Come farlo (pratico):",
+      "tips": [
+        "Crea una singola lista della spesa dal piano pasti della settimana.",
+        "Mantieni un elenco continuo \"usa questo prima\" sul frigorifero per articoli vicini alla scadenza.",
+        "Pianifica una visita settimanale al mercato e una sessione di \"cucina in lotti e congela\".",
+        "Tieni traccia di una metrica di base: numero di pasti salvati dallo spreco questa settimana (anche un piccolo numero è progresso)."
+      ]
+    },
+    "sidebar": {
+      "statsTitle": "Statistiche rapide e punti di discussione pratici",
+      "foodSystem": "Quota del sistema alimentare: ~25–30% dei GHG globali (usato per titoli).",
+      "foodWaste": "Spreco alimentare: 1,05 miliardi di tonnellate sprecate nel 2022 (≈19% del cibo disponibile) — le famiglie sono la fonte maggiore.",
+      "useExamples": "Usa esempi di aziende locali (Too Good To Go, Oddbox, progetti pilota di tracciabilità) per mostrare che le soluzioni funzionano ora."
+    },
+    "shortChecklist": {
+      "title": "Checklist breve da conservare (una pagina)",
+      "items": [
+        "Acquista prodotti di stagione questa settimana",
+        "Pianifica i pasti e congela le porzioni extra",
+        "Sostituisci un pasto di carne con legumi",
+        "Preferisci imballaggi riciclabili",
+        "Acquista locale dove possibile",
+        "Controlla gli indicatori di impronta rapidi",
+        "Fai un audit settimanale degli sprechi (1 numero)"
+      ]
+    },
+    "sources": {
+      "title": "Fonti",
+      "intro": "Fonti chiave utilizzate per costruire i numeri e i casi di studio (per verifica interna / uso editoriale):",
+      "list": [
+        "Our World in Data — Impatti ambientali del cibo ed emissioni del sistema alimentare (grafici riassuntivi e confronti).",
+        "UNEP Food Waste Index Report — 1,05 miliardi di tonnellate di cibo sprecate nel 2022 (famiglie: ~60% dello spreco a livello di consumatore).",
+        "Too Good To Go — Report di impatto (pasti salvati ed esempi di impatto sulla comunità).",
+        "Oddbox — storie di sostenibilità / salvataggio e tonnellate di prodotti salvati.",
+        "Walmart Tech Blog / reportistica su IBM Food Trust / progetto pilota di tracciabilità per verdure a foglia."
+      ]
+    }
   }
 }

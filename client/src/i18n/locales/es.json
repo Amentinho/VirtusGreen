@@ -234,57 +234,148 @@
     "metaDesc": "Descarga la checklist gratuita de 7 días y aprende acciones simples para reducir tu huella alimentaria y comprar de forma más sostenible.",
     "ogTitle": "Checklist Gratuita de Alimentación Sostenible (7 Días)",
     "ogDesc": "Consejos prácticos basados en ciencia para reducir tu huella alimentaria en solo una semana. Descarga la guía imprimible.",
-    "heroTitle": "Come Mejor para el Planeta — Un Paso Sencillo Cada Día",
-    "heroSubtitle": "Descarga la Checklist Gratuita de 7 Días y empieza a reducir tu huella alimentaria con acciones prácticas y fáciles.",
-    "downloadBtn": "Descargar la Checklist",
-    "freeBadge": "PDF Gratis",
-    "whatsInside": "Qué hay dentro",
-    "whoIsThisFor": "¿Para quién es esto?",
-    "whoIsThisForText": "Para cualquiera que quiera pasos rápidos y prácticos para comer más sano y reducir su impacto ambiental — desde profesionales ocupados hasta familias y principiantes curiosos.",
-    "howToUse": "Cómo usarlo",
-    "howToUseSteps": [
-      "Descarga el PDF (botón arriba).",
-      "Prueba una acción al día durante 7 días.",
-      "Comparte tu progreso con #VGChecklist en redes sociales."
-    ],
-    "quickBenefits": "Beneficios rápidos",
-    "benefits": [
-      "1 acción corta por día",
-      "Imprimible y mobile-friendly",
-      "Cambios fáciles que ahorran dinero y reducen emisiones"
-    ],
-    "subscribeText": "¿Quieres más? Suscríbete a consejos semanales y obtén guías más profundas sobre compras inteligentes y seguimiento de huellas de productos.",
-    "getTheChecklist": "Obtener la Checklist",
-    "noSpam": "Sin spam. Solo consejos basados en ciencia para ayudarte a reducir tu huella y comprar de forma más inteligente.",
-    "days": [
-      {
-        "title": "Día 1 — Elige Productos de Temporada",
-        "body": "Menos emisiones, más sabor."
+    "badges": {
+      "practical": "Práctico",
+      "evidenceBacked": "Basado en evidencia",
+      "actionable": "Accionable"
+    },
+    "heroTitle": "Cómo las decisiones alimentarias impactan el planeta (y qué hacer)",
+    "heroSubtitle": "Explicaciones ampliadas, ejemplos reales y breves casos de estudio para usar en publicaciones, correos o publicar directamente en tu sitio.",
+    "heroLead": "Práctico • Basado en evidencia • Accionable",
+    "bigPicture": {
+      "title": "Por qué importa",
+      "content": "El sistema alimentario global — desde la agricultura y el cambio de uso del suelo hasta el procesamiento, transporte y venta minorista — representa una parte importante de la presión planetaria: aproximadamente un cuarto a un tercio de las emisiones globales de gases de efecto invernadero según el método de contabilidad. La agricultura también utiliza una gran parte del agua dulce y la tierra habitable. Eso significa que los cambios en qué y cómo comemos se amplifican rápidamente a nivel poblacional.",
+      "note": "(Fuente clave: Our World in Data, UNEP Food Waste Index; ver Fuentes abajo.)"
+    },
+    "impacts": {
+      "title": "Cómo surgen los impactos (desglose claro)",
+      "production": "Fertilizantes, emisiones entéricas de animales, energía agrícola y producción de alimento para ganado.",
+      "landUse": "La tala de bosques o el drenaje de turberas para crear pastos o tierras de cultivo libera grandes reservas de carbono.",
+      "processing": "La refrigeración, el empaque y el envío de larga distancia añaden emisiones (pero a menudo menos que la producción).",
+      "waste": "Cuando se desperdicia comida comestible, todas las emisiones y recursos previos se pierden efectivamente."
+    },
+    "caseStudies": {
+      "title": "Casos de estudio del mundo real que puedes citar",
+      "tooGoodToGo": {
+        "title": "Too Good To Go — rescate de excedentes a escala",
+        "content": "Too Good To Go es una aplicación de consumo que conecta a los usuarios con excedentes de alimentos de minoristas y restaurantes. En informes de impacto recientes, la organización reporta haber salvado decenas de millones — y en algunos años más de 100 millones — de comidas del desperdicio. Este modelo muestra cómo el comportamiento del consumidor + tecnología simple proporciona una reducción medible del desperdicio rápidamente."
       },
-      {
-        "title": "Día 2 — Reduce el Desperdicio con una Planificación Sencilla",
-        "body": "Planifica tus comidas y conserva bien las sobras."
+      "oddbox": {
+        "title": "Oddbox — rescatando productos imperfectos",
+        "content": "Oddbox trabaja directamente con productores para rescatar productos 'demasiado raros' o excedentes. Por ejemplo, en una sola temporada reportada rescataron cientos de toneladas de fruta que de otro modo se habría desperdiciado. La lección: cambiar la aceptación minorista y la demanda del consumidor (comprar fruta 'fea') reduce la pérdida a nivel de granja."
       },
-      {
-        "title": "Día 3 — Prueba una Proteína Vegetal en Lugar de Carne",
-        "body": "Reduce tu huella cambiando una comida a la semana."
-      },
-      {
-        "title": "Día 4 — Revisa Envases y Reciclabilidad",
-        "body": "Elige productos con envases reciclables o mínimos."
-      },
-      {
-        "title": "Día 5 — Prefiere Alimentos Locales y de Bajo Transporte",
-        "body": "Apoya productores locales y reduce emisiones."
-      },
-      {
-        "title": "Día 6 — Aprende los Indicadores de Impacto (CO₂, Agua, Tierra)",
-        "body": "Conoce el impacto real de los alimentos comunes."
-      },
-      {
-        "title": "Día 7 — Construye tu Rutina de Compra Sostenible",
-        "body": "Crea una checklist semanal que guíe tus decisiones."
+      "walmart": {
+        "title": "Walmart & IBM Food Trust — trazabilidad para reducir la incertidumbre",
+        "content": "La iniciativa de trazabilidad de Walmart (con IBM Food Trust/Hyperledger) requirió que los proveedores de verduras de hoja registraran eventos de rastreo, permitiendo el rastreo rápido hasta las granjas en segundos en lugar de días. Una mejor trazabilidad reduce los tiempos de retiro, ayuda a reducir el desperdicio y aumenta la confianza del comprador en el origen del producto."
       }
-    ]
+    },
+    "planTitle": "Plan de acción expandido de 7 días (detallado — usa estos en tu PDF/página de destino)",
+    "day1": {
+      "title": "Día 1 — Elige productos de temporada",
+      "why": "Los cultivos de temporada se cosechan cuando las condiciones climáticas y del suelo son óptimas, reduciendo la energía necesaria para el calentamiento de invernaderos, la maduración artificial y el almacenamiento refrigerado. A menudo viajan distancias más cortas y usan menos insumos por unidad de alimento.",
+      "howTitle": "Cómo hacerlo (práctico):",
+      "tips": [
+        "Consulta calendarios de temporada para tu país (los mercados de agricultores a menudo enumeran los productos destacados de temporada).",
+        "Compra tomates, fresas y pepinos en su temporada local — evita variedades importadas cultivadas en invernadero fuera de temporada.",
+        "Compra en tu mercado local semanal una vez al mes y compara precios — los productos de temporada suelen ser más baratos y sabrosos."
+      ],
+      "example": "cambiar tomates importados fuera de temporada por tomates de temporada cultivados localmente reduce las necesidades de refrigeración y transporte y típicamente mejora el sabor."
+    },
+    "day2": {
+      "title": "Día 2 — Reduce el desperdicio de alimentos con una planificación simple de comidas",
+      "why": "El desperdicio de alimentos evitable a nivel doméstico es una gran fracción del desperdicio global (los hogares representan alrededor del 60% del desperdicio a nivel de consumidor en informes recientes de la ONU). Desperdiciar alimentos desperdicia el agua, la tierra y las emisiones incorporadas.",
+      "howTitle": "Cómo hacerlo (práctico):",
+      "tips": [
+        "Planifica 5–7 comidas para la semana y crea una sola lista de compras para evitar compras impulsivas.",
+        "Usa la regla de refrigerador \"primero en entrar, primero en salir\": mueve los artículos más antiguos al frente.",
+        "Cocina por lotes y congela extras en porciones etiquetadas. Congela fruta madura para batidos.",
+        "Usa aplicaciones o una simple pizarra en el refrigerador para enumerar las sobras — haz de la \"noche de sobras\" un hábito semanal."
+      ],
+      "metric": "Los informes de la ONU estiman que 1.05 mil millones de toneladas de alimentos se desperdiciaron en el comercio minorista, servicios de alimentos y hogares en 2022 — reducir el desperdicio doméstico es de alto impacto."
+    },
+    "day3": {
+      "title": "Día 3 — Prueba un cambio de proteína vegetal",
+      "why": "La carne de rumiantes (res, cordero) está entre los alimentos de mayor impacto por kg en CO₂-eq, tierra y agua. Cambiar una comida de res por semana por proteínas vegetales puede producir reducciones medibles por persona.",
+      "howTitle": "Cómo hacerlo (práctico):",
+      "tips": [
+        "Empieza pequeño: reemplaza una comida por semana (ej. boloñesa de res → boloñesa de lentejas).",
+        "Prueba recetas sabrosas y simples: tacos de frijoles, curry de garbanzos, salteado de tofu, pastel de pastor de lentejas.",
+        "Usa legumbres secas (más baratas y con menor huella que las alternativas de carne procesadas)."
+      ],
+      "example": "Las lentejas y los frijoles requieren mucha menos tierra y agua que la res y son fuentes económicas de proteína y fibra. (Usa gráficos de comparación por kg al publicar visuales.)"
+    },
+    "day4": {
+      "title": "Día 4 — Revisa envases y reciclabilidad",
+      "why": "Algunos beneficios ambientales de los alimentos se ven socavados por envases excesivos o difíciles de reciclar. Minimizar el empaque innecesario mejora la circularidad.",
+      "howTitle": "Cómo hacerlo (práctico):",
+      "tips": [
+        "Prefiere productos sueltos sobre preempacados donde sea posible.",
+        "Elige vidrio o metal para productos de larga vida (son ampliamente reciclables).",
+        "Evita plásticos negros y películas multicapa; estos a menudo no son reciclables en sistemas municipales.",
+        "Trae tus propios contenedores para secciones a granel cuando se permita."
+      ],
+      "note": "Los minoristas están probando envases reutilizables y estaciones de recarga — destaca ejemplos locales a tu audiencia."
+    },
+    "day5": {
+      "title": "Día 5 — Prefiere alimentos locales y de bajo transporte",
+      "why": "El transporte no siempre es la mayor parte de las emisiones de alimentos, pero elegir local reduce las emisiones de millas alimentarias (a menudo la refrigeración y el transporte aéreo son los peores infractores) y apoya la resiliencia regional.",
+      "howTitle": "Cómo hacerlo (práctico):",
+      "tips": [
+        "Compra frutas y verduras de vendedores locales o mercados de agricultores cuando están en temporada.",
+        "Prefiere productos etiquetados como cultivados localmente en lugar de artículos transportados por aire (ej. bayas voladas desde países lejanos).",
+        "Apoya lecherías y panaderías locales — estas a menudo tienen huellas de distribución más bajas en la última milla."
+      ]
+    },
+    "day6": {
+      "title": "Día 6 — Comprende los indicadores de huella (CO₂, agua, tierra)",
+      "why": "Aprender los tres indicadores principales — carbono (CO₂e), huella hídrica y uso de la tierra — te permite hacer compromisos informados (ej. algunos alimentos usan poca agua pero más tierra; otros invierten el patrón).",
+      "howTitle": "Cómo hacerlo (práctico):",
+      "tips": [
+        "Busca gráficos simples que comparen kg CO₂e por kg para alimentos comunes (res vs pollo vs legumbres vs tofu).",
+        "Usa comparaciones por porción (por comida o por 100 g) en publicaciones sociales para hacer los números relacionables.",
+        "Recuerda: el contexto importa — el método de producción, el alimento y el país cambian significativamente los números."
+      ],
+      "note": "Consejo: Guarda una pequeña tabla en tu teléfono con comparaciones rápidas para usar en publicaciones sociales y conversaciones."
+    },
+    "day7": {
+      "title": "Día 7 — Construye una rutina semanal de compras sostenibles",
+      "why": "Los hábitos consolidan los ahorros. Una rutina corta reduce el desperdicio, las compras impulsivas y te ayuda a elegir alimentos de menor impacto de manera consistente.",
+      "howTitle": "Cómo hacerlo (práctico):",
+      "tips": [
+        "Crea una sola lista de compras del plan de comidas de la semana.",
+        "Mantén una lista continua \"usa esto primero\" en el refrigerador para artículos cercanos a la fecha de vencimiento.",
+        "Programa una visita semanal al mercado y una sesión de \"cocina por lotes y congela\".",
+        "Rastrea una métrica básica: número de comidas que salvaste del desperdicio esta semana (incluso un número pequeño es progreso)."
+      ]
+    },
+    "sidebar": {
+      "statsTitle": "Estadísticas rápidas y puntos de conversación prácticos",
+      "foodSystem": "Participación del sistema alimentario: ~25–30% de los GEI globales (usado para titulares).",
+      "foodWaste": "Desperdicio de alimentos: 1.05 mil millones de toneladas desperdiciadas en 2022 (≈19% de alimentos disponibles) — los hogares son la fuente más grande.",
+      "useExamples": "Usa ejemplos de negocios locales (Too Good To Go, Oddbox, proyectos piloto de trazabilidad) para mostrar que las soluciones funcionan ahora."
+    },
+    "shortChecklist": {
+      "title": "Checklist corta para conservar (una página)",
+      "items": [
+        "Compra productos de temporada esta semana",
+        "Planifica comidas y congela extras",
+        "Cambia una comida de carne por legumbres",
+        "Prefiere envases reciclables",
+        "Compra local donde sea posible",
+        "Verifica indicadores de huella rápidos",
+        "Haz una auditoría semanal de desperdicio (1 número)"
+      ]
+    },
+    "sources": {
+      "title": "Fuentes",
+      "intro": "Fuentes clave utilizadas para construir los números y casos de estudio (para verificación interna / uso editorial):",
+      "list": [
+        "Our World in Data — Impactos ambientales de los alimentos y emisiones del sistema alimentario (gráficos resumen y comparaciones).",
+        "UNEP Food Waste Index Report — 1.05 mil millones de toneladas de alimentos desperdiciados en 2022 (hogares: ~60% del desperdicio a nivel de consumidor).",
+        "Too Good To Go — Informes de impacto (comidas salvadas y ejemplos de impacto comunitario).",
+        "Oddbox — historias de sostenibilidad / rescate y toneladas de productos rescatados.",
+        "Walmart Tech Blog / informes sobre IBM Food Trust / proyecto piloto de trazabilidad para verduras de hoja."
+      ]
+    }
   }
 }
