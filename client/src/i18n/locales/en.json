@@ -6,7 +6,8 @@
     "roadmap": "Roadmap",
     "aboutUs": "About Us",
     "getInTouch": "Get in Touch",
-    "freeChecklist": "Free Checklist"
+    "freeChecklist": "Free Checklist",
+    "greenAgent": "Green Agent"
   },
   "hero": {
     "title": "Transform Sustainability Into",
@@ -381,5 +382,65 @@
         "Walmart Tech Blog / reporting on the IBM Food Trust / traceability pilot for leafy greens."
       ]
     }
+  },
+  "greenAgent": {
+    "badge": "New Product",
+    "title": "Green Agent —",
+    "titleHighlight": "Authenticity you can verify.",
+    "subtitle": "For consortia and premium GI producers who need origin to be provable, not just declared. AI agents cross-check geolocation, satellite data and denomination rules — and a fake batch cannot pass.",
+    "skins": [
+      {
+        "label": "Bronte DOP",
+        "icon": "🌿",
+        "tag": "Anti-counterfeit",
+        "headline": "Pistacchio Verde di Bronte DOP — the fake Bronte stops here.",
+        "body": "Real Bronte pistachio is biennial and grown in a tiny zone around the volcano. Green Agent checks the plot geolocation against Copernicus satellite data and the DOP disciplinare. A batch declared as Bronte but plotted 90 km away near Ragusa is flagged before a QR is ever issued. Honest producers get a verifiable badge. Fakes get blocked."
+      },
+      {
+        "label": "Etna DOC",
+        "icon": "🍷",
+        "tag": "Provenance + EU e-label",
+        "headline": "Etna DOC — contrada provenance and mandatory e-label in one record.",
+        "body": "Etna's identity lives in its contrade — single-vineyard parcels with distinct volcanic soil profiles. Green Agent maps each parcel, anchors the harvest on-chain, and stores the mandatory EU wine e-label data (ingredients, nutrition, allergens, denomination) in the same record. One QR on the label, every market, full compliance."
+      },
+      {
+        "label": "Modica IGP",
+        "icon": "🍫",
+        "tag": "EUDR cocoa compliance",
+        "headline": "Cioccolato di Modica IGP — EUDR due diligence built in.",
+        "body": "Modica chocolate is made with imported cocoa — which puts it squarely in scope of EUDR by 30 December 2026. Green Agent maps cocoa origin, cross-checks against EUDR deforestation benchmarks, and generates the Due Diligence Statement ready for TRACES. Same record also carries the IGP authenticity proof."
+      }
+    ],
+    "features": [
+      {
+        "icon": "📍",
+        "title": "Plot-level geolocation",
+        "description": "Register parcel polygons once. Every batch is tied to a specific, verifiable piece of land."
+      },
+      {
+        "icon": "🛰️",
+        "title": "Satellite cross-check",
+        "description": "Copernicus Sentinel-2 data validates land use and detects mismatches with the declared crop and zone."
+      },
+      {
+        "icon": "📱",
+        "title": "Consumer QR",
+        "description": "One tap proves harvest year, zone, denomination and compliance status to any buyer or shopper."
+      },
+      {
+        "icon": "📄",
+        "title": "Compliance-ready",
+        "description": "EU wine e-label, GI traceability and EUDR due-diligence in the same tamper-evident on-chain record."
+      }
+    ],
+    "regulations": [
+      "EUDR 2023/1115 · Dec 2026",
+      "EU GI Reg. 2024/1143",
+      "ESPR 2024/1781 (DPP)",
+      "EU Wine E-label · mandatory",
+      "Copernicus Sentinel-2"
+    ],
+    "cta": "Book a pilot audit",
+    "ctaSub": "Fixed-price, 2 weeks. EUDR Readiness Check from €2,400 · Wine Digital Compliance Check from €1,800."
   }
 }
