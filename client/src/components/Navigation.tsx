@@ -43,7 +43,6 @@ export default function Navigation({ scrolled }: NavigationProps) {
     { label: t('navigation.howItWorks'), id: "how-it-works" },
     { label: t('navigation.indexes'), id: "environmental-metrics" },
     { label: t('navigation.forCompanies'), id: "for-companies" },
-    { label: t('navigation.greenAgent'), id: "green-agent" },
     { label: t('navigation.roadmap'), id: "roadmap" },
     { label: t('navigation.aboutUs'), id: "team" },
     { label: t('navigation.getInTouch'), id: "footer" },

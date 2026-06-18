@@ -4,7 +4,6 @@ import { useTranslation } from "react-i18next";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import GreenAgent from "@/components/GreenAgent";
-import Footer from "@/components/Footer";
 import logoImage from "@assets/Asset 77_1762949956789.png";
 import LanguageSelector from "@/components/LanguageSelector";
 import { trackEvent } from "@/lib/analytics";
@@ -60,7 +59,7 @@ export default function GreenAgentPage() {
               className="bg-primary hover:bg-primary/90 text-primary-foreground"
               onClick={() => {
                 trackEvent("cta_click", "engagement", "green_agent_page_nav");
-                document.getElementById("footer")?.scrollIntoView({ behavior: "smooth" });
+                window.location.href = "mailto:hello@virtusgreen.com?subject=Green Agent pilot audit";
               }}
             >
               {t("greenAgentPage.contactCta", "Book a call")}
@@ -69,12 +68,26 @@ export default function GreenAgentPage() {
         </div>
       </header>
 
-      {/* Green Agent section (reuses the existing component) */}
+      {/* Green Agent section */}
       <main>
         <GreenAgent />
       </main>
 
-      <Footer />
+      {/* Minimal footer */}
+      <footer className="border-t border-border/50 py-5 px-6 text-center text-xs text-muted-foreground">
+        © 2026 VirtusGreen · Barcelona / EU-wide ·{" "}
+        <a href="mailto:hello@virtusgreen.com" className="hover:text-primary transition-colors">
+          hello@virtusgreen.com
+        </a>
+        {" · "}
+        <button
+          onClick={() => setLocation("/")}
+          className="hover:text-primary transition-colors"
+        >
+          {t("greenAgentPage.backToHome", "Back to home")}
+        </button>
+      </footer>
+
     </div>
   );
 }
