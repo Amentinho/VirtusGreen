@@ -442,5 +442,40 @@
     ],
     "cta": "Book a pilot audit",
     "ctaSub": "Fixed-price, 2 weeks. EUDR Readiness Check from €2,400 · Wine Digital Compliance Check from €1,800."
+  },
+  "landing": {
+    "eyebrow": "Blockchain & AI · Verified provenance",
+    "headline": "What are you here for?",
+    "subheadline": "Two products, one mission — making the truth about a product verifiable.",
+    "passportLabel": "Live product",
+    "passportTitle": "Passport",
+    "passportSubtitle": "Digital Product Passport",
+    "passportDesc": "Scan a product barcode, see its verified environmental story — CO₂, water, energy — and earn tokens for sustainable choices. Gamified loyalty for everyday shoppers.",
+    "passportFeatures": [
+      "EcoScore via Life-Cycle Assessment, stored on-chain",
+      "6 environmental indexes per product",
+      "Tokens, characters and leaderboard rewards",
+      "For food & beverage brands"
+    ],
+    "passportCta": "Explore Passport",
+    "agentLabel": "GI Authenticity & Compliance",
+    "agentTitle": "Green Agent",
+    "agentSubtitle": "Provenance · EUDR · E-label",
+    "agentDesc": "For consortia and premium GI producers. AI agents cross-check plot geolocation against satellite data and denomination rules — a fake batch cannot pass.",
+    "agentFeatures": [
+      "Bronte DOP · anti-counterfeit",
+      "Etna DOC · provenance + EU e-label",
+      "Modica IGP · EUDR cocoa compliance",
+      "Fixed-price audits from €1,800"
+    ],
+    "agentCta": "Explore Green Agent",
+    "newBadge": "New"
+  },
+  "greenAgentPage": {
+    "back": "Back",
+    "contactCta": "Book a call",
+    "eyebrow": "GI Authenticity & Compliance",
+    "headline": "Green Agent",
+    "subheadline": "For consortia and premium GI producers who need origin to be provable, not just declared. AI agents cross-check geolocation, satellite data and denomination rules — and a fake batch cannot pass."
   }
 }

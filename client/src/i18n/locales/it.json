@@ -442,5 +442,40 @@
     ],
     "cta": "Prenota un audit pilota",
     "ctaSub": "Prezzo fisso, 2 settimane. EUDR Readiness Check da €2.400 · Wine Digital Compliance Check da €1.800."
+  },
+  "landing": {
+    "eyebrow": "Blockchain & AI · Provenienza verificabile",
+    "headline": "Cosa stai cercando?",
+    "subheadline": "Due prodotti, una missione — rendere verificabile la verità su un prodotto.",
+    "passportLabel": "Prodotto attivo",
+    "passportTitle": "Passport",
+    "passportSubtitle": "Passaporto Digitale di Prodotto",
+    "passportDesc": "Scansiona il barcode di un prodotto, scopri la sua storia ambientale verificata — CO₂, acqua, energia — e guadagna token per scelte sostenibili. Fedeltà gamificata per lo shopper quotidiano.",
+    "passportFeatures": [
+      "EcoScore tramite LCA, archiviato on-chain",
+      "6 indici ambientali per prodotto",
+      "Token, personaggi e classifiche premi",
+      "Per brand alimentari e delle bevande"
+    ],
+    "passportCta": "Scopri Passport",
+    "agentLabel": "Autenticità IGP & Conformità",
+    "agentTitle": "Green Agent",
+    "agentSubtitle": "Provenienza · EUDR · E-label",
+    "agentDesc": "Per i consorzi e i produttori premium IGP. Gli agenti AI verificano la geolocalizzazione delle parcelle rispetto ai dati satellitari e alle regole della denominazione — un lotto falso non può passare.",
+    "agentFeatures": [
+      "Bronte DOP · anti-contraffazione",
+      "Etna DOC · provenienza + e-label UE",
+      "Modica IGP · conformità EUDR cacao",
+      "Audit a prezzo fisso da €1.800"
+    ],
+    "agentCta": "Scopri Green Agent",
+    "newBadge": "Nuovo"
+  },
+  "greenAgentPage": {
+    "back": "Indietro",
+    "contactCta": "Prenota una call",
+    "eyebrow": "Autenticità IGP & Conformità",
+    "headline": "Green Agent",
+    "subheadline": "Per i consorzi e i produttori premium IGP che hanno bisogno che l'origine sia dimostrabile, non solo dichiarata. Gli agenti AI verificano geolocalizzazione, dati satellitari e regole della denominazione — un lotto falso non può passare."
   }
 }

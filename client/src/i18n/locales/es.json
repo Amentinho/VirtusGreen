@@ -442,5 +442,40 @@
     ],
     "cta": "Reservar una auditoría piloto",
     "ctaSub": "Precio fijo, 2 semanas. EUDR Readiness Check desde €2.400 · Wine Digital Compliance Check desde €1.800."
+  },
+  "landing": {
+    "eyebrow": "Blockchain & IA · Procedencia verificable",
+    "headline": "¿Qué estás buscando?",
+    "subheadline": "Dos productos, una misión — hacer verificable la verdad sobre un producto.",
+    "passportLabel": "Producto activo",
+    "passportTitle": "Passport",
+    "passportSubtitle": "Pasaporte Digital de Producto",
+    "passportDesc": "Escanea el código de barras de un producto, descubre su historia ambiental verificada — CO₂, agua, energía — y gana tokens por elecciones sostenibles. Lealtad gamificada para compradores cotidianos.",
+    "passportFeatures": [
+      "EcoScore vía LCA, almacenado on-chain",
+      "6 índices ambientales por producto",
+      "Tokens, personajes y recompensas de clasificación",
+      "Para marcas de alimentos y bebidas"
+    ],
+    "passportCta": "Explorar Passport",
+    "agentLabel": "Autenticidad IGP & Cumplimiento",
+    "agentTitle": "Green Agent",
+    "agentSubtitle": "Procedencia · EUDR · E-etiqueta",
+    "agentDesc": "Para consorcios y productores premium IGP. Los agentes IA verifican la geolocalización de parcelas con datos satelitales y reglas de denominación — un lote falso no puede pasar.",
+    "agentFeatures": [
+      "Bronte DOP · anti-falsificación",
+      "Etna DOC · procedencia + e-etiqueta UE",
+      "Modica IGP · cumplimiento EUDR cacao",
+      "Auditorías a precio fijo desde €1.800"
+    ],
+    "agentCta": "Explorar Green Agent",
+    "newBadge": "Nuevo"
+  },
+  "greenAgentPage": {
+    "back": "Volver",
+    "contactCta": "Reservar llamada",
+    "eyebrow": "Autenticidad IGP & Cumplimiento",
+    "headline": "Green Agent",
+    "subheadline": "Para consorcios y productores premium IGP que necesitan que el origen sea demostrable, no solo declarado. Los agentes IA verifican geolocalización, datos satelitales y reglas de denominación — un lote falso no puede pasar."
   }
 }
