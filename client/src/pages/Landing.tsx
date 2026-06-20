@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "wouter";
 import { useTranslation } from "react-i18next";
 import { ArrowRight, Shield, Leaf } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import logoImage from "@assets/Asset 77_1762949956789.png";
 import LanguageSelector from "@/components/LanguageSelector";
 import { trackEvent } from "@/lib/analytics";
@@ -23,25 +24,30 @@ export default function Landing() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
 
-      {/* Top bar */}
-      <header className="flex items-center justify-between px-6 py-4 border-b border-border/50">
-        <img src={logoImage} alt="VirtusGreen" className="h-8 w-auto" />
+      {/* Top bar — matches Navigation style */}
+      <header className="flex items-center justify-between px-6 py-0 h-20 border-b border-border/60 bg-background/80 backdrop-blur-md">
+        <button
+          onClick={() => setLocation("/")}
+          className="flex items-center gap-3 hover-elevate active-elevate-2 rounded-lg px-3 py-2 -ml-3"
+        >
+          <img src={logoImage} alt="VirtusGreen" className="h-10 w-auto object-contain" />
+        </button>
         <LanguageSelector />
       </header>
 
       {/* Hero text */}
       <div
-        className={`text-center pt-14 pb-8 px-6 transition-all duration-700 ${
+        className={`text-center pt-14 pb-10 px-6 transition-all duration-700 ${
           visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
         }`}
       >
-        <span className="inline-block text-xs font-semibold tracking-widest uppercase text-primary bg-primary/10 px-4 py-1.5 rounded-full mb-5">
+        <span className="inline-block text-xs font-semibold tracking-widest uppercase text-cta bg-cta/10 px-4 py-1.5 rounded-full mb-5 border border-cta/20">
           {t("landing.eyebrow", "Blockchain & AI · Verified provenance")}
         </span>
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
           {t("landing.headline", "What are you here for?")}
         </h1>
-        <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+        <p className="text-muted-foreground text-lg max-w-xl mx-auto leading-relaxed">
           {t("landing.subheadline", "Two products, one mission — making the truth about a product verifiable.")}
         </p>
       </div>
@@ -53,45 +59,44 @@ export default function Landing() {
           {/* Passport card */}
           <button
             onClick={() => go("/passport", "passport")}
-            className={`group relative text-left rounded-2xl border border-border bg-card p-8 transition-all duration-500 hover:border-primary hover:shadow-2xl hover:shadow-primary/15 hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
+            className={`group relative text-left rounded-2xl border border-card-border bg-card p-8 transition-all duration-500 hover:border-cta/50 hover:shadow-xl hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-cta ${
               visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
             style={{ transitionDelay: "150ms" }}
           >
-            {/* top accent */}
-            <div className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl bg-gradient-to-r from-primary to-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            {/* accent bar — matches card style from other pages */}
+            <div className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl bg-gradient-to-r from-cta to-accent-lime opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-            <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
-              <Shield className="w-7 h-7 text-primary" />
+            {/* icon */}
+            <div className="w-14 h-14 rounded-xl bg-cta/10 flex items-center justify-center mb-6 transition-colors duration-300 group-hover:bg-cta/20">
+              <Shield className="w-7 h-7 text-cta" />
             </div>
 
-            <div className="mb-2">
-              <span className="text-xs font-semibold tracking-widest uppercase text-primary">
-                {t("landing.passportLabel", "Live product")}
-              </span>
-            </div>
+            <span className="text-xs font-semibold tracking-widest uppercase text-cta block mb-3">
+              {t("landing.passportLabel", "Live product")}
+            </span>
 
-            <h2 className="text-2xl font-bold text-foreground mb-3">
+            <h2 className="text-2xl font-bold text-foreground mb-1">
               {t("landing.passportTitle", "Passport")}
-              <span className="block text-sm font-medium text-muted-foreground mt-0.5 tracking-wide uppercase">
-                {t("landing.passportSubtitle", "Digital Product Passport")}
-              </span>
             </h2>
+            <p className="text-xs font-semibold tracking-widest uppercase text-muted-foreground mb-4">
+              {t("landing.passportSubtitle", "Digital Product Passport")}
+            </p>
 
-            <p className="text-muted-foreground leading-relaxed mb-6">
+            <p className="text-muted-foreground leading-relaxed mb-6 text-sm">
               {t("landing.passportDesc", "Scan a product barcode, see its verified environmental story — CO₂, water, energy — and earn tokens for sustainable choices. Gamified loyalty for everyday shoppers.")}
             </p>
 
             <ul className="space-y-2 mb-8">
               {(t("landing.passportFeatures", { returnObjects: true }) as string[]).map((f: string, i: number) => (
-                <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary flex-none" />
+                <li key={i} className="flex items-center gap-2.5 text-sm text-muted-foreground">
+                  <span className="w-1.5 h-1.5 rounded-full bg-cta flex-none" />
                   {f}
                 </li>
               ))}
             </ul>
 
-            <div className="flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all duration-200">
+            <div className="flex items-center gap-2 text-cta font-semibold text-sm group-hover:gap-3 transition-all duration-200">
               {t("landing.passportCta", "Explore Passport")}
               <ArrowRight className="w-4 h-4" />
             </div>
@@ -100,52 +105,51 @@ export default function Landing() {
           {/* Green Agent card */}
           <button
             onClick={() => go("/green-agent", "green-agent")}
-            className={`group relative text-left rounded-2xl border border-border bg-card p-8 transition-all duration-500 hover:border-primary hover:shadow-2xl hover:shadow-primary/15 hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
+            className={`group relative text-left rounded-2xl border border-card-border bg-card p-8 transition-all duration-500 hover:border-cta/50 hover:shadow-xl hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-cta ${
               visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
             style={{ transitionDelay: "280ms" }}
           >
-            {/* top accent */}
-            <div className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl bg-gradient-to-r from-emerald-600 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            {/* accent bar */}
+            <div className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl bg-gradient-to-r from-cta to-accent-lime opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-            {/* NEW badge */}
+            {/* NEW badge — uses primary (dark teal) like the site's dark badges */}
             <div className="absolute top-5 right-5">
               <span className="text-xs font-bold tracking-widest uppercase bg-primary text-primary-foreground px-2.5 py-1 rounded-full">
                 {t("landing.newBadge", "New")}
               </span>
             </div>
 
-            <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
-              <Leaf className="w-7 h-7 text-primary" />
+            {/* icon */}
+            <div className="w-14 h-14 rounded-xl bg-cta/10 flex items-center justify-center mb-6 transition-colors duration-300 group-hover:bg-cta/20">
+              <Leaf className="w-7 h-7 text-cta" />
             </div>
 
-            <div className="mb-2">
-              <span className="text-xs font-semibold tracking-widest uppercase text-primary">
-                {t("landing.agentLabel", "GI Authenticity & Compliance")}
-              </span>
-            </div>
+            <span className="text-xs font-semibold tracking-widest uppercase text-cta block mb-3">
+              {t("landing.agentLabel", "GI Authenticity & Compliance")}
+            </span>
 
-            <h2 className="text-2xl font-bold text-foreground mb-3">
+            <h2 className="text-2xl font-bold text-foreground mb-1">
               {t("landing.agentTitle", "Green Agent")}
-              <span className="block text-sm font-medium text-muted-foreground mt-0.5 tracking-wide uppercase">
-                {t("landing.agentSubtitle", "Provenance · EUDR · E-label")}
-              </span>
             </h2>
+            <p className="text-xs font-semibold tracking-widest uppercase text-muted-foreground mb-4">
+              {t("landing.agentSubtitle", "Provenance · EUDR · E-label")}
+            </p>
 
-            <p className="text-muted-foreground leading-relaxed mb-6">
+            <p className="text-muted-foreground leading-relaxed mb-6 text-sm">
               {t("landing.agentDesc", "For consortia and premium GI producers. AI agents cross-check plot geolocation against satellite data and denomination rules — a fake batch cannot pass.")}
             </p>
 
             <ul className="space-y-2 mb-8">
               {(t("landing.agentFeatures", { returnObjects: true }) as string[]).map((f: string, i: number) => (
-                <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary flex-none" />
+                <li key={i} className="flex items-center gap-2.5 text-sm text-muted-foreground">
+                  <span className="w-1.5 h-1.5 rounded-full bg-cta flex-none" />
                   {f}
                 </li>
               ))}
             </ul>
 
-            <div className="flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all duration-200">
+            <div className="flex items-center gap-2 text-cta font-semibold text-sm group-hover:gap-3 transition-all duration-200">
               {t("landing.agentCta", "Explore Green Agent")}
               <ArrowRight className="w-4 h-4" />
             </div>
@@ -155,9 +159,9 @@ export default function Landing() {
       </div>
 
       {/* Footer strip */}
-      <footer className="border-t border-border/50 py-4 px-6 text-center text-xs text-muted-foreground">
+      <footer className="border-t border-border/60 py-4 px-6 text-center text-xs text-muted-foreground bg-card/50">
         © 2026 VirtusGreen · Barcelona / EU-wide ·{" "}
-        <a href="mailto:hello@virtusgreen.com" className="hover:text-primary transition-colors">
+        <a href="mailto:hello@virtusgreen.com" className="hover:text-foreground transition-colors">
           hello@virtusgreen.com
         </a>
       </footer>
