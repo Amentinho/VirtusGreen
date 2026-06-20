@@ -23,25 +23,33 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    const hash = window.location.hash.slice(1);
-    if (hash) {
-      setTimeout(() => {
-        const element = document.getElementById(hash);
-        if (element) {
-          const offset = 80;
-          const bodyRect = document.body.getBoundingClientRect().top;
-          const elementRect = element.getBoundingClientRect().top;
-          const elementPosition = elementRect - bodyRect;
-          const offsetPosition = elementPosition - offset;
+    const scrollToHash = () => {
+      const hash = window.location.hash.slice(1);
+      if (hash) {
+        // Give the page time to fully render before scrolling
+        setTimeout(() => {
+          const element = document.getElementById(hash);
+          if (element) {
+            const offset = 80;
+            const bodyRect = document.body.getBoundingClientRect().top;
+            const elementRect = element.getBoundingClientRect().top;
+            const elementPosition = elementRect - bodyRect;
+            const offsetPosition = elementPosition - offset;
 
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth",
-          });
-          window.history.replaceState(null, '', '/');
-        }
-      }, 100);
-    }
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth",
+            });
+            window.history.replaceState(null, '', '/passport');
+          }
+        }, 200);
+      }
+    };
+
+    scrollToHash();
+    // Also listen for hash changes triggered by wouter navigation
+    window.addEventListener('hashchange', scrollToHash);
+    return () => window.removeEventListener('hashchange', scrollToHash);
   }, []);
 
   return (
