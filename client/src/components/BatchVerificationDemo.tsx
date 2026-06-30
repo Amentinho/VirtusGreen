@@ -11,30 +11,34 @@ import { trackEvent } from "@/lib/analytics";
 
 type Skin = "bronte" | "etna" | "modica";
 
-const SKINS: Record<Skin, { label: string; icon: string; batchPrefix: string; dateFrom: string; dateTo: string; plotName: string }> = {
+function recentDateRange() {
+  const to = new Date();
+  const from = new Date();
+  from.setDate(from.getDate() - 90);
+  return {
+    dateFrom: from.toISOString().slice(0, 10),
+    dateTo: to.toISOString().slice(0, 10),
+  };
+}
+
+const SKINS: Record<Skin, { label: string; icon: string; batchPrefix: string; plotName: string }> = {
   bronte: {
     label: "Bronte DOP Pistachio",
     icon: "🌿",
     batchPrefix: "BRN",
-    dateFrom: "2024-09-01",
-    dateTo: "2024-11-30",
     plotName: "Contrada Difesa, Bronte (CT)",
   },
   etna: {
     label: "Etna DOC Wine",
     icon: "🍷",
     batchPrefix: "ETN",
-    dateFrom: "2024-08-01",
-    dateTo: "2024-10-31",
     plotName: "Contrada Calderara, Randazzo (CT)",
   },
   modica: {
     label: "Modica IGP Chocolate",
     icon: "🍫",
     batchPrefix: "MOD",
-    dateFrom: "2024-10-01",
-    dateTo: "2025-01-31",
-    plotName: "Cocoa origin — São Tomé (EUDR tracked)",
+    plotName: "Água Izé plantation, São Tomé island",
   },
 };
 
@@ -103,8 +107,7 @@ export default function BatchVerificationDemo() {
         body: JSON.stringify({
           batchId,
           skin,
-          dateFrom: SKINS[skin].dateFrom,
-          dateTo: SKINS[skin].dateTo,
+          ...recentDateRange(),
           useFakePlot: isFakeBatch(batchId),
         }),
       });
@@ -233,10 +236,11 @@ export default function BatchVerificationDemo() {
             </Badge>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-sm">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm">
             <Stat label="Batch ID" value={result.batchId} />
             <Stat label="Avg NDVI" value={result.avgNdvi.toFixed(3)} />
             <Stat label="Confidence" value={`${result.confidence}%`} />
+            <Stat label="Satellite data" value={`Last 90 days · live`} />
           </div>
 
           <div className="space-y-1.5">
