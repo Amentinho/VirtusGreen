@@ -42,6 +42,8 @@ type Step = "idle" | "capturing" | "verifying" | "anchoring" | "done" | "failed"
 
 interface VerifyResult {
   batchId: string;
+  skin: string;
+  plotName: string;
   verified: boolean;
   confidence: number;
   avgNdvi: number;
@@ -83,7 +85,7 @@ export default function BatchVerificationDemo() {
   };
 
   const isFakeBatch = (id: string) =>
-    /fake|test|demo|xxx|000|999/i.test(id) && !id.match(/^(BRN|ETN|MOD)-\d{4}-\d{3}$/);
+    !id.match(/^(BRN|ETN|MOD)-\d{4}-\d{3,4}$/i);
 
   const runVerification = async () => {
     setError(null);
@@ -92,21 +94,6 @@ export default function BatchVerificationDemo() {
 
     setStep("capturing");
     await delay(900);
-
-    // Demo-mode: obviously fake batch IDs fail before hitting the API
-    if (isFakeBatch(batchId)) {
-      setResult({
-        batchId,
-        verified: false,
-        confidence: 0,
-        avgNdvi: 0,
-        intervals: [],
-        anchorReady: false,
-      });
-      setStep("failed");
-      trackEvent("batch_verify_failed", "engagement", skin);
-      return;
-    }
 
     setStep("verifying");
     try {
@@ -118,6 +105,7 @@ export default function BatchVerificationDemo() {
           skin,
           dateFrom: SKINS[skin].dateFrom,
           dateTo: SKINS[skin].dateTo,
+          useFakePlot: isFakeBatch(batchId),
         }),
       });
 
@@ -186,7 +174,7 @@ export default function BatchVerificationDemo() {
           <div className="flex-1 space-y-1.5">
             <label className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">Plot</label>
             <div className="px-3 py-2 rounded-md border border-border bg-muted/30 text-sm text-muted-foreground">
-              {SKINS[skin].plotName}
+              {result?.plotName ?? SKINS[skin].plotName}
             </div>
           </div>
         </div>

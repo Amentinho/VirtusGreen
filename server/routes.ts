@@ -9,16 +9,60 @@ import { sendContactFormEmail } from "./email";
 const COPERNICUS_TOKEN_URL = "https://identity.dataspace.copernicus.eu/auth/realms/CDSE/protocol/openid-connect/token";
 const SENTINEL_HUB_BASE = "https://sh.dataspace.copernicus.eu";
 
-// Pre-seeded Bronte pistachio plot polygon (Contrada Difesa, Bronte CT)
-const BRONTE_PLOT_GEOJSON = {
-  type: "Polygon",
-  coordinates: [[
-    [14.8312, 37.7891],
-    [14.8356, 37.7891],
-    [14.8356, 37.7921],
-    [14.8312, 37.7921],
-    [14.8312, 37.7891],
-  ]],
+// Real registered plot polygons — each skin uses a distinct location
+const PLOTS: Record<string, { name: string; polygon: object; ndviThreshold: number }> = {
+  // Bronte DOP pistachio — Contrada Difesa, Bronte (CT), NW slope of Etna
+  bronte: {
+    name: "Contrada Difesa, Bronte (CT)",
+    ndviThreshold: 0.15,
+    polygon: {
+      type: "Polygon",
+      coordinates: [[
+        [14.8312, 37.7891], [14.8356, 37.7891],
+        [14.8356, 37.7921], [14.8312, 37.7921],
+        [14.8312, 37.7891],
+      ]],
+    },
+  },
+  // Etna DOC wine — Contrada Calderara, Randazzo (CT), north face of Etna
+  etna: {
+    name: "Contrada Calderara, Randazzo (CT)",
+    ndviThreshold: 0.20,
+    polygon: {
+      type: "Polygon",
+      coordinates: [[
+        [14.9520, 37.9410], [14.9580, 37.9410],
+        [14.9580, 37.9450], [14.9520, 37.9450],
+        [14.9520, 37.9410],
+      ]],
+    },
+  },
+  // Modica IGP chocolate — cocoa origin, São Tomé island (EUDR tracked)
+  modica: {
+    name: "Água Izé plantation, São Tomé island",
+    ndviThreshold: 0.40, // tropical cocoa: high NDVI expected
+    polygon: {
+      type: "Polygon",
+      coordinates: [[
+        [6.7180, 0.2820], [6.7240, 0.2820],
+        [6.7240, 0.2870], [6.7180, 0.2870],
+        [6.7180, 0.2820],
+      ]],
+    },
+  },
+  // Lava field on Etna — used for fake/rejected batches to guarantee NDVI failure
+  fake: {
+    name: "Lava field, Etna summit (non-agricultural)",
+    ndviThreshold: 99,
+    polygon: {
+      type: "Polygon",
+      coordinates: [[
+        [14.9930, 37.7480], [14.9990, 37.7480],
+        [14.9990, 37.7520], [14.9930, 37.7520],
+        [14.9930, 37.7480],
+      ]],
+    },
+  },
 };
 
 let cachedToken: { value: string; expiresAt: number } | null = null;
@@ -82,11 +126,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Sentinel Hub plot verification
   app.post("/api/sentinel/verify", async (req, res) => {
     try {
-      const { batchId, skin, dateFrom, dateTo } = req.body as {
+      const { batchId, skin, dateFrom, dateTo, useFakePlot } = req.body as {
         batchId: string;
         skin: "bronte" | "etna" | "modica";
         dateFrom: string;
         dateTo: string;
+        useFakePlot?: boolean;
       };
 
       if (!batchId || !skin) {
@@ -104,9 +149,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const from = dateFrom || "2024-09-01";
       const to = dateTo || "2024-11-30";
 
+      const plot = useFakePlot ? PLOTS.fake : (PLOTS[skin] ?? PLOTS.bronte);
+
       const statsPayload = {
         input: {
-          bounds: { geometry: BRONTE_PLOT_GEOJSON },
+          bounds: { geometry: plot.polygon },
           data: [{
             type: "sentinel-2-l2a",
             dataFilter: { mosaickingOrder: "leastCC" },
@@ -159,7 +206,6 @@ function evaluatePixel(s) {
         data: { interval: { from: string; to: string }; outputs: { ndvi: { bands: { B0: { stats: { mean: number; max: number; stDev: number; sampleCount: number } } } } } }[];
       };
 
-      // Interpret NDVI for pistachio: active canopy > 0.35, harvest dip expected Sep–Oct
       const intervals = statsData.data.map((d) => ({
         period: d.interval.from.slice(0, 7),
         ndviMean: parseFloat(d.outputs?.ndvi?.bands?.B0?.stats?.mean?.toFixed(3) ?? "0"),
@@ -171,20 +217,21 @@ function evaluatePixel(s) {
         ? intervals.reduce((s, i) => s + i.ndviMean, 0) / intervals.length
         : 0;
 
-      const verified = avgNdvi > 0.15;
-      // Scale: 0.15 (threshold) = 60%, 0.5+ = 99%
+      const threshold = plot.ndviThreshold;
+      const verified = avgNdvi > threshold;
       const confidence = verified
-        ? Math.min(99, Math.round(60 + ((avgNdvi - 0.15) / 0.35) * 39))
-        : Math.min(59, Math.round((avgNdvi / 0.15) * 59));
+        ? Math.min(99, Math.round(60 + ((avgNdvi - threshold) / 0.35) * 39))
+        : Math.min(59, Math.round((avgNdvi / threshold) * 59));
 
       res.json({
         batchId,
         skin,
+        plotName: plot.name,
         verified,
         confidence,
         avgNdvi: parseFloat(avgNdvi.toFixed(3)),
         intervals,
-        plotPolygon: BRONTE_PLOT_GEOJSON,
+        plotPolygon: plot.polygon,
         dateRange: { from, to },
         anchorReady: verified,
       });
