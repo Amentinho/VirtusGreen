@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import GreenAgent from "@/components/GreenAgent";
+import BatchVerificationDemo from "@/components/BatchVerificationDemo";
 import ContactForm from "@/components/ContactForm";
 import logoImage from "@assets/Asset 77_1762949956789.png";
 import LanguageSelector from "@/components/LanguageSelector";
@@ -59,6 +60,17 @@ export default function GreenAgentPage() {
 
       <main>
         <GreenAgent />
+        <section className="py-16 bg-background">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div className="text-center space-y-2">
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Live Batch Verification Demo</h2>
+              <p className="text-muted-foreground max-w-xl mx-auto text-sm">
+                Select a product, enter a batch ID, and watch Green Agent cross-check it against real Copernicus Sentinel-2 satellite data.
+              </p>
+            </div>
+            <BatchVerificationDemo />
+          </div>
+        </section>
         <ContactForm />
       </main>
 
