@@ -229,6 +229,30 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (e: any) { res.status(500).json({ error: e.message }); }
   });
 
+  // ── Next batch code (unique per producer+skin+year) ──────────────────────
+
+  app.get("/api/batches/next-code", async (req, res) => {
+    try {
+      if (!db) { res.status(503).json({ error: "Database not configured" }); return; }
+      const { producerId, skin } = req.query as { producerId: string; skin: string };
+      if (!producerId || !skin) { res.status(400).json({ error: "producerId and skin required" }); return; }
+      const prefix = skin === "bronte" ? "BRN" : skin === "etna" ? "ETN" : skin === "modica" ? "MOD" : "YUB";
+      const year = new Date().getFullYear();
+      const pattern = `${prefix}-${year}-%`;
+      // Find all existing codes for this producer+skin+year
+      const existing = await db.select({ batchCode: batches.batchCode })
+        .from(batches)
+        .where(eq(batches.producerId, producerId));
+      const nums = existing
+        .map(b => b.batchCode)
+        .filter(c => c.startsWith(`${prefix}-${year}-`))
+        .map(c => parseInt(c.split("-")[2] ?? "0", 10))
+        .filter(n => !isNaN(n));
+      const next = (nums.length > 0 ? Math.max(...nums) : 0) + 1;
+      res.json({ code: `${prefix}-${year}-${String(next).padStart(3, "0")}` });
+    } catch (e: any) { res.status(500).json({ error: e.message }); }
+  });
+
   // ── Batch registration + auto-verify ─────────────────────────────────────
 
   app.post("/api/batches", async (req, res) => {

@@ -11,6 +11,7 @@ import ProducerRegister from "@/pages/ProducerRegister";
 import ProducerDashboard from "@/pages/ProducerDashboard";
 import ProducerLogin from "@/pages/ProducerLogin";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
+import TermsOfService from "@/pages/TermsOfService";
 import BatchPassport from "@/pages/BatchPassport";
 import Checklist from "@/pages/Checklist";
 import NotFound from "@/pages/not-found";
@@ -30,6 +31,7 @@ function Router() {
       <Route path="/producer/dashboard" component={ProducerDashboard} />
       <Route path="/producer/login" component={ProducerLogin} />
       <Route path="/privacy" component={PrivacyPolicy} />
+      <Route path="/terms" component={TermsOfService} />
       <Route path="/passport/:batchCode" component={BatchPassport} />
       <Route path="/checklist" component={Checklist} />
       <Route component={NotFound} />

@@ -34,19 +34,19 @@ interface BatchForm {
 // ── Skin config ───────────────────────────────────────────────────────────────
 
 const SKINS: Record<Skin, { label: string; icon: string; center: [number, number]; zoom: number; hint: string }> = {
-  bronte:  { label: "Bronte DOP Pistachio", icon: "🌿", center: [37.789, 14.833], zoom: 13, hint: "Click the map to draw your plot polygon. Min 3 points." },
-  etna:    { label: "Etna DOC Wine",         icon: "🍷", center: [37.941, 14.952], zoom: 13, hint: "Draw the contrada boundary of your vineyard." },
-  modica:  { label: "Modica IGP Chocolate",  icon: "🍫", center: [0.282,  6.720],  zoom: 13, hint: "Draw the cocoa plantation polygon (São Tomé)." },
-  yubari:  { label: "Yubari Melon (Japan)",  icon: "🍈", center: [43.061, 141.994],zoom: 13, hint: "Draw the greenhouse / field boundary (Hokkaido)." },
+  bronte:  { label: "Pistacchio Bronte DOP", icon: "🌿", center: [37.789, 14.833], zoom: 13, hint: "Clicca sulla mappa per disegnare il poligono del tuo appezzamento. Minimo 3 punti." },
+  etna:    { label: "Vino Etna DOC",          icon: "🍷", center: [37.941, 14.952], zoom: 13, hint: "Disegna il confine della contrada del tuo vigneto." },
+  modica:  { label: "Cioccolato Modica IGP",  icon: "🍫", center: [0.282,  6.720],  zoom: 13, hint: "Disegna il poligono della piantagione di cacao (São Tomé)." },
+  yubari:  { label: "Melone Yubari (Giappone)", icon: "🍈", center: [43.061, 141.994],zoom: 13, hint: "Disegna il confine della serra / campo (Hokkaido)." },
 };
 
 const GI_TYPES = ["DOP", "DOC", "IGP"];
-const CERT_BODIES = ["CSQA", "DNV", "Bureau Veritas", "ICIM", "Other"];
+const CERT_BODIES = ["CSQA", "DNV", "Bureau Veritas", "ICIM", "Altro"];
 const STEPS = [
-  { label: "Producer",  icon: Building2 },
-  { label: "Plot",      icon: MapPin },
-  { label: "Batch",     icon: Package },
-  { label: "Verify",    icon: Satellite },
+  { label: "Produttore", icon: Building2 },
+  { label: "Appezzamento", icon: MapPin },
+  { label: "Lotto",      icon: Package },
+  { label: "Verifica",   icon: Satellite },
 ];
 
 // ── Map polygon drawing ───────────────────────────────────────────────────────
@@ -173,10 +173,15 @@ export default function ProducerRegister() {
       if (!res.ok) { setError(data.error ?? "Failed to register plot"); return; }
       setPlotId(data.id);
       trackEvent("plot_registered", "registration", plot.skin);
-      // Auto-generate batch code
-      const year = new Date().getFullYear();
-      const prefix = plot.skin === "bronte" ? "BRN" : plot.skin === "etna" ? "ETN" : plot.skin === "modica" ? "MOD" : "YUB";
-      setBatch(b => ({ ...b, batchCode: `${prefix}-${year}-001` }));
+      // Auto-generate unique batch code for this producer+skin+year
+      fetch(`/api/batches/next-code?producerId=${producerId}&skin=${plot.skin}`)
+        .then(r => r.json())
+        .then(d => { if (d.code) setBatch(b => ({ ...b, batchCode: d.code })); })
+        .catch(() => {
+          const year = new Date().getFullYear();
+          const prefix = plot.skin === "bronte" ? "BRN" : plot.skin === "etna" ? "ETN" : plot.skin === "modica" ? "MOD" : "YUB";
+          setBatch(b => ({ ...b, batchCode: `${prefix}-${year}-001` }));
+        });
       setStep(2);
     } catch (e: any) { setError(e.message); }
     finally { setSubmitting(false); }
@@ -243,7 +248,7 @@ export default function ProducerRegister() {
           <button onClick={() => setLocation("/green-agent")} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
             <ChevronLeft className="w-4 h-4" /> Green Agent
           </button>
-          <span className="text-sm font-semibold text-foreground flex items-center gap-1.5"><Leaf className="w-4 h-4 text-cta" /> Producer Registration</span>
+          <span className="text-sm font-semibold text-foreground flex items-center gap-1.5"><Leaf className="w-4 h-4 text-cta" /> Registrazione Produttore</span>
           <div className="w-24" />
         </div>
       </header>
@@ -279,35 +284,35 @@ export default function ProducerRegister() {
         {/* ── STEP 0: Producer ── */}
         {step === 0 && (
           <Card className="p-6 space-y-4">
-            <h2 className="font-bold text-foreground text-lg">Producer Information</h2>
+            <h2 className="font-bold text-foreground text-lg">Dati del Produttore</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <Field label="Full name" required>
+              <Field label="Nome e cognome" required>
                 <input className={inputCls} value={producer.name} onChange={e => setProducer(p => ({...p, name: e.target.value}))} placeholder="Andrea Amenta" />
               </Field>
-              <Field label="Farm / company name" required>
+              <Field label="Nome azienda / ragione sociale" required>
                 <input className={inputCls} value={producer.farmName} onChange={e => setProducer(p => ({...p, farmName: e.target.value}))} placeholder="Azienda Agricola..." />
               </Field>
               <Field label="Email" required>
-                <input className={inputCls} type="email" value={producer.email} onChange={e => setProducer(p => ({...p, email: e.target.value}))} placeholder="you@farm.it" />
+                <input className={inputCls} type="email" value={producer.email} onChange={e => setProducer(p => ({...p, email: e.target.value}))} placeholder="tu@azienda.it" />
               </Field>
               <Field label="Password" required>
-                <input className={inputCls} type="password" value={producer.password} onChange={e => setProducer(p => ({...p, password: e.target.value}))} placeholder="Min. 8 characters" autoComplete="new-password" />
+                <input className={inputCls} type="password" value={producer.password} onChange={e => setProducer(p => ({...p, password: e.target.value}))} placeholder="Min. 8 caratteri" autoComplete="new-password" />
               </Field>
-              <Field label="Phone">
+              <Field label="Telefono">
                 <input className={inputCls} value={producer.phone} onChange={e => setProducer(p => ({...p, phone: e.target.value}))} placeholder="+39 ..." />
               </Field>
-              <Field label="Region">
+              <Field label="Regione">
                 <input className={inputCls} value={producer.region} onChange={e => setProducer(p => ({...p, region: e.target.value}))} placeholder="Sicilia" />
               </Field>
-              <Field label="GI type">
+              <Field label="Tipo IG">
                 <select className={selectCls} value={producer.giType} onChange={e => setProducer(p => ({...p, giType: e.target.value}))}>
                   {GI_TYPES.map(t => <option key={t}>{t}</option>)}
                 </select>
               </Field>
-              <Field label="GI certification number">
+              <Field label="Numero certificazione IG">
                 <input className={inputCls} value={producer.giCertificationNumber} onChange={e => setProducer(p => ({...p, giCertificationNumber: e.target.value}))} placeholder="IT-DOP-..." />
               </Field>
-              <Field label="Certification body">
+              <Field label="Organismo di controllo">
                 <select className={selectCls} value={producer.certificationBody} onChange={e => setProducer(p => ({...p, certificationBody: e.target.value}))}>
                   {CERT_BODIES.map(c => <option key={c}>{c}</option>)}
                 </select>
@@ -322,13 +327,14 @@ export default function ProducerRegister() {
                 className="mt-0.5 h-4 w-4 rounded border-border accent-cta cursor-pointer"
               />
               <span className="text-xs text-muted-foreground leading-relaxed">
-                I consent to VirtusGreen processing my data (name, email, farm details, plot coordinates) for GI provenance verification purposes, in accordance with GDPR and EU Regulation 2024/1143.{" "}
-                <a href="/privacy" className="text-cta underline hover:no-underline" target="_blank">Privacy Policy</a>
+                Acconsento al trattamento dei miei dati personali (nome, email, dati aziendali, coordinate appezzamento) da parte di VirtusGreen per finalità di verifica di provenienza IG, ai sensi del GDPR e del Regolamento UE 2024/1143. Ho letto l'{" "}
+                <a href="/privacy" className="text-cta underline hover:no-underline" target="_blank">Informativa Privacy</a>{" "}e i{" "}
+                <a href="/terms" className="text-cta underline hover:no-underline" target="_blank">Termini di Servizio</a>.
               </span>
             </label>
 
             <Button className="w-full bg-cta hover:bg-cta/90 text-cta-foreground mt-2" onClick={submitProducer} disabled={submitting || !producer.gdprConsent}>
-              {submitting ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" />Saving…</> : <>Continue <ChevronRight className="w-4 h-4 ml-1" /></>}
+              {submitting ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" />Salvataggio…</> : <>Continua <ChevronRight className="w-4 h-4 ml-1" /></>}
             </Button>
           </Card>
         )}
@@ -336,12 +342,12 @@ export default function ProducerRegister() {
         {/* ── STEP 1: Plot ── */}
         {step === 1 && (
           <Card className="p-6 space-y-4">
-            <h2 className="font-bold text-foreground text-lg">Register Your Plot</h2>
+            <h2 className="font-bold text-foreground text-lg">Registra il tuo Appezzamento</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <Field label="Plot name" required>
+              <Field label="Nome appezzamento" required>
                 <input className={inputCls} value={plot.name} onChange={e => setPlot(p => ({...p, name: e.target.value}))} placeholder="Contrada Difesa Nord" />
               </Field>
-              <Field label="Product skin" required>
+              <Field label="Prodotto" required>
                 <select className={selectCls} value={plot.skin} onChange={e => {
                   const s = e.target.value as Skin;
                   setPlot(p => ({...p, skin: s, polygon: []}));
@@ -352,17 +358,17 @@ export default function ProducerRegister() {
                   ))}
                 </select>
               </Field>
-              <Field label="Altitude (m)">
+              <Field label="Altitudine (m s.l.m.)">
                 <input className={inputCls} type="number" value={plot.altitudeM} onChange={e => setPlot(p => ({...p, altitudeM: e.target.value}))} placeholder="700" />
               </Field>
-              <Field label="Area (ha)">
+              <Field label="Superficie (ha)">
                 <input className={inputCls} type="number" step="0.01" value={plot.areaHa} onChange={e => setPlot(p => ({...p, areaHa: e.target.value}))} placeholder="0.50" />
               </Field>
-              <Field label="Cadastral reference">
+              <Field label="Riferimento catastale">
                 <input className={inputCls} value={plot.cadastralRef} onChange={e => setPlot(p => ({...p, cadastralRef: e.target.value}))} placeholder="Foglio 12 – Particella 345" />
               </Field>
-              <Field label="Notes">
-                <input className={inputCls} value={plot.notes} onChange={e => setPlot(p => ({...p, notes: e.target.value}))} placeholder="North-facing, volcanic soil" />
+              <Field label="Note">
+                <input className={inputCls} value={plot.notes} onChange={e => setPlot(p => ({...p, notes: e.target.value}))} placeholder="Esposizione nord, suolo vulcanico" />
               </Field>
             </div>
 
@@ -370,13 +376,13 @@ export default function ProducerRegister() {
             <div className="space-y-2">
               <div className="flex items-center justify-between">
                 <label className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
-                  Plot polygon — click to add points
+                  Poligono appezzamento — clicca per aggiungere punti
                 </label>
                 <div className="flex gap-2">
-                  <Badge variant="secondary" className="text-xs">{mapPoints.length} points</Badge>
+                  <Badge variant="secondary" className="text-xs">{mapPoints.length} punti</Badge>
                   {mapPoints.length > 0 && (
                     <button onClick={() => { setMapPoints([]); setPlot(p => ({...p, polygon: []})); }}
-                      className="text-xs text-muted-foreground hover:text-foreground underline">Reset</button>
+                      className="text-xs text-muted-foreground hover:text-foreground underline">Reimposta</button>
                   )}
                 </div>
               </div>
@@ -396,21 +402,21 @@ export default function ProducerRegister() {
                 onClick={finalisePolygon}
                 disabled={mapPoints.length < 3}
               >
-                Finalise polygon ({mapPoints.length} points)
+                Conferma poligono ({mapPoints.length} punti)
               </Button>
               {plot.polygon.length > 0 && (
                 <p className="text-xs text-green-600 flex items-center gap-1">
-                  <CheckCircle2 className="w-3 h-3" /> Polygon saved — {plot.polygon.length - 1} points
+                  <CheckCircle2 className="w-3 h-3" /> Poligono salvato — {plot.polygon.length - 1} punti
                 </p>
               )}
             </div>
 
             <div className="flex gap-3 pt-2">
               <Button variant="outline" onClick={() => setStep(0)} className="flex-1">
-                <ChevronLeft className="w-4 h-4 mr-1" /> Back
+                <ChevronLeft className="w-4 h-4 mr-1" /> Indietro
               </Button>
               <Button className="flex-1 bg-cta hover:bg-cta/90 text-cta-foreground" onClick={submitPlot} disabled={submitting}>
-                {submitting ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" />Saving…</> : <>Continue <ChevronRight className="w-4 h-4 ml-1" /></>}
+                {submitting ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" />Salvataggio…</> : <>Continua <ChevronRight className="w-4 h-4 ml-1" /></>}
               </Button>
             </div>
           </Card>
@@ -419,32 +425,32 @@ export default function ProducerRegister() {
         {/* ── STEP 2: Batch ── */}
         {step === 2 && (
           <Card className="p-6 space-y-4">
-            <h2 className="font-bold text-foreground text-lg">Register Batch</h2>
+            <h2 className="font-bold text-foreground text-lg">Registra il Lotto</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <Field label="Batch code" required>
+              <Field label="Codice lotto" required>
                 <input className={inputCls} value={batch.batchCode} onChange={e => setBatch(b => ({...b, batchCode: e.target.value}))} placeholder="BRN-2026-001" />
               </Field>
-              <Field label="Declared quantity (kg)" required>
+              <Field label="Quantità dichiarata (kg)" required>
                 <input className={inputCls} type="number" value={batch.quantityKg} onChange={e => setBatch(b => ({...b, quantityKg: e.target.value}))} placeholder="1200" />
               </Field>
-              <Field label="Harvest from" required>
+              <Field label="Inizio raccolta" required>
                 <input className={inputCls} type="date" value={batch.harvestDateFrom} onChange={e => setBatch(b => ({...b, harvestDateFrom: e.target.value}))} />
               </Field>
-              <Field label="Harvest to" required>
+              <Field label="Fine raccolta" required>
                 <input className={inputCls} type="date" value={batch.harvestDateTo} onChange={e => setBatch(b => ({...b, harvestDateTo: e.target.value}))} />
               </Field>
               <div className="sm:col-span-2">
-                <Field label="Variety / notes">
-                  <input className={inputCls} value={batch.varietyNotes} onChange={e => setBatch(b => ({...b, varietyNotes: e.target.value}))} placeholder="Napoletana variety, hand-picked" />
+                <Field label="Varietà / note">
+                  <input className={inputCls} value={batch.varietyNotes} onChange={e => setBatch(b => ({...b, varietyNotes: e.target.value}))} placeholder="Varietà Napoletana, raccolta a mano" />
                 </Field>
               </div>
             </div>
             <div className="flex gap-3 pt-2">
               <Button variant="outline" onClick={() => setStep(1)} className="flex-1">
-                <ChevronLeft className="w-4 h-4 mr-1" /> Back
+                <ChevronLeft className="w-4 h-4 mr-1" /> Indietro
               </Button>
               <Button className="flex-1 bg-cta hover:bg-cta/90 text-cta-foreground" onClick={submitBatch} disabled={submitting}>
-                {submitting ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" />Saving…</> : <>Submit & Verify <Satellite className="w-4 h-4 ml-1" /></>}
+                {submitting ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" />Salvataggio…</> : <>Invia e Verifica <Satellite className="w-4 h-4 ml-1" /></>}
               </Button>
             </div>
           </Card>
@@ -453,19 +459,19 @@ export default function ProducerRegister() {
         {/* ── STEP 3: Verification result ── */}
         {step === 3 && (
           <Card className="p-6 space-y-5">
-            <h2 className="font-bold text-foreground text-lg">Satellite Verification</h2>
+            <h2 className="font-bold text-foreground text-lg">Verifica Satellitare</h2>
 
             {!verifyResult && (
               <div className="space-y-3">
                 <div className="flex items-center gap-3 text-sm font-medium text-foreground">
                   <Loader2 className="w-5 h-5 animate-spin text-cta shrink-0" />
-                  Running satellite verification — this takes 15–30 seconds
+                  Verifica satellitare in corso — richiede 15–30 secondi
                 </div>
                 <div className="pl-8 space-y-1.5 text-xs text-muted-foreground">
-                  <p>🛰️ Querying 12 months of Copernicus Sentinel-2 imagery for your plot</p>
-                  <p>☁️ Applying cloud masking and computing NDVI vegetation index</p>
-                  <p>📍 Cross-checking GI zone boundary and crop phenology</p>
-                  <p>⛓️ Anchoring verified result on Ethereum Sepolia</p>
+                  <p>🛰️ Acquisizione di 12 mesi di immagini Copernicus Sentinel-2 per il tuo appezzamento</p>
+                  <p>☁️ Mascheratura nuvole e calcolo indice NDVI</p>
+                  <p>📍 Verifica del confine di zona IG e fenologia colturale</p>
+                  <p>⛓️ Ancoraggio del risultato verificato su blockchain Ethereum</p>
                 </div>
               </div>
             )}
@@ -556,20 +562,20 @@ export default function ProducerRegister() {
                       className="w-full bg-cta hover:bg-cta/90 text-cta-foreground text-sm"
                       onClick={() => setLocation(`/passport/${batchCode}`)}
                     >
-                      View Digital Product Passport →
+                      Visualizza Passaporto Digitale del Prodotto →
                     </Button>
                     <Button
                       variant="outline"
                       className="w-full text-sm"
                       onClick={() => setLocation("/producer/dashboard")}
                     >
-                      Go to my dashboard →
+                      Vai alla mia dashboard →
                     </Button>
                   </div>
                 )}
 
                 <Button variant="outline" className="w-full" onClick={() => setLocation("/green-agent")}>
-                  Back to Green Agent
+                  Torna a Green Agent
                 </Button>
               </div>
             )}

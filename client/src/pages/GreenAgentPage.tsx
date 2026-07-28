@@ -73,6 +73,14 @@ export default function GreenAgentPage() {
               <p className="text-muted-foreground max-w-xl mx-auto text-sm">
                 Select a product, enter a batch ID, and watch Green Agent cross-check it against real Copernicus Sentinel-2 satellite data.
               </p>
+              <div className="pt-2">
+                <button
+                  onClick={() => setLocation("/passport/BRN-2026-001")}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-cta/10 border border-cta/30 text-cta text-sm font-medium hover:bg-cta/20 transition-colors"
+                >
+                  <span>🌿</span> Visualizza un Passaporto Digitale reale — Pistacchio Bronte DOP →
+                </button>
+              </div>
             </div>
             <BatchVerificationDemo />
           </div>
@@ -83,6 +91,10 @@ export default function GreenAgentPage() {
       <footer className="border-t border-border/50 py-5 px-6 text-center text-xs text-muted-foreground">
         © 2026 VirtusGreen · Barcelona / EU-wide ·{" "}
         <a href="mailto:hello@virtusgreen.com" className="hover:text-primary transition-colors">hello@virtusgreen.com</a>
+        {" · "}
+        <button onClick={() => setLocation("/terms")} className="hover:text-primary transition-colors">Termini</button>
+        {" · "}
+        <button onClick={() => setLocation("/privacy")} className="hover:text-primary transition-colors">Privacy</button>
         {" · "}
         <button onClick={() => setLocation("/")} className="hover:text-primary transition-colors">
           {t("greenAgentPage.backToHome", "Back to home")}
