@@ -1,11 +1,11 @@
 import { useState } from "react";
+import { useLocation } from "wouter";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Progress } from "@/components/ui/progress";
 import {
   MapPin, Satellite, Link, QrCode,
-  CheckCircle2, XCircle, Loader2, ChevronRight,
+  CheckCircle2, XCircle, Loader2, ChevronRight, ExternalLink,
 } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
 
@@ -55,8 +55,6 @@ interface VerifyResult {
   anchorReady: boolean;
 }
 
-const MOCK_TX = "0x4a7f...b3e9";
-
 const STEPS = [
   { key: "capture", label: "Capture", icon: MapPin },
   { key: "verify",  label: "Verify",  icon: Satellite },
@@ -73,7 +71,11 @@ function stepIndex(step: Step) {
   return -1;
 }
 
+const CONTRACT_ADDRESS = "0x4Db52a82F5c068Cc2b11Be5009191D149315C355";
+const ETHERSCAN_URL = `https://sepolia.etherscan.io/address/${CONTRACT_ADDRESS}`;
+
 export default function BatchVerificationDemo() {
+  const [, setLocation] = useLocation();
   const [skin, setSkin] = useState<Skin>("bronte");
   const [batchId, setBatchId] = useState(SKINS.bronte.batchPrefix + "-2024-001");
   const [step, setStep] = useState<Step>("idle");
@@ -280,18 +282,34 @@ export default function BatchVerificationDemo() {
           )}
 
           {step === "done" && result.verified && (
-            <div className="rounded-lg border border-cta/30 bg-cta/5 p-4 space-y-2">
+            <div className="rounded-lg border border-cta/30 bg-cta/5 p-4 space-y-3">
               <p className="text-xs font-semibold text-cta uppercase tracking-wide flex items-center gap-1.5">
-                <Link className="w-3 h-3" /> On-chain anchor
+                <Link className="w-3 h-3" /> On-chain anchor — GreenAgentLedger
               </p>
-              <p className="text-xs text-muted-foreground font-mono">{MOCK_TX} · Sepolia testnet</p>
-              <p className="text-xs text-muted-foreground">
-                Real anchoring via ThreatLedger contract{" "}
-                <code className="text-xs">0x8A208…Ba35B</code> coming in next sprint.
-              </p>
-              <div className="flex items-center gap-2 mt-3 pt-3 border-t border-cta/20">
-                <QrCode className="w-8 h-8 text-cta" />
-                <p className="text-xs text-muted-foreground">QR code generation ready — batch passport link will be issued here.</p>
+              <div className="flex items-center gap-2">
+                <code className="text-xs text-muted-foreground font-mono truncate">
+                  {CONTRACT_ADDRESS}
+                </code>
+                <a
+                  href={ETHERSCAN_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="shrink-0 text-cta hover:underline flex items-center gap-1 text-xs"
+                >
+                  Sepolia <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
+              <div className="pt-2 border-t border-cta/20">
+                <p className="text-xs text-muted-foreground mb-2">
+                  Register as a producer to anchor your batch on-chain and receive a QR-linked Digital Product Passport.
+                </p>
+                <Button
+                  size="sm"
+                  className="bg-cta hover:bg-cta/90 text-cta-foreground text-xs h-8"
+                  onClick={() => { trackEvent("cta_click", "engagement", "demo_to_register"); setLocation("/producer/register"); }}
+                >
+                  <QrCode className="w-3.5 h-3.5 mr-1.5" /> Get your Digital Product Passport
+                </Button>
               </div>
             </div>
           )}

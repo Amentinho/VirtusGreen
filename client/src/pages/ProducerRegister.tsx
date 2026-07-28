@@ -15,14 +15,15 @@ type Skin = "bronte" | "etna" | "modica" | "yubari";
 interface LatLng { lat: number; lng: number; }
 
 interface ProducerForm {
-  name: string; farmName: string; email: string; phone: string;
+  name: string; farmName: string; email: string; password: string; phone: string;
   country: string; region: string; giCertificationNumber: string;
   giType: string; certificationBody: string;
+  gdprConsent: boolean;
 }
 
 interface PlotForm {
   name: string; skin: Skin; polygon: [number, number][];
-  altitudeM: string; areaSqm: string; cadastralRef: string; notes: string;
+  altitudeM: string; areaHa: string; cadastralRef: string; notes: string;
 }
 
 interface BatchForm {
@@ -91,14 +92,15 @@ export default function ProducerRegister() {
 
   // Form state
   const [producer, setProducer] = useState<ProducerForm>({
-    name: "", farmName: "", email: "", phone: "",
+    name: "", farmName: "", email: "", password: "", phone: "",
     country: "IT", region: "", giCertificationNumber: "",
     giType: "DOP", certificationBody: "CSQA",
+    gdprConsent: false,
   });
 
   const [plot, setPlot] = useState<PlotForm>({
     name: "", skin: "bronte", polygon: [],
-    altitudeM: "", areaSqm: "", cadastralRef: "", notes: "",
+    altitudeM: "", areaHa: "", cadastralRef: "", notes: "",
   });
   const [mapPoints, setMapPoints] = useState<LatLng[]>([]);
 
@@ -114,9 +116,15 @@ export default function ProducerRegister() {
     if (!producer.name || !producer.farmName || !producer.email) {
       setError("Name, farm name, and email are required."); return;
     }
+    if (!producer.password || producer.password.length < 8) {
+      setError("Password must be at least 8 characters."); return;
+    }
+    if (!producer.gdprConsent) {
+      setError("You must accept the data processing terms to continue."); return;
+    }
     setSubmitting(true);
     try {
-      const res = await fetch("/api/producers", {
+      const res = await fetch("/api/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...producer, giType: producer.giType || undefined }),
@@ -126,6 +134,7 @@ export default function ProducerRegister() {
       setProducerId(data.id);
       trackEvent("producer_registered", "registration", producer.farmName);
       setStep(1);
+      // Session is now set — producer is logged in
     } catch (e: any) { setError(e.message); }
     finally { setSubmitting(false); }
   };
@@ -155,7 +164,7 @@ export default function ProducerRegister() {
           skin: plot.skin,
           polygon: { type: "Polygon", coordinates: [plot.polygon] },
           altitudeM: plot.altitudeM ? parseInt(plot.altitudeM) : undefined,
-          areaSqm: plot.areaSqm ? parseInt(plot.areaSqm) : undefined,
+          areaSqm: plot.areaHa ? Math.round(parseFloat(plot.areaHa) * 10000) : undefined,
           cadastralRef: plot.cadastralRef || undefined,
           notes: plot.notes || undefined,
         }),
@@ -179,6 +188,9 @@ export default function ProducerRegister() {
     setError(null);
     if (!batch.batchCode || !batch.harvestDateFrom || !batch.harvestDateTo) {
       setError("Batch code and harvest dates are required."); return;
+    }
+    if (!batch.quantityKg || parseFloat(batch.quantityKg) <= 0) {
+      setError("Declared quantity (kg) is required for the yield plausibility check."); return;
     }
     if (!producerId || !plotId) { setError("Producer or plot missing."); return; }
     setSubmitting(true);
@@ -215,7 +227,7 @@ export default function ProducerRegister() {
       const data = await res.json();
       setVerifyResult(data);
     } catch (e: any) {
-      setVerifyResult({ error: e.message });
+      setVerifyResult({ error: "We couldn't complete the satellite query. Please check your connection and retry." });
     }
   };
 
@@ -278,6 +290,9 @@ export default function ProducerRegister() {
               <Field label="Email" required>
                 <input className={inputCls} type="email" value={producer.email} onChange={e => setProducer(p => ({...p, email: e.target.value}))} placeholder="you@farm.it" />
               </Field>
+              <Field label="Password" required>
+                <input className={inputCls} type="password" value={producer.password} onChange={e => setProducer(p => ({...p, password: e.target.value}))} placeholder="Min. 8 characters" autoComplete="new-password" />
+              </Field>
               <Field label="Phone">
                 <input className={inputCls} value={producer.phone} onChange={e => setProducer(p => ({...p, phone: e.target.value}))} placeholder="+39 ..." />
               </Field>
@@ -298,7 +313,21 @@ export default function ProducerRegister() {
                 </select>
               </Field>
             </div>
-            <Button className="w-full bg-cta hover:bg-cta/90 text-cta-foreground mt-2" onClick={submitProducer} disabled={submitting}>
+            {/* GDPR consent */}
+            <label className="flex items-start gap-3 cursor-pointer group">
+              <input
+                type="checkbox"
+                checked={producer.gdprConsent}
+                onChange={e => setProducer(p => ({ ...p, gdprConsent: e.target.checked }))}
+                className="mt-0.5 h-4 w-4 rounded border-border accent-cta cursor-pointer"
+              />
+              <span className="text-xs text-muted-foreground leading-relaxed">
+                I consent to VirtusGreen processing my data (name, email, farm details, plot coordinates) for GI provenance verification purposes, in accordance with GDPR and EU Regulation 2024/1143.{" "}
+                <a href="/privacy" className="text-cta underline hover:no-underline" target="_blank">Privacy Policy</a>
+              </span>
+            </label>
+
+            <Button className="w-full bg-cta hover:bg-cta/90 text-cta-foreground mt-2" onClick={submitProducer} disabled={submitting || !producer.gdprConsent}>
               {submitting ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" />Saving…</> : <>Continue <ChevronRight className="w-4 h-4 ml-1" /></>}
             </Button>
           </Card>
@@ -326,8 +355,8 @@ export default function ProducerRegister() {
               <Field label="Altitude (m)">
                 <input className={inputCls} type="number" value={plot.altitudeM} onChange={e => setPlot(p => ({...p, altitudeM: e.target.value}))} placeholder="700" />
               </Field>
-              <Field label="Area (m²)">
-                <input className={inputCls} type="number" value={plot.areaSqm} onChange={e => setPlot(p => ({...p, areaSqm: e.target.value}))} placeholder="5000" />
+              <Field label="Area (ha)">
+                <input className={inputCls} type="number" step="0.01" value={plot.areaHa} onChange={e => setPlot(p => ({...p, areaHa: e.target.value}))} placeholder="0.50" />
               </Field>
               <Field label="Cadastral reference">
                 <input className={inputCls} value={plot.cadastralRef} onChange={e => setPlot(p => ({...p, cadastralRef: e.target.value}))} placeholder="Foglio 12 – Particella 345" />
@@ -395,7 +424,7 @@ export default function ProducerRegister() {
               <Field label="Batch code" required>
                 <input className={inputCls} value={batch.batchCode} onChange={e => setBatch(b => ({...b, batchCode: e.target.value}))} placeholder="BRN-2026-001" />
               </Field>
-              <Field label="Quantity (kg)">
+              <Field label="Declared quantity (kg)" required>
                 <input className={inputCls} type="number" value={batch.quantityKg} onChange={e => setBatch(b => ({...b, quantityKg: e.target.value}))} placeholder="1200" />
               </Field>
               <Field label="Harvest from" required>
@@ -427,9 +456,17 @@ export default function ProducerRegister() {
             <h2 className="font-bold text-foreground text-lg">Satellite Verification</h2>
 
             {!verifyResult && (
-              <div className="flex items-center gap-3 text-muted-foreground text-sm">
-                <Loader2 className="w-5 h-5 animate-spin text-cta" />
-                Querying Copernicus Sentinel-2 for your plot…
+              <div className="space-y-3">
+                <div className="flex items-center gap-3 text-sm font-medium text-foreground">
+                  <Loader2 className="w-5 h-5 animate-spin text-cta shrink-0" />
+                  Running satellite verification — this takes 15–30 seconds
+                </div>
+                <div className="pl-8 space-y-1.5 text-xs text-muted-foreground">
+                  <p>🛰️ Querying 12 months of Copernicus Sentinel-2 imagery for your plot</p>
+                  <p>☁️ Applying cloud masking and computing NDVI vegetation index</p>
+                  <p>📍 Cross-checking GI zone boundary and crop phenology</p>
+                  <p>⛓️ Anchoring verified result on Ethereum Sepolia</p>
+                </div>
               </div>
             )}
 
@@ -498,9 +535,36 @@ export default function ProducerRegister() {
                 )}
 
                 {verifyResult.verified && (
-                  <div className="rounded-lg border border-cta/30 bg-cta/5 p-4 space-y-1">
-                    <p className="text-xs font-semibold text-cta uppercase tracking-wide">✓ Ready for on-chain anchoring</p>
-                    <p className="text-xs text-muted-foreground">All 3 verification layers passed. Next: anchor to ThreatLedger contract → generate DPP + QR.</p>
+                  <div className="rounded-lg border border-cta/30 bg-cta/5 p-4 space-y-3">
+                    <p className="text-xs font-semibold text-cta uppercase tracking-wide">✓ All layers passed</p>
+                    {verifyResult.anchor?.txHash ? (
+                      <div className="space-y-1">
+                        <p className="text-xs text-muted-foreground">Anchored on Ethereum Sepolia</p>
+                        <a
+                          href={verifyResult.anchor.explorerUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-mono text-xs text-cta hover:underline break-all"
+                        >
+                          {verifyResult.anchor.txHash}
+                        </a>
+                      </div>
+                    ) : (
+                      <p className="text-xs text-muted-foreground">On-chain anchoring skipped (no contract configured).</p>
+                    )}
+                    <Button
+                      className="w-full bg-cta hover:bg-cta/90 text-cta-foreground text-sm"
+                      onClick={() => setLocation(`/passport/${batchCode}`)}
+                    >
+                      View Digital Product Passport →
+                    </Button>
+                    <Button
+                      variant="outline"
+                      className="w-full text-sm"
+                      onClick={() => setLocation("/producer/dashboard")}
+                    >
+                      Go to my dashboard →
+                    </Button>
                   </div>
                 )}
 
@@ -511,10 +575,15 @@ export default function ProducerRegister() {
             )}
 
             {verifyResult?.error && (
-              <div className="text-sm text-destructive rounded-lg border border-destructive/30 bg-destructive/5 p-4">
-                Verification error: {verifyResult.error}
-                <Button variant="outline" size="sm" className="mt-3 w-full" onClick={() => batchCode && runVerification(batchCode)}>
-                  Retry
+              <div className="text-sm text-destructive rounded-lg border border-destructive/30 bg-destructive/5 p-4 space-y-3">
+                <p className="font-medium">Verification could not be completed</p>
+                <p className="text-xs text-muted-foreground">
+                  {verifyResult.error.includes("Sentinel") || verifyResult.error.includes("satellite")
+                    ? "We couldn't reach the satellite data service. This is usually temporary — please wait a moment and retry."
+                    : verifyResult.error}
+                </p>
+                <Button variant="outline" size="sm" className="w-full" onClick={() => batchCode && runVerification(batchCode)}>
+                  Retry verification
                 </Button>
               </div>
             )}

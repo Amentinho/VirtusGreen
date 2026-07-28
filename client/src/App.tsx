@@ -7,6 +7,11 @@ import { HelmetProvider } from "react-helmet-async";
 import Landing from "@/pages/Landing";
 import Home from "@/pages/Home";
 import GreenAgentPage from "@/pages/GreenAgentPage";
+import ProducerRegister from "@/pages/ProducerRegister";
+import ProducerDashboard from "@/pages/ProducerDashboard";
+import ProducerLogin from "@/pages/ProducerLogin";
+import PrivacyPolicy from "@/pages/PrivacyPolicy";
+import BatchPassport from "@/pages/BatchPassport";
 import Checklist from "@/pages/Checklist";
 import NotFound from "@/pages/not-found";
 import { useEffect } from "react";
@@ -21,6 +26,11 @@ function Router() {
       <Route path="/" component={Landing} />
       <Route path="/passport" component={Home} />
       <Route path="/green-agent" component={GreenAgentPage} />
+      <Route path="/producer/register" component={ProducerRegister} />
+      <Route path="/producer/dashboard" component={ProducerDashboard} />
+      <Route path="/producer/login" component={ProducerLogin} />
+      <Route path="/privacy" component={PrivacyPolicy} />
+      <Route path="/passport/:batchCode" component={BatchPassport} />
       <Route path="/checklist" component={Checklist} />
       <Route component={NotFound} />
     </Switch>

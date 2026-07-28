@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoImage from "@assets/Asset 77_1762949956789.png";
+import logoImage from "@assets/logo-horizontal.png";
 import { trackEvent } from "@/lib/analytics";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "wouter";

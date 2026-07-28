@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "wouter";
 import { useTranslation } from "react-i18next";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Leaf } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import GreenAgent from "@/components/GreenAgent";
 import BatchVerificationDemo from "@/components/BatchVerificationDemo";
 import ContactForm from "@/components/ContactForm";
-import logoImage from "@assets/Asset 77_1762949956789.png";
+import logoImage from "@assets/logo-horizontal.png";
 import LanguageSelector from "@/components/LanguageSelector";
 import { trackEvent } from "@/lib/analytics";
 
@@ -51,6 +51,12 @@ export default function GreenAgentPage() {
           </div>
           <div className="flex items-center gap-3">
             <LanguageSelector />
+            <button onClick={() => setLocation("/producer/login")} className="text-sm text-muted-foreground hover:text-foreground transition-colors hidden sm:block">
+              Producer login
+            </button>
+            <Button size="sm" variant="outline" className="border-cta/40 text-cta hover:bg-cta/5" onClick={() => { trackEvent("cta_click","engagement","register_producer"); setLocation("/producer/register"); }}>
+              <Leaf className="w-3.5 h-3.5 mr-1.5" /> Register Producer
+            </Button>
             <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground" onClick={scrollToForm}>
               {t("greenAgentPage.contactCta", "Book a call")}
             </Button>

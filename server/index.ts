@@ -1,25 +1,28 @@
-import { readFileSync } from "fs";
-import { resolve } from "path";
-// Load .env before anything else
-try {
-  const envPath = resolve(process.cwd(), ".env");
-  readFileSync(envPath, "utf8").split("\n").forEach((line) => {
-    const eq = line.indexOf("=");
-    if (eq > 0) {
-      const key = line.slice(0, eq).trim();
-      const val = line.slice(eq + 1).trim();
-      if (key && !(key in process.env)) process.env[key] = val;
-    }
-  });
-} catch {}
-
+import "dotenv/config";
 import express, { type Request, Response, NextFunction } from "express";
+import session from "express-session";
+import connectPgSimple from "connect-pg-simple";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+const PgSession = connectPgSimple(session);
+app.use(session({
+  store: process.env.DATABASE_URL
+    ? new PgSession({ conString: process.env.DATABASE_URL, tableName: "sessions", createTableIfMissing: true })
+    : undefined,
+  secret: process.env.SESSION_SECRET || "virtusgreen-dev-secret-change-in-prod",
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
+  },
+}));
 
 app.use((req, res, next) => {
   const start = Date.now();

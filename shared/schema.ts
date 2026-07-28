@@ -38,7 +38,8 @@ export const producers = pgTable("producers", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
   name: text("name").notNull(),
   farmName: text("farm_name").notNull(),
-  email: text("email").notNull(),
+  email: text("email").notNull().unique(),
+  passwordHash: text("password_hash"),          // null = registered before auth existed
   phone: text("phone"),
   country: text("country").notNull().default("IT"),
   region: text("region"),                       // e.g. "Sicilia"
@@ -49,10 +50,11 @@ export const producers = pgTable("producers", {
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
-export const insertProducerSchema = createInsertSchema(producers).omit({ id: true, createdAt: true, status: true }).extend({
+export const insertProducerSchema = createInsertSchema(producers).omit({ id: true, createdAt: true, status: true, passwordHash: true }).extend({
   name: z.string().min(2),
   farmName: z.string().min(2),
   email: z.string().email(),
+  password: z.string().min(8, "Password must be at least 8 characters"),
   phone: z.string().optional(),
   country: z.string().default("IT"),
   region: z.string().optional(),

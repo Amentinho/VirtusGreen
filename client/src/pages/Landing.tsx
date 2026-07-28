@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "wouter";
 import { useTranslation } from "react-i18next";
 import { ArrowRight, Shield, Leaf } from "lucide-react";
-import logoImage from "@assets/Asset 77_1762949956789.png";
+import logoImage from "@assets/logo-horizontal.png";
 import LanguageSelector from "@/components/LanguageSelector";
 import { trackEvent } from "@/lib/analytics";
 
