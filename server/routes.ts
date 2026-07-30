@@ -5,8 +5,8 @@ import { insertContactSchema, insertProducerSchema, insertPlotSchema, insertBatc
 import { z } from "zod";
 import { sendContactFormEmail, sendDppReadyEmail } from "./email";
 import { db } from "./db";
-import { producers, plots, batches } from "@shared/schema";
-import { eq, desc } from "drizzle-orm";
+import { producers, plots, batches, catastoParcels } from "@shared/schema";
+import { eq, desc, and } from "drizzle-orm";
 import bcrypt from "bcryptjs";
 import { checkZoneBoundary } from "./verification/boundaries";
 import { scorePhenology } from "./verification/phenology";
@@ -205,6 +205,71 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const all = await db.select().from(producers).orderBy(desc(producers.createdAt));
       res.json(all);
     } catch (e: any) { res.status(500).json({ error: e.message }); }
+  });
+
+  // ── Catasto lookup — queries our local DB loaded via scripts/ingest-catasto.ts
+  // Params: codiceCatastale (4-char, e.g. "B202"), foglio, particella
+  app.get("/api/catasto/lookup", async (req, res) => {
+    try {
+      if (!db) { res.status(503).json({ error: "Database not configured" }); return; }
+      const { codiceCatastale, foglio, particella } = req.query as Record<string, string>;
+      if (!codiceCatastale || !foglio || !particella) {
+        res.status(400).json({ error: "codiceCatastale, foglio, particella are required" }); return;
+      }
+
+      // Normalize foglio: "1" → "0001", "82A" → foglio="0082" sezione="A0"
+      const foglioRaw = foglio.trim().toUpperCase();
+      const foglioMatch = foglioRaw.match(/^(\d+)([A-Z]?)$/);
+      if (!foglioMatch) { res.status(400).json({ error: "Foglio non valido" }); return; }
+      const foglioN   = foglioMatch[1].padStart(4, "0");
+      const sezione   = foglioMatch[2] ? foglioMatch[2] + "0" : "00";
+      const parcellaP = particella.trim();
+
+      const rows = await db
+        .select()
+        .from(catastoParcels)
+        .where(
+          and(
+            eq(catastoParcels.comuneCodice, codiceCatastale.toUpperCase()),
+            eq(catastoParcels.foglio, foglioN),
+            eq(catastoParcels.sezione, sezione),
+            eq(catastoParcels.mappale, parcellaP)
+          )
+        )
+        .limit(1);
+
+      if (!rows.length) {
+        // Check if we have ANY data for this comune — helps producers diagnose the issue
+        const hasComune = await db
+          .select({ id: catastoParcels.id })
+          .from(catastoParcels)
+          .where(eq(catastoParcels.comuneCodice, codiceCatastale.toUpperCase()))
+          .limit(1);
+
+        if (!hasComune.length) {
+          res.status(404).json({
+            error: `Dati catastali per il comune ${codiceCatastale} non ancora caricati. Disegna il poligono manualmente.`,
+            code: "COMUNE_NOT_LOADED",
+          });
+        } else {
+          res.status(404).json({
+            error: `Particella Fg. ${foglio} Part. ${particella} non trovata. Verifica i dati o disegna manualmente.`,
+            code: "PARCEL_NOT_FOUND",
+          });
+        }
+        return;
+      }
+
+      const parcel = rows[0];
+      res.json({
+        geometry: parcel.geometry,
+        areaSqm: parcel.areaSqm,
+        foglio: parcel.foglio,
+        mappale: parcel.mappale,
+      });
+    } catch (e: any) {
+      res.status(500).json({ error: e.message });
+    }
   });
 
   // ── Plot registration ─────────────────────────────────────────────────────

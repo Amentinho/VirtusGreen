@@ -347,11 +347,11 @@ export default function BatchPassport() {
           <Card className="p-6 space-y-3">
             <h2 className="text-sm font-bold text-foreground uppercase tracking-wide">{t("blockchain")}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-              <div><p className="text-xs text-muted-foreground">{t("network")}</p><p className="font-semibold">Ethereum Sepolia</p></div>
+              <div><p className="text-xs text-muted-foreground">{t("network")}</p><p className="font-semibold">{batch.chainId === 8453 ? "Base" : batch.chainId === 11155111 ? "Ethereum Sepolia (testnet)" : `Chain ${batch.chainId}`}</p></div>
               <div><p className="text-xs text-muted-foreground">{t("anchoredAt")}</p><p className="font-semibold text-xs">{batch.anchoredAt ? new Date(batch.anchoredAt).toLocaleString(lang === "it" ? "it-IT" : "en-GB") : "—"}</p></div>
               <div className="sm:col-span-2">
                 <p className="text-xs text-muted-foreground mb-1">{t("txHash")}</p>
-                <a href={`https://sepolia.etherscan.io/tx/${batch.txHash}`} target="_blank" rel="noopener noreferrer"
+                <a href={batch.chainId === 8453 ? `https://basescan.org/tx/${batch.txHash}` : `https://sepolia.etherscan.io/tx/${batch.txHash}`} target="_blank" rel="noopener noreferrer"
                   className="font-mono text-xs text-cta hover:underline flex items-center gap-1 break-all">
                   {batch.txHash}<ExternalLink className="w-3 h-3 shrink-0" />
                 </a>

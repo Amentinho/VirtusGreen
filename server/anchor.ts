@@ -1,11 +1,10 @@
 /**
- * On-chain anchoring via GreenAgentLedger (Sepolia).
+ * On-chain anchoring via GreenAgentLedger.
  *
- * Hashes batch verification data and calls anchor() on the contract.
- * Returns the transaction hash + block explorer URL.
+ * Prefers Base mainnet if BASE_CONTRACT_ADDRESS + BASE_RPC_URL are set.
+ * Falls back to Sepolia for local dev / pre-migration.
  *
- * If GREENAGENT_CONTRACT_ADDRESS or SEPOLIA_PRIVATE_KEY are absent,
- * returns null gracefully so the rest of the verification flow still works.
+ * Deploy to Base: npx tsx scripts/deploy-contract.ts
  */
 
 import { ethers } from "ethers";
@@ -20,7 +19,6 @@ let cachedAbi: any[] | null = null;
 
 function getAbi(): any[] {
   if (cachedAbi) return cachedAbi;
-
   const source = readFileSync(join(__dirname, "../contracts/GreenAgentLedger.sol"), "utf8");
   const input = {
     language: "Solidity",
@@ -35,8 +33,38 @@ function getAbi(): any[] {
 export interface AnchorResult {
   txHash: string;
   chainId: number;
+  chainName: string;
   explorerUrl: string;
   dataHash: string;
+}
+
+function chainConfig(): { contractAddress: string; rpcUrl: string; chainId: number; chainName: string; explorerBase: string } | null {
+  const privateKey = process.env.SEPOLIA_PRIVATE_KEY;
+  if (!privateKey) return null;
+
+  // Base mainnet — preferred for production
+  if (process.env.BASE_CONTRACT_ADDRESS && process.env.BASE_RPC_URL) {
+    return {
+      contractAddress: process.env.BASE_CONTRACT_ADDRESS,
+      rpcUrl: process.env.BASE_RPC_URL,
+      chainId: 8453,
+      chainName: "Base",
+      explorerBase: "https://basescan.org",
+    };
+  }
+
+  // Sepolia — fallback / dev
+  if (process.env.GREENAGENT_CONTRACT_ADDRESS) {
+    return {
+      contractAddress: process.env.GREENAGENT_CONTRACT_ADDRESS,
+      rpcUrl: process.env.SEPOLIA_RPC_URL ?? "https://rpc.sepolia.org",
+      chainId: 11155111,
+      chainName: "Sepolia (testnet)",
+      explorerBase: "https://sepolia.etherscan.io",
+    };
+  }
+
+  return null;
 }
 
 export async function anchorBatch(
@@ -44,35 +72,32 @@ export async function anchorBatch(
   skin: string,
   verificationDetails: object,
 ): Promise<AnchorResult | null> {
-  const contractAddress = process.env.GREENAGENT_CONTRACT_ADDRESS;
-  const privateKey = process.env.SEPOLIA_PRIVATE_KEY;
-
-  if (!contractAddress || !privateKey) {
-    console.warn("[anchor] Skipped — GREENAGENT_CONTRACT_ADDRESS or SEPOLIA_PRIVATE_KEY not set");
+  const chain = chainConfig();
+  if (!chain) {
+    console.warn("[anchor] Skipped — no chain config. Set BASE_CONTRACT_ADDRESS + BASE_RPC_URL in .env");
     return null;
   }
 
-  const rpcUrl = process.env.SEPOLIA_RPC_URL ?? "https://rpc.sepolia.org";
-  const provider = new ethers.JsonRpcProvider(rpcUrl);
+  const privateKey = process.env.SEPOLIA_PRIVATE_KEY!;
+  console.log(`[anchor] Using ${chain.chainName} (${chain.chainId})`);
+
+  const provider = new ethers.JsonRpcProvider(chain.rpcUrl);
   const wallet = new ethers.Wallet(privateKey, provider);
-
   const abi = getAbi();
-  const contract = new ethers.Contract(contractAddress, abi, wallet);
+  const contract = new ethers.Contract(chain.contractAddress, abi, wallet);
 
-  // Deterministic hash: keccak256 of canonical JSON
   const payload = JSON.stringify({ batchCode, skin, ...verificationDetails });
   const dataHash = ethers.keccak256(ethers.toUtf8Bytes(payload));
 
   console.log(`[anchor] Anchoring ${batchCode} → ${dataHash}`);
-
   const tx = await contract.anchor(batchCode, dataHash, skin);
   await tx.wait(1);
 
-  const chainId = 11155111; // Sepolia
   return {
     txHash: tx.hash,
-    chainId,
-    explorerUrl: `https://sepolia.etherscan.io/tx/${tx.hash}`,
+    chainId: chain.chainId,
+    chainName: chain.chainName,
+    explorerUrl: `${chain.explorerBase}/tx/${tx.hash}`,
     dataHash,
   };
 }

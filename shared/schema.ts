@@ -94,6 +94,21 @@ export const insertPlotSchema = createInsertSchema(plots).omit({ id: true, creat
 export type InsertPlot = z.infer<typeof insertPlotSchema>;
 export type Plot = typeof plots.$inferSelect;
 
+// Catasto parcels — loaded offline from AdE shapefiles, one row per particella
+export const catastoParcels = pgTable("catasto_parcels", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  // Identifiers from AdE shapefile fields
+  comuneCodice: text("comune_codice").notNull(),   // 4-char codice catastale, e.g. "B202"
+  foglio: text("foglio").notNull(),                // 4-digit foglio, e.g. "0001"
+  sezione: text("sezione").notNull().default("00"), // 2-char section code, "00" for rural
+  mappale: text("mappale").notNull(),              // particella number, e.g. "345"
+  areaSqm: integer("area_sqm"),
+  geometry: jsonb("geometry").notNull(),           // GeoJSON Polygon
+  ingestedAt: timestamp("ingested_at").defaultNow().notNull(),
+});
+
+export type CatastoParcel = typeof catastoParcels.$inferSelect;
+
 // Batch — a production lot submitted for verification
 export const batches = pgTable("batches", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
