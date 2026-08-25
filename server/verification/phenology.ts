@@ -112,6 +112,35 @@ const PHENOLOGY_PROFILES: Record<string, {
   },
 };
 
+// ── Runtime profile registration ─────────────────────────────────────────────
+// Call registerPhenologyProfile() to add a new GI zone without code changes.
+// Profile shape mirrors PHENOLOGY_PROFILES above — monthly NDVI [min, max] ranges.
+//
+// Example: add a new zone for Nocellara del Belice DOP olive oil:
+//   registerPhenologyProfile("nocellara", {
+//     label: "Olive — Mediterranean evergreen (Belice Valley, Sicily)",
+//     notes: "Evergreen. Harvest Oct-Nov. NDVI relatively stable 0.30-0.65 year-round.",
+//     monthly: {
+//       "01": [0.30, 0.55], "02": [0.30, 0.55], "03": [0.30, 0.58],
+//       "04": [0.32, 0.60], "05": [0.35, 0.65], "06": [0.38, 0.68],
+//       "07": [0.35, 0.65], "08": [0.30, 0.62], "09": [0.30, 0.60],
+//       "10": [0.28, 0.58], "11": [0.28, 0.55], "12": [0.28, 0.52],
+//     },
+//   });
+export function registerPhenologyProfile(
+  skin: string,
+  profile: { label: string; notes: string; monthly: Record<string, [number, number]> }
+) {
+  PHENOLOGY_PROFILES[skin] = profile;
+}
+
+// Returns a copy of all currently registered profiles (useful for admin UI)
+export function listPhenologyProfiles(): Record<string, { label: string; notes: string }> {
+  return Object.fromEntries(
+    Object.entries(PHENOLOGY_PROFILES).map(([k, v]) => [k, { label: v.label, notes: v.notes }])
+  );
+}
+
 export function scorePhenology(
   skin: string,
   monthlyNdvi: Record<string, number>, // e.g. { "2025-09": 0.42, "2025-10": 0.31 }
@@ -121,7 +150,10 @@ export function scorePhenology(
     return {
       score: 0, cropMatch: false, profile: "unknown",
       monthlyExpected: {}, monthlyActual: monthlyNdvi,
-      mismatches: [], notes: "No phenology profile for this skin",
+      mismatches: [],
+      notes: `No phenology profile registered for skin "${skin}". ` +
+        `Call registerPhenologyProfile("${skin}", { label, notes, monthly }) to add one. ` +
+        `Currently registered: ${Object.keys(PHENOLOGY_PROFILES).join(", ")}`,
     };
   }
 

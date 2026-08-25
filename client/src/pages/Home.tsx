@@ -8,6 +8,7 @@ import ForCompanies from "@/components/ForCompanies";
 import GreenAgent from "@/components/GreenAgent";
 import Roadmap from "@/components/Roadmap";
 import Team from "@/components/Team";
+import LeadCapture from "@/components/LeadCapture";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -64,6 +65,7 @@ export default function Home() {
         <GreenAgent />
         <Roadmap />
         <Team />
+        <LeadCapture />
       </main>
       <Footer />
     </div>

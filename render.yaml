@@ -30,3 +30,5 @@ services:
         sync: false
       - key: CONTRACT_ADDRESS
         value: "0x4Db52a82F5c068Cc2b11Be5009191D149315C355"
+      - key: CERTIFIER_API_KEY
+        sync: false
