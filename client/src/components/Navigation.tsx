@@ -20,13 +20,12 @@ export default function Navigation({ scrolled }: NavigationProps) {
   }, [open]);
 
   const scrollTo = (id: string) => {
-    if (location !== "/") { setLocation(`/#${id}`); }
-    else {
-      const el = document.getElementById(id);
-      if (el) {
-        const y = el.getBoundingClientRect().top + window.scrollY - 88;
-        window.scrollTo({ top: y, behavior: "smooth" });
-      }
+    const el = document.getElementById(id);
+    if (el) {
+      const y = el.getBoundingClientRect().top + window.scrollY - 88;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    } else {
+      setLocation(`/passport#${id}`);
     }
     trackEvent("nav_click", "navigation", id);
     setOpen(false);
@@ -58,7 +57,7 @@ export default function Navigation({ scrolled }: NavigationProps) {
 
             {/* Logo */}
             <button
-              onClick={() => scrollTo("hero")}
+              onClick={() => setLocation("/")}
               className="flex items-center rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c0fa79]"
               data-testid="button-logo"
               aria-label="VirtusGreen home"

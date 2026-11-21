@@ -12,7 +12,7 @@
   "hero": {
     "title": "Transforma la Sostenibilidad en",
     "titleHighlight": "Recompensas",
-    "subtitle": "Escanea el código de barras de cualquier producto VirtusGreen y descubre su historia ambiental verificada — CO₂, agua, energía — registrada en blockchain. Cada elección sostenible te da tokens.",
+    "subtitle": "Escanea el código de barras de cualquier producto VirtusGreen y descubre su historia ambiental verificada: CO₂, agua, energía, registrada en blockchain. Cada elección sostenible te da tokens.",
     "forCompaniesBtn": "Para Empresas",
     "getInTouchBtn": "Contáctanos",
     "blockchainVerified": "Verificado Blockchain",
@@ -94,7 +94,7 @@
     "subtitle": "Datos reales, no simples declaraciones. Ve las pruebas detrás de cada producto.",
     "blockchainTransparency": {
       "title": "Registros a prueba de manipulación",
-      "description": "Los datos ambientales se registran en blockchain — nadie puede modificarlos después, ni siquiera nosotros."
+      "description": "Los datos ambientales se registran en blockchain. Nadie puede modificarlos después, ni siquiera nosotros."
     },
     "rewardSystem": {
       "title": "Ganas cuando eliges mejor",
@@ -102,7 +102,7 @@
     },
     "comprehensiveData": {
       "title": "Seis índices por producto",
-      "description": "CO₂, agua, energía, renovables, materiales reciclados, reciclabilidad — medidos a lo largo de todo el ciclo de vida del producto."
+      "description": "CO₂, agua, energía, renovables, materiales reciclados, reciclabilidad. Todo medido a lo largo de todo el ciclo de vida del producto."
     },
     "easyToUse": {
       "title": "Apunta. Escanea. Listo.",
@@ -112,10 +112,10 @@
   "forCompanies": {
     "title": "Respalda tus declaraciones",
     "titleHighlight": "sostenibles con pruebas",
-    "subtitle": "Calculamos, verificamos y mostramos tu huella ambiental real — para que tus clientes vean que no es solo marketing.",
+    "subtitle": "Calculamos, verificamos y mostramos tu huella ambiental real, para que tus clientes vean que no es solo marketing.",
     "productListing": {
       "title": "Ficha de Producto",
-      "description": "Publica tus productos con EcoScores verificados y seis índices ambientales. Los consumidores comprometidos con la sostenibilidad te encuentran — y confían en ti.",
+      "description": "Publica tus productos con EcoScores verificados y seis índices ambientales. Los consumidores comprometidos con la sostenibilidad te encuentran y confían en ti.",
       "features": [
         "EcoScore visible en la ficha del producto",
         "Accesible para compradores eco-conscientes",
@@ -133,7 +133,7 @@
     },
     "sustainabilityConsulting": {
       "title": "Consultoría de Sostenibilidad",
-      "description": "Analizamos tu cadena de suministro, identificamos dónde está el impacto real y te ayudamos a reducirlo paso a paso. Sin consejos genéricos — solo acciones específicas para tu producto.",
+      "description": "Analizamos tu cadena de suministro, identificamos dónde está el impacto real y te ayudamos a reducirlo paso a paso. Sin consejos genéricos. Solo acciones específicas para tu producto.",
       "features": [
         "Análisis de puntos críticos de la cadena",
         "Hoja de ruta de reducción priorizada",
@@ -237,7 +237,7 @@
     "errorDescription": "Por favor, inténtalo de nuevo más tarde."
   },
   "footer": {
-    "description": "Datos ambientales reales para cada producto. Sin greenwashing, sin suposiciones — solo hechos, registrados en blockchain.",
+    "description": "Datos ambientales reales para cada producto. Sin greenwashing, sin suposiciones. Solo hechos, registrados en blockchain.",
     "quickLinks": "Enlaces Rápidos",
     "followUs": "Síguenos",
     "copyright": "VirtusGreen. Todos los derechos reservados."
@@ -399,7 +399,7 @@
     "badge": "Nuevo Producto",
     "title": "Green Agent —",
     "titleHighlight": "Autenticidad verificable.",
-    "subtitle": "Para consorcios y productores premium IGP que necesitan que el origen sea demostrable, no solo declarado. Los agentes IA verifican geolocalización, datos satelitales y reglas de denominación — un lote falso no puede pasar.",
+    "subtitle": "Para consorcios y productores premium IGP que necesitan que el origen sea demostrable, no solo declarado. Los agentes IA verifican geolocalización, datos satelitales y reglas de denominación. Un lote falso no puede pasar.",
     "skins": [
       {
         "label": "Bronte DOP",
@@ -458,11 +458,11 @@
   "landing": {
     "eyebrow": "Blockchain & IA · Procedencia verificable",
     "headline": "¿Qué estás buscando?",
-    "subheadline": "Dos productos, una misión — hacer que la verdad sobre un producto sea algo que puedas verificar de verdad.",
+    "subheadline": "Dos productos, una misión. Hacer que la verdad sobre un producto sea algo que puedas verificar de verdad.",
     "passportLabel": "Producto activo",
     "passportTitle": "Passport",
     "passportSubtitle": "Pasaporte Digital de Producto",
-    "passportDesc": "Escanea el código de barras y descubre la historia ambiental real de tu comida — CO₂, agua, energía — y gana tokens cada vez que eliges mejor. Sostenibilidad gamificada para la compra de cada día.",
+    "passportDesc": "Escanea el código de barras y descubre la historia ambiental real de tu comida (CO₂, agua, energía) y gana tokens cada vez que eliges mejor. Sostenibilidad gamificada para la compra de cada día.",
     "passportFeatures": [
       "EcoScore vía LCA, almacenado on-chain",
       "6 índices ambientales por producto",
@@ -473,7 +473,7 @@
     "agentLabel": "Autenticidad IGP & Cumplimiento",
     "agentTitle": "Green Agent",
     "agentSubtitle": "Procedencia · EUDR · E-etiqueta",
-    "agentDesc": "Para consorcios IGP y productores premium que necesitan demostrar el origen, no solo declararlo. Los agentes IA verifican la geolocalización de parcelas con datos satelitales y reglas de denominación — un lote falso no puede pasar.",
+    "agentDesc": "Para consorcios IGP y productores premium que necesitan demostrar el origen, no solo declararlo. Los agentes IA verifican la geolocalización de parcelas con datos satelitales y reglas de denominación. Un lote falso no puede pasar.",
     "agentFeatures": [
       "Bronte DOP · anti-falsificación",
       "Etna DOC · procedencia + e-etiqueta UE",
@@ -488,6 +488,6 @@
     "contactCta": "Reservar llamada",
     "eyebrow": "Autenticidad IGP & Cumplimiento",
     "headline": "Green Agent",
-    "subheadline": "Para consorcios y productores premium IGP que necesitan que el origen sea demostrable, no solo declarado. Los agentes IA verifican geolocalización, datos satelitales y reglas de denominación — un lote falso no puede pasar."
+    "subheadline": "Para consorcios y productores premium IGP que necesitan que el origen sea demostrable, no solo declarado. Los agentes IA verifican geolocalización, datos satelitales y reglas de denominación. Un lote falso no puede pasar."
   }
 }

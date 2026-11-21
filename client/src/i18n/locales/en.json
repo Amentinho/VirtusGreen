@@ -12,7 +12,7 @@
   "hero": {
     "title": "Transform Sustainability Into",
     "titleHighlight": "Rewards",
-    "subtitle": "Scan any VirtusGreen barcode and see the real environmental story behind your food — CO₂, water, energy — verified on-chain. Then earn tokens for every good choice you make.",
+    "subtitle": "Scan any VirtusGreen barcode and see the real environmental story behind your food: CO₂, water, energy, verified on-chain. Then earn tokens for every good choice you make.",
     "forCompaniesBtn": "For Companies",
     "getInTouchBtn": "Get in Touch",
     "blockchainVerified": "Blockchain Verified",
@@ -94,7 +94,7 @@
     "subtitle": "Real data, not green claims. See the evidence behind every product.",
     "blockchainTransparency": {
       "title": "Tamper-proof records",
-      "description": "Environmental data recorded on blockchain — nobody can change it after the fact, not even us."
+      "description": "Environmental data recorded on blockchain. Nobody can change it after the fact, not even us."
     },
     "rewardSystem": {
       "title": "You earn when you choose better",
@@ -102,7 +102,7 @@
     },
     "comprehensiveData": {
       "title": "Six indexes per product",
-      "description": "CO₂, water, energy, renewables, recycled content, recyclability — measured across the whole product lifecycle."
+      "description": "CO₂, water, energy, renewables, recycled content, recyclability. All measured across the whole product lifecycle."
     },
     "easyToUse": {
       "title": "Point. Scan. Done.",
@@ -112,10 +112,10 @@
   "forCompanies": {
     "title": "Back Your Sustainability",
     "titleHighlight": "Claims With Proof",
-    "subtitle": "We calculate, verify and display your real environmental footprint — so your customers can see it's not just a marketing sticker.",
+    "subtitle": "We calculate, verify and display your real environmental footprint, so your customers can see it's not just a marketing sticker.",
     "productListing": {
       "title": "Product Listing",
-      "description": "List your products with verified EcoScores and six environmental indexes. Consumers who care about footprint will find you — and trust you.",
+      "description": "List your products with verified EcoScores and six environmental indexes. Consumers who care about footprint will find you and trust you.",
       "features": [
         "EcoScore displayed on product page",
         "Visible to eco-conscious shoppers",
@@ -133,7 +133,7 @@
     },
     "sustainabilityConsulting": {
       "title": "Sustainability Consulting",
-      "description": "We dig into your supply chain, find where the real footprint sits, and help you reduce it step by step. No generic advice — just specific actions for your product.",
+      "description": "We dig into your supply chain, find where the real footprint sits, and help you reduce it step by step. No generic advice. Just specific actions for your product.",
       "features": [
         "Hotspot analysis of your supply chain",
         "Prioritised reduction roadmap",
@@ -237,7 +237,7 @@
     "errorDescription": "Please try again later."
   },
   "footer": {
-    "description": "Real environmental data for every product. No greenwashing, no guesswork — just facts, stored on blockchain.",
+    "description": "Real environmental data for every product. No greenwashing, no guesswork. Just facts, stored on blockchain.",
     "quickLinks": "Quick Links",
     "followUs": "Follow Us",
     "copyright": "VirtusGreen. All rights reserved."
@@ -397,9 +397,9 @@
   },
   "greenAgent": {
     "badge": "New Product",
-    "title": "Green Agent —",
+    "title": "Green Agent",
     "titleHighlight": "Authenticity you can verify.",
-    "subtitle": "For consortia and premium GI producers who need origin to be provable, not just declared. AI agents cross-check geolocation, satellite data and denomination rules — and a fake batch cannot pass.",
+    "subtitle": "For consortia and premium GI producers who need origin to be provable, not just declared. AI agents cross-check geolocation, satellite data and denomination rules. A fake batch cannot pass.",
     "skins": [
       {
         "label": "Bronte DOP",
@@ -458,11 +458,11 @@
   "landing": {
     "eyebrow": "Blockchain & AI · Verified provenance",
     "headline": "What are you here for?",
-    "subheadline": "Two products, one mission — making the truth about a product something you can actually verify.",
+    "subheadline": "Two products, one mission. Making the truth about a product something you can actually verify.",
     "passportLabel": "Live product",
     "passportTitle": "Passport",
     "passportSubtitle": "Digital Product Passport",
-    "passportDesc": "Scan a barcode, see the real environmental story behind your food — CO₂, water, energy — and earn tokens every time you choose better. Gamified sustainability for everyday shoppers.",
+    "passportDesc": "Scan a barcode, see the real environmental story behind your food (CO₂, water, energy) and earn tokens every time you choose better. Gamified sustainability for everyday shoppers.",
     "passportFeatures": [
       "EcoScore via Life-Cycle Assessment, stored on-chain",
       "6 environmental indexes per product",
@@ -473,7 +473,7 @@
     "agentLabel": "GI Authenticity & Compliance",
     "agentTitle": "Green Agent",
     "agentSubtitle": "Provenance · EUDR · E-label",
-    "agentDesc": "For GI consortia and premium producers who need origin to be provable, not just declared. AI agents cross-check plot geolocation against satellite data and denomination rules — a fake batch cannot pass.",
+    "agentDesc": "For GI consortia and premium producers who need origin to be provable, not just declared. AI agents cross-check plot geolocation against satellite data and denomination rules. A fake batch cannot pass.",
     "agentFeatures": [
       "Bronte DOP · anti-counterfeit",
       "Etna DOC · provenance + EU e-label",
@@ -488,6 +488,6 @@
     "contactCta": "Book a call",
     "eyebrow": "GI Authenticity & Compliance",
     "headline": "Green Agent",
-    "subheadline": "For consortia and premium GI producers who need origin to be provable, not just declared. AI agents cross-check geolocation, satellite data and denomination rules — and a fake batch cannot pass."
+    "subheadline": "For consortia and premium GI producers who need origin to be provable, not just declared. AI agents cross-check geolocation, satellite data and denomination rules. A fake batch cannot pass."
   }
 }

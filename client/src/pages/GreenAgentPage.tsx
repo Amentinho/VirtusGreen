@@ -37,7 +37,7 @@ export default function GreenAgentPage() {
       <header className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled ? "bg-background/95 backdrop-blur-md shadow-sm border-b border-border" : "bg-background border-b border-border/50"
       }`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 h-[72px] flex items-center justify-between gap-4">
           <div className="flex items-center gap-4">
             <button
               onClick={() => { trackEvent("nav_back", "navigation", "green_agent_to_landing"); setLocation("/"); }}
@@ -47,7 +47,7 @@ export default function GreenAgentPage() {
               {t("greenAgentPage.back", "Back")}
             </button>
             <div className="w-px h-5 bg-border" />
-            <img src={logoImage} alt="VirtusGreen" className="h-7 w-auto cursor-pointer" onClick={() => setLocation("/")} />
+            <img src={logoImage} alt="VirtusGreen" className="h-9 w-auto object-contain cursor-pointer" onClick={() => setLocation("/")} />
           </div>
           <div className="flex items-center gap-3">
             <LanguageSelector />
