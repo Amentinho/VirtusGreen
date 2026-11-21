@@ -216,7 +216,7 @@ export default function Hero() {
             <div className="flex items-center gap-2.5">
               <span className="flex items-center gap-1.5 text-[11px] font-bold tracking-[0.18em] uppercase text-[#c0fa79] bg-[#c0fa79]/10 border border-[#c0fa79]/20 rounded-full px-4 py-1.5">
                 <QrCode className="w-3 h-3" />
-                Digital Product Passport · Blockchain · Loyalty
+                {t("hero.eyebrow", "Digital Product Passport · Blockchain · Loyalty")}
               </span>
             </div>
 
@@ -226,12 +226,12 @@ export default function Hero() {
                 className="text-5xl sm:text-6xl lg:text-[4.25rem] leading-[1.05] font-light text-white"
                 style={{ fontFamily: "'Fraunces', Georgia, serif" }}
               >
-                Know what&apos;s in<br />
-                <em className="not-italic text-[#c0fa79]">your food.</em><br />
-                Earn for going green.
+                {t("hero.h1", "Know what's in")}<br />
+                <em className="not-italic text-[#c0fa79]">{t("hero.h1Accent", "your food.")}</em><br />
+                {t("hero.h1End", "Earn for going green.")}
               </h1>
               <p className="text-lg text-white/60 max-w-lg leading-relaxed font-light" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
-                Scan any VirtusGreen barcode to see the verified environmental story behind your food — CO₂, water, energy — and earn tokens for every sustainable choice.
+                {t("hero.subtitle", "Scan any VirtusGreen barcode to see the verified environmental story behind your food — CO₂, water, energy — and earn tokens for every sustainable choice.")}
               </p>
             </div>
 
@@ -251,14 +251,14 @@ export default function Hero() {
             {/* CTAs */}
             <div className="flex flex-wrap gap-3 pt-1">
               <a
-                href="https://virtusgreenapp.onrender.com"
+                href="https://app.virtusgreen.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2.5 rounded-xl px-7 py-3.5 text-sm font-bold transition-all duration-200 hover:gap-4"
                 style={{ background: "#c0fa79", color: "#043231" }}
                 data-testid="button-hero-primary"
               >
-                Open App
+                {t("hero.openApp", "Open App")}
                 <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" />
               </a>
               <button
@@ -266,15 +266,15 @@ export default function Hero() {
                 className="inline-flex items-center gap-2 rounded-xl px-7 py-3.5 text-sm font-semibold text-white/80 border border-white/15 hover:bg-white/5 transition-all duration-200"
                 data-testid="button-hero-secondary"
               >
-                How it works
+                {t("hero.howItWorks", "How it works")}
               </button>
             </div>
 
             {/* stats */}
             <div className="flex flex-wrap gap-3 pt-2">
-              <StatPill value="120+" label="Products tracked" delay="0ms" />
-              <StatPill value="450kg" label="CO₂ saved" delay="100ms" />
-              <StatPill value="35+" label="Producers" delay="200ms" />
+              <StatPill value={t("hero.stat1Value", "120+")} label={t("hero.stat1Label", "Products tracked")} delay="0ms" />
+              <StatPill value={t("hero.stat2Value", "450 kg")} label={t("hero.stat2Label", "CO₂ saved")} delay="100ms" />
+              <StatPill value={t("hero.stat3Value", "35+")} label={t("hero.stat3Label", "Producers")} delay="200ms" />
             </div>
           </div>
 

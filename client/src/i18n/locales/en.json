@@ -12,7 +12,7 @@
   "hero": {
     "title": "Transform Sustainability Into",
     "titleHighlight": "Rewards",
-    "subtitle": "Scan. Learn. Earn. The blockchain-powered app that makes sustainable shopping rewarding.",
+    "subtitle": "Scan any VirtusGreen barcode and see the real environmental story behind your food — CO₂, water, energy — verified on-chain. Then earn tokens for every good choice you make.",
     "forCompaniesBtn": "For Companies",
     "getInTouchBtn": "Get in Touch",
     "blockchainVerified": "Blockchain Verified",
@@ -20,7 +20,19 @@
     "ecoRewards": "Eco Rewards",
     "transparency": "Transparency",
     "scanProduct": "Scan Any Product",
-    "instantInsights": "Get instant environmental insights"
+    "instantInsights": "Get instant environmental insights",
+    "eyebrow": "Digital Product Passport · Blockchain · Loyalty",
+    "h1": "Know what's in",
+    "h1Accent": "your food.",
+    "h1End": "Earn for going green.",
+    "openApp": "Open App",
+    "howItWorks": "How it works",
+    "stat1Value": "120+",
+    "stat1Label": "Products tracked",
+    "stat2Value": "450 kg",
+    "stat2Label": "CO₂ saved",
+    "stat3Value": "35+",
+    "stat3Label": "Producers"
   },
   "socialProof": {
     "trustedBy": "Trusted by industry leaders",
@@ -79,53 +91,53 @@
   },
   "whyVirtusGreen": {
     "title": "Why VirtusGreen?",
-    "subtitle": "Blockchain-powered transparency for sustainable choices",
+    "subtitle": "Real data, not green claims. See the evidence behind every product.",
     "blockchainTransparency": {
-      "title": "Blockchain Transparency",
-      "description": "Immutable environmental data you can trust"
+      "title": "Tamper-proof records",
+      "description": "Environmental data recorded on blockchain — nobody can change it after the fact, not even us."
     },
     "rewardSystem": {
-      "title": "Reward System",
-      "description": "Earn tokens for sustainable shopping choices"
+      "title": "You earn when you choose better",
+      "description": "Every sustainable purchase earns tokens you can redeem for discounts and free products."
     },
     "comprehensiveData": {
-      "title": "Comprehensive Data",
-      "description": "Full lifecycle environmental impact analysis"
+      "title": "Six indexes per product",
+      "description": "CO₂, water, energy, renewables, recycled content, recyclability — measured across the whole product lifecycle."
     },
     "easyToUse": {
-      "title": "Easy to Use",
-      "description": "Simple scan-and-learn interface for everyone"
+      "title": "Point. Scan. Done.",
+      "description": "Aim your camera at a barcode. That's literally it. No app setup, no account required to read a passport."
     }
   },
   "forCompanies": {
-    "title": "Elevate Your Brand Through",
-    "titleHighlight": "Verified Sustainability",
-    "subtitle": "Comprehensive services to showcase your environmental commitment",
+    "title": "Back Your Sustainability",
+    "titleHighlight": "Claims With Proof",
+    "subtitle": "We calculate, verify and display your real environmental footprint — so your customers can see it's not just a marketing sticker.",
     "productListing": {
       "title": "Product Listing",
-      "description": "Get your products featured with EcoScore ratings. Increase visibility among eco-conscious consumers and showcase your commitment to sustainability.",
+      "description": "List your products with verified EcoScores and six environmental indexes. Consumers who care about footprint will find you — and trust you.",
       "features": [
-        "EcoScore rating display",
-        "Enhanced product visibility",
-        "Consumer trust building"
+        "EcoScore displayed on product page",
+        "Visible to eco-conscious shoppers",
+        "Built on verified LCA data, not estimates"
       ]
     },
     "lcaCalculation": {
       "title": "LCA Calculation",
-      "description": "Professional Life Cycle Assessment using advanced mathematical methodologies. EU compliant using PEF regulation for comprehensive environmental impact analysis from cradle to grave.",
+      "description": "Professional Life Cycle Assessment from cradle to grave, following EU PEF methodology. We handle the maths so you get a number you can actually defend.",
       "features": [
         "EU PEF regulation compliant",
-        "Advanced LCA methodologies",
-        "Industry-standard reporting"
+        "Covers scope 1, 2 and 3 emissions",
+        "Issued as a verifiable report"
       ]
     },
     "sustainabilityConsulting": {
       "title": "Sustainability Consulting",
-      "description": "Expert guidance to minimize environmental impact. Our team helps you identify opportunities and implement sustainable practices across your value chain.",
+      "description": "We dig into your supply chain, find where the real footprint sits, and help you reduce it step by step. No generic advice — just specific actions for your product.",
       "features": [
-        "Expert consultation",
-        "Impact reduction strategies",
-        "Continuous improvement"
+        "Hotspot analysis of your supply chain",
+        "Prioritised reduction roadmap",
+        "Ongoing progress tracking"
       ]
     }
   },
@@ -225,7 +237,7 @@
     "errorDescription": "Please try again later."
   },
   "footer": {
-    "description": "Transform sustainability into rewards with blockchain-powered transparency. Join thousands making eco-conscious choices.",
+    "description": "Real environmental data for every product. No greenwashing, no guesswork — just facts, stored on blockchain.",
     "quickLinks": "Quick Links",
     "followUs": "Follow Us",
     "copyright": "VirtusGreen. All rights reserved."
@@ -446,11 +458,11 @@
   "landing": {
     "eyebrow": "Blockchain & AI · Verified provenance",
     "headline": "What are you here for?",
-    "subheadline": "Two products, one mission — making the truth about a product verifiable.",
+    "subheadline": "Two products, one mission — making the truth about a product something you can actually verify.",
     "passportLabel": "Live product",
     "passportTitle": "Passport",
     "passportSubtitle": "Digital Product Passport",
-    "passportDesc": "Scan a product barcode, see its verified environmental story — CO₂, water, energy — and earn tokens for sustainable choices. Gamified loyalty for everyday shoppers.",
+    "passportDesc": "Scan a barcode, see the real environmental story behind your food — CO₂, water, energy — and earn tokens every time you choose better. Gamified sustainability for everyday shoppers.",
     "passportFeatures": [
       "EcoScore via Life-Cycle Assessment, stored on-chain",
       "6 environmental indexes per product",
@@ -461,7 +473,7 @@
     "agentLabel": "GI Authenticity & Compliance",
     "agentTitle": "Green Agent",
     "agentSubtitle": "Provenance · EUDR · E-label",
-    "agentDesc": "For consortia and premium GI producers. AI agents cross-check plot geolocation against satellite data and denomination rules — a fake batch cannot pass.",
+    "agentDesc": "For GI consortia and premium producers who need origin to be provable, not just declared. AI agents cross-check plot geolocation against satellite data and denomination rules — a fake batch cannot pass.",
     "agentFeatures": [
       "Bronte DOP · anti-counterfeit",
       "Etna DOC · provenance + EU e-label",

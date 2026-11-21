@@ -12,7 +12,7 @@
   "hero": {
     "title": "Transforma la Sostenibilidad en",
     "titleHighlight": "Recompensas",
-    "subtitle": "Escanea. Aprende. Gana. La aplicación basada en blockchain que hace que las compras sostenibles sean gratificantes.",
+    "subtitle": "Escanea el código de barras de cualquier producto VirtusGreen y descubre su historia ambiental verificada — CO₂, agua, energía — registrada en blockchain. Cada elección sostenible te da tokens.",
     "forCompaniesBtn": "Para Empresas",
     "getInTouchBtn": "Contáctanos",
     "blockchainVerified": "Verificado Blockchain",
@@ -20,7 +20,19 @@
     "ecoRewards": "Recompensas Eco",
     "transparency": "Transparencia",
     "scanProduct": "Escanea Cualquier Producto",
-    "instantInsights": "Obtén información ambiental instantánea"
+    "instantInsights": "Obtén información ambiental instantánea",
+    "eyebrow": "Pasaporte Digital de Producto · Blockchain · Recompensas",
+    "h1": "¿Sabes realmente qué",
+    "h1Accent": "hay en tu comida?",
+    "h1End": "Gana eligiendo mejor.",
+    "openApp": "Abrir App",
+    "howItWorks": "Cómo funciona",
+    "stat1Value": "120+",
+    "stat1Label": "Productos rastreados",
+    "stat2Value": "450 kg",
+    "stat2Label": "CO₂ ahorrado",
+    "stat3Value": "35+",
+    "stat3Label": "Productores"
   },
   "socialProof": {
     "trustedBy": "Confiado por líderes de la industria",
@@ -79,53 +91,53 @@
   },
   "whyVirtusGreen": {
     "title": "¿Por Qué VirtusGreen?",
-    "subtitle": "Transparencia basada en blockchain para decisiones sostenibles",
+    "subtitle": "Datos reales, no simples declaraciones. Ve las pruebas detrás de cada producto.",
     "blockchainTransparency": {
-      "title": "Transparencia Blockchain",
-      "description": "Datos ambientales inmutables en los que puedes confiar"
+      "title": "Registros a prueba de manipulación",
+      "description": "Los datos ambientales se registran en blockchain — nadie puede modificarlos después, ni siquiera nosotros."
     },
     "rewardSystem": {
-      "title": "Sistema de Recompensas",
-      "description": "Gana tokens por decisiones de compra sostenibles"
+      "title": "Ganas cuando eliges mejor",
+      "description": "Cada compra sostenible acumula tokens que puedes canjear por descuentos y productos gratuitos."
     },
     "comprehensiveData": {
-      "title": "Datos Completos",
-      "description": "Análisis completo del impacto ambiental del ciclo de vida"
+      "title": "Seis índices por producto",
+      "description": "CO₂, agua, energía, renovables, materiales reciclados, reciclabilidad — medidos a lo largo de todo el ciclo de vida del producto."
     },
     "easyToUse": {
-      "title": "Fácil de Usar",
-      "description": "Interfaz simple de escanear y aprender para todos"
+      "title": "Apunta. Escanea. Listo.",
+      "description": "Enfoca la cámara al código de barras. Eso es todo. Sin configuración, sin cuenta necesaria para leer un pasaporte."
     }
   },
   "forCompanies": {
-    "title": "Eleva Tu Marca a Través de",
-    "titleHighlight": "Sostenibilidad Verificada",
-    "subtitle": "Servicios completos para mostrar tu compromiso ambiental",
+    "title": "Respalda tus declaraciones",
+    "titleHighlight": "sostenibles con pruebas",
+    "subtitle": "Calculamos, verificamos y mostramos tu huella ambiental real — para que tus clientes vean que no es solo marketing.",
     "productListing": {
-      "title": "Listado de Productos",
-      "description": "Presenta tus productos con calificaciones EcoScore. Aumenta la visibilidad entre consumidores conscientes del medio ambiente y muestra tu compromiso con la sostenibilidad.",
+      "title": "Ficha de Producto",
+      "description": "Publica tus productos con EcoScores verificados y seis índices ambientales. Los consumidores comprometidos con la sostenibilidad te encuentran — y confían en ti.",
       "features": [
-        "Visualización de calificación EcoScore",
-        "Visibilidad del producto mejorada",
-        "Construcción de confianza del consumidor"
+        "EcoScore visible en la ficha del producto",
+        "Accesible para compradores eco-conscientes",
+        "Basado en datos LCA verificados, no estimaciones"
       ]
     },
     "lcaCalculation": {
-      "title": "Cálculo LCA",
-      "description": "Evaluación profesional del ciclo de vida utilizando metodologías matemáticas avanzadas. Cumple con la normativa UE PEF para un análisis integral del impacto ambiental desde la cuna hasta la tumba.",
+      "title": "Cálculo ACV",
+      "description": "Análisis de Ciclo de Vida profesional de cuna a tumba, siguiendo la metodología UE PEF. Nosotros hacemos los cálculos para que tengas un número que puedas defender.",
       "features": [
-        "Cumple con la normativa UE PEF",
-        "Metodologías LCA avanzadas",
-        "Informes estándar de la industria"
+        "Cumple la normativa UE PEF",
+        "Cubre emisiones alcance 1, 2 y 3",
+        "Emitido como informe verificable"
       ]
     },
     "sustainabilityConsulting": {
       "title": "Consultoría de Sostenibilidad",
-      "description": "Orientación experta para minimizar el impacto ambiental. Nuestro equipo te ayuda a identificar oportunidades e implementar prácticas sostenibles en toda tu cadena de valor.",
+      "description": "Analizamos tu cadena de suministro, identificamos dónde está el impacto real y te ayudamos a reducirlo paso a paso. Sin consejos genéricos — solo acciones específicas para tu producto.",
       "features": [
-        "Consultoría experta",
-        "Estrategias de reducción de impacto",
-        "Mejora continua"
+        "Análisis de puntos críticos de la cadena",
+        "Hoja de ruta de reducción priorizada",
+        "Seguimiento continuo del progreso"
       ]
     }
   },
@@ -225,7 +237,7 @@
     "errorDescription": "Por favor, inténtalo de nuevo más tarde."
   },
   "footer": {
-    "description": "Transforma la sostenibilidad en recompensas con transparencia basada en blockchain. Únete a miles que toman decisiones eco-conscientes.",
+    "description": "Datos ambientales reales para cada producto. Sin greenwashing, sin suposiciones — solo hechos, registrados en blockchain.",
     "quickLinks": "Enlaces Rápidos",
     "followUs": "Síguenos",
     "copyright": "VirtusGreen. Todos los derechos reservados."
@@ -446,11 +458,11 @@
   "landing": {
     "eyebrow": "Blockchain & IA · Procedencia verificable",
     "headline": "¿Qué estás buscando?",
-    "subheadline": "Dos productos, una misión — hacer verificable la verdad sobre un producto.",
+    "subheadline": "Dos productos, una misión — hacer que la verdad sobre un producto sea algo que puedas verificar de verdad.",
     "passportLabel": "Producto activo",
     "passportTitle": "Passport",
     "passportSubtitle": "Pasaporte Digital de Producto",
-    "passportDesc": "Escanea el código de barras de un producto, descubre su historia ambiental verificada — CO₂, agua, energía — y gana tokens por elecciones sostenibles. Lealtad gamificada para compradores cotidianos.",
+    "passportDesc": "Escanea el código de barras y descubre la historia ambiental real de tu comida — CO₂, agua, energía — y gana tokens cada vez que eliges mejor. Sostenibilidad gamificada para la compra de cada día.",
     "passportFeatures": [
       "EcoScore vía LCA, almacenado on-chain",
       "6 índices ambientales por producto",
@@ -461,7 +473,7 @@
     "agentLabel": "Autenticidad IGP & Cumplimiento",
     "agentTitle": "Green Agent",
     "agentSubtitle": "Procedencia · EUDR · E-etiqueta",
-    "agentDesc": "Para consorcios y productores premium IGP. Los agentes IA verifican la geolocalización de parcelas con datos satelitales y reglas de denominación — un lote falso no puede pasar.",
+    "agentDesc": "Para consorcios IGP y productores premium que necesitan demostrar el origen, no solo declararlo. Los agentes IA verifican la geolocalización de parcelas con datos satelitales y reglas de denominación — un lote falso no puede pasar.",
     "agentFeatures": [
       "Bronte DOP · anti-falsificación",
       "Etna DOC · procedencia + e-etiqueta UE",
