@@ -251,7 +251,7 @@ export default function Hero() {
             {/* CTAs */}
             <div className="flex flex-wrap gap-3 pt-1">
               <a
-                href="https://virtusgreen.onrender.com"
+                href="https://virtusgreenapp.onrender.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2.5 rounded-xl px-7 py-3.5 text-sm font-bold transition-all duration-200 hover:gap-4"

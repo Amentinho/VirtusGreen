@@ -11,11 +11,16 @@ const resources = {
   es: { translation: es },
 };
 
+const savedLang = localStorage.getItem('language');
+const browserLang = navigator.language?.split('-')[0];
+const supportedLangs = ['en', 'it', 'es'];
+const detectedLang = savedLang || (supportedLangs.includes(browserLang) ? browserLang : 'it');
+
 i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: localStorage.getItem('language') || 'en',
+    lng: detectedLang,
     fallbackLng: 'en',
     interpolation: {
       escapeValue: false,
