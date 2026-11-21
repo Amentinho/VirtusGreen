@@ -5,7 +5,6 @@ import HowItWorks from "@/components/HowItWorks";
 import EnvironmentalMetrics from "@/components/EnvironmentalMetrics";
 import WhyVirtusGreen from "@/components/WhyVirtusGreen";
 import ForCompanies from "@/components/ForCompanies";
-import GreenAgent from "@/components/GreenAgent";
 import Roadmap from "@/components/Roadmap";
 import Team from "@/components/Team";
 import LeadCapture from "@/components/LeadCapture";
@@ -62,7 +61,6 @@ export default function Home() {
         <EnvironmentalMetrics />
         <WhyVirtusGreen />
         <ForCompanies />
-        <GreenAgent />
         <Roadmap />
         <Team />
         <LeadCapture />

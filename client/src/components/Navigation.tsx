@@ -34,7 +34,6 @@ export default function Navigation({ scrolled }: NavigationProps) {
 
   const navLinks = [
     { label: t("navigation.howItWorks"), id: "how-it-works" },
-    { label: "Green Agent", id: "green-agent" },
     { label: t("navigation.forCompanies"), id: "for-companies" },
     { label: t("navigation.roadmap"), id: "roadmap" },
     { label: t("navigation.aboutUs"), id: "team" },
@@ -87,6 +86,17 @@ export default function Navigation({ scrolled }: NavigationProps) {
                   {link.label}
                 </button>
               ))}
+              <button
+                onClick={() => { setLocation("/green-agent"); trackEvent("nav_click", "navigation", "green-agent-page"); }}
+                className={`px-3.5 py-2 text-[13px] font-medium rounded-lg transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c0fa79] ${
+                  heroIsDark
+                    ? "text-white/70 hover:text-white hover:bg-white/8"
+                    : "text-foreground/70 hover:text-foreground hover:bg-muted/60"
+                }`}
+                data-testid="link-green-agent-page"
+              >
+                Green Agent
+              </button>
             </div>
 
             {/* Desktop right actions */}
@@ -150,6 +160,14 @@ export default function Navigation({ scrolled }: NavigationProps) {
               <ChevronRight className="w-4 h-4 text-white/30" />
             </button>
           ))}
+          <button
+            onClick={() => { setLocation("/green-agent"); setOpen(false); trackEvent("nav_click", "navigation", "green-agent-page"); }}
+            className="w-full flex items-center justify-between px-4 py-4 rounded-xl text-white/80 hover:text-white hover:bg-white/6 transition-colors text-base font-medium"
+            data-testid="link-mobile-green-agent-page"
+          >
+            Green Agent
+            <ChevronRight className="w-4 h-4 text-white/30" />
+          </button>
         </div>
         <div className="px-6 pb-10 space-y-3">
           <div className="flex justify-center pb-1">
