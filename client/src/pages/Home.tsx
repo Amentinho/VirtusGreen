@@ -9,6 +9,7 @@ import Roadmap from "@/components/Roadmap";
 import Team from "@/components/Team";
 import LeadCapture from "@/components/LeadCapture";
 import Footer from "@/components/Footer";
+import GuestScan from "@/components/GuestScan";
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
@@ -57,6 +58,7 @@ export default function Home() {
       <Navigation scrolled={scrolled} />
       <main>
         <Hero />
+        <GuestScan />
         <HowItWorks />
         <EnvironmentalMetrics />
         <WhyVirtusGreen />

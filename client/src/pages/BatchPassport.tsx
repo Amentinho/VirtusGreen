@@ -389,7 +389,38 @@ export default function BatchPassport() {
 
       </main>
 
-      <footer className="border-t border-border mt-8">
+      {/* Guest register CTA */}
+      <div
+        className="mt-8 mx-auto max-w-3xl px-4 pb-10"
+      >
+        <div
+          className="rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left"
+          style={{
+            background: "linear-gradient(135deg, rgba(192,250,121,0.08) 0%, rgba(0,175,103,0.06) 100%)",
+            border: "1px solid rgba(192,250,121,0.2)",
+          }}
+        >
+          <div className="text-4xl flex-none">🌿</div>
+          <div className="flex-1 min-w-0">
+            <p className="text-sm font-bold text-white mb-1">
+              Scan complete — want to do more?
+            </p>
+            <p className="text-xs text-white/55 leading-relaxed">
+              Register free to <span className="text-[#c0fa79] font-semibold">earn Green Tokens</span> for every verified product you scan, build your sustainability history, and share your impact.
+            </p>
+          </div>
+          <a
+            href="/producer/register"
+            className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold flex-none transition-all duration-200 hover:gap-3"
+            style={{ background: "#c0fa79", color: "#043231" }}
+          >
+            Register free
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="#043231" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <footer className="border-t border-border">
         <div className="max-w-3xl mx-auto px-4 py-4 flex items-center justify-between text-xs text-muted-foreground">
           <span>VirtusGreen · Green Agent</span>
           <span>EU Reg. 2024/1143 · EUDR 2023/1115 · ESPR DPP</span>
