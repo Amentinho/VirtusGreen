@@ -152,62 +152,60 @@
     }
   },
   "roadmap": {
-    "title": "La Nostra Roadmap",
-    "subtitle": "Costruiamo il futuro dello shopping sostenibile",
+    "title": "Roadmap",
+    "subtitle": "Da MVP funzionante a infrastruttura di provenienza europea.",
     "completed": "Completato",
     "inProgress": "In Corso",
     "upcoming": "Prossimamente",
     "q2_2025": {
-      "quarter": "Q2 2025",
-      "title": "Fondamenta e Pianificazione",
+      "quarter": "Q2–Q3 2025",
+      "title": "Fondamenta",
       "items": [
-        "Progettazione architettura della piattaforma",
-        "Esperienza di gamification",
-        "Sviluppo identità del marchio",
-        "Definizione sistema di ricompense"
+        "Brand identity e architettura",
+        "Integrazione dati NDVI Copernicus Sentinel-2",
+        "Ancoraggio blockchain su testnet Sepolia",
+        "Tre set di regole DOP/DOC/IGP (Bronte DOP, Etna DOC, Modica IGP)"
       ]
     },
     "q3_2025": {
-      "quarter": "Q3 2025",
-      "title": "Sviluppo Piattaforma",
+      "quarter": "Q4 2025–Q1 2026",
+      "title": "Sviluppo Prodotto",
       "items": [
-        "Sviluppo applicazione mobile",
-        "Indicatori di sostenibilità",
-        "Infrastruttura database",
-        "Implementazione sistema di ricompense",
-        "Strategia social media"
+        "Piattaforma B2B Green Agent sviluppata",
+        "Passaporto digitale consumer live",
+        "Demo verifica lotto con dati satellitari reali",
+        "QR passaporto con sistema di token reward"
       ]
     },
     "q4_2025": {
-      "quarter": "Q4 2025",
-      "title": "Lancio Beta",
+      "quarter": "Q4 2026",
+      "title": "Live & Primi Clienti",
       "items": [
-        "Test beta con utenti",
-        "Integrazione feedback utenti",
-        "Audit di sicurezza",
-        "Integrazioni API con partner",
-        "Marketing e Social Media"
+        "virtusgreen.com e app live",
+        "Partecipazione ETHGlobal Agentic Markets",
+        "Primo outreach pilota consorzi (Modica, Etna)",
+        "Deploy su Base mainnet"
       ]
     },
     "q1_2026": {
-      "quarter": "Q1 2026",
-      "title": "Lancio Pubblico",
+      "quarter": "Q1–Q2 2027",
+      "title": "Ricavi & Grant",
       "items": [
-        "Lancio completo della piattaforma",
-        "Rilascio app store (iOS e Android)",
-        "Programma onboarding partner",
-        "Coinvolgimento clienti",
-        "Implementazione sistema di ricompense"
+        "Primo contratto B2B firmato",
+        "Export DDS per conformità EUDR",
+        "Domanda EIC Accelerator (€2,5M)",
+        "Accesso a EIT Food Accelerator",
+        "Partnership CSQA ente di certificazione"
       ]
     },
     "q2026_plus": {
-      "quarter": "2026+",
-      "title": "Miglioramenti Deep Tech",
+      "quarter": "2027+",
+      "title": "Scala",
       "items": [
-        "Sviluppo stack blockchain",
-        "Riconoscimento immagini per prodotti",
-        "Generazione token",
-        "Calcolatore impatto sostenibilità"
+        "Integrazioni GDO (Esselunga, Carrefour)",
+        "Espansione in Giappone (ETH Tokyo)",
+        "Token economy e marketplace consumer",
+        "Raccolta fondi Serie A"
       ]
     }
   },

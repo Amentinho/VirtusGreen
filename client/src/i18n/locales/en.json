@@ -152,62 +152,60 @@
     }
   },
   "roadmap": {
-    "title": "Our Roadmap",
-    "subtitle": "Building the future of sustainable shopping",
+    "title": "Roadmap",
+    "subtitle": "From working MVP to EU-wide provenance infrastructure.",
     "completed": "Completed",
     "inProgress": "In Progress",
     "upcoming": "Upcoming",
     "q2_2025": {
-      "quarter": "Q2 2025",
-      "title": "Foundation & Plan",
+      "quarter": "Q2–Q3 2025",
+      "title": "Foundation",
       "items": [
-        "Platform architecture design",
-        "Gamification experience",
-        "Brand identity development",
-        "Rewarding system definition"
+        "Brand identity & architecture",
+        "Copernicus Sentinel-2 NDVI integration",
+        "Blockchain anchoring on Sepolia testnet",
+        "Three GI denomination rule sets (Bronte DOP, Etna DOC, Modica IGP)"
       ]
     },
     "q3_2025": {
-      "quarter": "Q3 2025",
-      "title": "Platform Development",
+      "quarter": "Q4 2025–Q1 2026",
+      "title": "Product Build",
       "items": [
-        "Mobile application development",
-        "Sustainability indicators",
-        "Database infrastructure",
-        "Rewarding system implementation",
-        "Social media strategy"
+        "Green Agent B2B platform built",
+        "Passport consumer DPP live",
+        "Batch verification demo with real satellite data",
+        "Digital passport QR with token rewards"
       ]
     },
     "q4_2025": {
-      "quarter": "Q4 2025",
-      "title": "Beta Launch",
+      "quarter": "Q4 2026",
+      "title": "Live & First Customers",
       "items": [
-        "Beta testing with users",
-        "User feedback integration",
-        "Security audits",
-        "API integrations with partners",
-        "Marketing & Social Media"
+        "virtusgreen.com & app live",
+        "ETHGlobal Agentic Markets submission",
+        "First consorzio pilot outreach (Modica, Etna)",
+        "Base mainnet deployment"
       ]
     },
     "q1_2026": {
-      "quarter": "Q1 2026",
-      "title": "Public Launch",
+      "quarter": "Q1–Q2 2027",
+      "title": "Revenue & Grants",
       "items": [
-        "Full platform launch",
-        "App store releases (iOS & Android)",
-        "Partner onboarding program",
-        "Customer engagement",
-        "Reward system implementation"
+        "First paid B2B contract signed",
+        "EUDR due-diligence statement export",
+        "EIC Accelerator application (€2.5M)",
+        "EIT Food Accelerator cohort",
+        "CSQA certification body partnership"
       ]
     },
     "q2026_plus": {
-      "quarter": "2026+",
-      "title": "Deep Tech Enhancements",
+      "quarter": "2027+",
+      "title": "Scale",
       "items": [
-        "Blockchain stack development",
-        "Image recognition for products",
-        "Token generation",
-        "Sustainability impact calculator"
+        "GDO retailer integrations (Esselunga, Carrefour)",
+        "Japan GI expansion (ETH Tokyo)",
+        "Token economy & consumer marketplace",
+        "Series A fundraising"
       ]
     }
   },

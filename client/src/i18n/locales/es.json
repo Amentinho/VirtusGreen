@@ -152,62 +152,60 @@
     }
   },
   "roadmap": {
-    "title": "Nuestra Hoja de Ruta",
-    "subtitle": "Construyendo el futuro de las compras sostenibles",
+    "title": "Hoja de Ruta",
+    "subtitle": "Del MVP funcional a infraestructura de procedencia europea.",
     "completed": "Completado",
-    "inProgress": "En Progreso",
+    "inProgress": "En Curso",
     "upcoming": "Próximamente",
     "q2_2025": {
-      "quarter": "Q2 2025",
-      "title": "Fundamentos y Planificación",
+      "quarter": "Q2–Q3 2025",
+      "title": "Fundación",
       "items": [
-        "Diseño de arquitectura de la plataforma",
-        "Experiencia de gamificación",
-        "Desarrollo de identidad de marca",
-        "Definición del sistema de recompensas"
+        "Identidad de marca y arquitectura",
+        "Integración NDVI Copernicus Sentinel-2",
+        "Anclaje blockchain en testnet Sepolia",
+        "Tres conjuntos de reglas DOP/DOC/IGP (Bronte DOP, Etna DOC, Modica IGP)"
       ]
     },
     "q3_2025": {
-      "quarter": "Q3 2025",
-      "title": "Desarrollo de Plataforma",
+      "quarter": "Q4 2025–Q1 2026",
+      "title": "Desarrollo del Producto",
       "items": [
-        "Desarrollo de aplicación móvil",
-        "Indicadores de sostenibilidad",
-        "Infraestructura de base de datos",
-        "Implementación del sistema de recompensas",
-        "Estrategia de redes sociales"
+        "Plataforma B2B Green Agent construida",
+        "Pasaporte digital consumer activo",
+        "Demo verificación de lote con datos satelitales reales",
+        "QR pasaporte con sistema de tokens de recompensa"
       ]
     },
     "q4_2025": {
-      "quarter": "Q4 2025",
-      "title": "Lanzamiento Beta",
+      "quarter": "Q4 2026",
+      "title": "Live y Primeros Clientes",
       "items": [
-        "Pruebas beta con usuarios",
-        "Integración de comentarios de usuarios",
-        "Auditorías de seguridad",
-        "Integraciones API con socios",
-        "Marketing y Redes Sociales"
+        "virtusgreen.com y app en producción",
+        "Participación ETHGlobal Agentic Markets",
+        "Primer outreach piloto a consorcios (Modica, Etna)",
+        "Despliegue en Base mainnet"
       ]
     },
     "q1_2026": {
-      "quarter": "Q1 2026",
-      "title": "Lanzamiento Público",
+      "quarter": "Q1–Q2 2027",
+      "title": "Ingresos y Subvenciones",
       "items": [
-        "Lanzamiento completo de la plataforma",
-        "Lanzamientos en app store (iOS y Android)",
-        "Programa de incorporación de socios",
-        "Compromiso del cliente",
-        "Implementación del sistema de recompensas"
+        "Primer contrato B2B firmado",
+        "Exportación DDS para cumplimiento EUDR",
+        "Solicitud EIC Accelerator (€2,5M)",
+        "Acceso a EIT Food Accelerator",
+        "Partnership con organismo CSQA"
       ]
     },
     "q2026_plus": {
-      "quarter": "2026+",
-      "title": "Mejoras Deep Tech",
+      "quarter": "2027+",
+      "title": "Escala",
       "items": [
-        "Desarrollo de stack blockchain",
-        "Reconocimiento de imágenes para productos",
-        "Generación de tokens",
-        "Calculadora de impacto de sostenibilidad"
+        "Integraciones con GDO (Esselunga, Carrefour)",
+        "Expansión a Japón (ETH Tokyo)",
+        "Token economy y marketplace consumer",
+        "Captación Serie A"
       ]
     }
   },
