@@ -256,15 +256,17 @@ export default function Hero() {
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-3 pt-1">
-              <button
-                onClick={() => scrollTo("scan")}
+              <a
+                href="https://app.virtusgreen.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2.5 rounded-xl px-7 py-3.5 text-sm font-bold transition-all duration-200 hover:gap-4"
                 style={{ background: "#c0fa79", color: "#043231" }}
                 data-testid="button-hero-primary"
               >
-                {t("hero.scanProduct", "Scan a Product")}
+                {t("hero.openApp", "Open App")}
                 <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" />
-              </button>
+              </a>
               <button
                 onClick={() => scrollTo("how-it-works")}
                 className="inline-flex items-center gap-2 rounded-xl px-7 py-3.5 text-sm font-semibold text-white/80 border border-white/15 hover:bg-white/5 transition-all duration-200"
