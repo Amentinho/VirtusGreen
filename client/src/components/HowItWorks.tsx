@@ -92,7 +92,7 @@ export default function HowItWorks() {
                 <div className="relative z-10 space-y-6">
                   <div className="flex items-start justify-between">
                     <div className="flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-                      <img src={step.icon as string} alt={step.title} className="w-20 h-20 object-contain" />
+                      <img src={step.icon as string} alt={step.title} className="w-20 h-20 object-contain" loading="lazy" />
                     </div>
                     <div className="text-5xl font-bold text-muted-foreground/20">
                       {index + 1}

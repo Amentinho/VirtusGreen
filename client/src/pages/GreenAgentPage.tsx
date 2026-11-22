@@ -18,7 +18,7 @@ export default function GreenAgentPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
     const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -52,10 +52,10 @@ export default function GreenAgentPage() {
           <div className="flex items-center gap-3">
             <LanguageSelector />
             <button onClick={() => setLocation("/producer/login")} className="text-sm text-muted-foreground hover:text-foreground transition-colors hidden sm:block">
-              Producer login
+              {t("greenAgentPage.producerLogin", "Producer login")}
             </button>
             <Button size="sm" variant="outline" className="border-cta/40 text-cta hover:bg-cta/5" onClick={() => { trackEvent("cta_click","engagement","register_producer"); setLocation("/producer/register"); }}>
-              <Leaf className="w-3.5 h-3.5 mr-1.5" /> Register Producer
+              <Leaf className="w-3.5 h-3.5 mr-1.5" /> {t("greenAgentPage.registerProducer", "Register Producer")}
             </Button>
             <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground" onClick={scrollToForm}>
               {t("greenAgentPage.contactCta", "Book a call")}
@@ -69,16 +69,16 @@ export default function GreenAgentPage() {
         <section className="py-16 bg-background">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
             <div className="text-center space-y-2">
-              <h2 className="text-2xl sm:text-3xl font-bold text-foreground">Live Batch Verification Demo</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground">{t("greenAgentPage.demoTitle", "Live Batch Verification Demo")}</h2>
               <p className="text-muted-foreground max-w-xl mx-auto text-sm">
-                Select a product, enter a batch ID, and watch Green Agent cross-check it against real Copernicus Sentinel-2 satellite data.
+                {t("greenAgentPage.demoSubtitle", "Select a product, enter a batch ID, and watch Green Agent cross-check it against real Copernicus Sentinel-2 satellite data.")}
               </p>
               <div className="pt-2">
                 <button
                   onClick={() => setLocation("/passport/BRN-2026-001")}
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-cta/10 border border-cta/30 text-cta text-sm font-medium hover:bg-cta/20 transition-colors"
                 >
-                  <span>🌿</span> Visualizza un Passaporto Digitale reale — Pistacchio Bronte DOP →
+                  <span>🌿</span> {t("greenAgentPage.demoPassportLink", "View a real Digital Passport — Bronte DOP Pistachio →")}
                 </button>
               </div>
             </div>
@@ -89,12 +89,12 @@ export default function GreenAgentPage() {
       </main>
 
       <footer className="border-t border-border/50 py-5 px-6 text-center text-xs text-muted-foreground">
-        © 2026 VirtusGreen · Barcelona / EU-wide ·{" "}
+        © {new Date().getFullYear()} VirtusGreen · Barcelona / EU-wide ·{" "}
         <a href="mailto:hello@virtusgreen.com" className="hover:text-primary transition-colors">hello@virtusgreen.com</a>
         {" · "}
-        <button onClick={() => setLocation("/terms")} className="hover:text-primary transition-colors">Termini</button>
+        <button onClick={() => setLocation("/terms")} className="hover:text-primary transition-colors">{t("footer.terms", "Terms")}</button>
         {" · "}
-        <button onClick={() => setLocation("/privacy")} className="hover:text-primary transition-colors">Privacy</button>
+        <button onClick={() => setLocation("/privacy")} className="hover:text-primary transition-colors">{t("footer.privacy", "Privacy")}</button>
         {" · "}
         <button onClick={() => setLocation("/")} className="hover:text-primary transition-colors">
           {t("greenAgentPage.backToHome", "Back to home")}

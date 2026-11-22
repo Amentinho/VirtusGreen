@@ -240,7 +240,9 @@
     "description": "Real environmental data for every product. No greenwashing, no guesswork. Just facts, stored on blockchain.",
     "quickLinks": "Quick Links",
     "followUs": "Follow Us",
-    "copyright": "VirtusGreen. All rights reserved."
+    "copyright": "VirtusGreen. All rights reserved.",
+    "terms": "Terms",
+    "privacy": "Privacy"
   },
   "checklist": {
     "title": "7-Day Sustainable Eating Checklist | Eat Better for the Planet",
@@ -488,6 +490,12 @@
     "contactCta": "Book a call",
     "eyebrow": "GI Authenticity & Compliance",
     "headline": "Green Agent",
-    "subheadline": "For consortia and premium GI producers who need origin to be provable, not just declared. AI agents cross-check geolocation, satellite data and denomination rules. A fake batch cannot pass."
+    "subheadline": "For consortia and premium GI producers who need origin to be provable, not just declared. AI agents cross-check geolocation, satellite data and denomination rules. A fake batch cannot pass.",
+    "producerLogin": "Producer login",
+    "registerProducer": "Register Producer",
+    "backToHome": "Back to home",
+    "demoTitle": "Live Batch Verification Demo",
+    "demoSubtitle": "Select a product, enter a batch ID, and watch Green Agent cross-check it against real Copernicus Sentinel-2 satellite data.",
+    "demoPassportLink": "View a real Digital Passport — Bronte DOP Pistachio →"
   }
 }

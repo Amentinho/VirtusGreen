@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -35,6 +36,7 @@ export default function Footer() {
   const { t } = useTranslation();
   const { toast } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [, setLocation] = useLocation();
 
   const form = useForm<InsertContact>({
     resolver: zodResolver(insertContactSchema),
@@ -100,14 +102,9 @@ export default function Footer() {
     { label: t('navigation.aboutUs'), id: "team" },
   ];
 
-  const handleSocialClick = (platform: string, href: string) => {
-    trackEvent('social_link_click', 'engagement', platform);
-    window.open(href, "_blank", "noopener noreferrer");
-  };
-
   const socialLinks = [
     { icon: linkedinIcon, label: "LinkedIn", href: "https://www.linkedin.com/company/virtusgreen" },
-    { icon: twitterIcon, label: "Twitter", href: "https://x.com/virtusgreen" },
+    { icon: twitterIcon, label: "Twitter / X", href: "https://x.com/virtusgreen" },
     { icon: instagramIcon, label: "Instagram", href: "https://www.instagram.com/virtusgreen/" },
   ];
 
@@ -117,13 +114,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
           <div className="space-y-6">
             <button
-              onClick={() => scrollToSection("hero")}
+              onClick={() => setLocation("/")}
               className="flex items-center gap-3 hover-elevate active-elevate-2 rounded-lg px-3 py-2 -ml-3"
               data-testid="button-logo-footer"
+              aria-label="VirtusGreen home"
             >
-              <img 
-                src={logoImage} 
-                alt="VirtusGreen Logo" 
+              <img
+                src={logoImage}
+                alt="VirtusGreen Logo"
                 className="h-12 w-auto object-contain"
               />
             </button>
@@ -156,19 +154,22 @@ export default function Footer() {
               </h3>
               <div className="flex gap-3">
                 {socialLinks.map((social) => (
-                  <button
+                  <a
                     key={social.label}
-                    onClick={() => handleSocialClick(social.label, social.href)}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => trackEvent('social_link_click', 'engagement', social.label)}
                     className="w-10 h-10 rounded-lg flex items-center justify-center hover-elevate active-elevate-2 transition-colors"
-                    data-testid={`link-social-${social.label.toLowerCase()}`}
+                    data-testid={`link-social-${social.label.toLowerCase().replace(/\s*\/\s*.*/, "")}`}
                     aria-label={social.label}
                   >
-                    <img 
-                      src={social.icon} 
-                      alt={social.label} 
-                      className="w-6 h-6 object-contain" 
+                    <img
+                      src={social.icon}
+                      alt={social.label}
+                      className="w-6 h-6 object-contain"
                     />
-                  </button>
+                  </a>
                 ))}
               </div>
             </div>

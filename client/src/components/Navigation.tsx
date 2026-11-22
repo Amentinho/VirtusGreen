@@ -11,7 +11,7 @@ interface NavigationProps { scrolled: boolean; }
 export default function Navigation({ scrolled }: NavigationProps) {
   const [open, setOpen] = useState(false);
   const { t } = useTranslation();
-  const [location, setLocation] = useLocation();
+  const [, setLocation] = useLocation();
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
@@ -38,17 +38,12 @@ export default function Navigation({ scrolled }: NavigationProps) {
     { label: t("navigation.aboutUs"), id: "team" },
   ];
 
-  // Determine if hero is dark so we know what color the nav text should be
-  const heroIsDark = !scrolled && location === "/";
-
   return (
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
             ? "bg-background/90 backdrop-blur-xl border-b border-border/40 shadow-sm"
-            : heroIsDark
-            ? "bg-transparent border-b border-white/0"
             : "bg-background/80 backdrop-blur-md"
         }`}
       >
@@ -65,7 +60,7 @@ export default function Navigation({ scrolled }: NavigationProps) {
               <img
                 src={logoImage}
                 alt="VirtusGreen"
-                className={`h-9 w-auto object-contain transition-all duration-300 ${heroIsDark ? "brightness-0 invert" : ""}`}
+                className="h-9 w-auto object-contain"
               />
             </button>
 
@@ -75,11 +70,7 @@ export default function Navigation({ scrolled }: NavigationProps) {
                 <button
                   key={link.id}
                   onClick={() => scrollTo(link.id)}
-                  className={`px-3.5 py-2 text-[13px] font-medium rounded-lg transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c0fa79] ${
-                    heroIsDark
-                      ? "text-white/70 hover:text-white hover:bg-white/8"
-                      : "text-foreground/70 hover:text-foreground hover:bg-muted/60"
-                  }`}
+                  className="px-3.5 py-2 text-[13px] font-medium rounded-lg transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c0fa79] text-foreground/70 hover:text-foreground hover:bg-muted/60"
                   data-testid={`link-${link.id}`}
                 >
                   {link.label}
@@ -87,14 +78,10 @@ export default function Navigation({ scrolled }: NavigationProps) {
               ))}
               <button
                 onClick={() => { setLocation("/green-agent"); trackEvent("nav_click", "navigation", "green-agent-page"); }}
-                className={`px-3.5 py-2 text-[13px] font-medium rounded-lg transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c0fa79] ${
-                  heroIsDark
-                    ? "text-white/70 hover:text-white hover:bg-white/8"
-                    : "text-foreground/70 hover:text-foreground hover:bg-muted/60"
-                }`}
+                className="px-3.5 py-2 text-[13px] font-medium rounded-lg transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c0fa79] text-foreground/70 hover:text-foreground hover:bg-muted/60"
                 data-testid="link-green-agent-page"
               >
-                Green Agent
+                {t("navigation.greenAgent")}
               </button>
             </div>
 
@@ -111,11 +98,7 @@ export default function Navigation({ scrolled }: NavigationProps) {
               </button>
               <button
                 onClick={() => scrollTo("footer")}
-                className={`text-[13px] font-semibold px-4 py-2 rounded-lg border transition-colors duration-150 ${
-                  heroIsDark
-                    ? "border-white/20 text-white hover:bg-white/10"
-                    : "border-border text-foreground hover:bg-muted"
-                }`}
+                className="text-[13px] font-semibold px-4 py-2 rounded-lg border transition-colors duration-150 border-border text-foreground hover:bg-muted"
                 data-testid="button-get-in-touch-nav"
               >
                 {t("navigation.getInTouch")}
@@ -124,9 +107,7 @@ export default function Navigation({ scrolled }: NavigationProps) {
 
             {/* Mobile menu toggle */}
             <button
-              className={`md:hidden p-2 rounded-lg transition-colors ${
-                heroIsDark ? "text-white hover:bg-white/10" : "text-foreground hover:bg-muted"
-              }`}
+              className="md:hidden p-2 rounded-lg transition-colors text-foreground hover:bg-muted"
               onClick={() => setOpen(v => !v)}
               aria-label="Toggle menu"
               data-testid="button-mobile-menu"

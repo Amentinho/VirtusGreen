@@ -240,7 +240,9 @@
     "description": "Datos ambientales reales para cada producto. Sin greenwashing, sin suposiciones. Solo hechos, registrados en blockchain.",
     "quickLinks": "Enlaces Rápidos",
     "followUs": "Síguenos",
-    "copyright": "VirtusGreen. Todos los derechos reservados."
+    "copyright": "VirtusGreen. Todos los derechos reservados.",
+    "terms": "Términos",
+    "privacy": "Privacidad"
   },
   "checklist": {
     "title": "Checklist de 7 Días de Alimentación Sostenible | Guía Gratis",
@@ -488,6 +490,12 @@
     "contactCta": "Reservar llamada",
     "eyebrow": "Autenticidad IGP & Cumplimiento",
     "headline": "Green Agent",
-    "subheadline": "Para consorcios y productores premium IGP que necesitan que el origen sea demostrable, no solo declarado. Los agentes IA verifican geolocalización, datos satelitales y reglas de denominación. Un lote falso no puede pasar."
+    "subheadline": "Para consorcios y productores premium IGP que necesitan que el origen sea demostrable, no solo declarado. Los agentes IA verifican geolocalización, datos satelitales y reglas de denominación. Un lote falso no puede pasar.",
+    "producerLogin": "Acceso productores",
+    "registerProducer": "Registrar Productor",
+    "backToHome": "Volver al inicio",
+    "demoTitle": "Demo en Vivo de Verificación de Lote",
+    "demoSubtitle": "Selecciona un producto, introduce un ID de lote y observa cómo Green Agent lo verifica con datos reales del satélite Copernicus Sentinel-2.",
+    "demoPassportLink": "Ver un Pasaporte Digital real — Pistacho Bronte DOP →"
   }
 }

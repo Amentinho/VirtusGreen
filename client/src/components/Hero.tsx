@@ -122,8 +122,10 @@ export default function Hero() {
   // Entrance
   useEffect(() => { setTimeout(() => setVisible(true), 60); }, []);
 
-  // Subtle animated particle field
+  // Subtle animated particle field — skipped for prefers-reduced-motion
   useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
@@ -131,9 +133,10 @@ export default function Hero() {
 
     const resize = () => { canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight; };
     resize();
-    window.addEventListener("resize", resize);
+    window.addEventListener("resize", resize, { passive: true });
 
-    const dots: { x: number; y: number; vx: number; vy: number; r: number }[] = Array.from({ length: 60 }, () => ({
+    // Reduced from 60 to 36 dots; connection threshold lowered to cut O(n²) work
+    const dots: { x: number; y: number; vx: number; vy: number; r: number }[] = Array.from({ length: 36 }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
       vx: (Math.random() - 0.5) * 0.3,
@@ -141,31 +144,34 @@ export default function Hero() {
       r: Math.random() * 1.5 + 0.5,
     }));
 
+    const THRESHOLD = 80;
+    const THRESHOLD_SQ = THRESHOLD * THRESHOLD;
+
     let raf: number;
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      dots.forEach(d => {
+      for (const d of dots) {
         d.x += d.vx; d.y += d.vy;
         if (d.x < 0) d.x = canvas.width;
-        if (d.x > canvas.width) d.x = 0;
+        else if (d.x > canvas.width) d.x = 0;
         if (d.y < 0) d.y = canvas.height;
-        if (d.y > canvas.height) d.y = 0;
+        else if (d.y > canvas.height) d.y = 0;
         ctx.beginPath();
         ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
         ctx.fillStyle = "rgba(192,250,121,0.18)";
         ctx.fill();
-      });
-      // draw faint connections
+      }
+      // Use squared distance to avoid sqrt per pair
       for (let i = 0; i < dots.length; i++) {
         for (let j = i + 1; j < dots.length; j++) {
           const dx = dots[i].x - dots[j].x;
           const dy = dots[i].y - dots[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 90) {
+          const distSq = dx * dx + dy * dy;
+          if (distSq < THRESHOLD_SQ) {
             ctx.beginPath();
             ctx.moveTo(dots[i].x, dots[i].y);
             ctx.lineTo(dots[j].x, dots[j].y);
-            ctx.strokeStyle = `rgba(192,250,121,${0.05 * (1 - dist / 90)})`;
+            ctx.strokeStyle = `rgba(192,250,121,${0.05 * (1 - distSq / THRESHOLD_SQ)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }

@@ -167,7 +167,7 @@ export default function Landing() {
 
       {/* Footer strip */}
       <footer className="py-4 px-8 text-center text-xs text-white/25 border-t border-white/5">
-        © 2026 VirtusGreen · EU-wide ·{" "}
+        © {new Date().getFullYear()} VirtusGreen · EU-wide ·{" "}
         <a href="mailto:hello@virtusgreen.com" className="hover:text-white/50 transition-colors">
           hello@virtusgreen.com
         </a>{" "}
