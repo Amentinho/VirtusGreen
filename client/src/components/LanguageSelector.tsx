@@ -14,7 +14,7 @@ const languages = [
   { code: 'es', name: 'Español', flag: '🇪🇸' },
 ];
 
-export default function LanguageSelector() {
+export default function LanguageSelector({ buttonClassName }: { buttonClassName?: string } = {}) {
   const { i18n } = useTranslation();
 
   const changeLanguage = (languageCode: string) => {
@@ -30,7 +30,7 @@ export default function LanguageSelector() {
         <Button
           variant="ghost"
           size="icon"
-          className="hover-elevate active-elevate-2"
+          className={`hover-elevate active-elevate-2 ${buttonClassName || ""}`}
           data-testid="button-language-selector"
         >
           <Globe className="h-5 w-5" />
