@@ -63,7 +63,9 @@ export default function Landing() {
         >
           <img src={logoImage} alt="VirtusGreen" className="h-9 w-auto object-contain brightness-0 invert" />
         </button>
-        <LanguageSelector />
+        <div className="text-white">
+          <LanguageSelector />
+        </div>
       </header>
 
       {/* Hero text */}
